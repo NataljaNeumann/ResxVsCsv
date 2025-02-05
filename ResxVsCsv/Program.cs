@@ -66,11 +66,13 @@ namespace ResxVsCsv
         {
             try
             {
+                const string c_strSpecialComment = "Please fill in the needed translation";
                 string strPattern = "*.*";
                 string strDirectory = Directory.GetCurrentDirectory();
                 string strToResx = null;
                 string strSortByName = "no";
-                string strAPIKey = null;
+                string strApiKey = null;
+                string strApiUrl = null;
                 string strTranslationService = null;
                 bool bHelp = aArgs.Length == 0;
 
@@ -109,11 +111,17 @@ namespace ResxVsCsv
                                 strSortByName = aArgs[++i];
                             }
                             break;
-                        case "--apikey":
                         case "--libreurl":
                             if (i + 1 < aArgs.Length)
                             {
-                                strAPIKey = aArgs[++i];
+                                strApiUrl = aArgs[++i];
+                            }
+                            break;
+
+                        case "--apikey":
+                            if (i + 1 < aArgs.Length)
+                            {
+                                strApiKey = aArgs[++i];
                             }
                             break;
                         case "--help":
@@ -121,6 +129,8 @@ namespace ResxVsCsv
                         case "/?":
                         case "--licence":
                         case "--license":
+                            System.Console.WriteLine("ResxVsCsv v0.5");
+                            System.Console.WriteLine();
                             System.Console.WriteLine("Copyright (c) 2025 NataljaNeumann");
                                 System.Console.WriteLine();
                             System.Console.WriteLine("Permission is hereby granted, free of charge, to any person obtaining a copy");
@@ -140,15 +150,15 @@ namespace ResxVsCsv
                             System.Console.WriteLine("LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,");
                             System.Console.WriteLine("OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE");
                             System.Console.WriteLine("SOFTWARE.");
-
+                            System.Console.WriteLine();
                             System.Console.WriteLine(
                                 "For conversion to CSV: ResxVsCsv --directory <dir> --pattern <pattern> [--sortbyname yes]");
                             System.Console.WriteLine(
-                                "For translation: ResxVsCsv --directory <dir> --pattern <pattern> --translator <google|microsoft|deepl|toptranslations> --apikey <key> [--sortbyname yes] ");
+                                "For translation: ResxVsCsv --directory <dir> --pattern <pattern> --translator <google|microsoft|deepl|toptranslation> --apikey <key> [--sortbyname yes] ");
                             System.Console.WriteLine(
-                                "Translation with argos: ResxVsCsv --directory <dir> --pattern <pattern> --translator argos [--sortbyname yes] ");
+                                "For translation with argos: ResxVsCsv --directory <dir> --pattern <pattern> --translator argos [--sortbyname yes] ");
                             System.Console.WriteLine(
-                                "Translation with LibreTranslate: ResxVsCsv --directory <dir> --pattern <pattern> --translator libre --libreurl <url> [--sortbyname yes] ");
+                                "For translation with LibreTranslate: ResxVsCsv --directory <dir> --pattern <pattern> --translator libretranslate --libreurl <url> [--apikey <key>] [--sortbyname yes] ");
                             System.Console.WriteLine(
                                 "For updating .Resx files: ResxVsCsv --directory <dir> --toresx <resources.csv>");
                             return;
@@ -163,7 +173,11 @@ namespace ResxVsCsv
                     List<Entry> oEntries = new List<Entry>(
                         ReadCsvFile(System.IO.Path.Combine(strDirectory, strToResx)));
                     var oDistinctCultures = oEntries
-                        .Where(x => !string.IsNullOrEmpty(x.Culture))
+                        .Where(x => !string.IsNullOrEmpty(x.Culture) && 
+                                    !string.IsNullOrEmpty(x.Name) && 
+                                    (   !string.IsNullOrEmpty(x.Value) || 
+                                        (   !string.IsNullOrEmpty(x.Comment) &&
+                                            !x.Comment.Equals(c_strSpecialComment))))
                         .Select(x => x.Culture)
                         .Distinct()
                         .ToList();
@@ -172,7 +186,7 @@ namespace ResxVsCsv
                     foreach (string strCulture in oDistinctCultures)
                     {
                         string strResxCulture = strCulture.Equals("(default)") ? "" : "." + strCulture;
-                        UpdateResxFile(oEntries.Where(x => x.Culture.Equals(strCulture)),
+                        UpdateResxFile(oEntries.Where(x => x.Culture.Equals(strCulture) && !string.IsNullOrEmpty(x.Value)),
                             System.IO.Path.Combine(strDirectory, strToResx.Replace(".csv", strResxCulture + ".resx")));
                     }
                 }
@@ -240,62 +254,75 @@ namespace ResxVsCsv
                                 }
                                 else
                                 {
-                                    if (string.IsNullOrEmpty(strAPIKey))
+                                    if (string.IsNullOrEmpty(strTranslationService))
                                     {
                                         outputlist.Add(new Entry
                                         {
-                                            Comment = "Empty space for " + strCulture + " - " + strName
+                                            Culture = strCulture,
+                                            Name = strName,
+                                            Comment = c_strSpecialComment
                                         });
                                     }
                                     else
                                     {
-                                        var translations = new List<Translation>();
-
-                                        string strLocalizedTextVariant = null;
-                                        Entry oFoundEntry = null;
-                                        if (oEntriesDictionary.TryGetValue(
-                                            new Entry { Culture = "(default)", Name = strName }, out oFoundEntry))
+                                        try
                                         {
-                                            strLocalizedTextVariant = oFoundEntry.Value;
-                                            if (!string.IsNullOrEmpty(strLocalizedTextVariant))
-                                                translations.Add(new Translation
-                                                {
-                                                    Language = "en",
-                                                    Text = strLocalizedTextVariant
-                                                });
-                                        };
+                                            var translations = new List<Translation>();
 
-
-                                        foreach (string strSourceCulture in new string[] { 
-                                            "es", "de", "pt", "it", "en", "fr", "ru" })
-                                        {
+                                            string strLocalizedTextVariant = null;
+                                            Entry oFoundEntry = null;
                                             if (oEntriesDictionary.TryGetValue(
-                                                new Entry { Culture = strSourceCulture, Name = strName }, out oFoundEntry))
+                                                new Entry { Culture = "(default)", Name = strName }, out oFoundEntry))
                                             {
                                                 strLocalizedTextVariant = oFoundEntry.Value;
                                                 if (!string.IsNullOrEmpty(strLocalizedTextVariant))
                                                     translations.Add(new Translation
                                                     {
-                                                        Language = strSourceCulture,
+                                                        Language = "en",
                                                         Text = strLocalizedTextVariant
                                                     });
                                             };
-                                        }
 
 
-
-                                        string bestTranslation = GetBestTranslation(
-                                            translations, strCulture, strAPIKey, strTranslationService);
-
-
-                                        if (!string.IsNullOrEmpty(bestTranslation))
-                                            outputlist.Add(new Entry
+                                            foreach (string strSourceCulture in new string[] { 
+                                                        "es", "de", "pt", "it", "en", "fr", "ru" })
                                             {
-                                                Culture = strCulture,
-                                                Name = strName,
-                                                Value = bestTranslation,
-                                                Comment = "Generated by AI"
-                                            });
+                                                if (oEntriesDictionary.TryGetValue(
+                                                    new Entry { Culture = strSourceCulture, Name = strName }, out oFoundEntry))
+                                                {
+                                                    strLocalizedTextVariant = oFoundEntry.Value;
+                                                    if (!string.IsNullOrEmpty(strLocalizedTextVariant))
+                                                        translations.Add(new Translation
+                                                        {
+                                                            Language = strSourceCulture,
+                                                            Text = strLocalizedTextVariant
+                                                        });
+                                                };
+                                            }
+
+
+
+                                            string bestTranslation = GetBestTranslation(
+                                                translations, strCulture, strApiKey, strTranslationService, strApiUrl);
+
+
+                                            if (!string.IsNullOrEmpty(bestTranslation))
+                                                outputlist.Add(new Entry
+                                                {
+                                                    Culture = strCulture,
+                                                    Name = strName,
+                                                    Value = bestTranslation,
+                                                    Comment = "Generated by AI"
+                                                });
+
+                                            System.Console.WriteLine("Translated " +
+                                                strCulture + " - " + strName);
+                                        }
+                                        catch (Exception oEx)
+                                        {
+                                            System.Console.Error.WriteLine("Error while translating " +
+                                                strCulture + " - " + strName + ": " + oEx.Message);
+                                        }
                                     }
                                 }
                             }
@@ -313,61 +340,74 @@ namespace ResxVsCsv
                                 }
                                 else
                                 {
-                                    if (string.IsNullOrEmpty(strAPIKey))
+                                    if (string.IsNullOrEmpty(strTranslationService))
                                     {
-                                        outputlist.Add(new Entry
-                                        {
-                                            Comment = "Empty space for " + strCulture + " - " + strName
-                                        });
-                                    }
-                                    else
-                                    {
-                                        var translations = new List<Translation>();
-
-                                        string strLocalizedTextVariant = null;
-                                        Entry oFoundEntry = null;
-                                        if (oEntriesDictionary.TryGetValue(
-                                            new Entry { Culture = "(default)", Name = strName }, out oFoundEntry))
-                                        {
-                                            strLocalizedTextVariant = oFoundEntry.Value;
-                                            if (!string.IsNullOrEmpty(strLocalizedTextVariant))
-                                                translations.Add(new Translation
-                                                    {
-                                                        Language = "en",
-                                                        Text = strLocalizedTextVariant
-                                                    });
-                                        };
-
-
-                                        foreach (string strSourceCulture in new string[] { 
-                                            "es", "de", "pt", "it", "en", "fr", "ru" })
-                                        {
-                                            if (oEntriesDictionary.TryGetValue(
-                                                new Entry { Culture = strSourceCulture, Name = strName }, out oFoundEntry))
-                                            {
-                                                strLocalizedTextVariant = oFoundEntry.Value;
-                                                if (!string.IsNullOrEmpty(strLocalizedTextVariant))
-                                                    translations.Add(new Translation
-                                                      {
-                                                          Language = strSourceCulture,
-                                                          Text = strLocalizedTextVariant
-                                                      });
-                                            };
-                                        }
-
-
-
-                                        string bestTranslation = GetBestTranslation(
-                                            translations, strCulture, strAPIKey, strTranslationService);
-
-                                        if (!string.IsNullOrEmpty(bestTranslation))
                                         outputlist.Add(new Entry
                                         {
                                             Culture = strCulture,
                                             Name = strName,
-                                            Value = bestTranslation,
-                                            Comment = "Generated by AI"
+                                            Comment = c_strSpecialComment
                                         });
+                                    }
+                                    else
+                                    {
+                                        try
+                                        {
+                                            var translations = new List<Translation>();
+
+                                            string strLocalizedTextVariant = null;
+                                            Entry oFoundEntry = null;
+                                            if (oEntriesDictionary.TryGetValue(
+                                                new Entry { Culture = "(default)", Name = strName }, out oFoundEntry))
+                                            {
+                                                strLocalizedTextVariant = oFoundEntry.Value;
+                                                if (!string.IsNullOrEmpty(strLocalizedTextVariant))
+                                                    translations.Add(new Translation
+                                                        {
+                                                            Language = "en",
+                                                            Text = strLocalizedTextVariant
+                                                        });
+                                            };
+
+
+                                            foreach (string strSourceCulture in new string[] { 
+                                                        "es", "de", "pt", "it", "en", "fr", "ru" })
+                                            {
+                                                if (oEntriesDictionary.TryGetValue(
+                                                    new Entry { Culture = strSourceCulture, Name = strName }, out oFoundEntry))
+                                                {
+                                                    strLocalizedTextVariant = oFoundEntry.Value;
+                                                    if (!string.IsNullOrEmpty(strLocalizedTextVariant))
+                                                        translations.Add(new Translation
+                                                          {
+                                                              Language = strSourceCulture,
+                                                              Text = strLocalizedTextVariant
+                                                          });
+                                                };
+                                            }
+
+
+
+                                            string bestTranslation = GetBestTranslation(
+                                                translations, strCulture, strApiKey, strTranslationService, strApiUrl);
+
+                                            if (!string.IsNullOrEmpty(bestTranslation))
+                                                outputlist.Add(new Entry
+                                                {
+                                                    Culture = strCulture,
+                                                    Name = strName,
+                                                    Value = bestTranslation,
+                                                    Comment = "Generated by AI"
+                                                });
+
+                                            System.Console.WriteLine("Translated " +
+                                                strCulture + " - " + strName);
+                                        }
+                                        catch (Exception oEx)
+                                        {
+                                            System.Console.Error.WriteLine("Error while translating " +
+                                                strCulture + " - " + strName + ": " + oEx.Message);
+                                        }
                                     }
                                 }
                             }
@@ -382,7 +422,7 @@ namespace ResxVsCsv
             catch (Exception oEx)
             {
                 // write error and exit
-                System.Console.Error.WriteLine(oEx);
+                System.Console.Error.WriteLine(oEx.Message);
             }
         }
 
@@ -784,23 +824,24 @@ namespace ResxVsCsv
             string strSourceLanguage, 
             string strText, 
             string strTargetLanguage, 
-            string strAPIKey, 
-            string strService)
+            string strApiKey, 
+            string strService,
+            string strApiUrl)
         {
             switch (strService.ToLower())
             {
                 case "google":
-                    return TranslateWithGoogle(strText, strSourceLanguage, strTargetLanguage, strAPIKey);
+                    return TranslateWithGoogle(strText, strSourceLanguage, strTargetLanguage, strApiKey);
                 case "microsoft":
-                    return TranslateWithMicrosoft(strText, strSourceLanguage, strTargetLanguage, strAPIKey);
+                    return TranslateWithMicrosoft(strText, strSourceLanguage, strTargetLanguage, strApiKey);
                 case "deepl":
-                    return TranslateWithDeepL(strText, strSourceLanguage, strTargetLanguage, strAPIKey);
+                    return TranslateWithDeepL(strText, strSourceLanguage, strTargetLanguage, strApiKey);
                 case "toptranslation":
-                    return TranslateWithTopTranslation(strText, strSourceLanguage, strTargetLanguage, strAPIKey);
+                    return TranslateWithTopTranslation(strText, strSourceLanguage, strTargetLanguage, strApiKey);
                 case "argos":
                     return TranslateWithArgosTranslate(strText, strSourceLanguage, strTargetLanguage, "");
-                case "libre":
-                    return TranslateWithLibreTranslate(strText, strSourceLanguage, strTargetLanguage, strAPIKey);
+                case "libretranslate":
+                    return TranslateWithLibreTranslate(strText, strSourceLanguage, strTargetLanguage, strApiKey, strApiUrl);
                 default:
                     throw new ArgumentException("Unknown translation service specified.");
             }
@@ -970,7 +1011,8 @@ namespace ResxVsCsv
         private static string TranslateWithLibreTranslate(
             string strText, 
             string strSourceLanguage, 
-            string strTargetLanguage, 
+            string strTargetLanguage,
+            string strApiKey,
             string strLibreTranslateUrl)
         {
             using (WebClient client = new WebClient())
@@ -981,6 +1023,10 @@ namespace ResxVsCsv
                     { "source", strSourceLanguage },
                     { "target", strTargetLanguage }
                 };
+
+                if (!string.IsNullOrEmpty(strApiKey))
+                    values.Add("api_key", strApiKey);
+
 
                 byte[] aResponse = client.UploadValues( strLibreTranslateUrl+"/translate", values);
                 string strResponseString = Encoding.UTF8.GetString(aResponse);
@@ -1085,8 +1131,9 @@ namespace ResxVsCsv
         public static string GetBestTranslation(
             IEnumerable<Translation> iTranslations,
             string strTargetLanguage,
-            string strAPIKey,
-            string strService)
+            string strApiKey,
+            string strService,
+            string strApiUrl)
         {
 
             string strBestTranslation = null;
@@ -1095,9 +1142,9 @@ namespace ResxVsCsv
             foreach (var oTranslation in iTranslations)
             {
                 string strTranslatedText = Translate(oTranslation.Language, oTranslation.Text, 
-                    strTargetLanguage, strAPIKey, strService);
+                    strTargetLanguage, strApiKey, strService, strApiUrl);
                 string strBackTranslatedText = Translate(strTargetLanguage, strTranslatedText, 
-                    oTranslation.Language, strAPIKey, strService);
+                    oTranslation.Language, strApiKey, strService, strApiUrl);
 
                 if (strBackTranslatedText.Equals(oTranslation.Text))
                 {
