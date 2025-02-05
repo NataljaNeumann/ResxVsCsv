@@ -110,6 +110,7 @@ namespace ResxVsCsv
                             }
                             break;
                         case "--apikey":
+                        case "--libreurl":
                             if (i + 1 < aArgs.Length)
                             {
                                 strAPIKey = aArgs[++i];
@@ -146,6 +147,8 @@ namespace ResxVsCsv
                                 "For translation: ResxVsCsv --directory <dir> --pattern <pattern> --translator <google|microsoft|deepl|toptranslations> --apikey <key> [--sortbyname yes] ");
                             System.Console.WriteLine(
                                 "Translation with argos: ResxVsCsv --directory <dir> --pattern <pattern> --translator argos [--sortbyname yes] ");
+                            System.Console.WriteLine(
+                                "Translation with LibreTranslate: ResxVsCsv --directory <dir> --pattern <pattern> --translator libre --libreurl <url> [--sortbyname yes] ");
                             System.Console.WriteLine(
                                 "For updating .Resx files: ResxVsCsv --directory <dir> --toresx <resources.csv>");
                             return;
@@ -703,7 +706,8 @@ namespace ResxVsCsv
                     return TranslateWithTopTranslation(strText, strSourceLanguage, strTargetLanguage, strAPIKey);
                 case "argos":
                     return TranslateWithArgosTranslate(strText, strSourceLanguage, strTargetLanguage, "");
-
+                case "libre":
+                    return TranslateWithLibreTranslate(strText, strSourceLanguage, strTargetLanguage, strAPIKey);
                 default:
                     throw new ArgumentException("Unknown translation service specified.");
             }
@@ -854,6 +858,37 @@ namespace ResxVsCsv
             return result.Trim();
         }
 
+
+        //===================================================================================================
+        /// <summary>
+        /// Translates a string with libre translate engine
+        /// </summary>
+        /// <param name="strText">Text to translate</param>
+        /// <param name="strSourceLanguage">Source language</param>
+        /// <param name="strTargetLanguage">Target language</param>
+        /// <returns>Translated string</returns>
+        //===================================================================================================
+        private static string TranslateWithLibreTranslate(
+            string strText, 
+            string strSourceLanguage, 
+            string strTargetLanguage, 
+            string strLibreTranslateUrl)
+        {
+            using (WebClient client = new WebClient())
+            {
+                var values = new System.Collections.Specialized.NameValueCollection
+                {
+                    { "q", strText },
+                    { "source", strSourceLanguage },
+                    { "target", strTargetLanguage }
+                };
+
+                byte[] aResponse = client.UploadValues( strLibreTranslateUrl+"/translate", values);
+                string strResponseString = Encoding.UTF8.GetString(aResponse);
+                return ExtractTranslatedTextFromLibreResponse(strResponseString);
+            }
+        }
+
         //===================================================================================================
         /// <summary>
         /// Extracts result from response
@@ -916,6 +951,7 @@ namespace ResxVsCsv
             int endIndex = strResponse.IndexOf("\"", startIndex);
             return strResponse.Substring(startIndex, endIndex - startIndex);
         }
+
         //===================================================================================================
         /// <summary>
         /// Extracts translated text from json result
@@ -931,6 +967,22 @@ namespace ResxVsCsv
             int nStartIndex = strJsonResponse.IndexOf("[[[") + 4;
             int nEndIndex = strJsonResponse.IndexOf("\",\"", nStartIndex);
             return strJsonResponse.Substring(nStartIndex, nEndIndex - nStartIndex);
+        }
+
+
+        //===================================================================================================
+        /// <summary>
+        /// Extracts translated text from libre result
+        /// </summary>
+        /// <param name="strJsonResponse">libre response</param>
+        /// <returns>Translation</returns>
+        //===================================================================================================
+        private static string ExtractTranslatedTextFromLibreResponse(string strResponse)
+        {
+            // Basic string manipulation to extract the translated text
+            int startIndex = strResponse.IndexOf("\"translatedText\":\"") + 18;
+            int endIndex = strResponse.IndexOf("\"", startIndex);
+            return strResponse.Substring(startIndex, endIndex - startIndex);
         }
 
 
