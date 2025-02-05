@@ -29,6 +29,7 @@ using System.Text.RegularExpressions;
 using System.Collections.Generic;
 using System.Net;
 using System.Text;
+using System.Diagnostics;
 
 
 namespace ResxVsCsv
@@ -142,7 +143,9 @@ namespace ResxVsCsv
                             System.Console.WriteLine(
                                 "For conversion to CSV: ResxVsCsv --directory <dir> --pattern <pattern> [--sortbyname yes]");
                             System.Console.WriteLine(
-                                "For translation: ResxVsCsv --directory <dir> --pattern <pattern> --translator <google|microsoft> --apikey <key> [--sortbyname yes] ");
+                                "For translation: ResxVsCsv --directory <dir> --pattern <pattern> --translator <google|microsoft|deepl|toptranslations> --apikey <key> [--sortbyname yes] ");
+                            System.Console.WriteLine(
+                                "Translation with argos: ResxVsCsv --directory <dir> --pattern <pattern> --translator argos [--sortbyname yes] ");
                             System.Console.WriteLine(
                                 "For updating .Resx files: ResxVsCsv --directory <dir> --toresx <resources.csv>");
                             return;
@@ -256,7 +259,7 @@ namespace ResxVsCsv
                                         };
 
 
-                                        foreach (string strSourceCulture in new string[] { "es", "de", "pt", "it", "en", "fr" })
+                                        foreach (string strSourceCulture in new string[] { "es", "de", "pt", "it", "en", "fr", "ru" })
                                         {
                                             if (oEntriesDictionary.TryGetValue(
                                                 new Entry { Culture = strSourceCulture, Name = strName }, out oFoundEntry))
@@ -328,7 +331,7 @@ namespace ResxVsCsv
                                         };
 
 
-                                        foreach (string strSourceCulture in new string[] { "es", "de", "pt", "it", "en", "fr" })
+                                        foreach (string strSourceCulture in new string[] { "es", "de", "pt", "it", "en", "fr", "ru" })
                                         {
                                             if (oEntriesDictionary.TryGetValue(
                                                 new Entry { Culture = strSourceCulture, Name = strName }, out oFoundEntry))
@@ -694,6 +697,13 @@ namespace ResxVsCsv
                     return TranslateWithGoogle(strText, strSourceLanguage, strTargetLanguage, strAPIKey);
                 case "microsoft":
                     return TranslateWithMicrosoft(strText, strSourceLanguage, strTargetLanguage, strAPIKey);
+                case "deepl":
+                    return TranslateWithDeepL(strText, strSourceLanguage, strTargetLanguage, strAPIKey);
+                case "toptranslation":
+                    return TranslateWithTopTranslation(strText, strSourceLanguage, strTargetLanguage, strAPIKey);
+                case "argos":
+                    return TranslateWithArgosTranslate(strText, strSourceLanguage, strTargetLanguage, "");
+
                 default:
                     throw new ArgumentException("Unknown translation service specified.");
             }
@@ -761,6 +771,91 @@ namespace ResxVsCsv
 
         //===================================================================================================
         /// <summary>
+        /// Translates a string with deepl engine
+        /// </summary>
+        /// <param name="strText">Text to translate</param>
+        /// <param name="strSourceLanguage">Source language</param>
+        /// <param name="strTargetLanguage">Target language</param>
+        /// <param name="strAPIKey">Key</param>
+        /// <returns>Translated string</returns>
+        //===================================================================================================
+        private static string TranslateWithDeepL(
+            string strText, 
+            string strSourceLanguage, 
+            string strTargetLanguage,
+            string strAPIKey)
+        {
+            string url = @"https://api.deepl.com/v2/translate?auth_key="+strAPIKey+"&text="+
+                Uri.EscapeDataString(strText)+"&source_lang="+strSourceLanguage+"&target_lang="+strTargetLanguage;
+
+            using (WebClient webClient = new WebClient())
+            {
+                webClient.Encoding = Encoding.UTF8;
+                string response = webClient.DownloadString(url);
+                return ExtractTranslatedTextFromDeepLResponse(response);
+            }
+        }
+
+        //===================================================================================================
+        /// <summary>
+        /// Translates a string with top translation engine
+        /// </summary>
+        /// <param name="strText">Text to translate</param>
+        /// <param name="strSourceLanguage">Source language</param>
+        /// <param name="strTargetLanguage">Target language</param>
+        /// <param name="strAPIKey">Key</param>
+        /// <returns>Translated string</returns>
+        //===================================================================================================
+        private static string TranslateWithTopTranslation(
+            string strText, 
+            string strSourceLanguage, 
+            string strTargetLanguage,
+            string strAPIKey)
+        {
+            string url = @"https://api.toptranslation.com/translate?auth_key=" + strAPIKey + "&text=" +
+                Uri.EscapeDataString(strText)+"&source_lang="+strSourceLanguage+"&target_lang="+strTargetLanguage;
+
+            using (WebClient webClient = new WebClient())
+            {
+                webClient.Encoding = Encoding.UTF8;
+                string response = webClient.DownloadString(url);
+                return ExtractTranslatedTextFromTopTranslationResponse(response);
+            }
+        }
+
+
+
+        //===================================================================================================
+        /// <summary>
+        /// Translates a string with argos engine
+        /// </summary>
+        /// <param name="strText">Text to translate</param>
+        /// <param name="strSourceLanguage">Source language</param>
+        /// <param name="strTargetLanguage">Target language</param>
+        /// <returns>Translated string</returns>
+        //===================================================================================================
+        private static string TranslateWithArgosTranslate(string text, string sourceLanguage, string targetLanguage, string argosTranslatePath)
+        {
+            var process = new Process
+            {
+                StartInfo = new ProcessStartInfo("argos-tranlate", "--from-lang "+sourceLanguage+" --to-lang "+targetLanguage)
+                {
+                    RedirectStandardInput = true,
+                    RedirectStandardOutput = true,
+                    UseShellExecute = true,
+                    CreateNoWindow = true
+                }
+            };
+            process.Start();
+            process.StandardInput.Write(text);
+            process.StandardInput.Flush();
+            string result = process.StandardOutput.ReadToEnd();
+            process.WaitForExit();
+            return result.Trim();
+        }
+
+        //===================================================================================================
+        /// <summary>
         /// Extracts result from response
         /// </summary>
         /// <param name="strResponse">Response from google service</param>
@@ -791,6 +886,36 @@ namespace ResxVsCsv
             return strResponse.Substring(startIndex, endIndex - startIndex);
         }
 
+
+        //===================================================================================================
+        /// <summary>
+        /// Extracts result from response
+        /// </summary>
+        /// <param name="strResponse">Response from deepl service</param>
+        /// <returns>The translated text from response</returns>
+        //===================================================================================================
+        private static string ExtractTranslatedTextFromDeepLResponse(string strResponse)
+        {
+            // Basic string manipulation to extract the translated text
+            int startIndex = strResponse.IndexOf("\"translatedText\":\"") + 18;
+            int endIndex = strResponse.IndexOf("\"", startIndex);
+            return strResponse.Substring(startIndex, endIndex - startIndex);
+        }
+
+        //===================================================================================================
+        /// <summary>
+        /// Extracts result from response
+        /// </summary>
+        /// <param name="strResponse">Response from toptanslation service</param>
+        /// <returns>The translated text from response</returns>
+        //===================================================================================================
+        private static string ExtractTranslatedTextFromTopTranslationResponse(string strResponse)
+        {
+            // Basic string manipulation to extract the translated text
+            int startIndex = strResponse.IndexOf("\"translatedText\":\"") + 18;
+            int endIndex = strResponse.IndexOf("\"", startIndex);
+            return strResponse.Substring(startIndex, endIndex - startIndex);
+        }
         //===================================================================================================
         /// <summary>
         /// Extracts translated text from json result
