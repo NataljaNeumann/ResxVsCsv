@@ -1001,36 +1001,32 @@ namespace ResxVsCsv
             string strAPIKey,
             string strService)
         {
-            List<string> oTranslationVariantsToTargetLanguage = new List<string>();
-            foreach (Translation oTranslation in iTranslations)
-            {
-                string strResult = Translate(oTranslation.Language, oTranslation.Text, strTargetLanguage, 
-                    strAPIKey, strService);
-                if (!string.IsNullOrEmpty(strResult))
-                {
-                    oTranslationVariantsToTargetLanguage.Add(strResult);
-                }
-            }
 
-            // Find the translation with the smallest edit distance
             string strBestTranslation = null;
             int nMinEditDistance = int.MaxValue;
 
-            foreach (string strVariant in oTranslationVariantsToTargetLanguage)
+            foreach (var oTranslation in iTranslations)
             {
-                int nSum = 0;
-                foreach (string strOtherVariant in oTranslationVariantsToTargetLanguage)
-                {
-                    nSum = nSum + GetEditDistance(strVariant, strOtherVariant);
-                }
+                string strTranslatedText = Translate(oTranslation.Language, oTranslation.Text, strTargetLanguage, strAPIKey, strService);
+                string strBackTranslatedText = Translate(strTargetLanguage, strTranslatedText, oTranslation.Language, strAPIKey, strService);
 
-                if (nSum < nMinEditDistance)
+                if (strBackTranslatedText.Equals(oTranslation.Text))
                 {
-                    nMinEditDistance = nSum;
-                    strBestTranslation = strVariant;
+                    // Found a perfect match
+                    return strTranslatedText; 
+                }
+                else
+                {
+                    int editDistance = GetEditDistance(oTranslation.Text, strBackTranslatedText);
+                    if (editDistance < nMinEditDistance)
+                    {
+                        nMinEditDistance = editDistance;
+                        strBestTranslation = strTranslatedText;
+                    }
                 }
             }
 
+            
             return strBestTranslation;
         }
 
