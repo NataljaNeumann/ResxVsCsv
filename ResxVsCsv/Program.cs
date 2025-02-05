@@ -1,4 +1,26 @@
-﻿using System;
+﻿/* MIT License
+
+Copyright (c) 2025 NataljaNeumann
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
+using System;
 using System.Data;
 using System.IO;
 using System.Linq;
@@ -95,6 +117,28 @@ namespace ResxVsCsv
                         case "--help":
                         case "-?":
                         case "/?":
+                        case "--licence":
+                        case "--license":
+                            System.Console.WriteLine("Copyright (c) 2025 NataljaNeumann");
+                                System.Console.WriteLine();
+                            System.Console.WriteLine("Permission is hereby granted, free of charge, to any person obtaining a copy");
+                            System.Console.WriteLine("of this software and associated documentation files (the \"Software\"), to deal");
+                            System.Console.WriteLine("in the Software without restriction, including without limitation the rights");
+                            System.Console.WriteLine("to use, copy, modify, merge, publish, distribute, sublicense, and/or sell");
+                            System.Console.WriteLine("copies of the Software, and to permit persons to whom the Software is");
+                            System.Console.WriteLine("furnished to do so, subject to the following conditions:");
+                            System.Console.WriteLine();
+                            System.Console.WriteLine("The above copyright notice and this permission notice shall be included in all");
+                            System.Console.WriteLine("copies or substantial portions of the Software.");
+                            System.Console.WriteLine();
+                            System.Console.WriteLine("THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR");
+                            System.Console.WriteLine("IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,");
+                            System.Console.WriteLine("FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE");
+                            System.Console.WriteLine("AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER");
+                            System.Console.WriteLine("LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,");
+                            System.Console.WriteLine("OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE");
+                            System.Console.WriteLine("SOFTWARE.");
+
                             System.Console.WriteLine(
                                 "For conversion to CSV: ResxVsCsv --directory <dir> --pattern <pattern> [--sortbyname yes]");
                             System.Console.WriteLine(
@@ -637,7 +681,7 @@ namespace ResxVsCsv
         /// <param name="strService">Service to use, either microsoft or google</param>
         /// <returns>Translated string</returns>
         //===================================================================================================
-        public string Translate(
+        public static string Translate(
             string strSourceLanguage, 
             string strText, 
             string strTargetLanguage, 
@@ -666,7 +710,7 @@ namespace ResxVsCsv
         /// <param name="strAPIKey">Key</param>
         /// <returns>Translated string</returns>
         //===================================================================================================
-        private string TranslateWithGoogle(
+        private static string TranslateWithGoogle(
             string strText, 
             string strSourceLanguage, 
             string strTargetLanguage, 
@@ -694,7 +738,7 @@ namespace ResxVsCsv
         /// <param name="strAPIKey">Key</param>
         /// <returns>Translated string</returns>
         //===================================================================================================
-        private string TranslateWithMicrosoft(
+        private static string TranslateWithMicrosoft(
             string strText, 
             string strSourceLanguage,
             string strTargetLanguage,
@@ -722,7 +766,7 @@ namespace ResxVsCsv
         /// <param name="strResponse">Response from google service</param>
         /// <returns>The translated text from response</returns>
         //===================================================================================================
-        private string ExtractTranslatedTextFromGoogleResponse(
+        private static string ExtractTranslatedTextFromGoogleResponse(
             string strResponse
             )
         {
@@ -739,7 +783,7 @@ namespace ResxVsCsv
         /// <param name="strResponse">Response from microsoft service</param>
         /// <returns>The translated text from response</returns>
         //===================================================================================================
-        private string ExtractTranslatedTextFromMicrosoftResponse(string strResponse)
+        private static string ExtractTranslatedTextFromMicrosoftResponse(string strResponse)
         {
             // Basic string manipulation to extract the translated text
             int startIndex = strResponse.IndexOf("\"text\":\"") + 8;
