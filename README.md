@@ -1,5 +1,6 @@
 # ResxVsCsv
-![ResxVsCsv](https://github.com/user-attachments/assets/c670a2f8-0366-4381-84ab-5e106245bb88)
+
+![ResxVsCsv2](https://github.com/user-attachments/assets/03b7bdce-d227-4eb3-a507-f9941f51f6d4)
 
 This project transforms resx files to csv and back. Also some functionality is added for automatic translations of strings.
 More details will follow
