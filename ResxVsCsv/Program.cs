@@ -70,10 +70,11 @@ namespace ResxVsCsv
                 string strPattern = "Resources.*resx";
                 string strDirectory = Directory.GetCurrentDirectory();
                 string strToResx = null;
-                string strSortByName = "no";
+                bool bSortByName = false;
                 string strApiKey = null;
-                string strApiUrl = null;
+                string strApiUrl = null;                
                 string strTranslationService = null;
+                bool bOnlyStrings = true;
                 if (aArgs.Length == 0)
                     aArgs = new string[] { "/?" };
 
@@ -110,7 +111,13 @@ namespace ResxVsCsv
                         case "--sortbyname":
                             if (i + 1 < aArgs.Length)
                             {
-                                strSortByName = aArgs[++i];
+                                bSortByName = "yes".Equals(aArgs[++i]);
+                            }
+                            break;
+                        case "--onlystrings":
+                            if (i + 1 < aArgs.Length)
+                            {
+                                bOnlyStrings = "yes".Equals(aArgs[++i]);
                             }
                             break;
                         case "--libreurl":
@@ -154,16 +161,16 @@ namespace ResxVsCsv
                             System.Console.WriteLine("SOFTWARE.");
                             System.Console.WriteLine();
                             System.Console.WriteLine(
-                                "For conversion to CSV: ResxVsCsv --directory <dir> --pattern <pattern> [--sortbyname yes]");
+                                "For conversion to CSV: ResxVsCsv --directory <dir> --pattern <pattern> [--sortbyname yes] [--onlystrings no]");
                             System.Console.WriteLine(
                                 "For translation: ResxVsCsv --directory <dir> --pattern <pattern> \r\n"+
-                                "  --translator <google|microsoft|deepl|toptranslation> --apikey <key> [--sortbyname yes] ");
+                                "  --translator <google|microsoft|deepl|toptranslation> --apikey <key> [--sortbyname yes] [--onlystrings no]");
                             System.Console.WriteLine(
                                 "For translation with argos: ResxVsCsv --directory <dir> --pattern <pattern> \r\n"+
                                 "  --translator argos [--sortbyname yes] ");
                             System.Console.WriteLine(
                                 "For translation with LibreTranslate: ResxVsCsv --directory <dir> --pattern <pattern> \r\n"+
-                                "  --translator libretranslate --libreurl <url> [--apikey <key>] [--sortbyname yes] ");
+                                "  --translator libretranslate --libreurl <url> [--apikey <key>] [--sortbyname yes] [--onlystrings no] ");
                             System.Console.WriteLine(
                                 "For updating .Resx files: ResxVsCsv --directory <dir> --toresx <resources.csv>");
                             return;
@@ -234,7 +241,7 @@ namespace ResxVsCsv
                             strFileNameWithoutExt.Substring(0, strFileNameWithoutExt.LastIndexOf('.')) : 
                             strFileNameWithoutExt;
                         // read the resx file and add entries to the overall list
-                        oAllEntries.AddRange(ReadResxFile(file, strCulture));
+                        oAllEntries.AddRange(ReadResxFile(file, strCulture, bOnlyStrings));
                     }
 
                     // find distinct cultures
@@ -260,7 +267,7 @@ namespace ResxVsCsv
                     // Now reorder the elements in needed order for output
                     List<Entry> outputlist = new List<Entry>();
 
-                    if (strSortByName.Equals("yes"))
+                    if (bSortByName)
                     {
                         foreach (string strName in distinctNames)
                             foreach (string strCulture in distinctCultures)
@@ -452,19 +459,30 @@ namespace ResxVsCsv
         /// </summary>
         /// <param name="strFilePath">Path to read</param>
         /// <param name="strCulture">Culure for the entries</param>
+        /// <param name="bOnlyStrings">Tells to skip all element with type="..." specification</param>
         /// <returns>An enumeration of strings in the resx</returns>
         //===================================================================================================
         static IEnumerable<Entry> ReadResxFile(
             string strFilePath,
-            string strCulture)
+            string strCulture,
+            bool bOnlyStrings)
         {
             var oXmlDoc = XDocument.Load(strFilePath);
             var iDataElements = oXmlDoc.Root.Elements("data");
 
             foreach (var oElement in iDataElements)
             {
+                // skip non-strings, if specified
+                if (bOnlyStrings && oElement.Attribute("type") != null)
+                    continue;
+
                 XAttribute oNameAttribute = oElement.Attribute("name");
                 var strName = oNameAttribute != null ? oNameAttribute.Value : null;
+
+                // skip non-strings, if specified
+                if (bOnlyStrings && strName != null && strName.StartsWith(">>"))
+                    continue;
+
                 var oValueNode = oElement.Element("value");
                 var oValueTextNode = oValueNode != null ? oValueNode.FirstNode as XText : null;
                 var strValue = oValueTextNode != null ? oValueTextNode.Value : null;
