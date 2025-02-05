@@ -67,14 +67,16 @@ namespace ResxVsCsv
             try
             {
                 const string c_strSpecialComment = "Please fill in the needed translation";
-                string strPattern = "*.*";
+                string strPattern = "Resources.*resx";
                 string strDirectory = Directory.GetCurrentDirectory();
                 string strToResx = null;
                 string strSortByName = "no";
                 string strApiKey = null;
                 string strApiUrl = null;
                 string strTranslationService = null;
-                bool bHelp = aArgs.Length == 0;
+                if (aArgs.Length == 0)
+                    aArgs = new string[] { "/?" };
+
 
                 // Parse command line arguments
                 for (int i = 0; i < aArgs.Length; i++)
@@ -154,11 +156,14 @@ namespace ResxVsCsv
                             System.Console.WriteLine(
                                 "For conversion to CSV: ResxVsCsv --directory <dir> --pattern <pattern> [--sortbyname yes]");
                             System.Console.WriteLine(
-                                "For translation: ResxVsCsv --directory <dir> --pattern <pattern> --translator <google|microsoft|deepl|toptranslation> --apikey <key> [--sortbyname yes] ");
+                                "For translation: ResxVsCsv --directory <dir> --pattern <pattern> \r\n"+
+                                "  --translator <google|microsoft|deepl|toptranslation> --apikey <key> [--sortbyname yes] ");
                             System.Console.WriteLine(
-                                "For translation with argos: ResxVsCsv --directory <dir> --pattern <pattern> --translator argos [--sortbyname yes] ");
+                                "For translation with argos: ResxVsCsv --directory <dir> --pattern <pattern> \r\n"+
+                                "  --translator argos [--sortbyname yes] ");
                             System.Console.WriteLine(
-                                "For translation with LibreTranslate: ResxVsCsv --directory <dir> --pattern <pattern> --translator libretranslate --libreurl <url> [--apikey <key>] [--sortbyname yes] ");
+                                "For translation with LibreTranslate: ResxVsCsv --directory <dir> --pattern <pattern> \r\n"+
+                                "  --translator libretranslate --libreurl <url> [--apikey <key>] [--sortbyname yes] ");
                             System.Console.WriteLine(
                                 "For updating .Resx files: ResxVsCsv --directory <dir> --toresx <resources.csv>");
                             return;
