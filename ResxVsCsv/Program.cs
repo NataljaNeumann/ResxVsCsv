@@ -131,7 +131,7 @@ namespace ResxVsCsv
                         case "/?":
                         case "--licence":
                         case "--license":
-                            System.Console.WriteLine("ResxVsCsv v0.5");
+                            System.Console.WriteLine("ResxVsCsv v0.9");
                             System.Console.WriteLine();
                             System.Console.WriteLine("Copyright (c) 2025 NataljaNeumann");
                                 System.Console.WriteLine();
@@ -177,22 +177,36 @@ namespace ResxVsCsv
                     // read the CSV file
                     List<Entry> oEntries = new List<Entry>(
                         ReadCsvFile(System.IO.Path.Combine(strDirectory, strToResx)));
-                    var oDistinctCultures = oEntries
-                        .Where(x => !string.IsNullOrEmpty(x.Culture) && 
-                                    !string.IsNullOrEmpty(x.Name) && 
-                                    (   !string.IsNullOrEmpty(x.Value) || 
-                                        (   !string.IsNullOrEmpty(x.Comment) &&
-                                            !x.Comment.Equals(c_strSpecialComment))))
-                        .Select(x => x.Culture)
-                        .Distinct()
-                        .ToList();
 
-                    // update single resx files
-                    foreach (string strCulture in oDistinctCultures)
+                    if (oEntries.Count == 0)
+                        System.Console.Error.WriteLine("Warning: no entries found in file "
+                            + System.IO.Path.Combine(strDirectory, strToResx));
+                    else
                     {
-                        string strResxCulture = strCulture.Equals("(default)") ? "" : "." + strCulture;
-                        UpdateResxFile(oEntries.Where(x => x.Culture.Equals(strCulture) && !string.IsNullOrEmpty(x.Value)),
-                            System.IO.Path.Combine(strDirectory, strToResx.Replace(".csv", strResxCulture + ".resx")));
+
+                        var oDistinctCultures = oEntries
+                            .Where(x => !string.IsNullOrEmpty(x.Culture) &&
+                                        !string.IsNullOrEmpty(x.Name) &&
+                                        (!string.IsNullOrEmpty(x.Value) ||
+                                            (!string.IsNullOrEmpty(x.Comment) &&
+                                                !x.Comment.Equals(c_strSpecialComment))))
+                            .Select(x => x.Culture)
+                            .Distinct()
+                            .ToList();
+
+                        if (oDistinctCultures.Count == 0)
+                        {
+                            System.Console.Error.WriteLine("Warning: loading of entries from file failed: "
+                                    + System.IO.Path.Combine(strDirectory, strToResx));
+                        }
+
+                        // update single resx files
+                        foreach (string strCulture in oDistinctCultures)
+                        {
+                            string strResxCulture = strCulture.Equals("(default)") ? "" : "." + strCulture;
+                            UpdateResxFile(oEntries.Where(x => x.Culture.Equals(strCulture) && !string.IsNullOrEmpty(x.Value)),
+                                System.IO.Path.Combine(strDirectory, strToResx.Replace(".csv", strResxCulture + ".resx")));
+                        }
                     }
                 }
                 else
@@ -658,26 +672,41 @@ namespace ResxVsCsv
                                     break;
                             }
                         }
-                        bHeaders = false;
-                    }
-                    else
+
+                        // someone deleted the headers?
+                        if (oColumnHeadersDictionary.Count == 0 && astrValues.Length>=4)
+                        {
+                            oColumnHeadersDictionary[eColumn.Culture] = 0;
+                            oColumnHeadersDictionary[eColumn.Name] = 1;
+                            oColumnHeadersDictionary[eColumn.Value] = 2;
+                            oColumnHeadersDictionary[eColumn.Comment] = 3;
+                            bHeaders = false;
+                        }                        
+                    };
+
+                    if (!bHeaders)
                     {
                         yield return new Entry
                         {
-                            Culture = oColumnHeadersDictionary.ContainsKey(eColumn.Culture) ?
+                            Culture = oColumnHeadersDictionary.ContainsKey(eColumn.Culture) &&
+                                   oColumnHeadersDictionary[eColumn.Culture] < astrValues.Length ?
                                     astrValues[oColumnHeadersDictionary[eColumn.Culture]] :
                                     null,
-                            Name = oColumnHeadersDictionary.ContainsKey(eColumn.Name) ?
+                            Name = oColumnHeadersDictionary.ContainsKey(eColumn.Name) &&
+                                   oColumnHeadersDictionary[eColumn.Name] < astrValues.Length ?
                                     astrValues[oColumnHeadersDictionary[eColumn.Name]] :
                                     null,
-                            Value = oColumnHeadersDictionary.ContainsKey(eColumn.Value) ?
+                            Value = oColumnHeadersDictionary.ContainsKey(eColumn.Value) &&
+                                   oColumnHeadersDictionary[eColumn.Value] < astrValues.Length ?
                                     astrValues[oColumnHeadersDictionary[eColumn.Value]] :
                                     null,
-                            Comment = oColumnHeadersDictionary.ContainsKey(eColumn.Comment) ?
+                            Comment = oColumnHeadersDictionary.ContainsKey(eColumn.Comment) &&
+                                   oColumnHeadersDictionary[eColumn.Comment] < astrValues.Length ?
                                     astrValues[oColumnHeadersDictionary[eColumn.Comment]] :
                                     null
                         };
-                    }
+                    } else
+                        bHeaders = false;
                 }
             }
         }
