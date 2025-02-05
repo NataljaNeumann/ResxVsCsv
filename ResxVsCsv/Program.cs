@@ -194,8 +194,12 @@ namespace ResxVsCsv
                         // calc components of the file name
                         string strFileName = file.Substring(file.LastIndexOf('\\') + 1);
                         string strFileNameWithoutExt = strFileName.Substring(0, strFileName.LastIndexOf('.'));
-                        string strCulture = strFileNameWithoutExt.Contains('.') ? strFileNameWithoutExt.Substring(strFileNameWithoutExt.LastIndexOf('.') + 1) : "(default)";
-                        strBaseName = strFileNameWithoutExt.Contains('.') ? strFileNameWithoutExt.Substring(0, strFileNameWithoutExt.LastIndexOf('.')) : strFileNameWithoutExt;
+                        string strCulture = strFileNameWithoutExt.Contains('.') ? 
+                            strFileNameWithoutExt.Substring(strFileNameWithoutExt.LastIndexOf('.') + 1) : 
+                            "(default)";
+                        strBaseName = strFileNameWithoutExt.Contains('.') ? 
+                            strFileNameWithoutExt.Substring(0, strFileNameWithoutExt.LastIndexOf('.')) : 
+                            strFileNameWithoutExt;
                         // read the resx file and add entries to the overall list
                         oAllEntries.AddRange(ReadResxFile(file, strCulture));
                     }
@@ -262,7 +266,8 @@ namespace ResxVsCsv
                                         };
 
 
-                                        foreach (string strSourceCulture in new string[] { "es", "de", "pt", "it", "en", "fr", "ru" })
+                                        foreach (string strSourceCulture in new string[] { 
+                                            "es", "de", "pt", "it", "en", "fr", "ru" })
                                         {
                                             if (oEntriesDictionary.TryGetValue(
                                                 new Entry { Culture = strSourceCulture, Name = strName }, out oFoundEntry))
@@ -334,7 +339,8 @@ namespace ResxVsCsv
                                         };
 
 
-                                        foreach (string strSourceCulture in new string[] { "es", "de", "pt", "it", "en", "fr", "ru" })
+                                        foreach (string strSourceCulture in new string[] { 
+                                            "es", "de", "pt", "it", "en", "fr", "ru" })
                                         {
                                             if (oEntriesDictionary.TryGetValue(
                                                 new Entry { Culture = strSourceCulture, Name = strName }, out oFoundEntry))
@@ -465,6 +471,93 @@ namespace ResxVsCsv
                 return strValue;
         }
 
+
+        //===================================================================================================
+        /// <summary>
+        /// Transforms a value t Json format
+        /// </summary>
+        /// <param name="strValue">Value to transform</param>
+        /// <returns>Value in Json format</returns>
+        //===================================================================================================
+        static string ToJson(string strValue)
+        {
+            var oResult = new StringBuilder();
+
+            oResult.Append("\"");
+            foreach (char c in strValue)
+            {
+                switch (c)
+                {
+                    case '\\':
+                        oResult.Append("\\\\");
+                        break;
+                    case '\"':
+                        oResult.Append("\\\"");
+                        break;
+                    case '\b':
+                        oResult.Append("\\b");
+                        break;
+                    case '\f':
+                        oResult.Append("\\f");
+                        break;
+                    case '\n':
+                        oResult.Append("\\n");
+                        break;
+                    case '\r':
+                        oResult.Append("\\r");
+                        break;
+                    case '\t':
+                        oResult.Append("\\t");
+                        break;
+                    default:
+                        if (char.IsControl(c))
+                        {
+                            oResult.Append(
+                                string.Format("\\u{0:X4}", (int)c));
+                        }
+                        else
+                        {
+                            oResult.Append(c);
+                        }
+                        break;
+                }
+            }
+            oResult.Append("\"");
+
+            return oResult.ToString();
+        }
+
+        //===================================================================================================
+        /// <summary>
+        /// Extracts JSon value from string
+        /// </summary>
+        /// <param name="strJson">JSon result</param>
+        /// <param name="strKey">Key to search for</param>
+        /// <returns>Value, transformed back</returns>
+        //===================================================================================================
+        static string ExtractJsonValue(string strJson, string strKey)
+        {
+            string pattern = "\\\"" + strKey + "\\\":\\\"(.*?)\\\"";
+            Match match = Regex.Match(strJson, pattern);
+            if (match.Success)
+            {
+                string strResult = match.Groups[1].Value
+                    .Replace("\\n", "\n")
+                    .Replace("\\t", "\t")
+                    .Replace("\\\"", "\"")
+                    .Replace("\\\\", "\\");
+
+
+                // Replace Unicode escape sequences
+                strResult = Regex.Replace(strResult, @"\\u([0-9A-Fa-f]{4})", match2 =>
+                {
+                    return ((char)Convert.ToInt32(match2.Groups[1].Value, 16)).ToString();
+                });
+
+                return strResult;
+            }
+            return string.Empty;
+        }
 
         //===================================================================================================
         /// <summary>
@@ -767,7 +860,7 @@ namespace ResxVsCsv
                 oWebClient.Headers.Add("Ocp-Apim-Subscription-Key", strAPIKey);
                 oWebClient.Headers.Add("Content-Type", "application/json");
 
-                string strBody = "[{\"Text\":\"" + strText + "\"}]";
+                string strBody = "[{\"Text\":"+ToJson(strText)+"}]";
                 string strResponse = oWebClient.UploadString(url, strBody);
                 return ExtractTranslatedTextFromMicrosoftResponse(strResponse);
             }
@@ -790,7 +883,8 @@ namespace ResxVsCsv
             string strAPIKey)
         {
             string url = @"https://api.deepl.com/v2/translate?auth_key="+strAPIKey+"&text="+
-                Uri.EscapeDataString(strText)+"&source_lang="+strSourceLanguage+"&target_lang="+strTargetLanguage;
+                Uri.EscapeDataString(strText)+"&source_lang="+strSourceLanguage+"&target_lang="+
+                strTargetLanguage;
 
             using (WebClient webClient = new WebClient())
             {
@@ -838,11 +932,16 @@ namespace ResxVsCsv
         /// <param name="strTargetLanguage">Target language</param>
         /// <returns>Translated string</returns>
         //===================================================================================================
-        private static string TranslateWithArgosTranslate(string text, string sourceLanguage, string targetLanguage, string argosTranslatePath)
+        private static string TranslateWithArgosTranslate(
+            string strText, 
+            string strSourceLanguage, 
+            string strTargetLanguage, 
+            string strArgosTranslatePath)
         {
             var process = new Process
             {
-                StartInfo = new ProcessStartInfo("argos-tranlate", "--from-lang "+sourceLanguage+" --to-lang "+targetLanguage)
+                StartInfo = new ProcessStartInfo(
+                    "argos-tranlate", "--from-lang "+strSourceLanguage+" --to-lang "+strTargetLanguage)
                 {
                     RedirectStandardInput = true,
                     RedirectStandardOutput = true,
@@ -851,7 +950,7 @@ namespace ResxVsCsv
                 }
             };
             process.Start();
-            process.StandardInput.Write(text);
+            process.StandardInput.Write(strText);
             process.StandardInput.Flush();
             string result = process.StandardOutput.ReadToEnd();
             process.WaitForExit();
@@ -901,9 +1000,7 @@ namespace ResxVsCsv
             )
         {
             // Basic string manipulation to extract the translated text
-            int nStartIndex = strResponse.IndexOf("\"translatedText\":\"") + 18;
-            int nEndIndex = strResponse.IndexOf("\"", nStartIndex);
-            return strResponse.Substring(nStartIndex, nEndIndex - nStartIndex);
+            return ExtractJsonValue(strResponse, "translatedText");
         }
 
         //===================================================================================================
@@ -916,9 +1013,7 @@ namespace ResxVsCsv
         private static string ExtractTranslatedTextFromMicrosoftResponse(string strResponse)
         {
             // Basic string manipulation to extract the translated text
-            int startIndex = strResponse.IndexOf("\"text\":\"") + 8;
-            int endIndex = strResponse.IndexOf("\"", startIndex);
-            return strResponse.Substring(startIndex, endIndex - startIndex);
+            return ExtractJsonValue(strResponse, "text");
         }
 
 
@@ -931,10 +1026,7 @@ namespace ResxVsCsv
         //===================================================================================================
         private static string ExtractTranslatedTextFromDeepLResponse(string strResponse)
         {
-            // Basic string manipulation to extract the translated text
-            int startIndex = strResponse.IndexOf("\"translatedText\":\"") + 18;
-            int endIndex = strResponse.IndexOf("\"", startIndex);
-            return strResponse.Substring(startIndex, endIndex - startIndex);
+            return ExtractJsonValue(strResponse, "text");
         }
 
         //===================================================================================================
@@ -947,9 +1039,7 @@ namespace ResxVsCsv
         private static string ExtractTranslatedTextFromTopTranslationResponse(string strResponse)
         {
             // Basic string manipulation to extract the translated text
-            int startIndex = strResponse.IndexOf("\"translatedText\":\"") + 18;
-            int endIndex = strResponse.IndexOf("\"", startIndex);
-            return strResponse.Substring(startIndex, endIndex - startIndex);
+            return ExtractJsonValue(strResponse, "translatedText");
         }
 
         //===================================================================================================
@@ -979,10 +1069,7 @@ namespace ResxVsCsv
         //===================================================================================================
         private static string ExtractTranslatedTextFromLibreResponse(string strResponse)
         {
-            // Basic string manipulation to extract the translated text
-            int startIndex = strResponse.IndexOf("\"translatedText\":\"") + 18;
-            int endIndex = strResponse.IndexOf("\"", startIndex);
-            return strResponse.Substring(startIndex, endIndex - startIndex);
+            return ExtractJsonValue(strResponse,"translatedText");
         }
 
 
@@ -1007,8 +1094,10 @@ namespace ResxVsCsv
 
             foreach (var oTranslation in iTranslations)
             {
-                string strTranslatedText = Translate(oTranslation.Language, oTranslation.Text, strTargetLanguage, strAPIKey, strService);
-                string strBackTranslatedText = Translate(strTargetLanguage, strTranslatedText, oTranslation.Language, strAPIKey, strService);
+                string strTranslatedText = Translate(oTranslation.Language, oTranslation.Text, 
+                    strTargetLanguage, strAPIKey, strService);
+                string strBackTranslatedText = Translate(strTargetLanguage, strTranslatedText, 
+                    oTranslation.Language, strAPIKey, strService);
 
                 if (strBackTranslatedText.Equals(oTranslation.Text))
                 {
@@ -1052,7 +1141,8 @@ namespace ResxVsCsv
                 for (int j = 1; j <= str2.Length; j++)
                 {
                     int nCost = str1[i - 1] == str2[j - 1] ? 0 : 1;
-                    aDist[i, j] = Math.Min(Math.Min(aDist[i - 1, j] + 1, aDist[i, j - 1] + 1), aDist[i - 1, j - 1] + nCost);
+                    aDist[i, j] = Math.Min(Math.Min(aDist[i - 1, j] + 1, 
+                        aDist[i, j - 1] + 1), aDist[i - 1, j - 1] + nCost);
                 }
             }
 
