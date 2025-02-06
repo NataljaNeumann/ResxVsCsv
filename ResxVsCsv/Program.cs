@@ -230,6 +230,8 @@ namespace ResxVsCsv
                     // the base file name for CSV creation
                     string strBaseName = "";
 
+                    var distinctCultures = new List<string>();
+
                     // Print selected files
                     foreach (var file in aFiles)
                     {
@@ -239,6 +241,7 @@ namespace ResxVsCsv
                         string strCulture = strFileNameWithoutExt.Contains('.') ? 
                             strFileNameWithoutExt.Substring(strFileNameWithoutExt.LastIndexOf('.') + 1) : 
                             "(default)";
+                        distinctCultures.Add(strCulture);
                         strBaseName = strFileNameWithoutExt.Contains('.') ? 
                             strFileNameWithoutExt.Substring(0, strFileNameWithoutExt.LastIndexOf('.')) : 
                             strFileNameWithoutExt;
@@ -247,11 +250,13 @@ namespace ResxVsCsv
                     }
 
                     // find distinct cultures
+                    /*
                     var distinctCultures = oAllEntries
                         .Where(x => !string.IsNullOrEmpty(x.Culture))
                         .Select(x => x.Culture)
                         .Distinct()
                         .ToList();
+                     */
 
                     // find distinct names for values
                     var distinctNames = oAllEntries
@@ -908,7 +913,19 @@ namespace ResxVsCsv
                 }
             }
 
-            oXmlDoc.Save(strFilePath);
+
+            System.Xml.XmlWriterSettings oXmlSettings = new System.Xml.XmlWriterSettings
+            {
+                Encoding = new UTF8Encoding(false), // false means no BOM
+                Indent = true
+            };
+
+            using (System.IO.FileStream oStream = new FileStream(strFilePath, FileMode.Create, FileAccess.Write))
+            using (System.Xml.XmlWriter oWriter = System.Xml.XmlWriter.Create(oStream, oXmlSettings))
+            {
+                oXmlDoc.Save(oWriter);
+            }
+            //oXmlDoc.Save(strFilePath);
 
         }
 
