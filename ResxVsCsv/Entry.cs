@@ -61,6 +61,18 @@ namespace ResxVsCsv
 
         //===================================================================================================
         /// <summary>
+        /// The type of the entry (if it is not a simple string
+        /// </summary>
+        public string Type { get; set; }
+
+        //===================================================================================================
+        /// <summary>
+        /// The type of the entry (if it is not a simple string
+        /// </summary>
+        public string MimeType { get; set; }
+
+        //===================================================================================================
+        /// <summary>
         /// Compares name and culture
         /// </summary>
         /// <param name="obj">Other object</param>

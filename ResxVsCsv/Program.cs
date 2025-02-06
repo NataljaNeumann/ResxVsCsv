@@ -50,9 +50,12 @@ namespace ResxVsCsv
             Culture,
             Name,
             Value,
-            Comment
+            Comment,
+            Type,
+            MimeType
         }
 
+        const string c_strSpecialComment = "Please fill in the needed translation";
 
         //===================================================================================================
         /// <summary>
@@ -66,7 +69,6 @@ namespace ResxVsCsv
         {
             try
             {
-                const string c_strSpecialComment = "Please fill in the needed translation";
                 string strPattern = "Resources.*resx";
                 string strDirectory = Directory.GetCurrentDirectory();
                 string strToResx = null;
@@ -258,6 +260,17 @@ namespace ResxVsCsv
                         .Distinct()
                         .ToList();
 
+                    // Dictionary with types
+                    Dictionary<string, string> oNameTypes = new Dictionary<string,string>();
+                    foreach (Entry oEntry in oAllEntries)
+                        if (!string.IsNullOrEmpty(oEntry.Name) && !string.IsNullOrEmpty(oEntry.Type))
+                            oNameTypes[oEntry.Name] = oEntry.Type;
+
+                    Dictionary<string, string> oNameMimeTypes = new Dictionary<string, string>();
+                    foreach (Entry oEntry in oAllEntries)
+                        if (!string.IsNullOrEmpty(oEntry.Name) && !string.IsNullOrEmpty(oEntry.MimeType))
+                            oNameMimeTypes[oEntry.Name] = oEntry.MimeType;
+
                     // collect all entries in a single dictionary for fast access
                     Dictionary<Entry, Entry> oEntriesDictionary = new Dictionary<Entry, Entry>();
 
@@ -280,13 +293,15 @@ namespace ResxVsCsv
                                 }
                                 else
                                 {
-                                    if (string.IsNullOrEmpty(strTranslationService))
+                                    if (string.IsNullOrEmpty(strTranslationService) || oNameTypes.ContainsKey(strName))
                                     {
                                         outputlist.Add(new Entry
                                         {
                                             Culture = strCulture,
                                             Name = strName,
-                                            Comment = c_strSpecialComment
+                                            Comment = oNameTypes.ContainsKey(strName) || strName.StartsWith(">>") ? "" : c_strSpecialComment,
+                                            Type = oNameTypes.ContainsKey(strName)?oNameTypes[strName]:null,
+                                            MimeType = oNameMimeTypes.ContainsKey(strName) ? oNameMimeTypes[strName] : null,
                                         });
                                     }
                                     else
@@ -366,13 +381,16 @@ namespace ResxVsCsv
                                 }
                                 else
                                 {
-                                    if (string.IsNullOrEmpty(strTranslationService))
+                                    if (string.IsNullOrEmpty(strTranslationService) || oNameTypes.ContainsKey(strName))
                                     {
                                         outputlist.Add(new Entry
                                         {
                                             Culture = strCulture,
                                             Name = strName,
-                                            Comment = c_strSpecialComment
+                                            Comment = oNameTypes.ContainsKey(strName) || strName.StartsWith(">>")?"":c_strSpecialComment,
+                                            Type = oNameTypes.ContainsKey(strName) ? oNameTypes[strName] : null,
+                                            MimeType = oNameMimeTypes.ContainsKey(strName) ? oNameMimeTypes[strName] : null
+
                                         });
                                     }
                                     else
@@ -473,11 +491,18 @@ namespace ResxVsCsv
             foreach (var oElement in iDataElements)
             {
                 // skip non-strings, if specified
-                if (bOnlyStrings && oElement.Attribute("type") != null)
+                XAttribute oTypeAttribute = oElement.Attribute("type");
+                
+                if (bOnlyStrings && oTypeAttribute != null)
                     continue;
+
+                var strType = oTypeAttribute != null ? oTypeAttribute.Value : null;
+                XAttribute oMimeTypeAttribute = oElement.Attribute("mimetype");
+                var strMimeType = oMimeTypeAttribute != null ? oMimeTypeAttribute.Value : null;
 
                 XAttribute oNameAttribute = oElement.Attribute("name");
                 var strName = oNameAttribute != null ? oNameAttribute.Value : null;
+
 
                 // skip non-strings, if specified
                 if (bOnlyStrings && strName != null && strName.StartsWith(">>"))
@@ -495,7 +520,9 @@ namespace ResxVsCsv
                     Name = strName,
                     Value = strValue,
                     Comment = strComment,
-                    Culture = strCulture
+                    Culture = strCulture,
+                    Type = strType,
+                    MimeType = strMimeType
                 };
             }
         }
@@ -514,7 +541,7 @@ namespace ResxVsCsv
             using (System.IO.StreamWriter oWriter =
                 new StreamWriter(strFilePath, false, Encoding.UTF8))
             {
-                oWriter.WriteLine("Culture;Name;Value;Comment");
+                oWriter.WriteLine("Culture;Name;Value;Comment;Type;MimeType");
 
                 foreach (Entry oEntry in iEntries)
                 {
@@ -522,7 +549,9 @@ namespace ResxVsCsv
                         ToCsv(oEntry.Culture) + ";" +
                         ToCsv(oEntry.Name) + ";" +
                         ToCsv(oEntry.Value) + ";" +
-                        ToCsv(oEntry.Comment));
+                        ToCsv(oEntry.Comment)+ ";" +
+                        ToCsv(oEntry.Type) + ";" +
+                        ToCsv(oEntry.MimeType));
                 }
 
                 oWriter.Flush();
@@ -688,6 +717,12 @@ namespace ResxVsCsv
                                 case "Comment":
                                     oColumnHeadersDictionary[eColumn.Comment] = i;
                                     break;
+                                case "Type":
+                                    oColumnHeadersDictionary[eColumn.Type] = i;
+                                    break;
+                                case "MimeType":
+                                    oColumnHeadersDictionary[eColumn.MimeType] = i;
+                                    break;
                             }
                         }
 
@@ -698,6 +733,7 @@ namespace ResxVsCsv
                             oColumnHeadersDictionary[eColumn.Name] = 1;
                             oColumnHeadersDictionary[eColumn.Value] = 2;
                             oColumnHeadersDictionary[eColumn.Comment] = 3;
+                            oColumnHeadersDictionary[eColumn.MimeType] = 4;
                             bHeaders = false;
                         }                        
                     };
@@ -721,6 +757,14 @@ namespace ResxVsCsv
                             Comment = oColumnHeadersDictionary.ContainsKey(eColumn.Comment) &&
                                    oColumnHeadersDictionary[eColumn.Comment] < astrValues.Length ?
                                     astrValues[oColumnHeadersDictionary[eColumn.Comment]] :
+                                    null,
+                            Type = oColumnHeadersDictionary.ContainsKey(eColumn.Type) &&
+                                   oColumnHeadersDictionary[eColumn.Type] < astrValues.Length ?
+                                    astrValues[oColumnHeadersDictionary[eColumn.Type]] :
+                                    null,
+                            MimeType = oColumnHeadersDictionary.ContainsKey(eColumn.MimeType) &&
+                                   oColumnHeadersDictionary[eColumn.MimeType] < astrValues.Length ?
+                                    astrValues[oColumnHeadersDictionary[eColumn.MimeType]] :
                                     null
                         };
                     } else
@@ -831,7 +875,7 @@ namespace ResxVsCsv
                     else
                     {
                         if (!string.IsNullOrEmpty(oNewValue.Comment) &&
-                            !oNewValue.Comment.StartsWith("Empty space for "))
+                            !oNewValue.Comment.StartsWith(c_strSpecialComment))
                         {
                             oElement.Add(new XElement("comment", oNewValue.Comment));
                         }
@@ -846,11 +890,20 @@ namespace ResxVsCsv
                         ));
 
                     if (!string.IsNullOrEmpty(oNewValue.Comment) &&
-                        !oNewValue.Comment.StartsWith("Empty space for "))
+                        !oNewValue.Comment.StartsWith(c_strSpecialComment))
                     {
                         oNewElement.Add(new XElement("comment", oNewValue.Comment));
                     }
 
+                    if (!string.IsNullOrEmpty(oNewValue.Type))
+                    {
+                        oNewElement.Add(new XAttribute("type", oNewValue.Type));
+                    }
+
+                    if (!string.IsNullOrEmpty(oNewValue.MimeType))
+                    {
+                        oNewElement.Add(new XAttribute("mimetype", oNewValue.MimeType));
+                    }
                     oXmlDoc.Root.Add(oNewElement);
                 }
             }
