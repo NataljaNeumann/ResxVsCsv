@@ -124,19 +124,19 @@
     <value>Virhe käännettäessä {0}</value>
   </data>
   <data name="ForConversionToCsv" xml:space="preserve">
-    <value>Muuntaaksesi CSV:ksi</value>
+    <value>Muuntaaksesi CSV:ksi: </value>
   </data>
   <data name="ForTranslation" xml:space="preserve">
-    <value>Käännöksiä varten</value>
+    <value>Käännöksiä varten: </value>
   </data>
   <data name="ForTranslationWithArgos" xml:space="preserve">
-    <value>Käännökseen argosilla</value>
+    <value>Käännökseen argosilla: </value>
   </data>
   <data name="ForTranslationWithLibreTranslate" xml:space="preserve">
-    <value>Käännös LibreTranslatella</value>
+    <value>Käännös LibreTranslatella: </value>
   </data>
   <data name="ForUpdatingResxFiles" xml:space="preserve">
-    <value>.Resx-tiedostojen päivittämiseen</value>
+    <value>.Resx-tiedostojen päivittämiseen: </value>
   </data>
   <data name="GeneratedByAi" xml:space="preserve">
     <value>Tekoälyn luoma</value>

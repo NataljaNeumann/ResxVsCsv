@@ -140,28 +140,28 @@ namespace ResxVsCsv
                         case "/?":
                         case "--licence":
                         case "--license":
-                            System.Console.WriteLine("ResxVsCsv v0.9 "+Properties.Resources.CopyrightMessage + "NataljaNeumann@gmx.de");
+                            WriteWrappedText("ResxVsCsv v0.9 " + Properties.Resources.CopyrightMessage + "NataljaNeumann@gmx.de");
                             System.Console.WriteLine();
-                            WriteWrappedText(Properties.Resources.LicenseText, Console.WindowWidth);
+                            WriteWrappedText(Properties.Resources.LicenseText);
                             System.Console.WriteLine();
-                            System.Console.WriteLine(
+                            WriteWrappedText(
                                 Properties.Resources.ForConversionToCsv +
-                                ": ResxVsCsv --directory <dir> --pattern <pattern> [--sortbyname yes] [--onlystrings no]");
-                            System.Console.WriteLine(
+                                "ResxVsCsv --directory <dir> --pattern <pattern> [--sortbyname yes] [--onlystrings no]");
+                            WriteWrappedText(
                                 Properties.Resources.ForTranslation +
-                                ": ResxVsCsv --directory <dir> --pattern <pattern> \r\n" +
+                                "ResxVsCsv --directory <dir> --pattern <pattern> \r\n" +
                                 "  --translator <google|microsoft|deepl|toptranslation> --apikey <key> [--sortbyname yes] [--onlystrings no]");
-                            System.Console.WriteLine(
+                            WriteWrappedText(
                                 Properties.Resources.ForTranslationWithArgos +
-                                ": ResxVsCsv --directory <dir> --pattern <pattern> \r\n" +
+                                "ResxVsCsv --directory <dir> --pattern <pattern> \r\n" +
                                 "  --translator argos [--sortbyname yes] [--onlystrings no]");
-                            System.Console.WriteLine(
+                            WriteWrappedText(
                                 Properties.Resources.ForTranslationWithLibreTranslate +
-                                ": ResxVsCsv --directory <dir> --pattern <pattern> \r\n" +
+                                "ResxVsCsv --directory <dir> --pattern <pattern> \r\n" +
                                 "  --translator libretranslate --libreurl <url> [--apikey <key>] [--sortbyname yes] [--onlystrings no] ");
-                            System.Console.WriteLine(
+                            WriteWrappedText(
                                 Properties.Resources.ForUpdatingResxFiles +
-                                ": ResxVsCsv --directory <dir> --toresx <resources.csv>");
+                                "ResxVsCsv --directory <dir> --toresx <resources.csv>");
                             return;
                     }
                 }
@@ -175,7 +175,7 @@ namespace ResxVsCsv
                         ReadCsvFile(System.IO.Path.Combine(strDirectory, strToResx)));
 
                     if (oEntries.Count == 0)
-                        System.Console.Error.WriteLine(
+                        WriteWrappedText(
                             string.Format(Properties.Resources.WarningNoEntriesInFile,
                             System.IO.Path.Combine(strDirectory, strToResx)));
                     else
@@ -193,7 +193,7 @@ namespace ResxVsCsv
 
                         if (oDistinctCultures.Count == 0)
                         {
-                            System.Console.Error.WriteLine(
+                            WriteWrappedText(
                                 string.Format(Properties.Resources.WarningLoadingEntriesFromFileFailed,
                                     System.IO.Path.Combine(strDirectory, strToResx)));
                         }
@@ -350,7 +350,7 @@ namespace ResxVsCsv
                                                     Comment = Properties.Resources.GeneratedByAi
                                                 });
 
-                                            System.Console.WriteLine(
+                                            WriteWrappedText(
                                                 string.Format(Properties.Resources.TranslatedCultureString,
                                                     strCulture + " - " + strName));
                                         }
@@ -440,7 +440,7 @@ namespace ResxVsCsv
                                                     Comment = Properties.Resources.GeneratedByAi
                                                 });
 
-                                            System.Console.WriteLine(
+                                            WriteWrappedText(
                                                 string.Format(Properties.Resources.TranslatedCultureString,
                                                     strCulture + " - " + strName));
                                         }
@@ -464,7 +464,7 @@ namespace ResxVsCsv
             catch (Exception oEx)
             {
                 // write error and exit
-                System.Console.Error.WriteLine(oEx.Message);
+                WriteWrappedText(oEx.Message);
             }
         }
 
@@ -475,35 +475,58 @@ namespace ResxVsCsv
         /// </summary>
         /// <param name="strText">Text to write</param>
         /// <param name="nWindowWidth">Window width</param>
+        /// <param name="bRightAligned">Indicates, if the text shall appear right-aligned</param>
         //===================================================================================================
         static void WriteWrappedText(
-            string strText, 
-            int nWindowWidth
+            string strText 
             )
         {
-            string[] aWords = strText.Replace("\n","\n ").Split(' ');
-            string strCurrentLine = " ";
-
-            foreach (string strWord in aWords)
+            if (strText.Contains("\n"))
             {
-                if ((strCurrentLine + strWord).Length < nWindowWidth && !strWord.Contains("\n"))
+                foreach (string strLine in strText.Replace(Environment.NewLine, "\n").Split('\n'))
                 {
-                    strCurrentLine += strWord + " ";
-                }
-                else
-                {
-                    if (!strWord.Contains("\n"))
-                        Console.WriteLine(strCurrentLine);
-                    else
-                        Console.Write(strCurrentLine);
-
-                    strCurrentLine = strWord + " ";
+                    WriteWrappedText(strLine.TrimEnd());
                 }
             }
-
-            if (strCurrentLine.Length > 0)
+            else
             {
-                Console.WriteLine(strCurrentLine);
+                int nWindowWidth = Console.WindowWidth - 1;
+                bool bRightAligned = true || 
+                    Properties.Resources.RightToLeft.Equals("Yes", StringComparison.InvariantCultureIgnoreCase);
+
+                string[] aWords = strText.Split(' ');
+                string strCurrentLine = "";
+
+                foreach (string strWord in aWords)
+                {
+                    if ((strCurrentLine + strWord).Length < nWindowWidth)
+                    {
+                        strCurrentLine += strWord + " ";
+                    }
+                    else
+                    {
+                        if (bRightAligned  && !strCurrentLine.StartsWith("ResxVsCsv") && !strCurrentLine.StartsWith("  --"))
+                        {
+                            strCurrentLine = new string(' ', nWindowWidth - strCurrentLine.Length)
+                                + (strCurrentLine.TrimEnd());
+                        }
+
+                        Console.WriteLine(strCurrentLine);
+
+                        strCurrentLine = strWord + " ";
+                    }
+                }
+
+                if (strCurrentLine.Length > 0)
+                {
+                    if (bRightAligned && !strCurrentLine.StartsWith("ResxVsCsv") && !strCurrentLine.StartsWith("  --"))
+                    {
+                        strCurrentLine = new string(' ', nWindowWidth - strCurrentLine.Length)
+                                       + (strCurrentLine.TrimEnd());
+                    }
+
+                    Console.WriteLine(strCurrentLine);
+                }
             }
         }
 

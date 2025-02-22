@@ -124,19 +124,19 @@
     <value>Помилка перекладу {0}</value>
   </data>
   <data name="ForConversionToCsv" xml:space="preserve">
-    <value>Щоб конвертувати в CSV</value>
+    <value>Щоб конвертувати в CSV: </value>
   </data>
   <data name="ForTranslation" xml:space="preserve">
-    <value>Для перекладу</value>
+    <value>Для перекладу: </value>
   </data>
   <data name="ForTranslationWithArgos" xml:space="preserve">
-    <value>Для перекладу з argos</value>
+    <value>Для перекладу з argos: </value>
   </data>
   <data name="ForTranslationWithLibreTranslate" xml:space="preserve">
-    <value>Для перекладу з LibreTranslate</value>
+    <value>Для перекладу з LibreTranslate: </value>
   </data>
   <data name="ForUpdatingResxFiles" xml:space="preserve">
-    <value>Для оновлення файлів .Resx</value>
+    <value>Для оновлення файлів .Resx: </value>
   </data>
   <data name="GeneratedByAi" xml:space="preserve">
     <value>Створено ШІ</value>

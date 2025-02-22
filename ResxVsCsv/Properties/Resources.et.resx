@@ -124,19 +124,19 @@
     <value>Viga keele {0} tõlkimisel</value>
   </data>
   <data name="ForConversionToCsv" xml:space="preserve">
-    <value>CSV-vormingusse teisendamiseks</value>
+    <value>CSV-vormingusse teisendamiseks: </value>
   </data>
   <data name="ForTranslation" xml:space="preserve">
-    <value>Tõlkimiseks</value>
+    <value>Tõlkimiseks: </value>
   </data>
   <data name="ForTranslationWithArgos" xml:space="preserve">
-    <value>Argosega tõlkimiseks</value>
+    <value>Argosega tõlkimiseks: </value>
   </data>
   <data name="ForTranslationWithLibreTranslate" xml:space="preserve">
-    <value>LibreTranslate'iga tõlkimiseks</value>
+    <value>LibreTranslate'iga tõlkimiseks: </value>
   </data>
   <data name="ForUpdatingResxFiles" xml:space="preserve">
-    <value>Resx-failide värskendamiseks</value>
+    <value>Resx-failide värskendamiseks: </value>
   </data>
   <data name="GeneratedByAi" xml:space="preserve">
     <value>AI loodud</value>

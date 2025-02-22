@@ -124,19 +124,19 @@
     <value>Σφάλμα κατά τη μετάφραση του {0}</value>
   </data>
   <data name="ForConversionToCsv" xml:space="preserve">
-    <value>Για μετατροπή σε CSV</value>
+    <value>Για μετατροπή σε CSV: </value>
   </data>
   <data name="ForTranslation" xml:space="preserve">
-    <value>Για μετάφραση</value>
+    <value>Για μετάφραση: </value>
   </data>
   <data name="ForTranslationWithArgos" xml:space="preserve">
-    <value>Για μετάφραση με argos</value>
+    <value>Για μετάφραση με argos: </value>
   </data>
   <data name="ForTranslationWithLibreTranslate" xml:space="preserve">
-    <value>Για μετάφραση με το LibreTranslate</value>
+    <value>Για μετάφραση με το LibreTranslate: </value>
   </data>
   <data name="ForUpdatingResxFiles" xml:space="preserve">
-    <value>Για ενημέρωση αρχείων .Resx</value>
+    <value>Για ενημέρωση αρχείων .Resx: </value>
   </data>
   <data name="GeneratedByAi" xml:space="preserve">
     <value>Δημιουργήθηκε από AI</value>

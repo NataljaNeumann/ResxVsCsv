@@ -79,7 +79,7 @@ namespace ResxVsCsv.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die For conversion to CSV ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die For conversion to CSV:  ähnelt.
         /// </summary>
         internal static string ForConversionToCsv {
             get {
@@ -88,7 +88,7 @@ namespace ResxVsCsv.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die For translation ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die For translation:  ähnelt.
         /// </summary>
         internal static string ForTranslation {
             get {
@@ -97,7 +97,7 @@ namespace ResxVsCsv.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die For translation with argos ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die For translation with argos:  ähnelt.
         /// </summary>
         internal static string ForTranslationWithArgos {
             get {
@@ -106,7 +106,7 @@ namespace ResxVsCsv.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die For translation with LibreTranslate ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die For translation with LibreTranslate:  ähnelt.
         /// </summary>
         internal static string ForTranslationWithLibreTranslate {
             get {
@@ -115,7 +115,7 @@ namespace ResxVsCsv.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die For updating .Resx files ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die For updating .Resx files:  ähnelt.
         /// </summary>
         internal static string ForUpdatingResxFiles {
             get {
@@ -140,6 +140,15 @@ namespace ResxVsCsv.Properties {
         internal static string LicenseText {
             get {
                 return ResourceManager.GetString("LicenseText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die No ähnelt.
+        /// </summary>
+        internal static string RightToLeft {
+            get {
+                return ResourceManager.GetString("RightToLeft", resourceCulture);
             }
         }
         

@@ -125,19 +125,24 @@
     <value>خطأ في ترجمة {0}</value>
   </data>
   <data name="ForConversionToCsv" xml:space="preserve">
-    <value>للتحويل إلى CSV</value>
+    <value>للتحويل إلى CSV:
+</value>
   </data>
   <data name="ForTranslation" xml:space="preserve">
-    <value>للترجمة</value>
+    <value>للترجمة:
+</value>
   </data>
   <data name="ForTranslationWithArgos" xml:space="preserve">
-    <value>للترجمة مع أرغوس</value>
+    <value>للترجمة مع أرغوس:
+</value>
   </data>
   <data name="ForTranslationWithLibreTranslate" xml:space="preserve">
-    <value>للترجمة مع LibreTranslate</value>
+    <value>للترجمة مع LibreTranslate:
+</value>
   </data>
   <data name="ForUpdatingResxFiles" xml:space="preserve">
-    <value>لتحديث ملفات .Resx</value>
+    <value>لتحديث ملفات .Resx:
+</value>
   </data>
   <data name="GeneratedByAi" xml:space="preserve">
     <value>تم إنشاؤها بواسطة منظمة العفو الدولية</value>
@@ -148,6 +153,9 @@
 يجب تضمين إشعار حقوق الطبع والنشر أعلاه وإشعار الإذن هذا في جميع النسخ أو الأجزاء الكبيرة من البرنامج.
 
 يتم توفير البرنامج "كما هو"، دون أي ضمان من أي نوع، صريحًا أو ضمنيًا، بما في ذلك، على سبيل المثال لا الحصر، ضمانات القابلية للتسويق والملاءمة لغرض معين وعدم الانتهاك. لا يتحمل المؤلفون أو أصحاب حقوق الطبع والنشر بأي حال من الأحوال المسؤولية عن أي مطالبة أو أضرار أو مسؤولية أخرى، سواء في إجراء العقد أو الضرر أو غير ذلك، الناشئة عن أو خارج أو فيما يتعلق بالبرنامج أو الاستخدام أو المعاملات الأخرى في البرنامج.</value>
+  </data>
+  <data name="RightToLeft" xml:space="preserve">
+    <value>Yes</value>
   </data>
   <data name="TranslatedCultureString" xml:space="preserve">
     <value>تمت ترجمته {0}</value>

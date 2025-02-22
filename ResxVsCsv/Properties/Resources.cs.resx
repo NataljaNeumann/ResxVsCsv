@@ -124,19 +124,19 @@
     <value>Chyba při překladu {0}</value>
   </data>
   <data name="ForConversionToCsv" xml:space="preserve">
-    <value>Chcete-li převést na CSV</value>
+    <value>Chcete-li převést na CSV: </value>
   </data>
   <data name="ForTranslation" xml:space="preserve">
-    <value>Pro překlad</value>
+    <value>Pro překlad: </value>
   </data>
   <data name="ForTranslationWithArgos" xml:space="preserve">
-    <value>Pro překlad s argos</value>
+    <value>Pro překlad s argos: </value>
   </data>
   <data name="ForTranslationWithLibreTranslate" xml:space="preserve">
-    <value>Pro překlad s LibreTranslate</value>
+    <value>Pro překlad s LibreTranslate: </value>
   </data>
   <data name="ForUpdatingResxFiles" xml:space="preserve">
-    <value>Pro aktualizaci souborů .Resx</value>
+    <value>Pro aktualizaci souborů .Resx: </value>
   </data>
   <data name="GeneratedByAi" xml:space="preserve">
     <value>Generováno AI</value>

@@ -124,19 +124,19 @@
     <value>Kon nie {0} vertaal nie</value>
   </data>
   <data name="ForConversionToCsv" xml:space="preserve">
-    <value>Om te skakel na CSV</value>
+    <value>Om te skakel na CSV: </value>
   </data>
   <data name="ForTranslation" xml:space="preserve">
-    <value>Vir vertaling</value>
+    <value>Vir vertaling: </value>
   </data>
   <data name="ForTranslationWithArgos" xml:space="preserve">
-    <value>Vir vertaling met argos</value>
+    <value>Vir vertaling met argos: </value>
   </data>
   <data name="ForTranslationWithLibreTranslate" xml:space="preserve">
-    <value>Vir vertaling met LibreTranslate</value>
+    <value>Vir vertaling met LibreTranslate: </value>
   </data>
   <data name="ForUpdatingResxFiles" xml:space="preserve">
-    <value>Vir die opdatering van .Resx-lêers</value>
+    <value>Vir die opdatering van .Resx-lêers: </value>
   </data>
   <data name="GeneratedByAi" xml:space="preserve">
     <value>Gegenereer deur KI</value>

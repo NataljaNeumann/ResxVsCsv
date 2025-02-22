@@ -125,19 +125,24 @@
     <value>שגיאה בתרגום {0}</value>
   </data>
   <data name="ForConversionToCsv" xml:space="preserve">
-    <value>להמרה ל-CSV</value>
+    <value>להמרה ל-CSV:
+</value>
   </data>
   <data name="ForTranslation" xml:space="preserve">
-    <value>לתרגום</value>
+    <value>לתרגום:
+</value>
   </data>
   <data name="ForTranslationWithArgos" xml:space="preserve">
-    <value>לתרגום עם ארגוס</value>
+    <value>לתרגום עם ארגוס:
+</value>
   </data>
   <data name="ForTranslationWithLibreTranslate" xml:space="preserve">
-    <value>לתרגום עם LibreTranslate</value>
+    <value>לתרגום עם LibreTranslate:
+</value>
   </data>
   <data name="ForUpdatingResxFiles" xml:space="preserve">
-    <value>לעדכון קבצי .Resx</value>
+    <value>לעדכון קבצי .Resx:
+</value>
   </data>
   <data name="GeneratedByAi" xml:space="preserve">
     <value>נוצר על ידי AI</value>
@@ -148,6 +153,9 @@
 הודעת זכויות היוצרים לעיל והודעת הרשאה זו יכללו בכל העותקים או חלקים מהותיים של התוכנה.
 
 התוכנה מסופקת "כמות שהיא", ללא אחריות מכל סוג, מפורשת או משתמעת, כולל אך לא מוגבלת לאחריות של סחירות, התאמה למטרה מסוימת ואי-הפרה. בשום מקרה לא יהיו המחברים או בעלי זכויות היוצרים אחראים לכל תביעה, נזקים או חבות אחרת, בין אם בפעולה של חוזה, בנזיקין או אחרת, הנובעת מהתוכנה האחרת שלה, או בהקשר אליה.</value>
+  </data>
+  <data name="RightToLeft" xml:space="preserve">
+    <value>Yes</value>
   </data>
   <data name="TranslatedCultureString" xml:space="preserve">
     <value>זה תורגם {0}</value>

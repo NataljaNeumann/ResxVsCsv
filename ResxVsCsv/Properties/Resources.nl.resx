@@ -124,19 +124,19 @@
     <value>Fout bij het vertalen van {0}</value>
   </data>
   <data name="ForConversionToCsv" xml:space="preserve">
-    <value>Om te converteren naar CSV</value>
+    <value>Om te converteren naar CSV: </value>
   </data>
   <data name="ForTranslation" xml:space="preserve">
-    <value>Voor vertaling</value>
+    <value>Voor vertaling: </value>
   </data>
   <data name="ForTranslationWithArgos" xml:space="preserve">
-    <value>Voor vertaling met argos</value>
+    <value>Voor vertaling met argos: </value>
   </data>
   <data name="ForTranslationWithLibreTranslate" xml:space="preserve">
-    <value>Voor vertaling met LibreTranslate</value>
+    <value>Voor vertaling met LibreTranslate: </value>
   </data>
   <data name="ForUpdatingResxFiles" xml:space="preserve">
-    <value>Voor het bijwerken van .Resx-bestanden</value>
+    <value>Voor het bijwerken van .Resx-bestanden: </value>
   </data>
   <data name="GeneratedByAi" xml:space="preserve">
     <value>Gegenereerd door AI</value>

@@ -124,19 +124,19 @@
     <value>Erro ao traduzir {0}</value>
   </data>
   <data name="ForConversionToCsv" xml:space="preserve">
-    <value>Para converter para CSV</value>
+    <value>Para converter para CSV: </value>
   </data>
   <data name="ForTranslation" xml:space="preserve">
-    <value>Para tradução</value>
+    <value>Para tradução: </value>
   </data>
   <data name="ForTranslationWithArgos" xml:space="preserve">
-    <value>Para tradução com argos</value>
+    <value>Para tradução com argos: </value>
   </data>
   <data name="ForTranslationWithLibreTranslate" xml:space="preserve">
-    <value>Para tradução com LibreTranslate</value>
+    <value>Para tradução com LibreTranslate: </value>
   </data>
   <data name="ForUpdatingResxFiles" xml:space="preserve">
-    <value>Para atualizar arquivos .Resx</value>
+    <value>Para atualizar arquivos .Resx: </value>
   </data>
   <data name="GeneratedByAi" xml:space="preserve">
     <value>Gerado por IA</value>

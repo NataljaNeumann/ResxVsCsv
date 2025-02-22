@@ -124,19 +124,19 @@
     <value>Det gick inte att översätta {0}</value>
   </data>
   <data name="ForConversionToCsv" xml:space="preserve">
-    <value>För att konvertera till CSV</value>
+    <value>För att konvertera till CSV: </value>
   </data>
   <data name="ForTranslation" xml:space="preserve">
-    <value>För översättning</value>
+    <value>För översättning: </value>
   </data>
   <data name="ForTranslationWithArgos" xml:space="preserve">
-    <value>För översättning med argos</value>
+    <value>För översättning med argos: </value>
   </data>
   <data name="ForTranslationWithLibreTranslate" xml:space="preserve">
-    <value>För översättning med LibreTranslate</value>
+    <value>För översättning med LibreTranslate: </value>
   </data>
   <data name="ForUpdatingResxFiles" xml:space="preserve">
-    <value>För uppdatering av .Resx-filer</value>
+    <value>För uppdatering av .Resx-filer: </value>
   </data>
   <data name="GeneratedByAi" xml:space="preserve">
     <value>Genereras av AI</value>

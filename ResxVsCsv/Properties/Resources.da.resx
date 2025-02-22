@@ -124,19 +124,19 @@
     <value>Fejl ved oversættelse af {0}</value>
   </data>
   <data name="ForConversionToCsv" xml:space="preserve">
-    <value>For at konvertere til CSV</value>
+    <value>For at konvertere til CSV: </value>
   </data>
   <data name="ForTranslation" xml:space="preserve">
-    <value>Til oversættelse</value>
+    <value>Til oversættelse: </value>
   </data>
   <data name="ForTranslationWithArgos" xml:space="preserve">
-    <value>Til oversættelse med argos</value>
+    <value>Til oversættelse med argos: </value>
   </data>
   <data name="ForTranslationWithLibreTranslate" xml:space="preserve">
-    <value>Til oversættelse med LibreTranslate</value>
+    <value>Til oversættelse med LibreTranslate: </value>
   </data>
   <data name="ForUpdatingResxFiles" xml:space="preserve">
-    <value>Til opdatering af .Resx-filer</value>
+    <value>Til opdatering af .Resx-filer: </value>
   </data>
   <data name="GeneratedByAi" xml:space="preserve">
     <value>Genereret af AI</value>

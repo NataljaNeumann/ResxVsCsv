@@ -124,19 +124,19 @@
     <value>{0} अनुवादे त्रुटिः।</value>
   </data>
   <data name="ForConversionToCsv" xml:space="preserve">
-    <value>CSV मध्ये परिवर्तनार्थम्</value>
+    <value>CSV मध्ये परिवर्तनार्थम्: </value>
   </data>
   <data name="ForTranslation" xml:space="preserve">
-    <value>अनुवादार्थम्</value>
+    <value>अनुवादार्थम्: </value>
   </data>
   <data name="ForTranslationWithArgos" xml:space="preserve">
-    <value>आर्गोस् सह अनुवादार्थम्</value>
+    <value>आर्गोस् सह अनुवादार्थम्: </value>
   </data>
   <data name="ForTranslationWithLibreTranslate" xml:space="preserve">
-    <value>LibreTranslate इत्यनेन सह अनुवादार्थम्</value>
+    <value>LibreTranslate इत्यनेन सह अनुवादार्थम्: </value>
   </data>
   <data name="ForUpdatingResxFiles" xml:space="preserve">
-    <value>.Resx सञ्चिकानां अद्यतनीकरणार्थम्</value>
+    <value>.Resx सञ्चिकानां अद्यतनीकरणार्थम्: </value>
   </data>
   <data name="GeneratedByAi" xml:space="preserve">
     <value>एआइ द्वारा उत्पन्नम्</value>

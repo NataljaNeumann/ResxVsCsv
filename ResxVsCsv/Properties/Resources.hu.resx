@@ -124,19 +124,19 @@
     <value>Hiba a(z) {0} fordítása során</value>
   </data>
   <data name="ForConversionToCsv" xml:space="preserve">
-    <value>CSV-re konvertálni</value>
+    <value>CSV-re konvertálni: </value>
   </data>
   <data name="ForTranslation" xml:space="preserve">
-    <value>Fordításhoz</value>
+    <value>Fordításhoz: </value>
   </data>
   <data name="ForTranslationWithArgos" xml:space="preserve">
-    <value>Fordításhoz argossal</value>
+    <value>Fordításhoz argossal: </value>
   </data>
   <data name="ForTranslationWithLibreTranslate" xml:space="preserve">
-    <value>A LibreTranslate segítségével történő fordításhoz</value>
+    <value>A LibreTranslate segítségével történő fordításhoz: </value>
   </data>
   <data name="ForUpdatingResxFiles" xml:space="preserve">
-    <value>.Resx fájlok frissítéséhez</value>
+    <value>.Resx fájlok frissítéséhez: </value>
   </data>
   <data name="GeneratedByAi" xml:space="preserve">
     <value>AI által generált</value>
