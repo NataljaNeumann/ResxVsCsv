@@ -140,41 +140,28 @@ namespace ResxVsCsv
                         case "/?":
                         case "--licence":
                         case "--license":
-                            System.Console.WriteLine("ResxVsCsv v0.9");
+                            System.Console.WriteLine("ResxVsCsv v0.9 "+Properties.Resources.CopyrightMessage + "NataljaNeumann@gmx.de");
                             System.Console.WriteLine();
-                            System.Console.WriteLine("Copyright (c) 2025 NataljaNeumann");
-                                System.Console.WriteLine();
-                            System.Console.WriteLine("Permission is hereby granted, free of charge, to any person obtaining a copy");
-                            System.Console.WriteLine("of this software and associated documentation files (the \"Software\"), to deal");
-                            System.Console.WriteLine("in the Software without restriction, including without limitation the rights");
-                            System.Console.WriteLine("to use, copy, modify, merge, publish, distribute, sublicense, and/or sell");
-                            System.Console.WriteLine("copies of the Software, and to permit persons to whom the Software is");
-                            System.Console.WriteLine("furnished to do so, subject to the following conditions:");
-                            System.Console.WriteLine();
-                            System.Console.WriteLine("The above copyright notice and this permission notice shall be included in all");
-                            System.Console.WriteLine("copies or substantial portions of the Software.");
-                            System.Console.WriteLine();
-                            System.Console.WriteLine("THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR");
-                            System.Console.WriteLine("IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,");
-                            System.Console.WriteLine("FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE");
-                            System.Console.WriteLine("AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER");
-                            System.Console.WriteLine("LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,");
-                            System.Console.WriteLine("OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE");
-                            System.Console.WriteLine("SOFTWARE.");
+                            WriteWrappedText(Properties.Resources.LicenseText, Console.WindowWidth);
                             System.Console.WriteLine();
                             System.Console.WriteLine(
-                                "For conversion to CSV: ResxVsCsv --directory <dir> --pattern <pattern> [--sortbyname yes] [--onlystrings no]");
+                                Properties.Resources.ForConversionToCsv +
+                                ": ResxVsCsv --directory <dir> --pattern <pattern> [--sortbyname yes] [--onlystrings no]");
                             System.Console.WriteLine(
-                                "For translation: ResxVsCsv --directory <dir> --pattern <pattern> \r\n"+
+                                Properties.Resources.ForTranslation +
+                                ": ResxVsCsv --directory <dir> --pattern <pattern> \r\n" +
                                 "  --translator <google|microsoft|deepl|toptranslation> --apikey <key> [--sortbyname yes] [--onlystrings no]");
                             System.Console.WriteLine(
-                                "For translation with argos: ResxVsCsv --directory <dir> --pattern <pattern> \r\n"+
-                                "  --translator argos [--sortbyname yes] ");
+                                Properties.Resources.ForTranslationWithArgos +
+                                ": ResxVsCsv --directory <dir> --pattern <pattern> \r\n" +
+                                "  --translator argos [--sortbyname yes] [--onlystrings no]");
                             System.Console.WriteLine(
-                                "For translation with LibreTranslate: ResxVsCsv --directory <dir> --pattern <pattern> \r\n"+
+                                Properties.Resources.ForTranslationWithLibreTranslate +
+                                ": ResxVsCsv --directory <dir> --pattern <pattern> \r\n" +
                                 "  --translator libretranslate --libreurl <url> [--apikey <key>] [--sortbyname yes] [--onlystrings no] ");
                             System.Console.WriteLine(
-                                "For updating .Resx files: ResxVsCsv --directory <dir> --toresx <resources.csv>");
+                                Properties.Resources.ForUpdatingResxFiles +
+                                ": ResxVsCsv --directory <dir> --toresx <resources.csv>");
                             return;
                     }
                 }
@@ -188,8 +175,9 @@ namespace ResxVsCsv
                         ReadCsvFile(System.IO.Path.Combine(strDirectory, strToResx)));
 
                     if (oEntries.Count == 0)
-                        System.Console.Error.WriteLine("Warning: no entries found in file "
-                            + System.IO.Path.Combine(strDirectory, strToResx));
+                        System.Console.Error.WriteLine(
+                            string.Format(Properties.Resources.WarningNoEntriesInFile,
+                            System.IO.Path.Combine(strDirectory, strToResx)));
                     else
                     {
 
@@ -205,8 +193,9 @@ namespace ResxVsCsv
 
                         if (oDistinctCultures.Count == 0)
                         {
-                            System.Console.Error.WriteLine("Warning: loading of entries from file failed: "
-                                    + System.IO.Path.Combine(strDirectory, strToResx));
+                            System.Console.Error.WriteLine(
+                                string.Format(Properties.Resources.WarningLoadingEntriesFromFileFailed,
+                                    System.IO.Path.Combine(strDirectory, strToResx)));
                         }
 
                         // update single resx files
@@ -358,16 +347,18 @@ namespace ResxVsCsv
                                                     Culture = strCulture,
                                                     Name = strName,
                                                     Value = bestTranslation,
-                                                    Comment = "Generated by AI"
+                                                    Comment = Properties.Resources.GeneratedByAi
                                                 });
 
-                                            System.Console.WriteLine("Translated " +
-                                                strCulture + " - " + strName);
+                                            System.Console.WriteLine(
+                                                string.Format(Properties.Resources.TranslatedCultureString,
+                                                    strCulture + " - " + strName));
                                         }
                                         catch (Exception oEx)
                                         {
-                                            System.Console.Error.WriteLine("Error while translating " +
-                                                strCulture + " - " + strName + ": " + oEx.Message);
+                                            System.Console.Error.WriteLine(
+                                                string.Format(Properties.Resources.ErrorWhileTranslating,
+                                                strCulture + " - " + strName + ": " + oEx.Message));
                                         }
                                     }
                                 }
@@ -446,16 +437,19 @@ namespace ResxVsCsv
                                                     Culture = strCulture,
                                                     Name = strName,
                                                     Value = bestTranslation,
-                                                    Comment = "Generated by AI"
+                                                    Comment = Properties.Resources.GeneratedByAi
                                                 });
 
-                                            System.Console.WriteLine("Translated " +
-                                                strCulture + " - " + strName);
+                                            System.Console.WriteLine(
+                                                string.Format(Properties.Resources.TranslatedCultureString,
+                                                    strCulture + " - " + strName));
                                         }
                                         catch (Exception oEx)
                                         {
-                                            System.Console.Error.WriteLine("Error while translating " +
-                                                strCulture + " - " + strName + ": " + oEx.Message);
+                                            System.Console.Error.WriteLine(
+                                                string.Format(
+                                                    Properties.Resources.ErrorWhileTranslating,
+                                                    strCulture + " - " + strName + ": " + oEx.Message));
                                         }
                                     }
                                 }
@@ -464,7 +458,6 @@ namespace ResxVsCsv
 
                     // write the csv file for convenient editing in sheet calculation programs
                     WriteToCsv(outputlist, System.IO.Path.Combine(strDirectory, strBaseName + ".csv"));
-
                 }
 
             }
@@ -475,6 +468,44 @@ namespace ResxVsCsv
             }
         }
 
+
+        //===================================================================================================
+        /// <summary>
+        /// Writes wrapped text to console
+        /// </summary>
+        /// <param name="strText">Text to write</param>
+        /// <param name="nWindowWidth">Window width</param>
+        //===================================================================================================
+        static void WriteWrappedText(
+            string strText, 
+            int nWindowWidth
+            )
+        {
+            string[] aWords = strText.Replace("\n","\n ").Split(' ');
+            string strCurrentLine = " ";
+
+            foreach (string strWord in aWords)
+            {
+                if ((strCurrentLine + strWord).Length < nWindowWidth && !strWord.Contains("\n"))
+                {
+                    strCurrentLine += strWord + " ";
+                }
+                else
+                {
+                    if (!strWord.Contains("\n"))
+                        Console.WriteLine(strCurrentLine);
+                    else
+                        Console.Write(strCurrentLine);
+
+                    strCurrentLine = strWord + " ";
+                }
+            }
+
+            if (strCurrentLine.Length > 0)
+            {
+                Console.WriteLine(strCurrentLine);
+            }
+        }
 
         //===================================================================================================
         /// <summary>
@@ -819,7 +850,7 @@ namespace ResxVsCsv
 
         //===================================================================================================
         /// <summary>
-        /// Writes entries to a resx file, completely overwriting itt
+        /// Writes entries to a resx file, completely overwriting it
         /// </summary>
         /// <param name="iEntries">Entries to write</param>
         /// <param name="strFilePath">Path to write to</param>

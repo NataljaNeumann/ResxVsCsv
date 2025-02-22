@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CopyrightMessage" xml:space="preserve">
+    <value>कॉपीराइट © 2025 </value>
+  </data>
+  <data name="ErrorWhileTranslating" xml:space="preserve">
+    <value>{0} का अनुवाद करने में त्रुटि</value>
+  </data>
+  <data name="ForConversionToCsv" xml:space="preserve">
+    <value>सीएसवी में कनवर्ट करने के लिए</value>
+  </data>
+  <data name="ForTranslation" xml:space="preserve">
+    <value>अनुवाद के लिए</value>
+  </data>
+  <data name="ForTranslationWithArgos" xml:space="preserve">
+    <value>आर्गोस के साथ अनुवाद के लिए</value>
+  </data>
+  <data name="ForTranslationWithLibreTranslate" xml:space="preserve">
+    <value>लिब्रेट्रांसलेट के साथ अनुवाद के लिए</value>
+  </data>
+  <data name="ForUpdatingResxFiles" xml:space="preserve">
+    <value>.Resx फ़ाइलें अद्यतन करने के लिए</value>
+  </data>
+  <data name="GeneratedByAi" xml:space="preserve">
+    <value>एआई द्वारा उत्पन्न</value>
+  </data>
+  <data name="LicenseText" xml:space="preserve">
+    <value>इस सॉफ़्टवेयर और संबंधित दस्तावेज़ फ़ाइलों ("सॉफ़्टवेयर") की एक प्रति प्राप्त करने वाले किसी भी व्यक्ति को, बिना किसी प्रतिबंध के सॉफ़्टवेयर में सौदा करने की अनुमति दी जाती है, जिसमें बिना किसी सीमा के उपयोग, प्रतिलिपि, संशोधित, विलय, प्रकाशन, वितरण, उपलाइसेंस, और/या सॉफ़्टवेयर की प्रतियां बेचने के अधिकार शामिल हैं, और जिन व्यक्तियों को सॉफ़्टवेयर प्रदान किया गया है, उन्हें निम्नलिखित शर्तों के अधीन ऐसा करने की अनुमति दी जाती है:
+
+उपरोक्त कॉपीराइट नोटिस और यह अनुमति नोटिस सॉफ़्टवेयर की सभी प्रतियों या पर्याप्त भागों में शामिल किया जाएगा।
+
+सॉफ़्टवेयर "जैसा है" प्रदान किया जाता है, किसी भी प्रकार की स्पष्ट या निहित वारंटी के बिना, जिसमें व्यापारिकता, किसी विशेष उद्देश्य के लिए उपयुक्तता और गैर-उल्लंघन की वारंटी शामिल है, लेकिन इन्हीं तक सीमित नहीं है। किसी भी स्थिति में लेखक या कॉपीराइट धारक किसी भी दावे, क्षति या अन्य देनदारी के लिए उत्तरदायी नहीं होंगे, चाहे अनुबंध, अपकृत्य या अन्यथा की कार्रवाई में, सॉफ्टवेयर से उत्पन्न, उसके बाहर या उसके संबंध में या उसके उपयोग या अन्य लेनदेन में। सॉफ़्टवेयर।</value>
+  </data>
+  <data name="TranslatedCultureString" xml:space="preserve">
+    <value>इसका अनुवाद किया गया है {0}</value>
+  </data>
+  <data name="WarningLoadingEntriesFromFileFailed" xml:space="preserve">
+    <value>चेतावनी: निम्न फ़ाइल से प्रविष्टियाँ लोड करने में विफल: {0}</value>
+  </data>
+  <data name="WarningNoEntriesInFile" xml:space="preserve">
+    <value>चेतावनी: फ़ाइल {0} में कोई प्रविष्टियाँ नहीं मिलीं।</value>
+  </data>
+</root>
