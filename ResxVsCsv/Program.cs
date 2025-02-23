@@ -214,15 +214,15 @@ namespace ResxVsCsv
                             WriteWrappedText(
                                 Properties.Resources.ForTranslation +
                                 "ResxVsCsv --directory <dir> --pattern <pattern> \r\n" +
-                                "  --translator <google|microsoft|deepl|toptranslation> --apikey <key> [--sortbyname yes] [--onlystrings no]");
+                                "  --translator <google|microsoft|deepl|toptranslation> --apikey <key> [--sortbyname yes]");
                             WriteWrappedText(
                                 Properties.Resources.ForTranslationWithArgos +
                                 "ResxVsCsv --directory <dir> --pattern <pattern> \r\n" +
-                                "  --translator argos [--sortbyname yes] [--onlystrings no]");
+                                "  --translator argos [--sortbyname yes]");
                             WriteWrappedText(
                                 Properties.Resources.ForTranslationWithLibreTranslate +
                                 "ResxVsCsv --directory <dir> --pattern <pattern> \r\n" +
-                                "  --translator libretranslate --libreurl <url> [--apikey <key>] [--sortbyname yes] [--onlystrings no] ");
+                                "  --translator libretranslate --libreurl <url> [--apikey <key>] [--sortbyname yes]");
                             WriteWrappedText(
                                 Properties.Resources.ForUpdatingResxFiles +
                                 "ResxVsCsv --directory <dir> --toresx <resources.csv>");
