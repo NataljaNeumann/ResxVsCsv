@@ -118,43 +118,51 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CopyrightMessage" xml:space="preserve">
-    <value>Kopiereg © 2025 </value>
+    <value>د چاپ حق © 2025 </value>
   </data>
   <data name="ErrorWhileTranslating" xml:space="preserve">
-    <value>Kon nie {0} vertaal nie</value>
+    <value>په ژباړه کې تېروتنه {0}</value>
   </data>
   <data name="ForConversionToCsv" xml:space="preserve">
-    <value>Om te skakel na CSV: </value>
+    <value>CSV ته د بدلولو لپاره:
+</value>
   </data>
   <data name="ForTranslation" xml:space="preserve">
-    <value>Vir vertaling: </value>
+    <value>د ژباړې لپاره:
+</value>
   </data>
   <data name="ForTranslationWithArgos" xml:space="preserve">
-    <value>Vir vertaling met argos: </value>
+    <value>د ارګوس سره د ژباړې لپاره:
+</value>
   </data>
   <data name="ForTranslationWithLibreTranslate" xml:space="preserve">
-    <value>Vir vertaling met LibreTranslate: </value>
+    <value>د LibreTranslate سره د ژباړې لپاره:
+</value>
   </data>
   <data name="ForUpdatingResxFiles" xml:space="preserve">
-    <value>Vir die opdatering van .Resx-lêers: </value>
+    <value>د .Resx فایلونو تازه کولو لپاره:
+</value>
   </data>
   <data name="GeneratedByAi" xml:space="preserve">
-    <value>Gegenereer deur KI</value>
+    <value>د AI لخوا تولید شوی</value>
   </data>
   <data name="LicenseText" xml:space="preserve">
-    <value>Toestemming word hiermee gratis verleen aan enige persoon wat 'n kopie van hierdie sagteware en gepaardgaande dokumentasielêers (die "sagteware") bekom, om sonder beperking met die sagteware te handel, insluitend sonder beperking die regte om te gebruik, kopieer, wysig, saam te voeg, publiseer, versprei, sublisensieer en/of verkoop kopieë van die sagteware, en om persone toe te laat aan wie die sagteware dit onderhewig is aan die volgende voorwaardes:
+    <value>په دې توګه اجازه ورکول کیږي، وړیا، هر هغه چا ته چې د دې سافټویر او اړوندو اسنادو فایلونو ("سافټویر") یوه کاپي ترلاسه کوي، پرته له کوم محدودیت څخه په سافټویر کې معامله وکړي، په شمول پرته له کوم محدودیت څخه د سافټویر د کارولو، کاپي کولو، تعدیل، یوځای کولو، خپرولو، ویشلو، فرعي جواز، او/یا د پلورلو حقونه، او هغه چا ته اجازه ورکول کیږي چې د سافټویر تابع وي. په لاندې شرایطو کې:
 
-Bogenoemde kopieregkennisgewing en hierdie toestemmingskennisgewing sal by alle kopieë of wesenlike gedeeltes van die sagteware ingesluit word.
+د پورتني کاپي حق خبرتیا او د اجازې دا خبرتیا باید د سافټویر په ټولو کاپي یا د پام وړ برخو کې شامل شي.
 
-DIE SAGTEWARE WORD "SOOS IS" VERSKAF, SONDER WAARBORG VAN ENIGE AARD, UITDRUKKELIJK OF geïmpliseer, INSLUITEND MAAR NIE BEPERK TOT DIE WAARBORGE VAN VERHANDELBAARHEID, GESKIKTHEID VIR 'N SPESIFIEKE DOEL EN NIE-SKENNING. IN GEEN GEVAL SAL DIE OUTEURS OF KOPIEREGHOUERS AANSPREEKLIK WEES VIR ENIGE EIS, SKADE OF ANDER AANSPREEKLIKHEID, HETSY IN 'N OPDRAG VAN KONTRAK, OORWEGING OF ANDERS, WAT VOORTKOM UIT, UIT OF IN VERBAND MET DIE ANDER SAGTEWARE.</value>
+سافټویر د هر ډول تضمین پرته "لکه څنګه چې دی" چمتو شوی، څرګند یا ضمیمه شوی، په شمول مګر د سوداګریزې وړتیا، مناسبې ځانګړې موخې لپاره د تضمین تضمینونو پورې محدود نه دی. په هیڅ صورت کې به لیکوالان یا د کاپي حق لرونکي د هر ډول ادعا، زیانونو یا نورو مسؤلیتونو لپاره مسؤل نه وي، که څه هم د تړون په یوه عمل کې، شکنجه یا بل ډول، د بیا وروسته وروسته، له دې وروسته رامنځ ته کیږي په سافټویر کې کارول یا نورې معاملې.</value>
+  </data>
+  <data name="RightToLeft" xml:space="preserve">
+    <value>Yes</value>
   </data>
   <data name="TranslatedCultureString" xml:space="preserve">
-    <value>Dit is vertaal {0}</value>
+    <value>دا ژباړل شوی {0}</value>
   </data>
   <data name="WarningLoadingEntriesFromFileFailed" xml:space="preserve">
-    <value>Waarskuwing: Kon nie inskrywings van die volgende lêer af laai nie: {0}</value>
+    <value>خبرداری: د لاندې فایل څخه د ننوتلو په بارولو کې پاتې راغلی: {0}</value>
   </data>
   <data name="WarningNoEntriesInFile" xml:space="preserve">
-    <value>Waarskuwing: Geen inskrywings is in lêer {0} gevind nie.</value>
+    <value>خبرداری: په دوتنې {0} کې هیڅ داخله ونه موندل شوه.</value>
   </data>
 </root>

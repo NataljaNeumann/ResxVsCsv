@@ -118,43 +118,43 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CopyrightMessage" xml:space="preserve">
-    <value>Kopiereg © 2025 </value>
+    <value>Автордук укук © 2025 </value>
   </data>
   <data name="ErrorWhileTranslating" xml:space="preserve">
-    <value>Kon nie {0} vertaal nie</value>
+    <value>{0} которууда ката кетти</value>
   </data>
   <data name="ForConversionToCsv" xml:space="preserve">
-    <value>Om te skakel na CSV: </value>
+    <value>CSVге айландыруу үчүн: </value>
   </data>
   <data name="ForTranslation" xml:space="preserve">
-    <value>Vir vertaling: </value>
+    <value>Котормо үчүн: </value>
   </data>
   <data name="ForTranslationWithArgos" xml:space="preserve">
-    <value>Vir vertaling met argos: </value>
+    <value>argos менен которуу үчүн: </value>
   </data>
   <data name="ForTranslationWithLibreTranslate" xml:space="preserve">
-    <value>Vir vertaling met LibreTranslate: </value>
+    <value>LibreTranslate менен которуу үчүн: </value>
   </data>
   <data name="ForUpdatingResxFiles" xml:space="preserve">
-    <value>Vir die opdatering van .Resx-lêers: </value>
+    <value>.Resx файлдарын жаңыртуу үчүн: </value>
   </data>
   <data name="GeneratedByAi" xml:space="preserve">
-    <value>Gegenereer deur KI</value>
+    <value>AI тарабынан түзүлгөн</value>
   </data>
   <data name="LicenseText" xml:space="preserve">
-    <value>Toestemming word hiermee gratis verleen aan enige persoon wat 'n kopie van hierdie sagteware en gepaardgaande dokumentasielêers (die "sagteware") bekom, om sonder beperking met die sagteware te handel, insluitend sonder beperking die regte om te gebruik, kopieer, wysig, saam te voeg, publiseer, versprei, sublisensieer en/of verkoop kopieë van die sagteware, en om persone toe te laat aan wie die sagteware dit onderhewig is aan die volgende voorwaardes:
+    <value>Ушуну менен бул программанын көчүрмөсүн жана ага байланыштуу документация файлдарын ("Программалык камсыздоо") алган ар кандай адамга Программалык камсыздоо менен чектөөсүз иштөөгө, анын ичинде Программанын нускаларын колдонуу, көчүрүү, өзгөртүү, бириктирүү, жарыялоо, жайылтуу, сублицензиялоо жана/же сатуу укуктарын чектөөсүз, ошондой эле Программа төмөндөгү шарттарды аткарууга тийиш болгон адамдарга уруксат берилет:
 
-Bogenoemde kopieregkennisgewing en hierdie toestemmingskennisgewing sal by alle kopieë of wesenlike gedeeltes van die sagteware ingesluit word.
+Жогорудагы автордук укук эскертүүсү жана бул уруксат эскертүүсү Программанын бардык нускаларына же олуттуу бөлүктөрүнө камтылууга тийиш.
 
-DIE SAGTEWARE WORD "SOOS IS" VERSKAF, SONDER WAARBORG VAN ENIGE AARD, UITDRUKKELIJK OF geïmpliseer, INSLUITEND MAAR NIE BEPERK TOT DIE WAARBORGE VAN VERHANDELBAARHEID, GESKIKTHEID VIR 'N SPESIFIEKE DOEL EN NIE-SKENNING. IN GEEN GEVAL SAL DIE OUTEURS OF KOPIEREGHOUERS AANSPREEKLIK WEES VIR ENIGE EIS, SKADE OF ANDER AANSPREEKLIKHEID, HETSY IN 'N OPDRAG VAN KONTRAK, OORWEGING OF ANDERS, WAT VOORTKOM UIT, UIT OF IN VERBAND MET DIE ANDER SAGTEWARE.</value>
+ПРОГРАММА "КАНДАЙ БОЛСО БОЛГОНДОЙ" БЕРИЛЕТ, ЭЧ КАЧАН ТҮРДӨГҮ, АЧЫН ЖАНА КИЙИНКЕН КЕПИЛДИКСИЗ, БИРОК БИРОК БИРОК СОТТУК КЕРЕКТҮҮЛҮК, БЕЛГИЛҮҮ МАКСАТКА ЖАНА ПАЙДАЛУУ ЭМЕС КЕПИЛДИКТЕР МЕНЕН ЧЕКТЕЛБЕГЕН. ЭЧ КАНДАЙ ЖАГДАЙДА АВТОРЛОР ЖЕ АВТОМОБИЛЬК УКУКТУН ЭЭЛЕРИ КЕЛИШИМДИН ИШ-АРАКЕТИНДЕГИ, КОРКУНУЧТУК ЖЕ БАШКА ЖОЛУ МЕНЕН, БАШКА ТАШКАН ТААНЫП КЕЛГЕН ДОО, ЗЫЯН ЖЕ БАШКА ЖООПКЕРЧИЛИК ҮЧҮН ЖООПКЕРЧИЛИКТИ ТАРТБАЙТ. ЖЕ ПРОГРАММАДАГЫ БАШКА ИШТЕР.</value>
   </data>
   <data name="TranslatedCultureString" xml:space="preserve">
-    <value>Dit is vertaal {0}</value>
+    <value>{0} которулду</value>
   </data>
   <data name="WarningLoadingEntriesFromFileFailed" xml:space="preserve">
-    <value>Waarskuwing: Kon nie inskrywings van die volgende lêer af laai nie: {0}</value>
+    <value>Эскертүү: Төмөнкү файлдан жазуулар жүктөлбөй калды: {0}</value>
   </data>
   <data name="WarningNoEntriesInFile" xml:space="preserve">
-    <value>Waarskuwing: Geen inskrywings is in lêer {0} gevind nie.</value>
+    <value>Эскертүү: {0} файлында эч кандай жазуу табылган жок.</value>
   </data>
 </root>

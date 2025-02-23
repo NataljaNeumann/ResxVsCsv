@@ -118,43 +118,43 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CopyrightMessage" xml:space="preserve">
-    <value>Kopiereg © 2025 </value>
+    <value>Hak Cipta © 2025</value>
   </data>
   <data name="ErrorWhileTranslating" xml:space="preserve">
-    <value>Kon nie {0} vertaal nie</value>
+    <value>Ralat menterjemah {0}</value>
   </data>
   <data name="ForConversionToCsv" xml:space="preserve">
-    <value>Om te skakel na CSV: </value>
+    <value>Untuk menukar kepada CSV: </value>
   </data>
   <data name="ForTranslation" xml:space="preserve">
-    <value>Vir vertaling: </value>
+    <value>Untuk terjemahan: </value>
   </data>
   <data name="ForTranslationWithArgos" xml:space="preserve">
-    <value>Vir vertaling met argos: </value>
+    <value>Untuk menterjemah dengan argos: </value>
   </data>
   <data name="ForTranslationWithLibreTranslate" xml:space="preserve">
-    <value>Vir vertaling met LibreTranslate: </value>
+    <value>Untuk menterjemah dengan LibreTranslate: </value>
   </data>
   <data name="ForUpdatingResxFiles" xml:space="preserve">
-    <value>Vir die opdatering van .Resx-lêers: </value>
+    <value>Untuk mengemas kini fail .Resx: </value>
   </data>
   <data name="GeneratedByAi" xml:space="preserve">
-    <value>Gegenereer deur KI</value>
+    <value>Dijana oleh AI</value>
   </data>
   <data name="LicenseText" xml:space="preserve">
-    <value>Toestemming word hiermee gratis verleen aan enige persoon wat 'n kopie van hierdie sagteware en gepaardgaande dokumentasielêers (die "sagteware") bekom, om sonder beperking met die sagteware te handel, insluitend sonder beperking die regte om te gebruik, kopieer, wysig, saam te voeg, publiseer, versprei, sublisensieer en/of verkoop kopieë van die sagteware, en om persone toe te laat aan wie die sagteware dit onderhewig is aan die volgende voorwaardes:
+    <value>Kebenaran dengan ini diberikan, secara percuma, kepada mana-mana orang yang mendapatkan salinan perisian ini dan fail dokumentasi yang berkaitan ("Perisian"), untuk berurusan dalam Perisian tanpa sekatan, termasuk tanpa had hak untuk menggunakan, menyalin, mengubah suai, menggabungkan, menerbitkan, mengedar, mensublesenkan, dan/atau menjual salinan Perisian, dan membenarkan orang yang tertakluk kepada syarat Perisian berikut, diberikan kepadanya:
 
-Bogenoemde kopieregkennisgewing en hierdie toestemmingskennisgewing sal by alle kopieë of wesenlike gedeeltes van die sagteware ingesluit word.
+Notis hak cipta di atas dan notis kebenaran ini hendaklah disertakan dalam semua salinan atau sebahagian besar Perisian.
 
-DIE SAGTEWARE WORD "SOOS IS" VERSKAF, SONDER WAARBORG VAN ENIGE AARD, UITDRUKKELIJK OF geïmpliseer, INSLUITEND MAAR NIE BEPERK TOT DIE WAARBORGE VAN VERHANDELBAARHEID, GESKIKTHEID VIR 'N SPESIFIEKE DOEL EN NIE-SKENNING. IN GEEN GEVAL SAL DIE OUTEURS OF KOPIEREGHOUERS AANSPREEKLIK WEES VIR ENIGE EIS, SKADE OF ANDER AANSPREEKLIKHEID, HETSY IN 'N OPDRAG VAN KONTRAK, OORWEGING OF ANDERS, WAT VOORTKOM UIT, UIT OF IN VERBAND MET DIE ANDER SAGTEWARE.</value>
+PERISIAN INI DISEDIAKAN "SEBAGAIMANA ADANYA", TANPA SEBARANG JENIS WARANTI, TERSURAT ATAU TERSIRAT, TERMASUK TETAPI TIDAK TERHAD KEPADA WARANTI KEBOLEHPERDAGANGAN, KESESUAIAN UNTUK TUJUAN TERTENTU DAN TANPA PELANGGARAN. DALAM APA PUN PENGARANG ATAU PEMEGANG HAK CIPTA TIDAK AKAN BERTANGGUNGJAWAB ATAS SEBARANG TUNTUTAN, KEROSAKAN ATAU LIABILITI LAIN, SAMA ADA DALAM TINDAKAN KONTRAK, TORT ATAU LAINNYA, TIMBUL DARIPADA, LUAR ATAU BERKAITAN DENGAN PERISIAN ATAU PENGGUNAAN YANG LAIN.</value>
   </data>
   <data name="TranslatedCultureString" xml:space="preserve">
-    <value>Dit is vertaal {0}</value>
+    <value>Ia telah diterjemahkan {0}</value>
   </data>
   <data name="WarningLoadingEntriesFromFileFailed" xml:space="preserve">
-    <value>Waarskuwing: Kon nie inskrywings van die volgende lêer af laai nie: {0}</value>
+    <value>Amaran: Gagal memuatkan entri daripada fail berikut: {0}</value>
   </data>
   <data name="WarningNoEntriesInFile" xml:space="preserve">
-    <value>Waarskuwing: Geen inskrywings is in lêer {0} gevind nie.</value>
+    <value>Amaran: Tiada entri ditemui dalam fail {0}.</value>
   </data>
 </root>

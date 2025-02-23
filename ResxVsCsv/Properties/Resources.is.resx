@@ -118,43 +118,43 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CopyrightMessage" xml:space="preserve">
-    <value>Kopiereg © 2025 </value>
+    <value>Höfundarréttur © 2025 </value>
   </data>
   <data name="ErrorWhileTranslating" xml:space="preserve">
-    <value>Kon nie {0} vertaal nie</value>
+    <value>Villa við að þýða {0}</value>
   </data>
   <data name="ForConversionToCsv" xml:space="preserve">
-    <value>Om te skakel na CSV: </value>
+    <value>Til að breyta í CSV: </value>
   </data>
   <data name="ForTranslation" xml:space="preserve">
-    <value>Vir vertaling: </value>
+    <value>Fyrir þýðingu: </value>
   </data>
   <data name="ForTranslationWithArgos" xml:space="preserve">
-    <value>Vir vertaling met argos: </value>
+    <value>Til að þýða með argos: </value>
   </data>
   <data name="ForTranslationWithLibreTranslate" xml:space="preserve">
-    <value>Vir vertaling met LibreTranslate: </value>
+    <value>Til að þýða með LibreTranslate: </value>
   </data>
   <data name="ForUpdatingResxFiles" xml:space="preserve">
-    <value>Vir die opdatering van .Resx-lêers: </value>
+    <value>Til að uppfæra .Resx skrár: </value>
   </data>
   <data name="GeneratedByAi" xml:space="preserve">
-    <value>Gegenereer deur KI</value>
+    <value>Myndað af gervigreind</value>
   </data>
   <data name="LicenseText" xml:space="preserve">
-    <value>Toestemming word hiermee gratis verleen aan enige persoon wat 'n kopie van hierdie sagteware en gepaardgaande dokumentasielêers (die "sagteware") bekom, om sonder beperking met die sagteware te handel, insluitend sonder beperking die regte om te gebruik, kopieer, wysig, saam te voeg, publiseer, versprei, sublisensieer en/of verkoop kopieë van die sagteware, en om persone toe te laat aan wie die sagteware dit onderhewig is aan die volgende voorwaardes:
+    <value>Leyfi er hér með veitt, að kostnaðarlausu, hverjum aðila sem fær afrit af þessum hugbúnaði og tengdum skjalaskrám („hugbúnaðurinn“), til að versla með hugbúnaðinn án takmarkana, þar með talið án takmarkana réttindi til að nota, afrita, breyta, sameina, birta, dreifa, veita undirleyfi og/eða selja afrit af hugbúnaðinum og leyfa einstaklingum sem fylgja þessum skilyrðum að gera það:
 
-Bogenoemde kopieregkennisgewing en hierdie toestemmingskennisgewing sal by alle kopieë of wesenlike gedeeltes van die sagteware ingesluit word.
+Ofangreind höfundarréttartilkynning og þessi leyfistilkynning skulu vera með í öllum eintökum eða verulegum hlutum hugbúnaðarins.
 
-DIE SAGTEWARE WORD "SOOS IS" VERSKAF, SONDER WAARBORG VAN ENIGE AARD, UITDRUKKELIJK OF geïmpliseer, INSLUITEND MAAR NIE BEPERK TOT DIE WAARBORGE VAN VERHANDELBAARHEID, GESKIKTHEID VIR 'N SPESIFIEKE DOEL EN NIE-SKENNING. IN GEEN GEVAL SAL DIE OUTEURS OF KOPIEREGHOUERS AANSPREEKLIK WEES VIR ENIGE EIS, SKADE OF ANDER AANSPREEKLIKHEID, HETSY IN 'N OPDRAG VAN KONTRAK, OORWEGING OF ANDERS, WAT VOORTKOM UIT, UIT OF IN VERBAND MET DIE ANDER SAGTEWARE.</value>
+HUGBÚNAÐURINN ER LEYNDUR „EINS OG ER“, ÁN NOKKURS ÁBYRGÐAR, SKÝRI EÐA UNDIRLIÐI, ÞAR Á MEÐ EN EKKI TAKMARKAÐUR VIÐ ÁBYRGÐIR UM SÖLJANNI, HÆFNI Í SÉRSTÖKNUM TILGANGI OG EKKI BROT. HÖFUNDAR EÐA HÖFUNDARRETTAHAFAR SKALA Í ENGUM TILKYNDUM BÆRA ÁBYRGÐ Á KÖFUM, SKAÐUM EÐA AÐRAR ÁBYRGÐ, HVORKI Í SAMNINGS-, skaðabótamáli EÐA ANNAÐ SEM SEM KOMA AF, ÚT EÐA Í TENGSLUM VIÐ NOTKUN VIÐ NOTKUNARVIÐ.</value>
   </data>
   <data name="TranslatedCultureString" xml:space="preserve">
-    <value>Dit is vertaal {0}</value>
+    <value>Það hefur verið þýtt {0}</value>
   </data>
   <data name="WarningLoadingEntriesFromFileFailed" xml:space="preserve">
-    <value>Waarskuwing: Kon nie inskrywings van die volgende lêer af laai nie: {0}</value>
+    <value>Viðvörun: Mistókst að hlaða færslum úr eftirfarandi skrá: {0}</value>
   </data>
   <data name="WarningNoEntriesInFile" xml:space="preserve">
-    <value>Waarskuwing: Geen inskrywings is in lêer {0} gevind nie.</value>
+    <value>Viðvörun: Engar færslur fundust í skránni {0}.</value>
   </data>
 </root>

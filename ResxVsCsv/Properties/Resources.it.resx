@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CopyrightMessage" xml:space="preserve">
-    <value>Diritto d'autore © 2025</value>
+    <value>Diritto d'autore © 2025 </value>
   </data>
   <data name="ErrorWhileTranslating" xml:space="preserve">
     <value>Errore durante la traduzione di {0}</value>

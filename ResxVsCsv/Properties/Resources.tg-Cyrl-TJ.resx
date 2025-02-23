@@ -118,43 +118,43 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CopyrightMessage" xml:space="preserve">
-    <value>Kopiereg © 2025 </value>
+    <value>Copyright © 2025 </value>
   </data>
   <data name="ErrorWhileTranslating" xml:space="preserve">
-    <value>Kon nie {0} vertaal nie</value>
+    <value>Хатогӣ ҳангоми тарҷумаи {0}</value>
   </data>
   <data name="ForConversionToCsv" xml:space="preserve">
-    <value>Om te skakel na CSV: </value>
+    <value>Барои табдил додан ба CSV: </value>
   </data>
   <data name="ForTranslation" xml:space="preserve">
-    <value>Vir vertaling: </value>
+    <value>Барои тарҷума: </value>
   </data>
   <data name="ForTranslationWithArgos" xml:space="preserve">
-    <value>Vir vertaling met argos: </value>
+    <value>Барои тарҷума бо argos: </value>
   </data>
   <data name="ForTranslationWithLibreTranslate" xml:space="preserve">
-    <value>Vir vertaling met LibreTranslate: </value>
+    <value>Барои тарҷума бо LibreTranslate: </value>
   </data>
   <data name="ForUpdatingResxFiles" xml:space="preserve">
-    <value>Vir die opdatering van .Resx-lêers: </value>
+    <value>Барои навсозии файлҳои .Resx: </value>
   </data>
   <data name="GeneratedByAi" xml:space="preserve">
-    <value>Gegenereer deur KI</value>
+    <value>Аз ҷониби AI тавлид шудааст</value>
   </data>
   <data name="LicenseText" xml:space="preserve">
-    <value>Toestemming word hiermee gratis verleen aan enige persoon wat 'n kopie van hierdie sagteware en gepaardgaande dokumentasielêers (die "sagteware") bekom, om sonder beperking met die sagteware te handel, insluitend sonder beperking die regte om te gebruik, kopieer, wysig, saam te voeg, publiseer, versprei, sublisensieer en/of verkoop kopieë van die sagteware, en om persone toe te laat aan wie die sagteware dit onderhewig is aan die volgende voorwaardes:
+    <value>Иҷозати ройгон ба ҳар шахсе, ки нусхаи ин нармафзор ва файлҳои ҳуҷҷатҳои алоқамандро ("Нармафзор") ба даст меорад, барои кор кардан бо Нармафзор бидуни маҳдудият, аз ҷумла бидуни маҳдудият ҳуқуқи истифода, нусхабардорӣ, тағир додан, якҷоя кардан, нашр кардан, паҳн кардан, зерлитсензия ва/ё фурӯши нусхаҳои Нармафзор дода мешавад ва ба шахсоне, ки шартҳои зеринро иҷро мекунанд, иҷозат дода мешавад:
 
-Bogenoemde kopieregkennisgewing en hierdie toestemmingskennisgewing sal by alle kopieë of wesenlike gedeeltes van die sagteware ingesluit word.
+Огоҳии дар боло зикршуда дар бораи ҳуқуқи муаллиф ва ин огоҳиномаи иҷозат бояд ба ҳама нусхаҳо ё қисмҳои муҳими Барнома дохил карда шаванд.
 
-DIE SAGTEWARE WORD "SOOS IS" VERSKAF, SONDER WAARBORG VAN ENIGE AARD, UITDRUKKELIJK OF geïmpliseer, INSLUITEND MAAR NIE BEPERK TOT DIE WAARBORGE VAN VERHANDELBAARHEID, GESKIKTHEID VIR 'N SPESIFIEKE DOEL EN NIE-SKENNING. IN GEEN GEVAL SAL DIE OUTEURS OF KOPIEREGHOUERS AANSPREEKLIK WEES VIR ENIGE EIS, SKADE OF ANDER AANSPREEKLIKHEID, HETSY IN 'N OPDRAG VAN KONTRAK, OORWEGING OF ANDERS, WAT VOORTKOM UIT, UIT OF IN VERBAND MET DIE ANDER SAGTEWARE.</value>
+НАРНАМИҲО "ЧУНОН КИ ҲАСТ", БЕ КАФОЛАТИ ҲАМГУН, ОЗОҲ Ё МАСЪАЛӢ, АЗ ҶУМЛА НА БА КАФОЛАТҲОИ ТИҶОРӢ, МУНОСИБАТ БА МАҚСАДҲОИ МАХСУС ВА МАСЪАЛАИ ҒАЙРИҲОИ МАХДУД НЕСТ. БА ҲЕҶ ҲОЛО МУАЛЛИМОН ВА СОХИБОНИ ҲУҚУДИ ​​МУАЛЛИФӢ БАРОИ ЯГОН ДАЪВО, ЗАРАР ВА ДИГАР масъулият, НОҲО АЗ АМАЛИ ШАРТАНДА, ТОҶИКИСТОН ВА ДИГАР ҶАВОБГИРӢ НАМЕШАВАНД. Ё ДИГАР МУНОСИБАТҲО ДАР НАМОЗ.</value>
   </data>
   <data name="TranslatedCultureString" xml:space="preserve">
-    <value>Dit is vertaal {0}</value>
+    <value>Тарҷума шудааст {0}</value>
   </data>
   <data name="WarningLoadingEntriesFromFileFailed" xml:space="preserve">
-    <value>Waarskuwing: Kon nie inskrywings van die volgende lêer af laai nie: {0}</value>
+    <value>Огоҳӣ: Бор кардани сабтҳо аз файли зерин муяссар нашуд: {0}</value>
   </data>
   <data name="WarningNoEntriesInFile" xml:space="preserve">
-    <value>Waarskuwing: Geen inskrywings is in lêer {0} gevind nie.</value>
+    <value>Огоҳӣ: Дар файли {0} ягон сабт ёфт нашуд.</value>
   </data>
 </root>

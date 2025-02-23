@@ -118,43 +118,43 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CopyrightMessage" xml:space="preserve">
-    <value>Kopiereg © 2025 </value>
+    <value>Зохиогчийн эрх © 2025 </value>
   </data>
   <data name="ErrorWhileTranslating" xml:space="preserve">
-    <value>Kon nie {0} vertaal nie</value>
+    <value>{0}-г орчуулахад алдаа гарлаа</value>
   </data>
   <data name="ForConversionToCsv" xml:space="preserve">
-    <value>Om te skakel na CSV: </value>
+    <value>CSV рүү хөрвүүлэхийн тулд: </value>
   </data>
   <data name="ForTranslation" xml:space="preserve">
-    <value>Vir vertaling: </value>
+    <value>Орчуулгын хувьд: </value>
   </data>
   <data name="ForTranslationWithArgos" xml:space="preserve">
-    <value>Vir vertaling met argos: </value>
+    <value>Аргосоор орчуулбал: </value>
   </data>
   <data name="ForTranslationWithLibreTranslate" xml:space="preserve">
-    <value>Vir vertaling met LibreTranslate: </value>
+    <value>LibreTranslate-р орчуулахын тулд: </value>
   </data>
   <data name="ForUpdatingResxFiles" xml:space="preserve">
-    <value>Vir die opdatering van .Resx-lêers: </value>
+    <value>.Resx файлуудыг шинэчлэхийн тулд: </value>
   </data>
   <data name="GeneratedByAi" xml:space="preserve">
-    <value>Gegenereer deur KI</value>
+    <value>AI үүсгэсэн</value>
   </data>
   <data name="LicenseText" xml:space="preserve">
-    <value>Toestemming word hiermee gratis verleen aan enige persoon wat 'n kopie van hierdie sagteware en gepaardgaande dokumentasielêers (die "sagteware") bekom, om sonder beperking met die sagteware te handel, insluitend sonder beperking die regte om te gebruik, kopieer, wysig, saam te voeg, publiseer, versprei, sublisensieer en/of verkoop kopieë van die sagteware, en om persone toe te laat aan wie die sagteware dit onderhewig is aan die volgende voorwaardes:
+    <value>Энэхүү програм хангамжийн хуулбар болон холбогдох баримт бичгийн файлыг ("Програм хангамж") олж авсан аливаа этгээдэд Програм хангамжийн хуулбарыг ашиглах, хуулах, өөрчлөх, нэгтгэх, нийтлэх, түгээх, тусгай зөвшөөрөл олгох болон/эсвэл худалдах эрхийг хязгаарлахгүйгээр Програм хангамжийг ашиглах, мөн дараах нөхцлүүдийг дагаж мөрдөхийг зөвшөөрч байна.
 
-Bogenoemde kopieregkennisgewing en hierdie toestemmingskennisgewing sal by alle kopieë of wesenlike gedeeltes van die sagteware ingesluit word.
+Дээрх зохиогчийн эрхийн мэдэгдэл болон энэхүү зөвшөөрлийн мэдэгдэл нь Програм хангамжийн бүх хуулбар эсвэл ихээхэн хэсэгт багтсан байна.
 
-DIE SAGTEWARE WORD "SOOS IS" VERSKAF, SONDER WAARBORG VAN ENIGE AARD, UITDRUKKELIJK OF geïmpliseer, INSLUITEND MAAR NIE BEPERK TOT DIE WAARBORGE VAN VERHANDELBAARHEID, GESKIKTHEID VIR 'N SPESIFIEKE DOEL EN NIE-SKENNING. IN GEEN GEVAL SAL DIE OUTEURS OF KOPIEREGHOUERS AANSPREEKLIK WEES VIR ENIGE EIS, SKADE OF ANDER AANSPREEKLIKHEID, HETSY IN 'N OPDRAG VAN KONTRAK, OORWEGING OF ANDERS, WAT VOORTKOM UIT, UIT OF IN VERBAND MET DIE ANDER SAGTEWARE.</value>
+ПРОГРАММ ХЭРЭГСЭЛИЙГ "БАЙГААГААР НЬ" ЯМАП Ч ТӨРЛИЙН, ИЛТ ЭСВЭЛ ДАЛД БАТАЛГАА ӨГӨХГҮЙ, ОНЦЛОХ ЗОРИУЛАЛТ, ЗОРИУЛАЛТЫН БУС ЗОРИУЛАЛТЫН БАТАЛГАА ОРОН ГЭХДЭЭ ХЯЗГААРЛАХГҮЙ. ЗОХИОГЧ БУЮУ ЗОХИОГЧИЙН ЭРХ ЭЗЭМШИГЧИД НЭГДСЭН ГЭРЭЭГЭЭС ГАРСАН ГЭРЭЭНИЙ ҮЙЛ АЖИЛЛАГАА, ЗОХИОН БАЙГУУЛАЛТ, БУСАД ЗОРИУЛАЛТ, ХОХИРОЛ, БУСАД ХАРИУЦЛАГЫГ ХАРИУЦАХГҮЙ. ЭСВЭЛ ПРОГРАММЫН БУСАД ХАРИУЦЛАГА.</value>
   </data>
   <data name="TranslatedCultureString" xml:space="preserve">
-    <value>Dit is vertaal {0}</value>
+    <value>Үүнийг {0} орчуулсан</value>
   </data>
   <data name="WarningLoadingEntriesFromFileFailed" xml:space="preserve">
-    <value>Waarskuwing: Kon nie inskrywings van die volgende lêer af laai nie: {0}</value>
+    <value>Анхааруулга: Дараах файлын оруулгуудыг ачаалж чадсангүй: {0}</value>
   </data>
   <data name="WarningNoEntriesInFile" xml:space="preserve">
-    <value>Waarskuwing: Geen inskrywings is in lêer {0} gevind nie.</value>
+    <value>Анхааруулга: {0} файлаас ямар ч бичилт олдсонгүй.</value>
   </data>
 </root>

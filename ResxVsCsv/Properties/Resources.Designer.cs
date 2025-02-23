@@ -162,6 +162,15 @@ namespace ResxVsCsv.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Yes ähnelt.
+        /// </summary>
+        internal static string UseWordWrap {
+            get {
+                return ResourceManager.GetString("UseWordWrap", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Warning: loading of entries from following file failed: {0} ähnelt.
         /// </summary>
         internal static string WarningLoadingEntriesFromFileFailed {

@@ -118,43 +118,43 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CopyrightMessage" xml:space="preserve">
-    <value>Kopiereg © 2025 </value>
+    <value>საავტორო უფლება © 2025 </value>
   </data>
   <data name="ErrorWhileTranslating" xml:space="preserve">
-    <value>Kon nie {0} vertaal nie</value>
+    <value>შეცდომა {0}-ის თარგმნისას</value>
   </data>
   <data name="ForConversionToCsv" xml:space="preserve">
-    <value>Om te skakel na CSV: </value>
+    <value>CSV-ში გადასაყვანად: </value>
   </data>
   <data name="ForTranslation" xml:space="preserve">
-    <value>Vir vertaling: </value>
+    <value>თარგმანისთვის: </value>
   </data>
   <data name="ForTranslationWithArgos" xml:space="preserve">
-    <value>Vir vertaling met argos: </value>
+    <value>არგოსით თარგმნა: </value>
   </data>
   <data name="ForTranslationWithLibreTranslate" xml:space="preserve">
-    <value>Vir vertaling met LibreTranslate: </value>
+    <value>LibreTranslate-ით თარგმნისთვის: </value>
   </data>
   <data name="ForUpdatingResxFiles" xml:space="preserve">
-    <value>Vir die opdatering van .Resx-lêers: </value>
+    <value>.Resx ფაილების განახლებისთვის: </value>
   </data>
   <data name="GeneratedByAi" xml:space="preserve">
-    <value>Gegenereer deur KI</value>
+    <value>გენერირებული AI-ს მიერ</value>
   </data>
   <data name="LicenseText" xml:space="preserve">
-    <value>Toestemming word hiermee gratis verleen aan enige persoon wat 'n kopie van hierdie sagteware en gepaardgaande dokumentasielêers (die "sagteware") bekom, om sonder beperking met die sagteware te handel, insluitend sonder beperking die regte om te gebruik, kopieer, wysig, saam te voeg, publiseer, versprei, sublisensieer en/of verkoop kopieë van die sagteware, en om persone toe te laat aan wie die sagteware dit onderhewig is aan die volgende voorwaardes:
+    <value>ნებართვა ენიჭება ნებისმიერ პირს, რომელიც იძენს ამ პროგრამული უზრუნველყოფის ასლს და მასთან დაკავშირებულ დოკუმენტაციის ფაილებს („პროგრამული უზრუნველყოფა“), ისარგებლოს პროგრამით შეზღუდვის გარეშე, მათ შორის შეზღუდვის გარეშე, პროგრამული უზრუნველყოფის ასლების გამოყენების, კოპირების, შესწორების, შერწყმის, გამოქვეყნების, გავრცელების, ქველიცენზირების ან/და გაყიდვის უფლებების და უფლებას მისცეს პირებს, რომლებსაც ეს პროგრამა ექვემდებარება შემდეგ პირობებს:
 
-Bogenoemde kopieregkennisgewing en hierdie toestemmingskennisgewing sal by alle kopieë of wesenlike gedeeltes van die sagteware ingesluit word.
+ზემოთ მოყვანილი საავტორო უფლებების შესახებ შეტყობინება და ეს ნებართვის შესახებ შეტყობინება უნდა იყოს შეტანილი პროგრამული უზრუნველყოფის ყველა ასლში ან მნიშვნელოვან ნაწილში.
 
-DIE SAGTEWARE WORD "SOOS IS" VERSKAF, SONDER WAARBORG VAN ENIGE AARD, UITDRUKKELIJK OF geïmpliseer, INSLUITEND MAAR NIE BEPERK TOT DIE WAARBORGE VAN VERHANDELBAARHEID, GESKIKTHEID VIR 'N SPESIFIEKE DOEL EN NIE-SKENNING. IN GEEN GEVAL SAL DIE OUTEURS OF KOPIEREGHOUERS AANSPREEKLIK WEES VIR ENIGE EIS, SKADE OF ANDER AANSPREEKLIKHEID, HETSY IN 'N OPDRAG VAN KONTRAK, OORWEGING OF ANDERS, WAT VOORTKOM UIT, UIT OF IN VERBAND MET DIE ANDER SAGTEWARE.</value>
+პროგრამული უზრუნველყოფა მოწოდებულია "როგორც არის", რაიმე სახის, გამოხატული ან ნაგულისხმევი გარანტიის გარეშე, მათ შორის, მაგრამ არ შემოიფარგლება ვაჭრობის გარანტიებით, ვარგისიანობა კონკრეტული მიზნისთვის და სხვა მიზნით. არავითარ შემთხვევაში ავტორები ან საავტორო უფლებების მფლობელები არ იქნებიან პასუხისმგებელი პრეტენზიებზე, ზარალზე ან სხვა პასუხისმგებლობაზე, იქნება ეს კონტრაქტის მოქმედებაში, დელიქტურ დანაშაულში თუ სხვაგვარად, რომელიც წარმოიშობა ჩვენგან ამის გარეშე ან სხვა გარიგებები პროგრამულ უზრუნველყოფაში.</value>
   </data>
   <data name="TranslatedCultureString" xml:space="preserve">
-    <value>Dit is vertaal {0}</value>
+    <value>ის ნათარგმნია {0}</value>
   </data>
   <data name="WarningLoadingEntriesFromFileFailed" xml:space="preserve">
-    <value>Waarskuwing: Kon nie inskrywings van die volgende lêer af laai nie: {0}</value>
+    <value>გაფრთხილება: ჩანაწერების ჩატვირთვა ვერ მოხერხდა შემდეგი ფაილიდან: {0}</value>
   </data>
   <data name="WarningNoEntriesInFile" xml:space="preserve">
-    <value>Waarskuwing: Geen inskrywings is in lêer {0} gevind nie.</value>
+    <value>გაფრთხილება: ფაილში {0} ჩანაწერები არ მოიძებნა.</value>
   </data>
 </root>

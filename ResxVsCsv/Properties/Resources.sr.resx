@@ -118,43 +118,43 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CopyrightMessage" xml:space="preserve">
-    <value>Kopiereg © 2025 </value>
+    <value>Ауторска права © 2025 </value>
   </data>
   <data name="ErrorWhileTranslating" xml:space="preserve">
-    <value>Kon nie {0} vertaal nie</value>
+    <value>Грешка при преводу {0}</value>
   </data>
   <data name="ForConversionToCsv" xml:space="preserve">
-    <value>Om te skakel na CSV: </value>
+    <value>Да бисте конвертовали у ЦСВ: </value>
   </data>
   <data name="ForTranslation" xml:space="preserve">
-    <value>Vir vertaling: </value>
+    <value>За превод: </value>
   </data>
   <data name="ForTranslationWithArgos" xml:space="preserve">
-    <value>Vir vertaling met argos: </value>
+    <value>За превод са аргосом: </value>
   </data>
   <data name="ForTranslationWithLibreTranslate" xml:space="preserve">
-    <value>Vir vertaling met LibreTranslate: </value>
+    <value>Да бисте превели помоћу ЛибреТранслате-а: </value>
   </data>
   <data name="ForUpdatingResxFiles" xml:space="preserve">
-    <value>Vir die opdatering van .Resx-lêers: </value>
+    <value>Да бисте ажурирали .Реск датотеке: </value>
   </data>
   <data name="GeneratedByAi" xml:space="preserve">
-    <value>Gegenereer deur KI</value>
+    <value>Генерисао АИ</value>
   </data>
   <data name="LicenseText" xml:space="preserve">
-    <value>Toestemming word hiermee gratis verleen aan enige persoon wat 'n kopie van hierdie sagteware en gepaardgaande dokumentasielêers (die "sagteware") bekom, om sonder beperking met die sagteware te handel, insluitend sonder beperking die regte om te gebruik, kopieer, wysig, saam te voeg, publiseer, versprei, sublisensieer en/of verkoop kopieë van die sagteware, en om persone toe te laat aan wie die sagteware dit onderhewig is aan die volgende voorwaardes:
+    <value>Овим се даје бесплатна дозвола било којој особи која добије копију овог софтвера и повезаних датотека документације („Софтвер“), да ради са Софтвером без ограничења, укључујући без ограничења права на коришћење, копирање, модификовање, спајање, објављивање, дистрибуцију, подлиценцирање и/или продају копија Софтвера, као и да се дозволи особама којима је Софтвер то достављен под следећим условима:
 
-Bogenoemde kopieregkennisgewing en hierdie toestemmingskennisgewing sal by alle kopieë of wesenlike gedeeltes van die sagteware ingesluit word.
+Горенаведено обавештење о ауторским правима и ово обавештење о дозволи биће укључено у све копије или значајне делове Софтвера.
 
-DIE SAGTEWARE WORD "SOOS IS" VERSKAF, SONDER WAARBORG VAN ENIGE AARD, UITDRUKKELIJK OF geïmpliseer, INSLUITEND MAAR NIE BEPERK TOT DIE WAARBORGE VAN VERHANDELBAARHEID, GESKIKTHEID VIR 'N SPESIFIEKE DOEL EN NIE-SKENNING. IN GEEN GEVAL SAL DIE OUTEURS OF KOPIEREGHOUERS AANSPREEKLIK WEES VIR ENIGE EIS, SKADE OF ANDER AANSPREEKLIKHEID, HETSY IN 'N OPDRAG VAN KONTRAK, OORWEGING OF ANDERS, WAT VOORTKOM UIT, UIT OF IN VERBAND MET DIE ANDER SAGTEWARE.</value>
+СОФТВЕР СЕ ДАЈЕ „КАКАВ ЈЕСТЕ“, БЕЗ БИЛО КОЈЕ ВРСТЕ ГАРАНЦИЈЕ, ИЗРИЧИТЕ ИЛИ ПОДРАЗУМЕВАНЕ, УКЉУЧУЈУЋИ, АЛИ НЕ ОГРАНИЧАВАЈУЋИ СЕ НА ГАРАНЦИЈЕ ЗА ПРОДАЈУ, ПРИКЛАДНОСТ ЗА ОДРЕЂЕНУ НАМЕНУ И НЕКРШЕЊЕ ПРАВА. АУТОРИ ИЛИ НОСИЛАЦИ АУТОРСКОГ ПРАВА НИ У КОЈЕМ СЛУЧАЈУ НЕЋЕ БИТИ ОДГОВОРНИ ЗА БИЛО КАКАВ ЗАХТЕВ, ШТЕТУ ИЛИ ДРУГУ ОДГОВОРНОСТ, БИЛО У РАДУ УГОВОРА, ДЕЛАТНИХ ДЕЛОВА ИЛИ НА ДРУГИМ, КОЈИ ПРОИЗЛАЗЕ ИЗ, ВАН ИЛИ У СВОЈИМ ВЕЗАМА ПОСЛОВАЊЕ У СОФТВЕРУ.</value>
   </data>
   <data name="TranslatedCultureString" xml:space="preserve">
-    <value>Dit is vertaal {0}</value>
+    <value>Преведено је {0}</value>
   </data>
   <data name="WarningLoadingEntriesFromFileFailed" xml:space="preserve">
-    <value>Waarskuwing: Kon nie inskrywings van die volgende lêer af laai nie: {0}</value>
+    <value>Упозорење: Учитавање уноса из следеће датотеке није успело: {0}</value>
   </data>
   <data name="WarningNoEntriesInFile" xml:space="preserve">
-    <value>Waarskuwing: Geen inskrywings is in lêer {0} gevind nie.</value>
+    <value>Упозорење: У датотеци {0} нису пронађени уноси.</value>
   </data>
 </root>

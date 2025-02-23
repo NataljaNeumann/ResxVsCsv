@@ -118,43 +118,43 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CopyrightMessage" xml:space="preserve">
-    <value>Kopiereg © 2025 </value>
+    <value>Հեղինակային իրավունք © 2025 </value>
   </data>
   <data name="ErrorWhileTranslating" xml:space="preserve">
-    <value>Kon nie {0} vertaal nie</value>
+    <value>{0}-ի թարգմանության սխալ</value>
   </data>
   <data name="ForConversionToCsv" xml:space="preserve">
-    <value>Om te skakel na CSV: </value>
+    <value>CSV-ի փոխարկելու համար՝ </value>
   </data>
   <data name="ForTranslation" xml:space="preserve">
-    <value>Vir vertaling: </value>
+    <value>Թարգմանության համար. </value>
   </data>
   <data name="ForTranslationWithArgos" xml:space="preserve">
-    <value>Vir vertaling met argos: </value>
+    <value>Արգոսի հետ թարգմանելու համար. </value>
   </data>
   <data name="ForTranslationWithLibreTranslate" xml:space="preserve">
-    <value>Vir vertaling met LibreTranslate: </value>
+    <value>LibreTranslate-ով թարգմանելու համար՝ </value>
   </data>
   <data name="ForUpdatingResxFiles" xml:space="preserve">
-    <value>Vir die opdatering van .Resx-lêers: </value>
+    <value>.Resx ֆայլերը թարմացնելու համար. </value>
   </data>
   <data name="GeneratedByAi" xml:space="preserve">
-    <value>Gegenereer deur KI</value>
+    <value>Ստեղծված է AI-ի կողմից</value>
   </data>
   <data name="LicenseText" xml:space="preserve">
-    <value>Toestemming word hiermee gratis verleen aan enige persoon wat 'n kopie van hierdie sagteware en gepaardgaande dokumentasielêers (die "sagteware") bekom, om sonder beperking met die sagteware te handel, insluitend sonder beperking die regte om te gebruik, kopieer, wysig, saam te voeg, publiseer, versprei, sublisensieer en/of verkoop kopieë van die sagteware, en om persone toe te laat aan wie die sagteware dit onderhewig is aan die volgende voorwaardes:
+    <value>Սույնով անվճար թույլտվություն է տրվում ցանկացած անձի, ով ստանում է այս ծրագրաշարի պատճենը և հարակից փաստաթղթերի ֆայլերը («Ծրագրաշարը»), օգտվել Ծրագրով առանց սահմանափակումների, ներառյալ՝ առանց սահմանափակման՝ օգտագործելու, պատճենելու, փոփոխելու, միաձուլելու, հրապարակելու, տարածելու, ենթալիցենզավորելու և/կամ վաճառելու ծրագրաշարի պատճենները և թույլատրել այն անձանց, ում դա վերաբերում է հետևյալ պայմաններին.
 
-Bogenoemde kopieregkennisgewing en hierdie toestemmingskennisgewing sal by alle kopieë of wesenlike gedeeltes van die sagteware ingesluit word.
+Հեղինակային իրավունքի վերը նշված ծանուցումը և թույլտվության այս ծանուցումը պետք է ներառվեն Ծրագրաշարի բոլոր պատճեններում կամ զգալի մասերում:
 
-DIE SAGTEWARE WORD "SOOS IS" VERSKAF, SONDER WAARBORG VAN ENIGE AARD, UITDRUKKELIJK OF geïmpliseer, INSLUITEND MAAR NIE BEPERK TOT DIE WAARBORGE VAN VERHANDELBAARHEID, GESKIKTHEID VIR 'N SPESIFIEKE DOEL EN NIE-SKENNING. IN GEEN GEVAL SAL DIE OUTEURS OF KOPIEREGHOUERS AANSPREEKLIK WEES VIR ENIGE EIS, SKADE OF ANDER AANSPREEKLIKHEID, HETSY IN 'N OPDRAG VAN KONTRAK, OORWEGING OF ANDERS, WAT VOORTKOM UIT, UIT OF IN VERBAND MET DIE ANDER SAGTEWARE.</value>
+ԾՐԱԳՐԱԿԱՆ ԾՐԱԳՐԸ ՏՐԱՄԱԴՐՎՈՒՄ Է «ԻՆՉՊԵՍ ԿԱ», ԱՌԱՆՑ ՈՐԵՎԷ ՏԵՍԱԿԻ ԵՐԱՇԽԻՔԻ, ՀԱՅՏԱՐԱՐ ԿԱՄ ՆԿԱՏԻՐՎԱԾ, ՆԵՐԱՌՅԱԼ, ԲԱՅՑ ՉՍԱՀՄԱՆԱՓԱԿՎՈՂ ԱՐՏԱԴՐԱԿԱՆՈՒԹՅԱՆ ԵՐԱՇԽԻՔՆԵՐՈՎ, ՊԱՏԱՍԽԱՆՈՒԹՅԱՆ ՀԱՏՈՒԿ ՆՊԱՏԱԿՈՎ ԵՎ ՆՊԱՏԱԿՈՎ: ՈՉ ՄԻ ԴԵՊՔՈՒՄ ՀԵՂԻՆԱԿՆԵՐԸ ԿԱՄ ՀԵՂԻՆԱԿԱՅԻՆ ԻՐԱՎՈՒՆՔՆԵՐԸ ՊԱՏԱՍԽԱՆԱՏՎՈՒԹՅՈՒՆ ՉԻ ՊԱՏԱՍԽԱՆԱՏՎԵԼ ՈՐԵՎԷ ՊԱՀԱՆՋԻ, ՎՆԱՍԻ ԿԱՄ ԱՅԼ ՊԱՏԱՍԽԱՆԱՏՎՈՒԹՅԱՆ ՀԱՄԱՐ՝ ԱՆԿԱԽ ՊԱՅՄԱՆԱԳՐԻ ԳՈՐԾՈՂՈՒԹՅԱՆ, ԴԱՇԽԱՏՈՒԹՅԱՆ, ԿԱՄ ԱՅԼ ՀԱԿԱՌԱԿԻՑ, ՈՐ ԲԱՑՎՈՒՄ Է ԱՊԱՀՈՎ ՄԵԶ. ԿԱՄ ԱՅԼ ԳՈՐԾՈՒՆՔՆԵՐ ԾՐԱԳՐԵՐԻ ՄԵՋ:</value>
   </data>
   <data name="TranslatedCultureString" xml:space="preserve">
-    <value>Dit is vertaal {0}</value>
+    <value>Այն թարգմանվել է {0}</value>
   </data>
   <data name="WarningLoadingEntriesFromFileFailed" xml:space="preserve">
-    <value>Waarskuwing: Kon nie inskrywings van die volgende lêer af laai nie: {0}</value>
+    <value>Զգուշացում. Չհաջողվեց բեռնել գրառումները հետևյալ ֆայլից՝ {0}</value>
   </data>
   <data name="WarningNoEntriesInFile" xml:space="preserve">
-    <value>Waarskuwing: Geen inskrywings is in lêer {0} gevind nie.</value>
+    <value>Զգուշացում. {0} ֆայլում գրառումներ չեն գտնվել:</value>
   </data>
 </root>

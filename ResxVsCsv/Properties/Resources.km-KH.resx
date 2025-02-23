@@ -118,43 +118,43 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CopyrightMessage" xml:space="preserve">
-    <value>Kopiereg © 2025 </value>
+    <value>រក្សាសិទ្ធិ © 2025 </value>
   </data>
   <data name="ErrorWhileTranslating" xml:space="preserve">
-    <value>Kon nie {0} vertaal nie</value>
+    <value>កំហុសក្នុងការបកប្រែ {0}</value>
   </data>
   <data name="ForConversionToCsv" xml:space="preserve">
-    <value>Om te skakel na CSV: </value>
+    <value>ដើម្បីបំប្លែងទៅជា CSV៖ </value>
   </data>
   <data name="ForTranslation" xml:space="preserve">
-    <value>Vir vertaling: </value>
+    <value>សម្រាប់ការបកប្រែ៖ </value>
   </data>
   <data name="ForTranslationWithArgos" xml:space="preserve">
-    <value>Vir vertaling met argos: </value>
+    <value>ដើម្បីបកប្រែជាមួយ argos: </value>
   </data>
   <data name="ForTranslationWithLibreTranslate" xml:space="preserve">
-    <value>Vir vertaling met LibreTranslate: </value>
+    <value>ដើម្បីបកប្រែជាមួយ LibreTranslate៖ </value>
   </data>
   <data name="ForUpdatingResxFiles" xml:space="preserve">
-    <value>Vir die opdatering van .Resx-lêers: </value>
+    <value>ដើម្បីធ្វើបច្ចុប្បន្នភាពឯកសារ .Resx៖ </value>
   </data>
   <data name="GeneratedByAi" xml:space="preserve">
-    <value>Gegenereer deur KI</value>
+    <value>បង្កើតឡើងដោយ AI</value>
   </data>
   <data name="LicenseText" xml:space="preserve">
-    <value>Toestemming word hiermee gratis verleen aan enige persoon wat 'n kopie van hierdie sagteware en gepaardgaande dokumentasielêers (die "sagteware") bekom, om sonder beperking met die sagteware te handel, insluitend sonder beperking die regte om te gebruik, kopieer, wysig, saam te voeg, publiseer, versprei, sublisensieer en/of verkoop kopieë van die sagteware, en om persone toe te laat aan wie die sagteware dit onderhewig is aan die volgende voorwaardes:
+    <value>ការអនុញ្ញាតត្រូវបានផ្តល់ដោយឥតគិតថ្លៃដល់បុគ្គលណាម្នាក់ដែលទទួលបានច្បាប់ចម្លងនៃកម្មវិធីនេះ និងឯកសារឯកសារដែលពាក់ព័ន្ធ ("កម្មវិធី") ដើម្បីដោះស្រាយនៅក្នុងកម្មវិធីដោយគ្មានការរឹតត្បិត រួមទាំងដោយគ្មានការកំណត់សិទ្ធិក្នុងការប្រើប្រាស់ ចម្លង កែប្រែ បញ្ចូលចូលគ្នា បោះផ្សាយ ចែកចាយ អាជ្ញាប័ណ្ណរង និង/ឬលក់ច្បាប់ចម្លងនៃកម្មវិធី និងអនុញ្ញាតិឱ្យបុគ្គលណាដែលអនុវត្តលក្ខខណ្ឌដូចតទៅនេះ៖ ផ្តល់ជូន
 
-Bogenoemde kopieregkennisgewing en hierdie toestemmingskennisgewing sal by alle kopieë of wesenlike gedeeltes van die sagteware ingesluit word.
+ការជូនដំណឹងអំពីការរក្សាសិទ្ធិខាងលើ និងការជូនដំណឹងអំពីការអនុញ្ញាតនេះ នឹងត្រូវបញ្ចូលទៅក្នុងច្បាប់ចម្លងទាំងអស់ ឬផ្នែកសំខាន់ៗនៃកម្មវិធី។
 
-DIE SAGTEWARE WORD "SOOS IS" VERSKAF, SONDER WAARBORG VAN ENIGE AARD, UITDRUKKELIJK OF geïmpliseer, INSLUITEND MAAR NIE BEPERK TOT DIE WAARBORGE VAN VERHANDELBAARHEID, GESKIKTHEID VIR 'N SPESIFIEKE DOEL EN NIE-SKENNING. IN GEEN GEVAL SAL DIE OUTEURS OF KOPIEREGHOUERS AANSPREEKLIK WEES VIR ENIGE EIS, SKADE OF ANDER AANSPREEKLIKHEID, HETSY IN 'N OPDRAG VAN KONTRAK, OORWEGING OF ANDERS, WAT VOORTKOM UIT, UIT OF IN VERBAND MET DIE ANDER SAGTEWARE.</value>
+សូហ្វវែរត្រូវបានផ្តល់ជូន "ដូចដែល" ដោយគ្មានការធានានៃប្រភេទណាមួយ បង្ហាញ ឬបង្កប់ន័យ រួមទាំង ប៉ុន្តែមិនកំណត់ចំពោះការធានានៃការធ្វើពាណិជ្ជកម្ម ភាពសមស្របសម្រាប់គោលបំណងជាក់លាក់ និងគ្មានដែនកំណត់។ គ្មានករណីណាមួយដែលអ្នកនិពន្ធ ឬអ្នកកាន់កាប់សិទ្ធិថតចម្លងត្រូវទទួលខុសត្រូវចំពោះការទាមទារ ការខូចខាត ឬការទទួលខុសត្រូវផ្សេងទៀត មិនថានៅក្នុងសកម្មភាពនៃកិច្ចសន្យា ការទារុណកម្ម ឬផ្សេងទៀត កើតឡើងពី ខាងក្រៅ ឬនៅពេលក្រោយក៏ដោយ កិច្ចព្រមព្រៀងផ្សេងទៀតនៅក្នុងកម្មវិធី។</value>
   </data>
   <data name="TranslatedCultureString" xml:space="preserve">
-    <value>Dit is vertaal {0}</value>
+    <value>វាត្រូវបានបកប្រែ {0}</value>
   </data>
   <data name="WarningLoadingEntriesFromFileFailed" xml:space="preserve">
-    <value>Waarskuwing: Kon nie inskrywings van die volgende lêer af laai nie: {0}</value>
+    <value>ការព្រមាន៖ បរាជ័យក្នុងការផ្ទុកធាតុពីឯកសារខាងក្រោម៖ {0}</value>
   </data>
   <data name="WarningNoEntriesInFile" xml:space="preserve">
-    <value>Waarskuwing: Geen inskrywings is in lêer {0} gevind nie.</value>
+    <value>ការព្រមាន៖ រកមិនឃើញធាតុនៅក្នុងឯកសារ {0} ទេ។</value>
   </data>
 </root>

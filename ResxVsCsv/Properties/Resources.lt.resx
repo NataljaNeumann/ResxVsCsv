@@ -118,43 +118,43 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CopyrightMessage" xml:space="preserve">
-    <value>Kopiereg © 2025 </value>
+    <value>Autorių teisės © 2025 </value>
   </data>
   <data name="ErrorWhileTranslating" xml:space="preserve">
-    <value>Kon nie {0} vertaal nie</value>
+    <value>Klaida verčiant {0}</value>
   </data>
   <data name="ForConversionToCsv" xml:space="preserve">
-    <value>Om te skakel na CSV: </value>
+    <value>Norėdami konvertuoti į CSV: </value>
   </data>
   <data name="ForTranslation" xml:space="preserve">
-    <value>Vir vertaling: </value>
+    <value>Dėl vertimo: </value>
   </data>
   <data name="ForTranslationWithArgos" xml:space="preserve">
-    <value>Vir vertaling met argos: </value>
+    <value>Norėdami išversti su argos: </value>
   </data>
   <data name="ForTranslationWithLibreTranslate" xml:space="preserve">
-    <value>Vir vertaling met LibreTranslate: </value>
+    <value>Norėdami išversti su LibreTranslate: </value>
   </data>
   <data name="ForUpdatingResxFiles" xml:space="preserve">
-    <value>Vir die opdatering van .Resx-lêers: </value>
+    <value>Norėdami atnaujinti .Resx failus: </value>
   </data>
   <data name="GeneratedByAi" xml:space="preserve">
-    <value>Gegenereer deur KI</value>
+    <value>Sukurta AI</value>
   </data>
   <data name="LicenseText" xml:space="preserve">
-    <value>Toestemming word hiermee gratis verleen aan enige persoon wat 'n kopie van hierdie sagteware en gepaardgaande dokumentasielêers (die "sagteware") bekom, om sonder beperking met die sagteware te handel, insluitend sonder beperking die regte om te gebruik, kopieer, wysig, saam te voeg, publiseer, versprei, sublisensieer en/of verkoop kopieë van die sagteware, en om persone toe te laat aan wie die sagteware dit onderhewig is aan die volgende voorwaardes:
+    <value>Bet kuriam asmeniui, įsigijusiam šios programinės įrangos kopiją ir susijusius dokumentacijos failus (toliau – Programinė įranga), suteikiamas nemokamas leidimas be apribojimų prekiauti Programine įranga, įskaitant be apribojimų teises naudoti, kopijuoti, modifikuoti, sujungti, publikuoti, platinti, sublicencijuoti ir (arba) parduoti Programinės įrangos kopijas, ir leisti asmenims, kuriems ši programinė įranga yra suteikta, tai daryti:
 
-Bogenoemde kopieregkennisgewing en hierdie toestemmingskennisgewing sal by alle kopieë of wesenlike gedeeltes van die sagteware ingesluit word.
+Aukščiau pateiktas pranešimas apie autorių teises ir šis pranešimas apie leidimą turi būti įtrauktas į visas Programinės įrangos kopijas arba svarbias dalis.
 
-DIE SAGTEWARE WORD "SOOS IS" VERSKAF, SONDER WAARBORG VAN ENIGE AARD, UITDRUKKELIJK OF geïmpliseer, INSLUITEND MAAR NIE BEPERK TOT DIE WAARBORGE VAN VERHANDELBAARHEID, GESKIKTHEID VIR 'N SPESIFIEKE DOEL EN NIE-SKENNING. IN GEEN GEVAL SAL DIE OUTEURS OF KOPIEREGHOUERS AANSPREEKLIK WEES VIR ENIGE EIS, SKADE OF ANDER AANSPREEKLIKHEID, HETSY IN 'N OPDRAG VAN KONTRAK, OORWEGING OF ANDERS, WAT VOORTKOM UIT, UIT OF IN VERBAND MET DIE ANDER SAGTEWARE.</value>
+PROGRAMINĖ ĮRANGA TEIKIAMA „TOKI, KOKIA YRA“, BE JOKIŲ RŪŠIŲ, AIŠKIŲ AR NUMANOMŲ GARANTIJŲ, ĮSKAITANT, BET JOMIS, JOMIS GARANTIJAS DĖL TINKAMUMO PARDUOTI, TINKAMUMO TAM TAM TIKSLUI IR NEPAŽEIDIMO. JOKIU ATVEJU AUTORIAI AR AUTORIŲ TEISIŲ TURĖTOJAI NEATSAKO UŽ JOKIUS REIKALAVIMUS, ŽALĄ AR KITĄ ATSAKOMYBĘ, ATSIŽVELGIANT Į SUTARTIES VEIKSMUS, NESKELIMUS AR KITAIP, KELIAUSIĄ DĖL, NAUDOJIMO AR SU SU KITAIS SU JAIS PROGRAMINĖ ĮRANGA.</value>
   </data>
   <data name="TranslatedCultureString" xml:space="preserve">
-    <value>Dit is vertaal {0}</value>
+    <value>Jis buvo išverstas į {0}</value>
   </data>
   <data name="WarningLoadingEntriesFromFileFailed" xml:space="preserve">
-    <value>Waarskuwing: Kon nie inskrywings van die volgende lêer af laai nie: {0}</value>
+    <value>Įspėjimas: nepavyko įkelti įrašų iš šio failo: {0}</value>
   </data>
   <data name="WarningNoEntriesInFile" xml:space="preserve">
-    <value>Waarskuwing: Geen inskrywings is in lêer {0} gevind nie.</value>
+    <value>Įspėjimas: faile {0} įrašų nerasta.</value>
   </data>
 </root>

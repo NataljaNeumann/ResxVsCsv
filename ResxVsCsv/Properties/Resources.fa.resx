@@ -118,43 +118,51 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CopyrightMessage" xml:space="preserve">
-    <value>Kopiereg © 2025 </value>
+    <value>حق چاپ © 2025 </value>
   </data>
   <data name="ErrorWhileTranslating" xml:space="preserve">
-    <value>Kon nie {0} vertaal nie</value>
+    <value>خطا در ترجمه {0}</value>
   </data>
   <data name="ForConversionToCsv" xml:space="preserve">
-    <value>Om te skakel na CSV: </value>
+    <value>برای تبدیل به CSV:
+</value>
   </data>
   <data name="ForTranslation" xml:space="preserve">
-    <value>Vir vertaling: </value>
+    <value>برای ترجمه:
+</value>
   </data>
   <data name="ForTranslationWithArgos" xml:space="preserve">
-    <value>Vir vertaling met argos: </value>
+    <value>برای ترجمه با argos:
+</value>
   </data>
   <data name="ForTranslationWithLibreTranslate" xml:space="preserve">
-    <value>Vir vertaling met LibreTranslate: </value>
+    <value>برای ترجمه با LibreTranslate:
+</value>
   </data>
   <data name="ForUpdatingResxFiles" xml:space="preserve">
-    <value>Vir die opdatering van .Resx-lêers: </value>
+    <value>برای به روز رسانی فایل های .Resx:
+</value>
   </data>
   <data name="GeneratedByAi" xml:space="preserve">
-    <value>Gegenereer deur KI</value>
+    <value>تولید شده توسط هوش مصنوعی</value>
   </data>
   <data name="LicenseText" xml:space="preserve">
-    <value>Toestemming word hiermee gratis verleen aan enige persoon wat 'n kopie van hierdie sagteware en gepaardgaande dokumentasielêers (die "sagteware") bekom, om sonder beperking met die sagteware te handel, insluitend sonder beperking die regte om te gebruik, kopieer, wysig, saam te voeg, publiseer, versprei, sublisensieer en/of verkoop kopieë van die sagteware, en om persone toe te laat aan wie die sagteware dit onderhewig is aan die volgende voorwaardes:
+    <value>بدینوسیله به هر شخصی که نسخه‌ای از این نرم‌افزار و فایل‌های مستندات مرتبط («نرم‌افزار») را دریافت می‌کند، اجازه می‌دهد بدون محدودیت، از جمله بدون محدودیت حقوق استفاده، کپی، تغییر، ادغام، انتشار، توزیع، مجوز فرعی، و/یا فروش نسخه‌های نرم‌افزار، و به اشخاصی که شرایط زیر مشمول این نرم‌افزار می‌شود، معامله کند.
 
-Bogenoemde kopieregkennisgewing en hierdie toestemmingskennisgewing sal by alle kopieë of wesenlike gedeeltes van die sagteware ingesluit word.
+اعلامیه حق چاپ بالا و این اعلامیه مجوز باید در تمام نسخه ها یا بخش های قابل توجهی از نرم افزار گنجانده شود.
 
-DIE SAGTEWARE WORD "SOOS IS" VERSKAF, SONDER WAARBORG VAN ENIGE AARD, UITDRUKKELIJK OF geïmpliseer, INSLUITEND MAAR NIE BEPERK TOT DIE WAARBORGE VAN VERHANDELBAARHEID, GESKIKTHEID VIR 'N SPESIFIEKE DOEL EN NIE-SKENNING. IN GEEN GEVAL SAL DIE OUTEURS OF KOPIEREGHOUERS AANSPREEKLIK WEES VIR ENIGE EIS, SKADE OF ANDER AANSPREEKLIKHEID, HETSY IN 'N OPDRAG VAN KONTRAK, OORWEGING OF ANDERS, WAT VOORTKOM UIT, UIT OF IN VERBAND MET DIE ANDER SAGTEWARE.</value>
+نرم‌افزار «همان‌طور که هست»، بدون ضمانت از هر نوع، صریح یا ضمنی، شامل اما نه محدود به ضمانت‌های کالای تجاری، تناسب برای یک هدف خاص و غیر از آن، ارائه می‌شود. در هیچ موردی نویسندگان یا دارندگان حق نسخه‌برداری در قبال ادعا، خسارت یا سایر مسئولیت‌ها، اعم از اینکه در یک اقدام قراردادی، ظلم یا در غیر این صورت، ناشی از خارج از این موضوع باشد، مسئول نخواهند بود. یا سایر معاملات در نرم افزار.</value>
+  </data>
+  <data name="RightToLeft" xml:space="preserve">
+    <value>Yes</value>
   </data>
   <data name="TranslatedCultureString" xml:space="preserve">
-    <value>Dit is vertaal {0}</value>
+    <value>ترجمه شده است {0}</value>
   </data>
   <data name="WarningLoadingEntriesFromFileFailed" xml:space="preserve">
-    <value>Waarskuwing: Kon nie inskrywings van die volgende lêer af laai nie: {0}</value>
+    <value>هشدار: ورودی‌های فایل زیر بارگیری نشد: {0}</value>
   </data>
   <data name="WarningNoEntriesInFile" xml:space="preserve">
-    <value>Waarskuwing: Geen inskrywings is in lêer {0} gevind nie.</value>
+    <value>هشدار: هیچ ورودی در فایل {0} یافت نشد.</value>
   </data>
 </root>

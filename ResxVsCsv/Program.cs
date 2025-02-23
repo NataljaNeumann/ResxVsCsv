@@ -30,6 +30,7 @@ using System.Collections.Generic;
 using System.Net;
 using System.Text;
 using System.Diagnostics;
+using System.Globalization;
 
 
 namespace ResxVsCsv
@@ -67,6 +68,69 @@ namespace ResxVsCsv
             string[] aArgs
             )
         {
+#if DEBUG
+            //set test culture
+            //string strSetCulture =
+                // "af-ZA";
+                // "ar-SA";
+                // "az-AZ";
+                // "be-BY";
+                // "bg-BG";
+                // "bs-Latn-BA";
+                // "cs-CZ";
+                // "da-DK";
+                // "de-DE";
+                // "el-GR";
+                // "es-ES";
+                // "et-EE";
+                // "fa-IR";
+                // "fi-FI";
+                // "fr-FR";
+                // "he-IL";
+                // "hi-IN";
+                // "hu-HU";
+                // "hy-AM";
+                // "id-ID";
+                // "is-IS";
+                // "it-IT";
+                // "ja-JP";
+                // "ka-GE";
+                // "kk-KZ";
+                // "km-KH";
+                // "ko-KR";
+                // "ky-KG";
+                // "lt-LT";
+                // "lv-LV";
+                // "mk-MK";
+                // "mn-MN";
+                // "ms-MY";
+                // "nl-NL";
+                // "no-NO";
+                // "pa-Arab-PK";
+                // "pa-IN";
+                // "pl-PL";
+                // "ps-AF";
+                // "pt-PT";
+                // "en-US";
+                // "ro-RO";
+                // "ru-RU";
+                // "sa-IN";
+                // "sk-SK";
+                // "sl-SL";
+                // "sr-Latn-RS"; // TODO: need a fix
+                // "sv-SE";
+                // "tg-Cyrl-TJ";
+                // "th-TH";
+                // "tr-TR";
+                // "uk-UA";
+                // "uz-Latn-UZ";
+                // "vi-VN";
+                // "zh-TW";
+                // "zh-CN";
+            //System.Threading.Thread.CurrentThread.CurrentCulture = new CultureInfo(strSetCulture);
+            //System.Threading.Thread.CurrentThread.CurrentUICulture = new CultureInfo(strSetCulture);
+#endif
+ 
             try
             {
                 string strPattern = "Resources.*resx";
@@ -481,8 +545,17 @@ namespace ResxVsCsv
             string strText 
             )
         {
+            // for some languages we don't wrap the text, because it is unclear where the words start and end
+            if (!Properties.Resources.UseWordWrap.Equals("Yes", StringComparison.InvariantCultureIgnoreCase))
+            {
+                System.Console.WriteLine(strText);
+                return;
+            }
+
+            // first split the lines, if there are several lines
             if (strText.Contains("\n"))
             {
+                // then write each line, wrapped
                 foreach (string strLine in strText.Replace(Environment.NewLine, "\n").Split('\n'))
                 {
                     WriteWrappedText(strLine.TrimEnd());
@@ -490,10 +563,12 @@ namespace ResxVsCsv
             }
             else
             {
+                // get somme information about the width of the window
                 int nWindowWidth = Console.WindowWidth - 1;
-                bool bRightAligned = true || 
-                    Properties.Resources.RightToLeft.Equals("Yes", StringComparison.InvariantCultureIgnoreCase);
+                // and if we need to align the text at right, e.g. hebrew or arabic
+                bool bRightAligned = Properties.Resources.RightToLeft.Equals("Yes", StringComparison.InvariantCultureIgnoreCase);
 
+                // now process all words separately
                 string[] aWords = strText.Split(' ');
                 string strCurrentLine = "";
 
@@ -505,11 +580,18 @@ namespace ResxVsCsv
                     }
                     else
                     {
-                        if (bRightAligned  && !strCurrentLine.StartsWith("ResxVsCsv") && !strCurrentLine.StartsWith("  --"))
+
+
+                        if (bRightAligned && !strCurrentLine.StartsWith("ResxVsCsv") && !strCurrentLine.StartsWith("  --"))
                         {
+                            strCurrentLine = ReverseArabicAndHebrewText(strCurrentLine);
+
                             strCurrentLine = new string(' ', nWindowWidth - strCurrentLine.Length)
                                 + (strCurrentLine.TrimEnd());
                         }
+                        else
+                            if (bRightAligned)
+                                strCurrentLine = ReverseArabicAndHebrewParts(strCurrentLine);
 
                         Console.WriteLine(strCurrentLine);
 
@@ -517,17 +599,106 @@ namespace ResxVsCsv
                     }
                 }
 
+                // the remaining part of the string
                 if (strCurrentLine.Length > 0)
                 {
+
                     if (bRightAligned && !strCurrentLine.StartsWith("ResxVsCsv") && !strCurrentLine.StartsWith("  --"))
                     {
+                        strCurrentLine = ReverseArabicAndHebrewText(strCurrentLine);
+
                         strCurrentLine = new string(' ', nWindowWidth - strCurrentLine.Length)
                                        + (strCurrentLine.TrimEnd());
                     }
+                    else
+                        if (bRightAligned)
+                            strCurrentLine = ReverseArabicAndHebrewParts(strCurrentLine);
+
 
                     Console.WriteLine(strCurrentLine);
                 }
             }
+        }
+
+
+        //===================================================================================================
+        /// <summary>
+        /// This reverses the complete text, except non-arabic and non-hebrew parts, useful for rtl languages
+        /// </summary>
+        /// <param name="strInput">Input text</param>
+        /// <returns>Reversed text</returns>
+        //===================================================================================================
+        static string ReverseArabicAndHebrewText(string strInput)
+        {
+            // first reverse the complete line
+            char[] aChars = strInput.ToCharArray();
+            Array.Reverse(aChars);
+            for (int i=aChars.Length-1;i>=0;--i)
+                switch (aChars[i])
+                {
+                    case '(':
+                        aChars[i] = ')';
+                        break;
+                    case ')':
+                        aChars[i] = '(';
+                        break;
+                    case '/':
+                        aChars[i] = '\\';
+                        break;
+                    case '\\':
+                        aChars[i] = '/';
+                        break;
+                }
+            string strAllReversed = new string(aChars);
+
+            // now reverse non-arabic and non-hebrew back to the normal order
+            string strPattern = "[^\u0590-\u05FF\u0600-\u06FF:\\s()\\\"]+";
+            return Regex.Replace(strAllReversed, strPattern, new MatchEvaluator(ReverseMatch));
+        }
+
+
+        //===================================================================================================
+        /// <summary>
+        /// This reverses hebrew and arabic parts, useful for ltr languages
+        /// </summary>
+        /// <param name="strInput">Input text</param>
+        /// <returns>Text with reversed hebrew and arabic parts</returns>
+        //===================================================================================================
+        static string ReverseArabicAndHebrewParts(string strInput)
+        {
+            string strPattern = "[\\u0590-\\u05FF\\u0600-\\u06FF\\s,:\\.\\\"\\'\\(\\)]+";
+            return Regex.Replace(strInput, strPattern, new MatchEvaluator(ReverseMatch));
+        }
+
+
+        //===================================================================================================
+        /// <summary>
+        /// Reverses a regex match
+        /// </summary>
+        /// <param name="match"></param>
+        /// <returns></returns>
+        //===================================================================================================
+        static string ReverseMatch(Match oMatch)
+        {
+            char[] aChars = oMatch.Value.ToCharArray();
+            Array.Reverse(aChars);
+            for (int i=aChars.Length-1;i>=0;--i)
+                switch (aChars[i])
+                {
+                    case '(':
+                        aChars[i] = ')';
+                        break;
+                    case ')':
+                        aChars[i] = '(';
+                        break;
+                    case '/':
+                        aChars[i] = '\\';
+                        break;
+                    case '\\':
+                        aChars[i] = '/';
+                        break;
+                }
+            return new string(aChars);
         }
 
         //===================================================================================================

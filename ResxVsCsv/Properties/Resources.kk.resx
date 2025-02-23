@@ -118,43 +118,43 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CopyrightMessage" xml:space="preserve">
-    <value>Kopiereg © 2025 </value>
+    <value>Авторлық құқық © 2025 </value>
   </data>
   <data name="ErrorWhileTranslating" xml:space="preserve">
-    <value>Kon nie {0} vertaal nie</value>
+    <value>{0} аудару қатесі</value>
   </data>
   <data name="ForConversionToCsv" xml:space="preserve">
-    <value>Om te skakel na CSV: </value>
+    <value>CSV түрлендіру үшін: </value>
   </data>
   <data name="ForTranslation" xml:space="preserve">
-    <value>Vir vertaling: </value>
+    <value>Аударма үшін: </value>
   </data>
   <data name="ForTranslationWithArgos" xml:space="preserve">
-    <value>Vir vertaling met argos: </value>
+    <value>Аргоспен аудару үшін: </value>
   </data>
   <data name="ForTranslationWithLibreTranslate" xml:space="preserve">
-    <value>Vir vertaling met LibreTranslate: </value>
+    <value>LibreTranslate арқылы аудару үшін: </value>
   </data>
   <data name="ForUpdatingResxFiles" xml:space="preserve">
-    <value>Vir die opdatering van .Resx-lêers: </value>
+    <value>.Resx файлдарын жаңарту үшін: </value>
   </data>
   <data name="GeneratedByAi" xml:space="preserve">
-    <value>Gegenereer deur KI</value>
+    <value>Жасалған AI</value>
   </data>
   <data name="LicenseText" xml:space="preserve">
-    <value>Toestemming word hiermee gratis verleen aan enige persoon wat 'n kopie van hierdie sagteware en gepaardgaande dokumentasielêers (die "sagteware") bekom, om sonder beperking met die sagteware te handel, insluitend sonder beperking die regte om te gebruik, kopieer, wysig, saam te voeg, publiseer, versprei, sublisensieer en/of verkoop kopieë van die sagteware, en om persone toe te laat aan wie die sagteware dit onderhewig is aan die volgende voorwaardes:
+    <value>Осы арқылы осы бағдарламалық жасақтаманың көшірмесін және онымен байланысты құжаттама файлдарын («Бағдарламалық қамтамасыз ету») алатын кез келген тұлғаға Бағдарламалық жасақтаманы пайдалану, көшіру, өзгерту, біріктіру, жариялау, тарату, қосалқы лицензиялау және/немесе сату құқықтарын қоса алғанда, шектеусіз шектеусіз жұмыс істеуге және Бағдарламалық жасақтамаға келесі шарттарды орындауға рұқсат беру тегін беріледі:
 
-Bogenoemde kopieregkennisgewing en hierdie toestemmingskennisgewing sal by alle kopieë of wesenlike gedeeltes van die sagteware ingesluit word.
+Жоғарыдағы авторлық құқық ескертуі және осы рұқсат ескертуі Бағдарламалық қамтамасыз етудің барлық көшірмелеріне немесе маңызды бөліктеріне қосылуы керек.
 
-DIE SAGTEWARE WORD "SOOS IS" VERSKAF, SONDER WAARBORG VAN ENIGE AARD, UITDRUKKELIJK OF geïmpliseer, INSLUITEND MAAR NIE BEPERK TOT DIE WAARBORGE VAN VERHANDELBAARHEID, GESKIKTHEID VIR 'N SPESIFIEKE DOEL EN NIE-SKENNING. IN GEEN GEVAL SAL DIE OUTEURS OF KOPIEREGHOUERS AANSPREEKLIK WEES VIR ENIGE EIS, SKADE OF ANDER AANSPREEKLIKHEID, HETSY IN 'N OPDRAG VAN KONTRAK, OORWEGING OF ANDERS, WAT VOORTKOM UIT, UIT OF IN VERBAND MET DIE ANDER SAGTEWARE.</value>
+БАҒДАРЛАМАЛЫҚ ҚҰРАМ КЕЗ КЕЛГЕН ТҮРЛЕРДІҢ, АЙҚЫН НЕМЕСЕ ЖҰМЫСТЫ КЕПІЛДІКТЕРСІЗ, БІРАҚ САТУ КЕПІЛДЕРІМЕН, НЕГІЗГІ МАҚСАТҚА ЖӘНЕ МАҚСАТҚА ЖӘНЕ МАҚСАТҚА СӘЙКЕМДІККЕ САЙЫМДАСТЫҚТЫҢ ҚОСЫМЫНДА, БІРАҚ ШЕКТЕУЛЕГЕН КЕПІЛДІГІСІЗ «БҰЛ ҚАЛАЙ» ҚАМТАМАСЫЗ ЕТЕДІ. АВТОРЛАР НЕМЕСЕ АВТОРЛЫҚ ҚҰҚЫҚ ИЕЛЕРІ ЕШҚАНДА ЕМЕС КЕЗ КЕЛГЕН ШАҒЫМДАСТЫРУ, ЗИЯН НЕ БАСҚА ЖАУАПКЕРШІЛІК ҮШІН, КЕЛІСІМ-ШАТ ӘРЕКЕТТЕРДІҢ, ЗИЯНДАРДЫҢ НЕ БАСҚА ТӘСІЛДЕРДІҢ НЕГІЗІНДЕ, БАСҚА НЕМЕСЕ АЙТЫНДАҒАН ТУЫНДАҒЫ ЖАУАПКЕРШІЛІКТІ БОЛМАЙДЫ. НЕМЕСЕ БАҒДАРЛАМАЛЫҚ ҚҰРАЛДАҒЫ БАСҚА МӘМІЛЕЛЕР.БАҒДАРЛАМАЛЫҚ ҚҰРАМ КЕЗ КЕЛГЕН ТҮРЛЕРДІҢ, АЙҚЫН НЕМЕСЕ ЖҰМЫСТЫ КЕПІЛДІКТЕРСІЗ, БІРАҚ САТУ КЕПІЛДЕРІМЕН, НЕГІЗГІ МАҚСАТҚА ЖӘНЕ МАҚСАТҚА ЖӘНЕ МАҚСАТҚА СӘЙКЕМДІККЕ САЙЫМДАСТЫҚТЫҢ ҚОСЫМЫНДА, БІРАҚ ШЕКТЕУЛЕГЕН КЕПІЛДІГІСІЗ «БҰЛ ҚАЛАЙ» ҚАМТАМАСЫЗ ЕТЕДІ. АВТОРЛАР НЕМЕСЕ АВТОРЛЫҚ ҚҰҚЫҚ ИЕЛЕРІ ЕШҚАНДА ЕМЕС КЕЗ КЕЛГЕН ШАҒЫМДАСТЫРУ, ЗИЯН НЕ БАСҚА ЖАУАПКЕРШІЛІК ҮШІН, КЕЛІСІМ-ШАТ ӘРЕКЕТТЕРДІҢ, ЗИЯНДАРДЫҢ НЕ БАСҚА ТӘСІЛДЕРДІҢ НЕГІЗІНДЕ, БАСҚА НЕМЕСЕ АЙТЫНДАҒАН ТУЫНДАҒЫ ЖАУАПКЕРШІЛІКТІ БОЛМАЙДЫ. НЕМЕСЕ БАҒДАРЛАМАЛЫҚ ҚҰРАЛДАҒЫ БАСҚА МӘМІЛЕЛЕР.</value>
   </data>
   <data name="TranslatedCultureString" xml:space="preserve">
-    <value>Dit is vertaal {0}</value>
+    <value>Ол аударылды: {0}</value>
   </data>
   <data name="WarningLoadingEntriesFromFileFailed" xml:space="preserve">
-    <value>Waarskuwing: Kon nie inskrywings van die volgende lêer af laai nie: {0}</value>
+    <value>Ескерту: келесі файлдан жазбалар жүктелмеді: {0}</value>
   </data>
   <data name="WarningNoEntriesInFile" xml:space="preserve">
-    <value>Waarskuwing: Geen inskrywings is in lêer {0} gevind nie.</value>
+    <value>Ескерту: {0} файлында ешбір жазба табылмады.</value>
   </data>
 </root>

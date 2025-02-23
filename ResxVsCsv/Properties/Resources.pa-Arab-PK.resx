@@ -118,43 +118,51 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CopyrightMessage" xml:space="preserve">
-    <value>Kopiereg © 2025 </value>
+    <value>کاپی رائٹ © 2025 </value>
   </data>
   <data name="ErrorWhileTranslating" xml:space="preserve">
-    <value>Kon nie {0} vertaal nie</value>
+    <value>{0} دا ترجمہ کرن چ غلطی ہوئی</value>
   </data>
   <data name="ForConversionToCsv" xml:space="preserve">
-    <value>Om te skakel na CSV: </value>
+    <value>سی ایس وی چ تبدیل کرن لئی:
+</value>
   </data>
   <data name="ForTranslation" xml:space="preserve">
-    <value>Vir vertaling: </value>
+    <value>ترجمے لئی:
+</value>
   </data>
   <data name="ForTranslationWithArgos" xml:space="preserve">
-    <value>Vir vertaling met argos: </value>
+    <value>آرگوس دے نال ترجمہ کرن لئی:
+</value>
   </data>
   <data name="ForTranslationWithLibreTranslate" xml:space="preserve">
-    <value>Vir vertaling met LibreTranslate: </value>
+    <value>LibreTranslate نال ترجمہ کرن لئی:
+</value>
   </data>
   <data name="ForUpdatingResxFiles" xml:space="preserve">
-    <value>Vir die opdatering van .Resx-lêers: </value>
+    <value>.Resx فائلاں نو اپ ڈیٹ کرن دے لی:
+</value>
   </data>
   <data name="GeneratedByAi" xml:space="preserve">
-    <value>Gegenereer deur KI</value>
+    <value>اے آئی دے ذریعہ تیار کیتا گیا</value>
   </data>
   <data name="LicenseText" xml:space="preserve">
-    <value>Toestemming word hiermee gratis verleen aan enige persoon wat 'n kopie van hierdie sagteware en gepaardgaande dokumentasielêers (die "sagteware") bekom, om sonder beperking met die sagteware te handel, insluitend sonder beperking die regte om te gebruik, kopieer, wysig, saam te voeg, publiseer, versprei, sublisensieer en/of verkoop kopieë van die sagteware, en om persone toe te laat aan wie die sagteware dit onderhewig is aan die volgende voorwaardes:
+    <value>اس سافٹ ویئر تے متعلقہ دستاویزات فائلاں ("سافٹ ویئر") دی کاپی حاصل کرن آلے کسی وی شخص نو اجازت دتی جاندی اے، بغیر کسے پابندی دے سافٹ ویئر نال نمٹن لئی، بشمول بغیر کسی حد دے سافٹ ویئر دی کاپیاں استعمال کرن، کاپی کرن، ترمیم کرن، ضم کرن، شائع کرن، تقسیم کرن، ذیلی لائسنس دین، تے / یا فروخت کرن دے حقوق، تے انہاں لوکاں نو اجازت دین لئی جہڑے سافٹ ویئر دے تابع ہن، مندرجہ ذیل شرائط دے مطابق:
 
-Bogenoemde kopieregkennisgewing en hierdie toestemmingskennisgewing sal by alle kopieë of wesenlike gedeeltes van die sagteware ingesluit word.
+مندرجہ بالا کاپی رائٹ نوٹس تے ایہ اجازت نامہ سافٹ ویئر دیاں ساریاں کاپیاں یا کافی حصیاں وچ شامل کیتا جائے گا۔
 
-DIE SAGTEWARE WORD "SOOS IS" VERSKAF, SONDER WAARBORG VAN ENIGE AARD, UITDRUKKELIJK OF geïmpliseer, INSLUITEND MAAR NIE BEPERK TOT DIE WAARBORGE VAN VERHANDELBAARHEID, GESKIKTHEID VIR 'N SPESIFIEKE DOEL EN NIE-SKENNING. IN GEEN GEVAL SAL DIE OUTEURS OF KOPIEREGHOUERS AANSPREEKLIK WEES VIR ENIGE EIS, SKADE OF ANDER AANSPREEKLIKHEID, HETSY IN 'N OPDRAG VAN KONTRAK, OORWEGING OF ANDERS, WAT VOORTKOM UIT, UIT OF IN VERBAND MET DIE ANDER SAGTEWARE.</value>
+سافٹ ویئر "جیویں اے" فراہم کیتا جاندا اے، بغیر کسی قسم دی وارنٹی دے، واضح یا ضمنی، بشمول لیکن تجارتی صلاحیت دی وارنٹیاں تک محدود نئیں، کسے خاص مقصد لئی فٹنس تے کوئی خاص مقصد تک محدود نئیں۔ کسے وی صورت وچ مصنفین یا کاپی رائٹ ہولڈر کسی وی دعوے، نقصانات یا دوجی ذمہ داری دے ذمہ دار نئیں ہون گے، چاہے اوہ معاہدے، ٹورٹ یا دوجی صورت وچ، اس توں پیدا ہون آلے، اس طرح دے اندر، اس طرح توں پیدا ہون آلا ہووے۔ سافٹ ویئر وچ ورتن یا دوجے لین دین۔</value>
+  </data>
+  <data name="RightToLeft" xml:space="preserve">
+    <value>Yes</value>
   </data>
   <data name="TranslatedCultureString" xml:space="preserve">
-    <value>Dit is vertaal {0}</value>
+    <value>ایہدا ترجمہ کیتا گیا اے {0}</value>
   </data>
   <data name="WarningLoadingEntriesFromFileFailed" xml:space="preserve">
-    <value>Waarskuwing: Kon nie inskrywings van die volgende lêer af laai nie: {0}</value>
+    <value>انتباہ: درج ذیل فائل چوں اندراجات لوڈ کرن چ ناکامی ہوئی: {0}</value>
   </data>
   <data name="WarningNoEntriesInFile" xml:space="preserve">
-    <value>Waarskuwing: Geen inskrywings is in lêer {0} gevind nie.</value>
+    <value>خبردار: فائل {0} وچ کوئی اندراج نئیں لبیا۔</value>
   </data>
 </root>
