@@ -56,6 +56,10 @@ namespace ResxVsCsv
             MimeType
         }
 
+        //===================================================================================================
+        /// <summary>
+        /// Special comment that indicates that the value is missing (not empty)
+        /// </summary>
         const string c_strSpecialComment = "Please fill in the needed translation";
 
         //===================================================================================================
@@ -566,7 +570,8 @@ namespace ResxVsCsv
                 // get somme information about the width of the window
                 int nWindowWidth = Console.WindowWidth - 1;
                 // and if we need to align the text at right, e.g. hebrew or arabic
-                bool bRightAligned = Properties.Resources.RightToLeft.Equals("Yes", StringComparison.InvariantCultureIgnoreCase);
+                bool bRightToLeft = Properties.Resources.RightToLeft.Equals("Yes", 
+                    StringComparison.InvariantCultureIgnoreCase);
 
                 // now process all words separately
                 string[] aWords = strText.Split(' ');
@@ -582,7 +587,8 @@ namespace ResxVsCsv
                     {
 
 
-                        if (bRightAligned && !strCurrentLine.StartsWith("ResxVsCsv") && !strCurrentLine.StartsWith("  --"))
+                        if (bRightToLeft && !strCurrentLine.StartsWith("ResxVsCsv") && 
+                            !strCurrentLine.StartsWith("  --"))
                         {
                             strCurrentLine = ReverseArabicAndHebrewText(strCurrentLine);
 
@@ -590,7 +596,7 @@ namespace ResxVsCsv
                                 + (strCurrentLine.TrimEnd());
                         }
                         else
-                            if (bRightAligned)
+                            if (bRightToLeft)
                                 strCurrentLine = ReverseArabicAndHebrewParts(strCurrentLine);
 
                         Console.WriteLine(strCurrentLine);
@@ -603,7 +609,7 @@ namespace ResxVsCsv
                 if (strCurrentLine.Length > 0)
                 {
 
-                    if (bRightAligned && !strCurrentLine.StartsWith("ResxVsCsv") && !strCurrentLine.StartsWith("  --"))
+                    if (bRightToLeft && !strCurrentLine.StartsWith("ResxVsCsv") && !strCurrentLine.StartsWith("  --"))
                     {
                         strCurrentLine = ReverseArabicAndHebrewText(strCurrentLine);
 
@@ -611,7 +617,7 @@ namespace ResxVsCsv
                                        + (strCurrentLine.TrimEnd());
                     }
                     else
-                        if (bRightAligned)
+                        if (bRightToLeft)
                             strCurrentLine = ReverseArabicAndHebrewParts(strCurrentLine);
 
 
