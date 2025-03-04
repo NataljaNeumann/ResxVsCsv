@@ -218,7 +218,11 @@ namespace ResxVsCsv
                             goto case "--licence";
                         case "--licence":
                         case "--license":
-                            WriteWrappedText("ResxVsCsv v0.9 " + Properties.Resources.CopyrightMessage + "NataljaNeumann@gmx.de");
+                            Version oVersion = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
+                            WriteWrappedText(
+                                string.Format("ResxVsCsv v{0}.{1} {2} {3}", 
+                                oVersion.Major, oVersion.Minor, 
+                                Properties.Resources.CopyrightMessage, "NataljaNeumann@gmx.de"));
                             System.Console.WriteLine();
                             WriteWrappedText(Properties.Resources.LicenseText);
                             System.Console.WriteLine();
