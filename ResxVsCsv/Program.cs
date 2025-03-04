@@ -206,6 +206,16 @@ namespace ResxVsCsv
                         case "--help":
                         case "-?":
                         case "/?":
+                            try
+                            {
+                                System.Diagnostics.Process.Start(System.IO.Path.Combine(
+                                    AppDomain.CurrentDomain.BaseDirectory,
+                                    "Readme.html"));
+                            }
+                            catch
+                            {
+                            }
+                            goto case "--licence";
                         case "--licence":
                         case "--license":
                             WriteWrappedText("ResxVsCsv v0.9 " + Properties.Resources.CopyrightMessage + "NataljaNeumann@gmx.de");
