@@ -1,15 +1,26 @@
-﻿# ResxVsCsv
-  
-[Latest Sources and Releases](https://github.com/NataljaNeumann/ResxVsCsv)  
-  
-  
-![ResxVsCsv2](https://github.com/user-attachments/assets/03b7bdce-d227-4eb3-a507-f9941f51f6d4)  
+﻿‎
 
-‎[English](#en), [Français](#fr), [Español](#es), [Português](#pt), [Italiano](#it), [Deutsch](#de), [По русски](#ru), [Polski](#pl), [Στα ελληνικά](#gr), 
-[Nederlands](#nl), [Dansk](#da), [Suomeksi](#fi), [Svenska](#sv), [Türkçe](#tr), [中文文本](#chs), [中文文字](#cht), [日本語](#ja), [한국인](#ko), [भारतीय में](#hi), [باللغة العربية](#ar), [עִברִית](#he)
+
+
+
+Resx Vs. Csv
+______________________________________________________________________________________________________________________
+
+Latest Sources and Releases: https://github.com/NataljaNeumann/ResxVsCsv
+
+
+> https://github.com/user-attachments/assets/03b7bdce-d227-4eb3-a507-f9941f51f6d4
+
+‎English.., Français.., Español.., Português.., Italiano.., Deutsch.., По русски.., Polski.., Στα ελληνικά.., 
+Nederlands.., Dansk.., Suomeksi.., Svenska.., Türkçe.., 中文文本.., 中文文字.., 日本語.., 한국인.., भारतीय में.., باللغة العربية.., עִברִית..
 ‎
-# English
-<a name="en"></a>
+
+
+
+
+English
+______________________________________________________________________________________________________________________
+
 ‎This project transforms RESX files to CSV and back. Also some functionality is added for automatic translations of strings.
 
 ‎Parameters:
@@ -39,11 +50,16 @@
 ‎For translation with LibreTranslate: ResxVsCsv --directory <dir> --pattern <pattern> --translator libretranslate --libreurl <url> [--apikey <key>] [--sortbyname yes]
 
 ‎For updating RESX files: ResxVsCsv --directory <dir> --toresx <resources.csv>
-  
-[Do you need support?](https://github.com/NataljaNeumann/ResxVsCsv/issues)  
-[Wiki](https://github.com/NataljaNeumann/ResxVsCsv/wiki)‎
-# Français
-<a name="fr"></a>
+
+Do you need support?: https://github.com/NataljaNeumann/ResxVsCsv/issues
+Wiki: https://github.com/NataljaNeumann/ResxVsCsv/wiki‎
+
+
+
+
+Français
+______________________________________________________________________________________________________________________
+
 ‎Ce projet transforme les fichiers RESX en CSV et inversement. Certaines fonctionnalités sont également ajoutées pour les traductions automatiques de chaînes.
 
 ‎Paramètres:
@@ -73,11 +89,16 @@
 ‎Pour la traduction avec «LibreTranslate»: ResxVsCsv --directory <dir> --pattern <pattern> --translator libretranslate --libreurl <url> [--apikey <key>] [--sortbyname yes]
 
 ‎Pour mettre à jour les fichiers RESX: ResxVsCsv --directory <dir> --toresx <resources.csv>
-  
-[Avez-vous besoin de soutien?](https://github.com/NataljaNeumann/ResxVsCsv/issues)  
-[Wikia](https://github.com/NataljaNeumann/ResxVsCsv/wiki)‎
-# Español
-<a name="es"></a>
+
+Avez-vous besoin de soutien?: https://github.com/NataljaNeumann/ResxVsCsv/issues
+Wikia: https://github.com/NataljaNeumann/ResxVsCsv/wiki‎
+
+
+
+
+Español
+______________________________________________________________________________________________________________________
+
 ‎Este proyecto transforma archivos RESX a CSV y viceversa. También se agrega alguna funcionalidad para traducciones automáticas de cadenas.
 
 ‎Parámetros:
@@ -107,11 +128,16 @@
 ‎Para traducir con "LibreTranslate": ResxVsCsv --directory <dir> --pattern <pattern> --translator libretranslate --libreurl <url> [--apikey <key>] [--sortbyname yes]
 
 ‎Para actualizar archivos RESX: ResxVsCsv --directory <dir> --toresx <resources.csv>
-  
-[¿Necesitas apoyo?](https://github.com/NataljaNeumann/ResxVsCsv/issues)  
-[Wiki](https://github.com/NataljaNeumann/ResxVsCsv/wiki)‎
-# Português
-<a name="pt"></a>
+
+¿Necesitas apoyo?: https://github.com/NataljaNeumann/ResxVsCsv/issues
+Wiki: https://github.com/NataljaNeumann/ResxVsCsv/wiki‎
+
+
+
+
+Português
+______________________________________________________________________________________________________________________
+
 ‎Este projeto transforma arquivos RESX em CSV e vice-versa. Também foram adicionadas algumas funcionalidades para traduções automáticas de strings.
 
 ‎Parâmetros:
@@ -141,11 +167,16 @@
 ‎FPara tradução com "LibreTranslate": ResxVsCsv --directory <dir> --pattern <pattern> --translator libretranslate --libreurl <url> [--apikey <key>] [--sortbyname yes]
 
 ‎Para atualizar arquivos RESX: ResxVsCsv --directory <dir> --toresx <resources.csv>
-  
-[Você precisa de suporte?](https://github.com/NataljaNeumann/ResxVsCsv/issues)  
-[Wiki](https://github.com/NataljaNeumann/ResxVsCsv/wiki)‎
-# Italiano
-<a name="it"></a>
+
+Você precisa de suporte?: https://github.com/NataljaNeumann/ResxVsCsv/issues
+Wiki: https://github.com/NataljaNeumann/ResxVsCsv/wiki‎
+
+
+
+
+Italiano
+______________________________________________________________________________________________________________________
+
 ‎Questo progetto trasforma i file RESX in CSV e viceversa. Inoltre vengono aggiunte alcune funzionalità per la traduzione automatica delle stringhe.
 
 ‎Parametri:
@@ -175,11 +206,16 @@
 ‎Per la traduzione con "LibreTranslate": ResxVsCsv --directory <dir> --pattern <pattern> --translator libretranslate --libreurl <url> [--apikey <key>] [--sortbyname yes]
 
 ‎Per aggiornare i file RESX: ResxVsCsv --directory <dir> --toresx <resources.csv>
-  
-[Hai bisogno di supporto?](https://github.com/NataljaNeumann/ResxVsCsv/issues)  
-[Wiki](https://github.com/NataljaNeumann/ResxVsCsv/wiki)‎
-# Deutsch
-<a name="de"></a>
+
+Hai bisogno di supporto?: https://github.com/NataljaNeumann/ResxVsCsv/issues
+Wiki: https://github.com/NataljaNeumann/ResxVsCsv/wiki‎
+
+
+
+
+Deutsch
+______________________________________________________________________________________________________________________
+
 ‎Dieses Projekt wandelt RESX-Dateien in CSV und zurück um. Außerdem wurden einige Funktionen für die automatische Übersetzung von Zeichenfolgen hinzugefügt.
 
 ‎Parameter:
@@ -209,11 +245,16 @@
 ‎Zur Übersetzung mit „LibreTranslate“: ResxVsCsv --directory <dir> --pattern <pattern> --translator libretranslate --libreurl <url> [--apikey <key>] [--sortbyname yes]
 
 ‎Zum Aktualisieren von RESX-Dateien: ResxVsCsv --directory <dir> --toresx <resources.csv>
-  
-[Brauchen Sie Unterstützung?](https://github.com/NataljaNeumann/ResxVsCsv/issues)  
-[Wiki](https://github.com/NataljaNeumann/ResxVsCsv/wiki)‎
-# По русски
-<a name="ru"></a>
+
+Brauchen Sie Unterstützung?: https://github.com/NataljaNeumann/ResxVsCsv/issues
+Wiki: https://github.com/NataljaNeumann/ResxVsCsv/wiki‎
+
+
+
+
+По русски
+______________________________________________________________________________________________________________________
+
 ‎Этот проект преобразует файлы RESX в CSV и обратно. Также добавлен функционал для автоматического перевода строк.
 
 ‎Параметры:
@@ -243,11 +284,16 @@
 ‎Для перевода с помощью «LibreTranslate»: ResxVsCsv --directory <dir> --pattern <pattern> --translator libretranslate --libreurl <url> [--apikey <key>] [--sortbyname yes]
 
 ‎Для обновления файлов RESX: ResxVsCsv --directory <dir> --toresx <resources.csv>
-  
-[Вам нужна поддержка?](https://github.com/NataljaNeumann/ResxVsCsv/issues)  
-[Вики](https://github.com/NataljaNeumann/ResxVsCsv/wiki)‎
-# Polski
-<a name="pl"></a>
+
+Вам нужна поддержка?: https://github.com/NataljaNeumann/ResxVsCsv/issues
+Вики: https://github.com/NataljaNeumann/ResxVsCsv/wiki‎
+
+
+
+
+Polski
+______________________________________________________________________________________________________________________
+
 ‎Ten projekt przekształca pliki RESX do formatu CSV i odwrotnie. Dodano także pewną funkcjonalność automatycznego tłumaczenia ciągów znaków.
 
 ‎Parametry:
@@ -277,11 +323,16 @@
 ‎Do tłumaczenia za pomocą „LibreTranslate”: ResxVsCsv --directory <dir> --pattern <pattern> --translator libretranslate --libreurl <url> [--apikey <key>] [--sortbyname yes]
 
 ‎Aby zaktualizować pliki RESX: ResxVsCsv --directory <dir> --toresx <resources.csv>
-  
-[Czy potrzebujesz wsparcia?](https://github.com/NataljaNeumann/ResxVsCsv/issues)  
-[Вики](https://github.com/NataljaNeumann/ResxVsCsv/wiki)‎
-# Στα ελληνικά
-<a name="gr"></a>
+
+Czy potrzebujesz wsparcia?: https://github.com/NataljaNeumann/ResxVsCsv/issues
+Вики: https://github.com/NataljaNeumann/ResxVsCsv/wiki‎
+
+
+
+
+Στα ελληνικά
+______________________________________________________________________________________________________________________
+
 ‎Αυτό το έργο μετατρέπει αρχεία RESX σε CSV και πίσω. Επίσης, προστίθεται κάποια λειτουργικότητα για αυτόματες μεταφράσεις συμβολοσειρών.
 
 ‎Παράμετροι:
@@ -311,11 +362,16 @@
 ‎Για μετάφραση με το "LibreTranslate": ResxVsCsv --directory <dir> --pattern <pattern> --translator libretranslate --libreurl <url> [--apikey <key>] [--sortbyname yes]
 
 ‎Για ενημέρωση αρχείων RESX: ResxVsCsv --directory <dir> --toresx <resources.csv>
-  
-[Χρειάζεστε υποστήριξη;](https://github.com/NataljaNeumann/ResxVsCsv/issues)  
-[Wiki](https://github.com/NataljaNeumann/ResxVsCsv/wiki)‎
-# Nederlands
-<a name="nl"></a>
+
+Χρειάζεστε υποστήριξη;: https://github.com/NataljaNeumann/ResxVsCsv/issues
+Wiki: https://github.com/NataljaNeumann/ResxVsCsv/wiki‎
+
+
+
+
+Nederlands
+______________________________________________________________________________________________________________________
+
 ‎Dit project transformeert RESX-bestanden naar CSV en terug. Ook is er functionaliteit toegevoegd voor automatische vertalingen van strings.
 
 ‎Parameters:
@@ -345,11 +401,16 @@
 ‎Voor vertaling met "LibreTranslate": ResxVsCsv --directory <dir> --pattern <pattern> --translator libretranslate --libreurl <url> [--apikey <key>] [--sortbyname yes]
 
 ‎Voor het bijwerken van RESX-bestanden: ResxVsCsv --directory <dir> --toresx <resources.csv>
-  
-[Heeft u ondersteuning nodig?](https://github.com/NataljaNeumann/ResxVsCsv/issues)  
-[Wiki](https://github.com/NataljaNeumann/ResxVsCsv/wiki)‎
-# Dansk
-<a name="da"></a>
+
+Heeft u ondersteuning nodig?: https://github.com/NataljaNeumann/ResxVsCsv/issues
+Wiki: https://github.com/NataljaNeumann/ResxVsCsv/wiki‎
+
+
+
+
+Dansk
+______________________________________________________________________________________________________________________
+
 ‎Dette projekt transformerer RESX-filer til CSV og tilbage. Der er også tilføjet nogle funktioner til automatiske oversættelser af strenge.
 
 ‎Parametre:
@@ -379,11 +440,16 @@
 ‎Til oversættelse med "LibreTranslate": ResxVsCsv --directory <dir> --pattern <pattern> --translator libretranslate --libreurl <url> [--apikey <key>] [--sortbyname yes]
 
 ‎Til opdatering af RESX-filer: ResxVsCsv --directory <dir> --toresx <resources.csv>
-  
-[Har du brug for støtte?](https://github.com/NataljaNeumann/ResxVsCsv/issues)  
-[Wiki](https://github.com/NataljaNeumann/ResxVsCsv/wiki)‎
-# Suomeksi
-<a name="fi"></a>
+
+Har du brug for støtte?: https://github.com/NataljaNeumann/ResxVsCsv/issues
+Wiki: https://github.com/NataljaNeumann/ResxVsCsv/wiki‎
+
+
+
+
+Suomeksi
+______________________________________________________________________________________________________________________
+
 ‎Tämä projekti muuttaa RESX-tiedostot CSV-muotoon ja takaisin. Myös joitakin toimintoja on lisätty merkkijonojen automaattista kääntämistä varten.
 
 ‎Parametrit:
@@ -413,11 +479,16 @@
 ‎Käännös sanalla "LibreTranslate": ResxVsCsv --directory <dir> --pattern <pattern> --translator libretranslate --libreurl <url> [--apikey <key>] [--sortbyname yes]
 
 ‎RESX-tiedostojen päivittäminen: ResxVsCsv --directory <dir> --toresx <resources.csv>
-  
-[Tarvitsetko tukea?](https://github.com/NataljaNeumann/ResxVsCsv/issues)  
-[Wiki](https://github.com/NataljaNeumann/ResxVsCsv/wiki)‎
-# Svenska
-<a name="sv"></a>
+
+Tarvitsetko tukea?: https://github.com/NataljaNeumann/ResxVsCsv/issues
+Wiki: https://github.com/NataljaNeumann/ResxVsCsv/wiki‎
+
+
+
+
+Svenska
+______________________________________________________________________________________________________________________
+
 ‎Detta projekt omvandlar RESX-filer till CSV och tillbaka. Även viss funktionalitet läggs till för automatisk översättning av strängar.
 
 ‎Parametrar:
@@ -447,11 +518,16 @@
 ‎För översättning med "LibreTranslate": ResxVsCsv --directory <dir> --pattern <pattern> --translator libretranslate --libreurl <url> [--apikey <key>] [--sortbyname yes]
 
 ‎För att uppdatera RESX-filer: ResxVsCsv --directory <dir> --toresx <resources.csv>
-  
-[Behöver du stöd?](https://github.com/NataljaNeumann/ResxVsCsv/issues)  
-[Wiki](https://github.com/NataljaNeumann/ResxVsCsv/wiki)‎
-# Türkçe
-<a name="tr"></a>
+
+Behöver du stöd?: https://github.com/NataljaNeumann/ResxVsCsv/issues
+Wiki: https://github.com/NataljaNeumann/ResxVsCsv/wiki‎
+
+
+
+
+Türkçe
+______________________________________________________________________________________________________________________
+
 ‎Bu proje RESX dosyalarını CSV'ye ve geriye dönüştürür. Ayrıca dizelerin otomatik çevirileri için bazı işlevler eklenmiştir.
 
 ‎Parametreler:
@@ -481,11 +557,16 @@
 ‎"LibreTranslate" ile çeviri için: ResxVsCsv --directory <dir> --pattern <pattern> --translator libretranslate --libreurl <url> [--apikey <key>] [--sortbyname yes]
 
 ‎RESX dosyalarını güncellemek için: ResxVsCsv --directory <dir> --toresx <resources.csv>
-  
-[Desteğe mi ihtiyacınız var?](https://github.com/NataljaNeumann/ResxVsCsv/issues)  
-[Viki](https://github.com/NataljaNeumann/ResxVsCsv/wiki)‎
-# 中文文本
-<a name="chs"></a>
+
+Desteğe mi ihtiyacınız var?: https://github.com/NataljaNeumann/ResxVsCsv/issues
+Viki: https://github.com/NataljaNeumann/ResxVsCsv/wiki‎
+
+
+
+
+中文文本
+______________________________________________________________________________________________________________________
+
 ‎该项目将 RESX 文件与 CSV 文件相互转换。还添加了一些用于字符串自动翻译的功能。
 
 ‎参数：
@@ -515,12 +596,17 @@
 ‎使用「LibreTranslate」进行翻译： ResxVsCsv --directory <dir> --pattern <pattern> --translator libretranslate --libreurl <url> [--apikey <key>] [--sortbyname yes]
 
 ‎对于更新 RESX 文件： ResxVsCsv --directory <dir> --toresx <resources.csv>
-  
-[您需要支持吗？](https://github.com/NataljaNeumann/ResxVsCsv/issues)  
-[维基百科](https://github.com/NataljaNeumann/ResxVsCsv/wiki)  
+
+您需要支持吗？: https://github.com/NataljaNeumann/ResxVsCsv/issues
+维基百科: https://github.com/NataljaNeumann/ResxVsCsv/wiki
 ‎
-# 中文文字
-<a name="cht"></a>
+
+
+
+
+中文文字
+______________________________________________________________________________________________________________________
+
 ‎該專案將 RESX 檔案與 CSV 檔案相互轉換。還添加了一些用於字串自動翻譯的功能。
 
 ‎參數：
@@ -550,11 +636,16 @@
 ‎對於使用「LibreTranslate」進行翻譯： ResxVsCsv --directory <dir> --pattern <pattern> --translator libretranslate --libreurl <url> [--apikey <key>] [--sortbyname yes]
 
 ‎對於更新 RESX 檔案： ResxVsCsv --directory <dir> --toresx <resources.csv>
-  
-[您需要支援嗎？](https://github.com/NataljaNeumann/ResxVsCsv/issues)  
-[維基百科](https://github.com/NataljaNeumann/ResxVsCsv/wiki)‎
-# 日本語
-<a name="ja"></a>
+
+您需要支援嗎？: https://github.com/NataljaNeumann/ResxVsCsv/issues
+維基百科: https://github.com/NataljaNeumann/ResxVsCsv/wiki‎
+
+
+
+
+日本語
+______________________________________________________________________________________________________________________
+
 ‎このプロジェクトは、RESX ファイルを CSV に変換したり、その逆の変換を行ったりします。また、文字列の自動翻訳のための機能もいくつか追加されています。
 
 ‎パラメータ:
@@ -584,11 +675,16 @@
 ‎「LibreTranslate」による翻訳の場合: ResxVsCsv --directory <dir> --pattern <pattern> --translator libretranslate --libreurl <url> [--apikey <key>] [--sortbyname yes]
 
 ‎RESX ファイルを更新するには: ResxVsCsv --directory <dir> --toresx <resources.csv>
-  
-[サポートが必要ですか?](https://github.com/NataljaNeumann/ResxVsCsv/issues)  
-[ウィキ](https://github.com/NataljaNeumann/ResxVsCsv/wiki)‎
-# 한국인
-<a name="ko"></a>
+
+サポートが必要ですか?: https://github.com/NataljaNeumann/ResxVsCsv/issues
+ウィキ: https://github.com/NataljaNeumann/ResxVsCsv/wiki‎
+
+
+
+
+한국인
+______________________________________________________________________________________________________________________
+
 ‎이 프로젝트는 RESX 파일을 CSV로 변환하거나 그 반대로 변환합니다. 또한 문자열 자동 번역을 위한 일부 기능이 추가되었습니다.
 
 ‎매개변수:
@@ -618,11 +714,16 @@
 ‎"LibreTranslate"를 사용한 번역: ResxVsCsv --directory <dir> --pattern <pattern> --translator libretranslate --libreurl <url> [--apikey <key>] [--sortbyname yes]
 
 ‎RESX 파일을 업데이트하려면: ResxVsCsv --directory <dir> --toresx <resources.csv>
-  
-[지원이 필요합니까?](https://github.com/NataljaNeumann/ResxVsCsv/issues)  
-[위키](https://github.com/NataljaNeumann/ResxVsCsv/wiki)‎
-# भारतीय में
-<a name="hi"></a>
+
+지원이 필요합니까?: https://github.com/NataljaNeumann/ResxVsCsv/issues
+위키: https://github.com/NataljaNeumann/ResxVsCsv/wiki‎
+
+
+
+
+भारतीय में
+______________________________________________________________________________________________________________________
+
 ‎यह प्रोजेक्ट RESX फ़ाइलों को CSV और बैक में बदल देता है। इसके अलावा स्ट्रिंग्स के स्वचालित अनुवाद के लिए कुछ कार्यक्षमता भी जोड़ी गई है।
 
 ‎पैरामीटर:
@@ -652,11 +753,16 @@
 ‎"LibreTranslate" के साथ अनुवाद के लिए: ResxVsCsv --directory <dir> --pattern <pattern> --translator libretranslate --libreurl <url> [--apikey <key>] [--sortbyname yes]
 
 ‎RESX फ़ाइलें अद्यतन करने के लिए: ResxVsCsv --directory <dir> --toresx <resources.csv>
-  
-[क्या आपको समर्थन की आवश्यकता है?](https://github.com/NataljaNeumann/ResxVsCsv/issues)  
-[विकि](https://github.com/NataljaNeumann/ResxVsCsv/wiki)‏
-# باللغة العربية
-<a name="ar"></a>
+
+क्या आपको समर्थन की आवश्यकता है?: https://github.com/NataljaNeumann/ResxVsCsv/issues
+विकि: https://github.com/NataljaNeumann/ResxVsCsv/wiki‏
+
+
+
+
+باللغة العربية
+______________________________________________________________________________________________________________________
+
 ‏يقوم هذا المشروع بتحويل ملفات RESX إلى CSV والعكس. تتم أيضًا إضافة بعض الوظائف للترجمات التلقائية للسلاسل.
 
 ‏حدود:
@@ -687,11 +793,16 @@
 
 ‏لتحديث ملفات RESX: ResxVsCsv --directory <dir> --toresx <resources.csv>
 
-‏[هل تحتاج إلى دعم؟](https://github.com/NataljaNeumann/ResxVsCsv/issues)  
-[ويكي](https://github.com/NataljaNeumann/ResxVsCsv/wiki)
+‏هل تحتاج إلى دعم؟: https://github.com/NataljaNeumann/ResxVsCsv/issues
+ويكي: https://github.com/NataljaNeumann/ResxVsCsv/wiki
 ‏
-# עִברִית
-<a name="he"></a>
+
+
+
+
+עִברִית
+______________________________________________________________________________________________________________________
+
 ‏פרויקט זה הופך קבצי RESX ל-CSV ובחזרה. כמו כן, מתווספת פונקציונליות מסוימת עבור תרגומים אוטומטיים של מחרוזות.
 
 ‏פרמטרים:
@@ -722,6 +833,6 @@
 
 ‏לעדכון קבצי RESX: ResxVsCsv --directory <dir> --toresx <resources.csv>
 
-‏[האם אתה צריך תמיכה?](https://github.com/NataljaNeumann/ResxVsCsv/issues)  
-[ויקי](https://github.com/NataljaNeumann/ResxVsCsv/wiki)
+‏האם אתה צריך תמיכה?: https://github.com/NataljaNeumann/ResxVsCsv/issues
+ויקי: https://github.com/NataljaNeumann/ResxVsCsv/wiki
 

@@ -1,0 +1,604 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<html><head><style>
+        .note-ltr {
+            position: relative;
+            border-left: 5px solid blue;
+            padding-left: 30px;
+            padding-top: 30px;
+            margin: 10px 0;
+            background-color: #f9f9f9;
+        }
+        .note-ltr::before {
+            content: 'ⓘ';
+            position: absolute;
+            top: 5px;
+            left: 5px; 
+            font-size: 25px;
+            color: blue;
+        }
+        .note-rtl {
+            position: relative;
+            border-right: 5px solid blue;
+            padding-right: 30px;
+            padding-top: 30px;
+            margin: 10px 0;
+            background-color: #f9f9f9;
+        }
+        .note-rtl::before {
+            content: 'ⓘ';
+            position: absolute;
+            top: 5px; 
+            right: 5px;
+            font-size: 25px;
+            color: blue;
+        }
+    </style>
+  </head>
+  <body>
+    <h1 dir="ltr" lang="en">Resx Vs. Csv</h1>
+    <br/>
+    <a href="https://github.com/NataljaNeumann/ResxVsCsv" target="_new" dir="ltr" lang="en">Latest Sources and Releases</a>
+    <br/>
+    <br/>
+    <br/>
+
+    <img alt="ResxVsCsv2" style="max-width:100%" src="https://github.com/user-attachments/assets/03b7bdce-d227-4eb3-a507-f9941f51f6d4" /><br/>
+
+    <p dir="ltr">
+      <a href="#en" lang="en">English</a>, <a href="#fr" lang="fr">Français</a>, <a href="#es" lang="es">Español</a>, <a href="#pt" lang="pt">Português</a
+      >, <a href="#it" lang="it">Italiano</a>, <a href="#de" lang="de">Deutsch</a>, <a href="#ru" lang="ru">По русски</a>, <a href="#pl" lang="pl">Polski</a
+      >, <a href="#gr" lang="gr">Στα ελληνικά</a>, 
+      <a href="#nl" lang="nl">Nederlands</a>, <a href="#da" lang="da">Dansk</a>, <a href="#fi" lang="fi">Suomeksi</a
+      >, <a href="#sv" lang="sv">Svenska</a>, <a href="#tr" lang="tr">Türkçe</a>, <a href="#chs" lang="chs">中文文本</a>, <a href="#cht" lang="cht"
+      >中文文字</a>, <a href="#ja" lang="ja">日本語</a>, <a href="#ko" lang="ko">한국인</a>, <a href="#hi" lang="hi">भारतीय में</a>, <a href="#ar" lang="ar">باللغة العربية</a
+      >, <a href="#he" lang="he">עִברִית</a></p>
+
+    <a name="en"><h1 dir="ltr" lang="en">English</h1></a>
+    <p dir="ltr" lang="en">This project transforms RESX files to CSV and back. Also some functionality is added for automatic translations of strings.</p>
+    <hr/>
+    <p dir="ltr" lang="en">Parameters:</p>
+    <p dir="ltr" lang="en"><cite dir="ltr">--directory &lt;dir&gt;</cite> the directory of RESX files or of CSV file, e.g.: <cite dir="ltr">--directory c:\users\myname\projects\myproject</cite></p>
+    <p dir="ltr" lang="en"><cite dir="ltr">--pattern &lt;pattern&gt;</cite> the patttern for RESX files, e.g.: <cite dir="ltr">--pattern Resources.*resx</cite></p>
+    <p dir="ltr" lang="en"><cite dir="ltr">--translator &lt;google|microsoft|deepl|toptranslation|libretranslate|argos&gt;</cite> the translator for translation of missing RESX entries during transfer to CSV, e.g.: <cite dir="ltr">--translator argos</cite></p>
+    <p dir="ltr" lang="en"><cite dir="ltr">--apikey &lt;key&gt;</cite> the key for translation of api, e.g.: <cite dir="ltr">--key 012345XYZ</cite></p>
+    <p dir="ltr" lang="en"><cite dir="ltr">--libreurl &lt;url&gt;</cite> the URL for libretranslate translation service, e.g.: <cite dir="ltr">--libreurl https://libretranslate.com/translate</cite></p>
+    <p dir="ltr" lang="en"><cite dir="ltr">--sortbyname &lt;yes|no&gt;</cite> specifies that CSV file shall be sorted by name, yes or no. Default is: <cite dir="ltr">no</cite></p>
+    <p dir="ltr" lang="en"><cite dir="ltr">--toresx &lt;name.csv&gt;</cite> the specified CSV file shall be integrated into corresponding RESX files, e.g.: <cite dir="ltr">--toresx Resources.csv</cite></p>
+    <p dir="ltr" lang="en"><cite dir="ltr">--onlystrings &lt;yes|no&gt;</cite> specifies, if only string values shall be gathered in CSV, or other values, too. Yes or no, the default is yes, e.g.: <cite dir="ltr">--onlystrings no</cite></p>
+    <hr/>
+    <p dir="ltr" lang="en">For conversion to CSV: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; [--sortbyname yes] [--onlystrings no]</cite></p>
+    <p dir="ltr" lang="en">For translation: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator &lt;google|microsoft|deepl|toptranslation&gt; --apikey &lt;key&gt; [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="en">For translation with Argos: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt;  --translator argos [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="en">For translation with LibreTranslate: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="en">For updating RESX files: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt;</cite></p>
+
+    <br/>
+    <a href="https://github.com/NataljaNeumann/ResxVsCsv/issues" target="_new" dir="ltr" lang="en">Do you need support?</a>
+    <br/>
+    <a href="https://github.com/NataljaNeumann/ResxVsCsv/wiki" target="_new" dir="ltr" lang="en">Wiki</a>
+
+
+    <a name="fr"><h1 dir="ltr" lang="fr">Français</h1></a>
+
+    <p dir="ltr" lang="fr">Ce projet transforme les fichiers RESX en CSV et inversement. Certaines fonctionnalités sont également ajoutées pour les traductions automatiques de chaînes.</p>
+    <hr/>
+    <p dir="ltr" lang="fr">Paramètres:</p>
+    <p dir="ltr" lang="fr"><cite dir="ltr">--directory &lt;dir&gt;</cite> le répertoire des fichiers RESX ou du fichier CSV, par exemple: <cite dir="ltr">--directory c:\users\myname\projects\myproject</cite></p>
+    <p dir="ltr" lang="fr"><cite dir="ltr">--pattern &lt;pattern&gt;</cite> le modèle pour les fichiers RESX, par exemple: <cite dir="ltr">--pattern Resources.*resx</cite></p>
+    <p dir="ltr" lang="fr"><cite dir="ltr">--translator &lt;google|microsoft|deepl|toptranslation|libretranslate|argos&gt;</cite> le traducteur pour la traduction des entrées RESX manquantes lors du transfert vers CSV, par exemple: <cite dir="ltr">--translator argos</cite></p>
+    <p dir="ltr" lang="fr"><cite dir="ltr">--apikey &lt;key&gt;</cite> la clé de traduction de l'API, par exemple: <cite dir="ltr">--key 012345XYZ</cite></p>
+    <p dir="ltr" lang="fr"><cite dir="ltr">--libreurl &lt;url&gt;</cite> l'URL du service de traduction libretranslate, par exemple: <cite dir="ltr">--libreurl https://libretranslate.com/translate</cite></p>
+    <p dir="ltr" lang="fr"><cite dir="ltr">--sortbyname &lt;yes|no&gt;</cite> spécifie que le fichier CSV doit être trié par nom, oui ou non. La valeur par défaut est: <cite dir="ltr">no</cite></p>
+    <p dir="ltr" lang="fr"><cite dir="ltr">--toresx &lt;name.csv&gt;</cite> le fichier CSV spécifié doit être intégré aux fichiers RESX correspondants, par exemple: <cite dir="ltr">--toresx Resources.csv</cite></p>
+    <p dir="ltr" lang="fr"><cite dir="ltr">--onlystrings &lt;yes|no&gt;</cite> spécifie si seules les valeurs de chaîne doivent être collectées au format CSV, ou d'autres valeurs également. Oui ou non, la valeur par défaut est oui, par exemple: <cite dir="ltr">--onlystrings no</cite></p>
+    <hr/>
+    <p dir="ltr" lang="fr">Pour la conversion en CSV: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; [--sortbyname yes] [--onlystrings no]</cite></p>
+    <p dir="ltr" lang="fr">Pour la traduction: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator &lt;google|microsoft|deepl|toptranslation&gt; --apikey &lt;key&gt; [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="fr">Pour la traduction avec «Argos»: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt;  --translator argos [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="fr">Pour la traduction avec «LibreTranslate»: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="fr">Pour mettre à jour les fichiers RESX: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt;</cite></p>
+
+    <br/>
+    <a href="https://github.com/NataljaNeumann/ResxVsCsv/issues" target="_new" dir="ltr" lang="fr">Avez-vous besoin de soutien?</a>
+    <br/>
+    <a href="https://github.com/NataljaNeumann/ResxVsCsv/wiki" target="_new" dir="ltr" lang="fr">Wikia</a>
+
+    <a name="es"><h1 dir="ltr" lang="es">Español</h1></a>
+
+    <p dir="ltr" lang="es">Este proyecto transforma archivos RESX a CSV y viceversa. También se agrega alguna funcionalidad para traducciones automáticas de cadenas.</p>
+    <hr/>
+    <p dir="ltr" lang="es">Parámetros:</p>
+    <p dir="ltr" lang="es"><cite dir="ltr">--directory &lt;dir&gt;</cite> el directorio de archivos RESX o de archivos CSV, por ejemplo: <cite dir="ltr">--directory c:\users\myname\projects\myproject</cite></p>
+    <p dir="ltr" lang="es"><cite dir="ltr">--pattern &lt;pattern&gt;</cite> el patrón para archivos RESX, por ejemplo: <cite dir="ltr">--pattern Resources.*resx</cite></p>
+    <p dir="ltr" lang="es"><cite dir="ltr">--translator &lt;google|microsoft|deepl|toptranslation|libretranslate|argos&gt;</cite> tel traductor para traducir las entradas RESX que faltan durante la transferencia a CSV, por ejemplo: <cite dir="ltr">--translator argos</cite></p>
+    <p dir="ltr" lang="es"><cite dir="ltr">--apikey &lt;key&gt;</cite> la clave para la traducción de api, por ejemplo: <cite dir="ltr">--key 012345XYZ</cite></p>
+    <p dir="ltr" lang="es"><cite dir="ltr">--libreurl &lt;url&gt;</cite> la URL del servicio de traducción libretranslate, por ejemplo: <cite dir="ltr">--libreurl https://libretranslate.com/translate</cite></p>
+    <p dir="ltr" lang="es"><cite dir="ltr">--sortbyname &lt;yes|no&gt;</cite> especifica que el archivo CSV se ordenará por nombre, sí o no. El valor predeterminado es: <cite dir="ltr">no</cite></p>
+    <p dir="ltr" lang="es"><cite dir="ltr">--toresx &lt;name.csv&gt;</cite> El archivo CSV especificado se integrará en los archivos RESX correspondientes, por ejemplo: <cite dir="ltr">--toresx Resources.csv</cite></p>
+    <p dir="ltr" lang="es"><cite dir="ltr">--onlystrings &lt;yes|no&gt;</cite> especifica si solo se recopilarán valores de cadena en CSV, u otros valores también. Sí o no, el valor predeterminado es sí, por ejemplo: <cite dir="ltr">--onlystrings no</cite></p>
+    <hr/>
+    <p dir="ltr" lang="es">Para conversión a CSV: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; [--sortbyname yes] [--onlystrings no]</cite></p>
+    <p dir="ltr" lang="es">Para traducción: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator &lt;google|microsoft|deepl|toptranslation&gt; --apikey &lt;key&gt; [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="es">Para traducir con "Argos": <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt;  --translator argos [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="es">Para traducir con "LibreTranslate": <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="es">Para actualizar archivos RESX: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt;</cite></p>
+
+    <br/>
+    <a href="https://github.com/NataljaNeumann/ResxVsCsv/issues" target="_new" dir="ltr" lang="es">¿Necesitas apoyo?</a>
+    <br/>
+    <a href="https://github.com/NataljaNeumann/ResxVsCsv/wiki" target="_new" dir="ltr" lang="es">Wiki</a>
+
+
+    <a name="pt"><h1 dir="ltr" lang="pt">Português</h1></a>
+
+    <p dir="ltr" lang="pt">Este projeto transforma arquivos RESX em CSV e vice-versa. Também foram adicionadas algumas funcionalidades para traduções automáticas de strings.</p>
+    <hr/>
+    <p dir="ltr" lang="pt">Parâmetros:</p>
+    <p dir="ltr" lang="pt"><cite dir="ltr">--directory &lt;dir&gt;</cite> o diretório de arquivos RESX ou de arquivo CSV, por exemplo: <cite dir="ltr">--directory c:\users\myname\projects\myproject</cite></p>
+    <p dir="ltr" lang="pt"><cite dir="ltr">--pattern &lt;pattern&gt;</cite> o padrão para arquivos RESX, por exemplo: <cite dir="ltr">--pattern Resources.*resx</cite></p>
+    <p dir="ltr" lang="pt"><cite dir="ltr">--translator &lt;google|microsoft|deepl|toptranslation|libretranslate|argos&gt;</cite> o tradutor para tradução de entradas RESX ausentes durante a transferência para CSV, por exemplo: <cite dir="ltr">--translator argos</cite></p>
+    <p dir="ltr" lang="pt"><cite dir="ltr">--apikey &lt;key&gt;</cite> a chave para tradução da API, por exemplo: <cite dir="ltr">--key 012345XYZ</cite></p>
+    <p dir="ltr" lang="pt"><cite dir="ltr">--libreurl &lt;url&gt;</cite> o URL do serviço de tradução libretranslate, por exemplo: <cite dir="ltr">--libreurl https://libretranslate.com/translate</cite></p>
+    <p dir="ltr" lang="pt"><cite dir="ltr">--sortbyname &lt;yes|no&gt;</cite> especifica que o arquivo CSV deve ser classificado por nome, sim ou não. O padrão é: <cite dir="ltr">no</cite></p>
+    <p dir="ltr" lang="pt"><cite dir="ltr">--toresx &lt;name.csv&gt;</cite> o arquivo CSV especificado deve ser integrado aos arquivos RESX correspondentes, por exemplo: <cite dir="ltr">--toresx Resources.csv</cite></p>
+    <p dir="ltr" lang="pt"><cite dir="ltr">--onlystrings &lt;yes|no&gt;</cite> especifica se apenas valores de string devem ser reunidos em CSV ou outros valores também. Sim ou não, o padrão é sim, por exemplo: <cite dir="ltr">--onlystrings no</cite></p>
+    <hr/>
+    <p dir="ltr" lang="pt">Para conversão para CSV: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; [--sortbyname yes] [--onlystrings no]</cite></p>
+    <p dir="ltr" lang="pt">Para tradução: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator &lt;google|microsoft|deepl|toptranslation&gt; --apikey &lt;key&gt; [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="pt">Para tradução com "Argos": <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt;  --translator argos [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="pt">FPara tradução com "LibreTranslate": <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="pt">Para atualizar arquivos RESX: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt;</cite></p>
+
+    <br/>
+    <a href="https://github.com/NataljaNeumann/ResxVsCsv/issues" target="_new" dir="ltr" lang="pt">Você precisa de suporte?</a>
+    <br/>
+    <a href="https://github.com/NataljaNeumann/ResxVsCsv/wiki" target="_new" dir="ltr" lang="pt">Wiki</a>
+
+    <a name="it"><h1 dir="ltr" lang="it">Italiano</h1></a>
+
+    <p dir="ltr" lang="it">Questo progetto trasforma i file RESX in CSV e viceversa. Inoltre vengono aggiunte alcune funzionalità per la traduzione automatica delle stringhe.</p>
+    <hr/>
+    <p dir="ltr" lang="it">Parametri:</p>
+    <p dir="ltr" lang="it"><cite dir="ltr">--directory &lt;dir&gt;</cite> la directory dei file RESX o del file CSV, ad esempio: <cite dir="ltr">--directory c:\users\myname\projects\myproject</cite></p>
+    <p dir="ltr" lang="it"><cite dir="ltr">--pattern &lt;pattern&gt;</cite> il modello per i file RESX, ad esempio: <cite dir="ltr">--pattern Resources.*resx</cite></p>
+    <p dir="ltr" lang="it"><cite dir="ltr">--translator &lt;google|microsoft|deepl|toptranslation|libretranslate|argos&gt;</cite> il traduttore per la traduzione delle voci RESX mancanti durante il trasferimento in CSV, ad esempio: <cite dir="ltr">--translator argos</cite></p>
+    <p dir="ltr" lang="it"><cite dir="ltr">--apikey &lt;key&gt;</cite> la chiave per la traduzione di api, ad esempio: <cite dir="ltr">--key 012345XYZ</cite></p>
+    <p dir="ltr" lang="it"><cite dir="ltr">--libreurl &lt;url&gt;</cite> l'URL del servizio di traduzione libretranslate, ad esempio: <cite dir="ltr">--libreurl https://libretranslate.com/translate</cite></p>
+    <p dir="ltr" lang="it"><cite dir="ltr">--sortbyname &lt;yes|no&gt;</cite> specifica che il file CSV deve essere ordinato per nome, sì o no. L'impostazione predefinita è: <cite dir="ltr">no</cite></p>
+    <p dir="ltr" lang="it"><cite dir="ltr">--toresx &lt;name.csv&gt;</cite> il file CSV specificato deve essere integrato nei file RESX corrispondenti, ad esempio: <cite dir="ltr">--toresx Resources.csv</cite></p>
+    <p dir="ltr" lang="it"><cite dir="ltr">--onlystrings &lt;yes|no&gt;</cite> specifica se nel CSV devono essere raccolti solo valori stringa o anche altri valori. Sì o no, l'impostazione predefinita è sì, ad esempio: <cite dir="ltr">--onlystrings no</cite></p>
+    <hr/>
+    <p dir="ltr" lang="it">Per la conversione in CSV: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; [--sortbyname yes] [--onlystrings no]</cite></p>
+    <p dir="ltr" lang="it">Per la traduzione: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator &lt;google|microsoft|deepl|toptranslation&gt; --apikey &lt;key&gt; [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="it">Per la traduzione con "Argos": <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt;  --translator argos [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="it">Per la traduzione con "LibreTranslate": <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="it">Per aggiornare i file RESX: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt;</cite></p>
+
+    <br/>
+    <a href="https://github.com/NataljaNeumann/ResxVsCsv/issues" target="_new" dir="ltr" lang="it">Hai bisogno di supporto?</a>
+    <br/>
+    <a href="https://github.com/NataljaNeumann/ResxVsCsv/wiki" target="_new" dir="ltr" lang="it">Wiki</a>
+
+    <a name="de"><h1 dir="ltr" lang="de">Deutsch</h1></a>
+
+    <p dir="ltr" lang="de">Dieses Projekt wandelt RESX-Dateien in CSV und zurück um. Außerdem wurden einige Funktionen für die automatische Übersetzung von Zeichenfolgen hinzugefügt.</p>
+    <hr/>
+    <p dir="ltr" lang="de">Parameter:</p>
+    <p dir="ltr" lang="de"><cite dir="ltr">--directory &lt;dir&gt;</cite> das Verzeichnis der RESX-Dateien oder der CSV-Datei, z.B.: <cite dir="ltr">--directory c:\users\myname\projects\myproject</cite></p>
+    <p dir="ltr" lang="de"><cite dir="ltr">--pattern &lt;pattern&gt;</cite> das Muster für RESX-Dateien, z.B.: <cite dir="ltr">--pattern Resources.*resx</cite></p>
+    <p dir="ltr" lang="de"><cite dir="ltr">--translator &lt;google|microsoft|deepl|toptranslation|libretranslate|argos&gt;</cite> der Übersetzer zur Übersetzung fehlender RESX-Einträge bei der Übertragung nach CSV, z.B.: <cite dir="ltr">--translator argos</cite></p>
+    <p dir="ltr" lang="de"><cite dir="ltr">--apikey &lt;key&gt;</cite> Der Schlüssel für die Übersetzung der API, z.B.: <cite dir="ltr">--key 012345XYZ</cite></p>
+    <p dir="ltr" lang="de"><cite dir="ltr">--libreurl &lt;url&gt;</cite> die URL für den Übersetzungsdienst libretranslate, z. B.: <cite dir="ltr">--libreurl https://libretranslate.com/translate</cite></p>
+    <p dir="ltr" lang="de"><cite dir="ltr">--sortbyname &lt;yes|no&gt;</cite> Gibt an, dass die CSV-Datei nach Name sortiert werden soll, ja oder nein. Standard ist: <cite dir="ltr">no</cite></p>
+    <p dir="ltr" lang="de"><cite dir="ltr">--toresx &lt;name.csv&gt;</cite> Die angegebene CSV-Datei muss in entsprechende RESX-Dateien integriert werden, z. B.: <cite dir="ltr">--toresx Resources.csv</cite></p>
+    <p dir="ltr" lang="de"><cite dir="ltr">--onlystrings &lt;yes|no&gt;</cite> Gibt an, ob nur String-Werte in CSV erfasst werden sollen, oder auch andere Werte. Ja oder nein, die Standardeinstellung ist ja, z. B.: <cite dir="ltr">--onlystrings no</cite></p>
+    <hr/>
+    <p dir="ltr" lang="de">Für die Konvertierung in CSV: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; [--sortbyname yes] [--onlystrings no]</cite></p>
+    <p dir="ltr" lang="de">Zur Übersetzung: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator &lt;google|microsoft|deepl|toptranslation&gt; --apikey &lt;key&gt; [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="de">Zur Übersetzung mit „Argos“: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt;  --translator argos [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="de">Zur Übersetzung mit „LibreTranslate“: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="de">Zum Aktualisieren von RESX-Dateien: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt;</cite></p>
+    
+    <br/>
+    <a href="https://github.com/NataljaNeumann/ResxVsCsv/issues" target="_new" dir="ltr" lang="de">Brauchen Sie Unterstützung?</a>
+    <br/>
+    <a href="https://github.com/NataljaNeumann/ResxVsCsv/wiki" target="_new" dir="ltr" lang="de">Wiki</a>
+
+    <a name="ru"><h1 dir="ltr" lang="ru">По русски</h1></a>
+
+    <p dir="ltr" lang="ru">Этот проект преобразует файлы RESX в CSV и обратно. Также добавлен функционал для автоматического перевода строк.</p>
+    <hr/>
+    <p dir="ltr" lang="ru">Параметры:</p>
+    <p dir="ltr" lang="ru"><cite dir="ltr">--directory &lt;dir&gt;</cite> каталог файлов RESX или файла CSV, например: <cite dir="ltr">--directory c:\users\myname\projects\myproject</cite></p>
+    <p dir="ltr" lang="ru"><cite dir="ltr">--pattern &lt;pattern&gt;</cite> шаблон для файлов RESX, например: <cite dir="ltr">--pattern Resources.*resx</cite></p>
+    <p dir="ltr" lang="ru"><cite dir="ltr">--translator &lt;google|microsoft|deepl|toptranslation|libretranslate|argos&gt;</cite> переводчик для перевода недостающих записей RESX при переносе в CSV, например: <cite dir="ltr">--translator argos</cite></p>
+    <p dir="ltr" lang="ru"><cite dir="ltr">--apikey &lt;key&gt;</cite> ключ для перевода API, например: <cite dir="ltr">--key 012345XYZ</cite></p>
+    <p dir="ltr" lang="ru"><cite dir="ltr">--libreurl &lt;url&gt;</cite> URL-адрес службы перевода libretranslate, например: <cite dir="ltr">--libreurl https://libretranslate.com/translate</cite></p>
+    <p dir="ltr" lang="ru"><cite dir="ltr">--sortbyname &lt;yes|no&gt;</cite> указывает, что файл CSV должен быть отсортирован по имени, да или нет. По умолчанию: <cite dir="ltr">no</cite></p>
+    <p dir="ltr" lang="ru"><cite dir="ltr">--toresx &lt;name.csv&gt;</cite> указанный файл CSV должен быть интегрирован в соответствующие файлы RESX, например: <cite dir="ltr">--toresx Resources.csv</cite></p>
+    <p dir="ltr" lang="ru"><cite dir="ltr">--onlystrings &lt;yes|no&gt;</cite> указывает, следует ли собирать в CSV только строковые значения или другие значения. Да или нет, по умолчанию — да, например: <cite dir="ltr">--onlystrings no</cite></p>
+    <hr/>
+    <p dir="ltr" lang="ru">Для преобразования в CSV: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; [--sortbyname yes] [--onlystrings no]</cite></p>
+    <p dir="ltr" lang="ru">Для перевода: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator &lt;google|microsoft|deepl|toptranslation&gt; --apikey &lt;key&gt; [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="ru">Для перевода с помощью «Argos»: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt;  --translator argos [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="ru">Для перевода с помощью «LibreTranslate»: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="ru">Для обновления файлов RESX: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt;</cite></p>
+
+    <br/>
+    <a href="https://github.com/NataljaNeumann/ResxVsCsv/issues" target="_new" dir="ltr" lang="ru">Вам нужна поддержка?</a>
+    <br/>
+    <a href="https://github.com/NataljaNeumann/ResxVsCsv/wiki" target="_new" dir="ltr" lang="ru">Вики</a>
+
+
+    <a name="pl"><h1 dir="ltr" lang="pl">Polski</h1></a>
+    
+    <p dir="ltr" lang="pl">Ten projekt przekształca pliki RESX do formatu CSV i odwrotnie. Dodano także pewną funkcjonalność automatycznego tłumaczenia ciągów znaków.</p>
+    <hr/>
+    <p dir="ltr" lang="pl">Parametry:</p>
+    <p dir="ltr" lang="pl"><cite dir="ltr">--directory &lt;dir&gt;</cite> katalog plików RESX lub pliku CSV, np.: <cite dir="ltr">--directory c:\users\myname\projects\myproject</cite></p>
+    <p dir="ltr" lang="pl"><cite dir="ltr">--pattern &lt;pattern&gt;</cite> wzór dla plików RESX, np.: <cite dir="ltr">--pattern Resources.*resx</cite></p>
+    <p dir="ltr" lang="pl"><cite dir="ltr">--translator &lt;google|microsoft|deepl|toptranslation|libretranslate|argos&gt;</cite> tłumacz do tłumaczenia brakujących wpisów RESX podczas przesyłania do CSV, np.: <cite dir="ltr">--translator argos</cite></p>
+    <p dir="ltr" lang="pl"><cite dir="ltr">--apikey &lt;key&gt;</cite> klucz do tłumaczenia API, np.: <cite dir="ltr">--key 012345XYZ</cite></p>
+    <p dir="ltr" lang="pl"><cite dir="ltr">--libreurl &lt;url&gt;</cite> adres URL usługi tłumaczeniowej libretranslate, np.: <cite dir="ltr">--libreurl https://libretranslate.com/translate</cite></p>
+    <p dir="ltr" lang="pl"><cite dir="ltr">--sortbyname &lt;yes|no&gt;</cite> określa, że ​​plik CSV będzie sortowany według nazwy, tak lub nie. Wartość domyślna to: <cite dir="ltr">no</cite></p>
+    <p dir="ltr" lang="pl"><cite dir="ltr">--toresx &lt;name.csv&gt;</cite> określony plik CSV należy zintegrować z odpowiednimi plikami RESX, np.: <cite dir="ltr">--toresx Resources.csv</cite></p>
+    <p dir="ltr" lang="pl"><cite dir="ltr">--onlystrings &lt;yes|no&gt;</cite> określa, czy w formacie CSV mają być gromadzone tylko wartości łańcuchowe, czy też inne wartości. Tak lub nie, domyślnie jest to tak, np.: <cite dir="ltr">--onlystrings no</cite></p>
+    <hr/>
+    <p dir="ltr" lang="pl">Do konwersji do CSV: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; [--sortbyname yes] [--onlystrings no]</cite></p>
+    <p dir="ltr" lang="pl">Do tłumaczenia: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator &lt;google|microsoft|deepl|toptranslation&gt; --apikey &lt;key&gt; [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="pl">Do tłumaczenia z „Argos”: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt;  --translator argos [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="pl">Do tłumaczenia za pomocą „LibreTranslate”: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="pl">Aby zaktualizować pliki RESX: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt;</cite></p>
+
+    <br/>
+    <a href="https://github.com/NataljaNeumann/ResxVsCsv/issues" target="_new" dir="ltr" lang="pl">Czy potrzebujesz wsparcia?</a>
+    <br/>
+    <a href="https://github.com/NataljaNeumann/ResxVsCsv/wiki" target="_new" dir="ltr" lang="pl">Вики</a>
+
+    
+    <a name="gr"><h1 dir="ltr" lang="gr">Στα ελληνικά</h1></a>
+
+    <p dir="ltr" lang="gr">Αυτό το έργο μετατρέπει αρχεία RESX σε CSV και πίσω. Επίσης, προστίθεται κάποια λειτουργικότητα για αυτόματες μεταφράσεις συμβολοσειρών.</p>
+    <hr/>
+    <p dir="ltr" lang="gr">Παράμετροι:</p>
+    <p dir="ltr" lang="gr"><cite dir="ltr">--directory &lt;dir&gt;</cite> τον κατάλογο των αρχείων RESX ή του αρχείου CSV, π.χ. <cite dir="ltr">--directory c:\users\myname\projects\myproject</cite></p>
+    <p dir="ltr" lang="gr"><cite dir="ltr">--pattern &lt;pattern&gt;</cite> το μοτίβο για αρχεία RESX, π.χ. <cite dir="ltr">--pattern Resources.*resx</cite></p>
+    <p dir="ltr" lang="gr"><cite dir="ltr">--translator &lt;google|microsoft|deepl|toptranslation|libretranslate|argos&gt;</cite> ο μεταφραστής για μετάφραση των καταχωρήσεων RESX που λείπουν κατά τη μεταφορά σε CSV, π.χ. <cite dir="ltr">--translator argos</cite></p>
+    <p dir="ltr" lang="gr"><cite dir="ltr">--apikey &lt;key&gt;</cite> το κλειδί για τη μετάφραση του api, π.χ. <cite dir="ltr">--key 012345XYZ</cite></p>
+    <p dir="ltr" lang="gr"><cite dir="ltr">--libreurl &lt;url&gt;</cite> τη διεύθυνση URL για την υπηρεσία μετάφρασης libretranslate, π.χ.: <cite dir="ltr">--libreurl https://libretranslate.com/translate</cite></p>
+    <p dir="ltr" lang="gr"><cite dir="ltr">--sortbyname &lt;yes|no&gt;</cite> καθορίζει ότι το αρχείο CSV θα ταξινομηθεί με βάση το όνομα, ναι ή όχι. Η προεπιλογή είναι: <cite dir="ltr">no</cite></p>
+    <p dir="ltr" lang="gr"><cite dir="ltr">--toresx &lt;name.csv&gt;</cite> το καθορισμένο αρχείο CSV θα ενσωματωθεί σε αντίστοιχα αρχεία RESX, π.χ. <cite dir="ltr">--toresx Resources.csv</cite></p>
+    <p dir="ltr" lang="gr"><cite dir="ltr">--onlystrings &lt;yes|no&gt;</cite> καθορίζει, εάν θα συγκεντρώνονται μόνο τιμές συμβολοσειράς στο CSV ή και άλλες τιμές. Ναι ή όχι, η προεπιλογή είναι ναι, π.χ. <cite dir="ltr">--onlystrings no</cite></p>
+    <hr/>
+    <p dir="ltr" lang="gr">Για μετατροπή σε CSV: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; [--sortbyname yes] [--onlystrings no]</cite></p>
+    <p dir="ltr" lang="gr">Για μετάφραση: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator &lt;google|microsoft|deepl|toptranslation&gt; --apikey &lt;key&gt; [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="gr">Για μετάφραση με το "Argos": <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt;  --translator argos [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="gr">Για μετάφραση με το "LibreTranslate": <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="gr">Για ενημέρωση αρχείων RESX: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt;</cite></p>
+
+    <br/>
+    <a href="https://github.com/NataljaNeumann/ResxVsCsv/issues" target="_new" dir="ltr" lang="gr">Χρειάζεστε υποστήριξη;</a>
+    <br/>
+    <a href="https://github.com/NataljaNeumann/ResxVsCsv/wiki" target="_new" dir="ltr" lang="gr">Wiki</a>
+    
+    
+    <a name="nl"><h1 dir="ltr" lang="nl">Nederlands</h1></a>
+    
+    <p dir="ltr" lang="nl">Dit project transformeert RESX-bestanden naar CSV en terug. Ook is er functionaliteit toegevoegd voor automatische vertalingen van strings.</p>
+    <hr/>
+    <p dir="ltr" lang="nl">Parameters:</p>
+    <p dir="ltr" lang="nl"><cite dir="ltr">--directory &lt;dir&gt;</cite> de map met RESX-bestanden of een CSV-bestand, bijvoorbeeld: <cite dir="ltr">--directory c:\users\myname\projects\myproject</cite></p>
+    <p dir="ltr" lang="nl"><cite dir="ltr">--pattern &lt;pattern&gt;</cite> het patroon voor RESX-bestanden, bijvoorbeeld: <cite dir="ltr">--pattern Resources.*resx</cite></p>
+    <p dir="ltr" lang="nl"><cite dir="ltr">--translator &lt;google|microsoft|deepl|toptranslation|libretranslate|argos&gt;</cite> de vertaler voor de vertaling van ontbrekende RESX-gegevens tijdens de overdracht naar CSV, bijvoorbeeld: <cite dir="ltr">--translator argos</cite></p>
+    <p dir="ltr" lang="nl"><cite dir="ltr">--apikey &lt;key&gt;</cite> de sleutel voor de vertaling van API, bijvoorbeeld: <cite dir="ltr">--key 012345XYZ</cite></p>
+    <p dir="ltr" lang="nl"><cite dir="ltr">--libreurl &lt;url&gt;</cite> de URL voor de libretranslate-vertaalservice, bijvoorbeeld: <cite dir="ltr">--libreurl https://libretranslate.com/translate</cite></p>
+    <p dir="ltr" lang="nl"><cite dir="ltr">--sortbyname &lt;yes|no&gt;</cite> specificeert dat het CSV-bestand moet worden gesorteerd op naam, ja of nee. Standaard is: <cite dir="ltr">no</cite></p>
+    <p dir="ltr" lang="nl"><cite dir="ltr">--toresx &lt;name.csv&gt;</cite> het gespecificeerde CSV-bestand wordt geïntegreerd in overeenkomstige RESX-bestanden, bijvoorbeeld: <cite dir="ltr">--toresx Resources.csv</cite></p>
+    <p dir="ltr" lang="nl"><cite dir="ltr">--onlystrings &lt;yes|no&gt;</cite> specificeert of alleen tekenreekswaarden moeten worden verzameld in CSV, of ook andere waarden. Ja of nee, de standaardwaarde is ja, bijvoorbeeld: <cite dir="ltr">--onlystrings no</cite></p>
+    <hr/>
+    <p dir="ltr" lang="nl">Voor conversie naar CSV: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; [--sortbyname yes] [--onlystrings no]</cite></p>
+    <p dir="ltr" lang="nl">Voor vertaling: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator &lt;google|microsoft|deepl|toptranslation&gt; --apikey &lt;key&gt; [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="nl">Voor vertaling met "Argos": <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt;  --translator argos [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="nl">Voor vertaling met "LibreTranslate": <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="nl">Voor het bijwerken van RESX-bestanden: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt;</cite></p>
+
+    <br/>
+    <a href="https://github.com/NataljaNeumann/ResxVsCsv/issues" target="_new" dir="ltr" lang="nl">Heeft u ondersteuning nodig?</a>
+    <br/>
+    <a href="https://github.com/NataljaNeumann/ResxVsCsv/wiki" target="_new" dir="ltr" lang="nl">Wiki</a>
+
+    <a name="da"><h1 dir="ltr" lang="da">Dansk</h1></a>
+
+    <p dir="ltr" lang="da">Dette projekt transformerer RESX-filer til CSV og tilbage. Der er også tilføjet nogle funktioner til automatiske oversættelser af strenge.</p>
+    <hr/>
+    <p dir="ltr" lang="da">Parametre:</p>
+    <p dir="ltr" lang="da"><cite dir="ltr">--directory &lt;dir&gt;</cite> biblioteket med RESX-filer eller CSV-filer, f.eks.: <cite dir="ltr">--directory c:\users\myname\projects\myproject</cite></p>
+    <p dir="ltr" lang="da"><cite dir="ltr">--pattern &lt;pattern&gt;</cite> mønsteret for RESX-filer, f.eks.: <cite dir="ltr">--pattern Resources.*resx</cite></p>
+    <p dir="ltr" lang="da"><cite dir="ltr">--translator &lt;google|microsoft|deepl|toptranslation|libretranslate|argos&gt;</cite> oversætteren til oversættelse af manglende RESX-poster under overførsel til CSV, f.eks.: <cite dir="ltr">--translator argos</cite></p>
+    <p dir="ltr" lang="da"><cite dir="ltr">--apikey &lt;key&gt;</cite> nøglen til oversættelse af api, f.eks.: <cite dir="ltr">--key 012345XYZ</cite></p>
+    <p dir="ltr" lang="da"><cite dir="ltr">--libreurl &lt;url&gt;</cite> URL'en til libretranslate-oversættelsestjenesten, f.eks.: <cite dir="ltr">--libreurl https://libretranslate.com/translate</cite></p>
+    <p dir="ltr" lang="da"><cite dir="ltr">--sortbyname &lt;yes|no&gt;</cite> specificerer, at CSV-filen skal sorteres efter navn, ja eller nej. Standard er: <cite dir="ltr">no</cite></p>
+    <p dir="ltr" lang="da"><cite dir="ltr">--toresx &lt;name.csv&gt;</cite> den angivne CSV-fil skal integreres i tilsvarende RESX-filer, f.eks.: <cite dir="ltr">--toresx Resources.csv</cite></p>
+    <p dir="ltr" lang="da"><cite dir="ltr">--onlystrings &lt;yes|no&gt;</cite> angiver, om kun strengværdier skal samles i CSV, eller også andre værdier. Ja eller nej, standarden er ja, f.eks.: <cite dir="ltr">--onlystrings no</cite></p>
+    <hr/>
+    <p dir="ltr" lang="da">For konvertering til CSV: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; [--sortbyname yes] [--onlystrings no]</cite></p>
+    <p dir="ltr" lang="da">Til oversættelse: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator &lt;google|microsoft|deepl|toptranslation&gt; --apikey &lt;key&gt; [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="da">Til oversættelse med "Argos": <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt;  --translator argos [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="da">Til oversættelse med "LibreTranslate": <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="da">Til opdatering af RESX-filer: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt;</cite></p>
+    
+    <br/>
+    <a href="https://github.com/NataljaNeumann/ResxVsCsv/issues" target="_new" dir="ltr" lang="da">Har du brug for støtte?</a>
+    <br/>
+    <a href="https://github.com/NataljaNeumann/ResxVsCsv/wiki" target="_new" dir="ltr" lang="da">Wiki</a>
+
+
+
+    <a name="fi"><h1 dir="ltr" lang="fi">Suomeksi</h1></a>
+    
+    <p dir="ltr" lang="fi">Tämä projekti muuttaa RESX-tiedostot CSV-muotoon ja takaisin. Myös joitakin toimintoja on lisätty merkkijonojen automaattista kääntämistä varten.</p>
+    <hr/>
+    <p dir="ltr" lang="fi">Parametrit:</p>
+    <p dir="ltr" lang="fi"><cite dir="ltr">--directory &lt;dir&gt;</cite> RESX-tiedostojen tai CSV-tiedostojen hakemisto, esim. <cite dir="ltr">--directory c:\users\myname\projects\myproject</cite></p>
+    <p dir="ltr" lang="fi"><cite dir="ltr">--pattern &lt;pattern&gt;</cite> RESX-tiedostojen malli, esim. <cite dir="ltr">--pattern Resources.*resx</cite></p>
+    <p dir="ltr" lang="fi"><cite dir="ltr">--translator &lt;google|microsoft|deepl|toptranslation|libretranslate|argos&gt;</cite> kääntäjä puuttuvien RESX-merkintöjen kääntämiseen CSV-tiedostoon siirron aikana, esim. <cite dir="ltr">--translator argos</cite></p>
+    <p dir="ltr" lang="fi"><cite dir="ltr">--apikey &lt;key&gt;</cite> avain api:n kääntämiseen, esim. <cite dir="ltr">--key 012345XYZ</cite></p>
+    <p dir="ltr" lang="fi"><cite dir="ltr">--libreurl &lt;url&gt;</cite> libretranslate-käännöspalvelun URL-osoite, esim.: <cite dir="ltr">--libreurl https://libretranslate.com/translate</cite></p>
+    <p dir="ltr" lang="fi"><cite dir="ltr">--sortbyname &lt;yes|no&gt;</cite> määrittää, että CSV-tiedosto lajitellaan nimen mukaan, kyllä ​​tai ei. Oletus on: <cite dir="ltr">no</cite></p>
+    <p dir="ltr" lang="fi"><cite dir="ltr">--toresx &lt;name.csv&gt;</cite> määritetty CSV-tiedosto tulee integroida vastaaviin RESX-tiedostoihin, esim. <cite dir="ltr">--toresx Resources.csv</cite></p>
+    <p dir="ltr" lang="fi"><cite dir="ltr">--onlystrings &lt;yes|no&gt;</cite> määrittää, kerätäänkö CSV:hen vain merkkijonoarvot vai myös muita arvoja. Kyllä tai ei, oletusarvo on kyllä, esim.: <cite dir="ltr">--onlystrings no</cite></p>
+    <hr/>
+    <p dir="ltr" lang="fi">CSV-muotoon muuntaminen: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; [--sortbyname yes] [--onlystrings no]</cite></p>
+    <p dir="ltr" lang="fi">Käännös: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator &lt;google|microsoft|deepl|toptranslation&gt; --apikey &lt;key&gt; [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="fi">Käännös sanalla "Argos": <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt;  --translator argos [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="fi">Käännös sanalla "LibreTranslate": <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="fi">RESX-tiedostojen päivittäminen: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt;</cite></p>
+
+    <br/>
+    <a href="https://github.com/NataljaNeumann/ResxVsCsv/issues" target="_new" dir="ltr" lang="fi">Tarvitsetko tukea?</a>
+    <br/>
+    <a href="https://github.com/NataljaNeumann/ResxVsCsv/wiki" target="_new" dir="ltr" lang="fi">Wiki</a>
+
+    <a name="sv"><h1 dir="ltr" lang="sv">Svenska</h1></a>
+
+    
+    <p dir="ltr" lang="sv">Detta projekt omvandlar RESX-filer till CSV och tillbaka. Även viss funktionalitet läggs till för automatisk översättning av strängar.</p>
+    <hr/>
+    <p dir="ltr" lang="sv">Parametrar:</p>
+    <p dir="ltr" lang="sv"><cite dir="ltr">--directory &lt;dir&gt;</cite> katalogen för RESX-filer eller CSV-filer, t.ex.: <cite dir="ltr">--directory c:\users\myname\projects\myproject</cite></p>
+    <p dir="ltr" lang="sv"><cite dir="ltr">--pattern &lt;pattern&gt;</cite> mönstret för RESX-filer, t.ex.: <cite dir="ltr">--pattern Resources.*resx</cite></p>
+    <p dir="ltr" lang="sv"><cite dir="ltr">--translator &lt;google|microsoft|deepl|toptranslation|libretranslate|argos&gt;</cite> översättaren för översättning av saknade RESX-poster under överföring till CSV, t.ex.: <cite dir="ltr">--translator argos</cite></p>
+    <p dir="ltr" lang="sv"><cite dir="ltr">--apikey &lt;key&gt;</cite> nyckeln för översättning av api, t.ex.: <cite dir="ltr">--key 012345XYZ</cite></p>
+    <p dir="ltr" lang="sv"><cite dir="ltr">--libreurl &lt;url&gt;</cite> URL:en för översättningstjänsten libretranslate, t.ex.: <cite dir="ltr">--libreurl https://libretranslate.com/translate</cite></p>
+    <p dir="ltr" lang="sv"><cite dir="ltr">--sortbyname &lt;yes|no&gt;</cite> anger att CSV-filen ska sorteras efter namn, ja eller nej. Standard är: <cite dir="ltr">no</cite></p>
+    <p dir="ltr" lang="sv"><cite dir="ltr">--toresx &lt;name.csv&gt;</cite> den angivna CSV-filen ska integreras i motsvarande RESX-filer, t.ex.: <cite dir="ltr">--toresx Resources.csv</cite></p>
+    <p dir="ltr" lang="sv"><cite dir="ltr">--onlystrings &lt;yes|no&gt;</cite> anger om endast strängvärden ska samlas in i CSV, eller andra värden också. Ja eller nej, standard är ja, t.ex.: <cite dir="ltr">--onlystrings no</cite></p>
+    <hr/>
+    <p dir="ltr" lang="sv">För konvertering till CSV: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; [--sortbyname yes] [--onlystrings no]</cite></p>
+    <p dir="ltr" lang="sv">För översättning: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator &lt;google|microsoft|deepl|toptranslation&gt; --apikey &lt;key&gt; [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="sv">För översättning med "Argos": <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt;  --translator argos [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="sv">För översättning med "LibreTranslate": <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="sv">För att uppdatera RESX-filer: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt;</cite></p>
+
+    <br/>
+    <a href="https://github.com/NataljaNeumann/ResxVsCsv/issues" target="_new" dir="ltr" lang="sv">Behöver du stöd?</a>
+    <br/>
+    <a href="https://github.com/NataljaNeumann/ResxVsCsv/wiki" target="_new" dir="ltr" lang="sv">Wiki</a>
+
+
+    <a name="tr"><h1 dir="ltr" lang="tr">Türkçe</h1></a>
+    
+    <p dir="ltr" lang="tr">Bu proje RESX dosyalarını CSV'ye ve geriye dönüştürür. Ayrıca dizelerin otomatik çevirileri için bazı işlevler eklenmiştir.</p>
+    <hr/>
+    <p dir="ltr" lang="tr">Parametreler:</p>
+    <p dir="ltr" lang="tr"><cite dir="ltr">--directory &lt;dir&gt;</cite> RESX dosyalarının veya CSV dosyasının dizini, örneğin: <cite dir="ltr">--directory c:\users\myname\projects\myproject</cite></p>
+    <p dir="ltr" lang="tr"><cite dir="ltr">--pattern &lt;pattern&gt;</cite> RESX dosyaları için kalıp, örneğin: <cite dir="ltr">--pattern Resources.*resx</cite></p>
+    <p dir="ltr" lang="tr"><cite dir="ltr">--translator &lt;google|microsoft|deepl|toptranslation|libretranslate|argos&gt;</cite> CSV'ye aktarım sırasında eksik RESX girişlerinin çevirisi için çevirmen, örneğin: <cite dir="ltr">--translator argos</cite></p>
+    <p dir="ltr" lang="tr"><cite dir="ltr">--apikey &lt;key&gt;</cite> api'nin çevirisinin anahtarı, örneğin: <cite dir="ltr">--key 012345XYZ</cite></p>
+    <p dir="ltr" lang="tr"><cite dir="ltr">--libreurl &lt;url&gt;</cite> libretranslate çeviri hizmetinin URL'si, örneğin: <cite dir="ltr">--libreurl https://libretranslate.com/translate</cite></p>
+    <p dir="ltr" lang="tr"><cite dir="ltr">--sortbyname &lt;yes|no&gt;</cite> CSV dosyasının evet veya hayır ada göre sıralanacağını belirtir. Varsayılan: <cite dir="ltr">no</cite></p>
+    <p dir="ltr" lang="tr"><cite dir="ltr">--toresx &lt;name.csv&gt;</cite> belirtilen CSV dosyası ilgili RESX dosyalarına entegre edilecektir, örneğin: <cite dir="ltr">--toresx Resources.csv</cite></p>
+    <p dir="ltr" lang="tr"><cite dir="ltr">--onlystrings &lt;yes|no&gt;</cite> CSV'de yalnızca dize değerlerinin mi yoksa diğer değerlerin mi toplanacağını belirtir. Evet veya hayır, varsayılan evet'tir, örneğin: <cite dir="ltr">--onlystrings no</cite></p>
+    <hr/>
+    <p dir="ltr" lang="tr">CSV'ye dönüştürmek için: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; [--sortbyname yes] [--onlystrings no]</cite></p>
+    <p dir="ltr" lang="tr">Çeviri için: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator &lt;google|microsoft|deepl|toptranslation&gt; --apikey &lt;key&gt; [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="tr">"Argos" ile çeviri için: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt;  --translator argos [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="tr">"LibreTranslate" ile çeviri için: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="tr">RESX dosyalarını güncellemek için: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt;</cite></p>
+
+    <br/>
+    <a href="https://github.com/NataljaNeumann/ResxVsCsv/issues" target="_new" dir="ltr" lang="tr">Desteğe mi ihtiyacınız var?</a>
+    <br/>
+    <a href="https://github.com/NataljaNeumann/ResxVsCsv/wiki" target="_new" dir="ltr" lang="tr">Viki</a>
+
+    
+
+    <a name="chs"><h1 dir="ltr" lang="chs">中文文本</h1></a>
+
+    <p dir="ltr" lang="chs">该项目将 RESX 文件与 CSV 文件相互转换。还添加了一些用于字符串自动翻译的功能。</p>
+    <hr/>
+    <p dir="ltr" lang="chs">参数：</p>
+    <p dir="ltr" lang="chs"><cite dir="ltr">--directory &lt;dir&gt;</cite> RESX 文件或 CSV 文件的目录，例如： <cite dir="ltr">--directory c:\users\myname\projects\myproject</cite></p>
+    <p dir="ltr" lang="chs"><cite dir="ltr">--pattern &lt;pattern&gt;</cite> RESX 文件的模式，例如： <cite dir="ltr">--pattern Resources.*resx</cite></p>
+    <p dir="ltr" lang="chs"><cite dir="ltr">--translator &lt;google|microsoft|deepl|toptranslation|libretranslate|argos&gt;</cite> 翻译器用于在传输到 CSV 期间翻译丢失的 RESX 条目，例如： <cite dir="ltr">--translator argos</cite></p>
+    <p dir="ltr" lang="chs"><cite dir="ltr">--apikey &lt;key&gt;</cite> API 翻译的关键，例如： <cite dir="ltr">--key 012345XYZ</cite></p>
+    <p dir="ltr" lang="chs"><cite dir="ltr">--libreurl &lt;url&gt;</cite> libretranslate 翻译服务的 URL，例如： <cite dir="ltr">--libreurl https://libretranslate.com/translate</cite></p>
+    <p dir="ltr" lang="chs"><cite dir="ltr">--sortbyname &lt;yes|no&gt;</cite> 指定 CSV 文件应按名称、是或否排序。默认为： <cite dir="ltr">no</cite></p>
+    <p dir="ltr" lang="chs"><cite dir="ltr">--toresx &lt;name.csv&gt;</cite> 指定的 CSV 文件应集成到相应的 RESX 文件中，例如： <cite dir="ltr">--toresx Resources.csv</cite></p>
+    <p dir="ltr" lang="chs"><cite dir="ltr">--onlystrings &lt;yes|no&gt;</cite> 指定是否仅应在 CSV 中收集字符串值，或者也应收集其他值。是或否，默认为是，例如： <cite dir="ltr">--onlystrings no</cite></p>
+    <hr/>
+    <p dir="ltr" lang="chs">对于转换为 CSV： <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; [--sortbyname yes] [--onlystrings no]</cite></p>
+    <p dir="ltr" lang="chs">翻译： <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator &lt;google|microsoft|deepl|toptranslation&gt; --apikey &lt;key&gt; [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="chs">对于「Argos」翻译： <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt;  --translator argos [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="chs">使用「LibreTranslate」进行翻译： <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="chs">对于更新 RESX 文件： <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt;</cite></p>
+
+    <br/>
+    <a href="https://github.com/NataljaNeumann/ResxVsCsv/issues" target="_new" dir="ltr" lang="chs">您需要支持吗？</a>
+    <br/>
+    <a href="https://github.com/NataljaNeumann/ResxVsCsv/wiki" target="_new" dir="ltr" lang="chs">维基百科</a>
+    <br/>
+    
+
+    <a name="cht"><h1 dir="ltr" lang="cht">中文文字</h1></a>
+
+    <p dir="ltr" lang="cht">該專案將 RESX 檔案與 CSV 檔案相互轉換。還添加了一些用於字串自動翻譯的功能。</p>
+    <hr/>
+    <p dir="ltr" lang="cht">參數：</p>
+    <p dir="ltr" lang="cht"><cite dir="ltr">--directory &lt;dir&gt;</cite> RESX 檔案或 CSV 檔案的目錄，例如： <cite dir="ltr">--directory c:\users\myname\projects\myproject</cite></p>
+    <p dir="ltr" lang="cht"><cite dir="ltr">--pattern &lt;pattern&gt;</cite> RESX 檔案的模式，例如： <cite dir="ltr">--pattern Resources.*resx</cite></p>
+    <p dir="ltr" lang="cht"><cite dir="ltr">--translator &lt;google|microsoft|deepl|toptranslation|libretranslate|argos&gt;</cite> 在傳輸到 CSV 期間翻譯遺失的 RESX 條目的翻譯器，例如： <cite dir="ltr">--translator argos</cite></p>
+    <p dir="ltr" lang="cht"><cite dir="ltr">--apikey &lt;key&gt;</cite> API 翻譯的金鑰，例如： <cite dir="ltr">--key 012345XYZ</cite></p>
+    <p dir="ltr" lang="cht"><cite dir="ltr">--libreurl &lt;url&gt;</cite> libretranslate 翻譯服務的 URL，例如： <cite dir="ltr">--libreurl https://libretranslate.com/translate</cite></p>
+    <p dir="ltr" lang="cht"><cite dir="ltr">--sortbyname &lt;yes|no&gt;</cite> 指定 CSV 檔案應按名稱（是或否）排序。預設為： <cite dir="ltr">no</cite></p>
+    <p dir="ltr" lang="cht"><cite dir="ltr">--toresx &lt;name.csv&gt;</cite> 指定的 CSV 檔案應整合到對應的 RESX 檔案中，例如： <cite dir="ltr">--toresx Resources.csv</cite></p>
+    <p dir="ltr" lang="cht"><cite dir="ltr">--onlystrings &lt;yes|no&gt;</cite> 指定是否僅將字串值收集在 CSV 中，或也收集其他值。是或否，預設為是，例如： <cite dir="ltr">--onlystrings no</cite></p>
+    <hr/>
+    <p dir="ltr" lang="cht">對於轉換為 CSV： <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; [--sortbyname yes] [--onlystrings no]</cite></p>
+    <p dir="ltr" lang="cht">對於翻譯： <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator &lt;google|microsoft|deepl|toptranslation&gt; --apikey &lt;key&gt; [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="cht">對於使用「Argos」進行翻譯：<cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt;  --translator argos [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="cht">對於使用「LibreTranslate」進行翻譯： <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="cht">對於更新 RESX 檔案： <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt;</cite></p>
+    
+
+    <br/>
+    <a href="https://github.com/NataljaNeumann/ResxVsCsv/issues" target="_new" dir="ltr" lang="cht">您需要支援嗎？</a>
+    <br/>
+    <a href="https://github.com/NataljaNeumann/ResxVsCsv/wiki" target="_new" dir="ltr" lang="cht">維基百科</a>
+
+    <a name="ja"><h1 dir="ltr" lang="ja">日本語</h1></a>
+
+    <p dir="ltr" lang="ja">このプロジェクトは、RESX ファイルを CSV に変換したり、その逆の変換を行ったりします。また、文字列の自動翻訳のための機能もいくつか追加されています。</p>
+    <hr/>
+    <p dir="ltr" lang="ja">パラメータ:</p>
+    <p dir="ltr" lang="ja"><cite dir="ltr">--directory &lt;dir&gt;</cite> RESX ファイルまたは CSV ファイルのディレクトリ。例: <cite dir="ltr">--directory c:\users\myname\projects\myproject</cite></p>
+    <p dir="ltr" lang="ja"><cite dir="ltr">--pattern &lt;pattern&gt;</cite> RESX ファイルのパターン、例: <cite dir="ltr">--pattern Resources.*resx</cite></p>
+    <p dir="ltr" lang="ja"><cite dir="ltr">--translator &lt;google|microsoft|deepl|toptranslation|libretranslate|argos&gt;</cite> CSV への転送中に欠落している RESX エントリを翻訳するためのトランスレータ。例: <cite dir="ltr">--translator argos</cite></p>
+    <p dir="ltr" lang="ja"><cite dir="ltr">--apikey &lt;key&gt;</cite> API の翻訳用のキー、例: <cite dir="ltr">--key 012345XYZ</cite></p>
+    <p dir="ltr" lang="ja"><cite dir="ltr">--libreurl &lt;url&gt;</cite> libretranslate 翻訳サービスの URL、例: <cite dir="ltr">--libreurl https://libretranslate.com/translate</cite></p>
+    <p dir="ltr" lang="ja"><cite dir="ltr">--sortbyname &lt;yes|no&gt;</cite> CSV ファイルを名前でソートすることを指定します (「はい」または「いいえ」)。デフォルトは: <cite dir="ltr">no</cite></p>
+    <p dir="ltr" lang="ja"><cite dir="ltr">--toresx &lt;name.csv&gt;</cite> 指定された CSV ファイルは、対応する RESX ファイルに統合されます。例: <cite dir="ltr">--toresx Resources.csv</cite></p>
+    <p dir="ltr" lang="ja"><cite dir="ltr">--onlystrings &lt;yes|no&gt;</cite> 文字列値のみを CSV で収集するか、他の値も収集するかどうかを指定します。 「はい」または「いいえ」。デフォルトは「はい」です。例: <cite dir="ltr">--onlystrings no</cite></p>
+    <hr/>
+    <p dir="ltr" lang="ja">CSV に変換するには: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; [--sortbyname yes] [--onlystrings no]</cite></p>
+    <p dir="ltr" lang="ja">翻訳の場合: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator &lt;google|microsoft|deepl|toptranslation&gt; --apikey &lt;key&gt; [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="ja">「Argos」を使用した翻訳の場合: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt;  --translator argos [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="ja">「LibreTranslate」による翻訳の場合: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="ja">RESX ファイルを更新するには: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt;</cite></p>
+
+    <br/>
+    <a href="https://github.com/NataljaNeumann/ResxVsCsv/issues" target="_new" dir="ltr" lang="ja">サポートが必要ですか?</a>
+    <br/>
+    <a href="https://github.com/NataljaNeumann/ResxVsCsv/wiki" target="_new" dir="ltr" lang="ja">ウィキ</a>
+
+    <a name="ko"><h1 dir="ltr" lang="ko">한국인</h1></a>
+
+    <p dir="ltr" lang="ko">이 프로젝트는 RESX 파일을 CSV로 변환하거나 그 반대로 변환합니다. 또한 문자열 자동 번역을 위한 일부 기능이 추가되었습니다.</p>
+    <hr/>
+    <p dir="ltr" lang="ko">매개변수:</p>
+    <p dir="ltr" lang="ko"><cite dir="ltr">--directory &lt;dir&gt;</cite> RESX 파일 또는 CSV 파일의 디렉터리입니다. 예: <cite dir="ltr">--directory c:\users\myname\projects\myproject</cite></p>
+    <p dir="ltr" lang="ko"><cite dir="ltr">--pattern &lt;pattern&gt;</cite> RESX 파일의 패턴, 예: <cite dir="ltr">--pattern Resources.*resx</cite></p>
+    <p dir="ltr" lang="ko"><cite dir="ltr">--translator &lt;google|microsoft|deepl|toptranslation|libretranslate|argos&gt;</cite> CSV로 전송하는 동안 누락된 RESX 항목을 번역하기 위한 번역기, 예: <cite dir="ltr">--translator argos</cite></p>
+    <p dir="ltr" lang="ko"><cite dir="ltr">--apikey &lt;key&gt;</cite> API 번역의 키입니다. 예: <cite dir="ltr">--key 012345XYZ</cite></p>
+    <p dir="ltr" lang="ko"><cite dir="ltr">--libreurl &lt;url&gt;</cite> libretranslate 번역 서비스의 URL, 예: <cite dir="ltr">--libreurl https://libretranslate.com/translate</cite></p>
+    <p dir="ltr" lang="ko"><cite dir="ltr">--sortbyname &lt;yes|no&gt;</cite> CSV 파일이 이름(예 또는 아니요)별로 정렬되도록 지정합니다. 기본값은: <cite dir="ltr">no</cite></p>
+    <p dir="ltr" lang="ko"><cite dir="ltr">--toresx &lt;name.csv&gt;</cite> 지정된 CSV 파일은 해당 RESX 파일에 통합되어야 합니다. 예: <cite dir="ltr">--toresx Resources.csv</cite></p>
+    <p dir="ltr" lang="ko"><cite dir="ltr">--onlystrings &lt;yes|no&gt;</cite> 문자열 값만 CSV로 수집할지, 아니면 다른 값도 수집할지를 지정합니다. 예 또는 아니요. 기본값은 예입니다. 예: <cite dir="ltr">--onlystrings no</cite></p>
+    <hr/>
+    <p dir="ltr" lang="ko">CSV로 변환하려면: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; [--sortbyname yes] [--onlystrings no]</cite></p>
+    <p dir="ltr" lang="ko">번역: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator &lt;google|microsoft|deepl|toptranslation&gt; --apikey &lt;key&gt; [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="ko">"Argos"로 번역하려면: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt;  --translator argos [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="ko">"LibreTranslate"를 사용한 번역: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="ko">RESX 파일을 업데이트하려면: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt;</cite></p>
+
+    <br/>
+    <a href="https://github.com/NataljaNeumann/ResxVsCsv/issues" target="_new" dir="ltr" lang="ko">지원이 필요합니까?</a>
+    <br/>
+    <a href="https://github.com/NataljaNeumann/ResxVsCsv/wiki" target="_new" dir="ltr" lang="ko">위키</a>
+
+    <a name="hi"><h1 dir="ltr" lang="hi">भारतीय में</h1></a>
+
+    <p dir="ltr" lang="hi">यह प्रोजेक्ट RESX फ़ाइलों को CSV और बैक में बदल देता है। इसके अलावा स्ट्रिंग्स के स्वचालित अनुवाद के लिए कुछ कार्यक्षमता भी जोड़ी गई है।</p>
+    <hr/>
+    <p dir="ltr" lang="hi">पैरामीटर:</p>
+    <p dir="ltr" lang="hi"><cite dir="ltr">--directory &lt;dir&gt;</cite> RESX फ़ाइलों या CSV फ़ाइल की निर्देशिका, जैसे: <cite dir="ltr">--directory c:\users\myname\projects\myproject</cite></p>
+    <p dir="ltr" lang="hi"><cite dir="ltr">--pattern &lt;pattern&gt;</cite> RESX फ़ाइलों के लिए पैटर्न, उदाहरण: <cite dir="ltr">--pattern Resources.*resx</cite></p>
+    <p dir="ltr" lang="hi"><cite dir="ltr">--translator &lt;google|microsoft|deepl|toptranslation|libretranslate|argos&gt;</cite> CSV में स्थानांतरण के दौरान गुम RESX प्रविष्टियों के अनुवाद के लिए अनुवादक, उदाहरण: <cite dir="ltr">--translator argos</cite></p>
+    <p dir="ltr" lang="hi"><cite dir="ltr">--apikey &lt;key&gt;</cite> एपीआई के अनुवाद के लिए कुंजी, उदाहरण: <cite dir="ltr">--key 012345XYZ</cite></p>
+    <p dir="ltr" lang="hi"><cite dir="ltr">--libreurl &lt;url&gt;</cite> लिब्रेट्रांसलेट अनुवाद सेवा के लिए यूआरएल, उदाहरण: <cite dir="ltr">--libreurl https://libretranslate.com/translate</cite></p>
+    <p dir="ltr" lang="hi"><cite dir="ltr">--sortbyname &lt;yes|no&gt;</cite> निर्दिष्ट करता है कि CSV फ़ाइल को नाम, हाँ या नहीं के आधार पर क्रमबद्ध किया जाएगा। डिफ़ॉल्ट है: <cite dir="ltr">no</cite></p>
+    <p dir="ltr" lang="hi"><cite dir="ltr">--toresx &lt;name.csv&gt;</cite> निर्दिष्ट CSV फ़ाइल को संबंधित RESX फ़ाइलों में एकीकृत किया जाएगा, उदाहरण के लिए: <cite dir="ltr">--toresx Resources.csv</cite></p>
+    <p dir="ltr" lang="hi"><cite dir="ltr">--onlystrings &lt;yes|no&gt;</cite> निर्दिष्ट करता है, यदि सीएसवी में केवल स्ट्रिंग मान एकत्र किए जाएंगे, या अन्य मान भी। हाँ या नहीं, डिफ़ॉल्ट हाँ है, उदाहरण: <cite dir="ltr">--onlystrings no</cite></p>
+    <hr/>
+    <p dir="ltr" lang="hi">सीएसवी में रूपांतरण के लिए: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; [--sortbyname yes] [--onlystrings no]</cite></p>
+    <p dir="ltr" lang="hi">अनुवाद के लिए: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator &lt;google|microsoft|deepl|toptranslation&gt; --apikey &lt;key&gt; [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="hi">"Argos" के साथ अनुवाद के लिए: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt;  --translator argos [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="hi">"LibreTranslate" के साथ अनुवाद के लिए: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="hi">RESX फ़ाइलें अद्यतन करने के लिए: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt;</cite></p>
+
+    <br/>
+    <a href="https://github.com/NataljaNeumann/ResxVsCsv/issues" target="_new" dir="ltr" lang="hi">क्या आपको समर्थन की आवश्यकता है?</a>
+    <br/>
+    <a href="https://github.com/NataljaNeumann/ResxVsCsv/wiki" target="_new" dir="ltr" lang="hi">विकि</a>
+
+
+    <a name="ar"><h1 dir="rtl" lang="ar">باللغة العربية</h1></a>
+
+    <font size="+2">
+      
+      <p dir="rtl" lang="ar">يقوم هذا المشروع بتحويل ملفات RESX إلى CSV والعكس. تتم أيضًا إضافة بعض الوظائف للترجمات التلقائية للسلاسل.</p>
+      <hr/>
+      <p dir="rtl" lang="ar">حدود:</p>
+      <p dir="rtl" lang="ar"><cite dir="ltr">--directory &lt;dir&gt;</cite> دليل ملفات RESX أو ملف CSV، على سبيل المثال: <cite dir="ltr">--directory c:\users\myname\projects\myproject</cite></p>
+      <p dir="rtl" lang="ar"><cite dir="ltr">--pattern &lt;pattern&gt;</cite> النمط لملفات RESX، على سبيل المثال: <cite dir="ltr">--pattern Resources.*resx</cite></p>
+      <p dir="rtl" lang="ar"><cite dir="ltr">--translator &lt;google|microsoft|deepl|toptranslation|libretranslate|argos&gt;</cite> مترجم لترجمة إدخالات RESX المفقودة أثناء النقل إلى ملف CSV، على سبيل المثال: <cite dir="ltr">--translator argos</cite></p>
+      <p dir="rtl" lang="ar"><cite dir="ltr">--apikey &lt;key&gt;</cite> مفتاح ترجمة واجهة برمجة التطبيقات، على سبيل المثال: <cite dir="ltr">--key 012345XYZ</cite></p>
+      <p dir="rtl" lang="ar"><cite dir="ltr">--libreurl &lt;url&gt;</cite> عنوان URL لخدمة الترجمة libretranslate، على سبيل المثال: <cite dir="ltr">--libreurl https://libretranslate.com/translate</cite></p>
+      <p dir="rtl" lang="ar"><cite dir="ltr">--sortbyname &lt;yes|no&gt;</cite> يحدد أنه يجب فرز ملف CSV حسب الاسم، نعم أو لا. الافتراضي هو: <cite dir="ltr">no</cite></p>
+      <p dir="rtl" lang="ar"><cite dir="ltr">--toresx &lt;name.csv&gt;</cite> يجب دمج ملف CSV المحدد في ملفات RESX المقابلة، على سبيل المثال: <cite dir="ltr">--toresx Resources.csv</cite></p>
+      <p dir="rtl" lang="ar"><cite dir="ltr">--onlystrings &lt;yes|no&gt;</cite> يحدد ما إذا كان سيتم جمع قيم السلسلة فقط في ملف CSV، أو قيم أخرى أيضًا. نعم أو لا، الافتراضي هو نعم، على سبيل المثال: <cite dir="ltr">--onlystrings no</cite></p>
+      <hr/>
+      <p dir="rtl" lang="ar">للتحويل إلى CSV: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; [--sortbyname yes] [--onlystrings no]</cite></p>
+      <p dir="rtl" lang="ar">للترجمة: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator &lt;google|microsoft|deepl|toptranslation&gt; --apikey &lt;key&gt; [--sortbyname yes]</cite></p>
+      <p dir="rtl" lang="ar">للترجمة مع "أرجوس": <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt;  --translator argos [--sortbyname yes]</cite></p>
+      <p dir="rtl" lang="ar">للترجمة باستخدام "LibreTranslate": <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes]</cite></p>
+      <p dir="rtl" lang="ar">لتحديث ملفات RESX: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt;</cite></p>
+
+      <p dir="rtl" lang="ar">
+        <a href="https://github.com/NataljaNeumann/ResxVsCsv/issues" target="_new" dir="rtl" lang="ar">هل تحتاج إلى دعم؟</a>
+        <br/>
+        <a href="https://github.com/NataljaNeumann/ResxVsCsv/wiki" target="_new" dir="rtl" lang="ar">ويكي</a>
+      </p>
+    </font>
+
+    <font size="+1">
+    <a name="he"><h1 dir="rtl" lang="he">עִברִית</h1></a>
+
+      <p dir="rtl" lang="he">פרויקט זה הופך קבצי RESX ל-CSV ובחזרה. כמו כן, מתווספת פונקציונליות מסוימת עבור תרגומים אוטומטיים של מחרוזות.</p>
+      <hr/>
+      <p dir="rtl" lang="he">פרמטרים:</p>
+      <p dir="rtl" lang="he"><cite dir="ltr">--directory &lt;dir&gt;</cite> הספרייה של קבצי RESX או של קובץ CSV, למשל: <cite dir="ltr">--directory c:\users\myname\projects\myproject</cite></p>
+      <p dir="rtl" lang="he"><cite dir="ltr">--pattern &lt;pattern&gt;</cite> התבנית של קבצי RESX, למשל: <cite dir="ltr">--pattern Resources.*resx</cite></p>
+      <p dir="rtl" lang="he"><cite dir="ltr">--translator &lt;google|microsoft|deepl|toptranslation|libretranslate|argos&gt;</cite> המתרגם לתרגום של ערכי RESX חסרים במהלך העברה ל-CSV, למשל: <cite dir="ltr">--translator argos</cite></p>
+      <p dir="rtl" lang="he"><cite dir="ltr">--apikey &lt;key&gt;</cite> המפתח לתרגום API, למשל: <cite dir="ltr">--key 012345XYZ</cite></p>
+      <p dir="rtl" lang="he"><cite dir="ltr">--libreurl &lt;url&gt;</cite> כתובת האתר של שירות התרגום libretranslate, למשל: <cite dir="ltr">--libreurl https://libretranslate.com/translate</cite></p>
+      <p dir="rtl" lang="he"><cite dir="ltr">--sortbyname &lt;yes|no&gt;</cite> מציין שקובץ ה-CSV ימויין לפי שם, כן או לא. ברירת המחדל היא: <cite dir="ltr">no</cite></p>
+      <p dir="rtl" lang="he"><cite dir="ltr">--toresx &lt;name.csv&gt;</cite> קובץ ה-CSV שצוין ישולבו בקבצי RESX מתאימים, למשל: <cite dir="ltr">--toresx Resources.csv</cite></p>
+      <p dir="rtl" lang="he"><cite dir="ltr">--onlystrings &lt;yes|no&gt;</cite> מציין, אם רק ערכי מחרוזת יאספו ב-CSV, או גם בערכים אחרים. כן או לא, ברירת המחדל היא כן, למשל: <cite dir="ltr">--onlystrings no</cite></p>
+      <hr/>
+      <p dir="rtl" lang="he">להמרה ל-CSV: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; [--sortbyname yes] [--onlystrings no]</cite></p>
+      <p dir="rtl" lang="he">לתרגום: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator &lt;google|microsoft|deepl|toptranslation&gt; --apikey &lt;key&gt; [--sortbyname yes]</cite></p>
+      <p dir="rtl" lang="he">לתרגום עם "Argos": <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt;  --translator argos [--sortbyname yes]</cite></p>
+      <p dir="rtl" lang="he">לתרגום עם "LibreTranslate": <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes]</cite></p>
+      <p dir="rtl" lang="he">לעדכון קבצי RESX: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt;</cite></p>
+
+    <p dir="rtl" lang="he">
+      <a href="https://github.com/NataljaNeumann/ResxVsCsv/issues" target="_new" dir="rtl" lang="he">האם אתה צריך תמיכה?</a>
+      <br/>
+      <a href="https://github.com/NataljaNeumann/ResxVsCsv/wiki" target="_new" dir="rtl" lang="he">ויקי</a>
+    </p>
+
+    </font>
+
+  </body>
+</html>
