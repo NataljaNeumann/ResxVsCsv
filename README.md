@@ -661,32 +661,12 @@
 <a name="ar"></a>
 ‏يقوم هذا المشروع بتحويل ملفات RESX إلى CSV والعكس. تتم أيضًا إضافة بعض الوظائف للترجمات التلقائية للسلاسل.
 
-‏للتحويل إلى CSV:  ‎ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; [--sortbyname yes] [--onlystrings no]‏
-
-‏للترجمة:  ‎ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator &lt;google|microsoft|deepl|toptranslation&gt; --apikey &lt;key&gt; [--sortbyname yes]‏
-
-‏للترجمة مع "أرجوس":  ‎ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt;  --translator argos [--sortbyname yes]‏
-
-‏للترجمة باستخدام "LibreTranslate":  ‎ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes]‏
-
-‏لتحديث ملفات RESX:  ‎ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt;‏
-
 ‏[هل تحتاج إلى دعم؟](https://github.com/NataljaNeumann/ResxVsCsv/issues)  
 [ويكي](https://github.com/NataljaNeumann/ResxVsCsv/wiki)
 ‏
 # עִברִית
 <a name="he"></a>
 ‏פרויקט זה הופך קבצי RESX ל-CSV ובחזרה. כמו כן, מתווספת פונקציונליות מסוימת עבור תרגומים אוטומטיים של מחרוזות.
-
-‏להמרה ל-CSV:  ‎ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; [--sortbyname yes] [--onlystrings no]‏
-
-‏לתרגום:  ‎ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator &lt;google|microsoft|deepl|toptranslation&gt; --apikey &lt;key&gt; [--sortbyname yes]‏
-
-‏לתרגום עם "Argos":  ‎ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt;  --translator argos [--sortbyname yes]‏
-
-‏לתרגום עם "LibreTranslate":  ‎ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes]‏
-
-‏לעדכון קבצי RESX:  ‎ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt;‏
 
 ‏[האם אתה צריך תמיכה?](https://github.com/NataljaNeumann/ResxVsCsv/issues)  
 [ויקי](https://github.com/NataljaNeumann/ResxVsCsv/wiki)
