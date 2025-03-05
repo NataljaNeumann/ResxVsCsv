@@ -661,24 +661,6 @@
 <a name="ar"></a>
 ‏يقوم هذا المشروع بتحويل ملفات RESX إلى CSV والعكس. تتم أيضًا إضافة بعض الوظائف للترجمات التلقائية للسلاسل.
 
-‏حدود:
-
-‏ ‎--directory &lt;dir&gt;‏ دليل ملفات RESX أو ملف CSV، على سبيل المثال:  ‎--directory c:\users\myname\projects\myproject‏
-
-‏ ‎--pattern &lt;pattern&gt;‏ النمط لملفات RESX، على سبيل المثال:  ‎--pattern Resources.*resx‏
-
-‏ ‎--translator &lt;google|microsoft|deepl|toptranslation|libretranslate|argos&gt;‏ مترجم لترجمة إدخالات RESX المفقودة أثناء النقل إلى ملف CSV، على سبيل المثال:  ‎--translator argos‏
-
-‏ ‎--apikey &lt;key&gt;‏ مفتاح ترجمة واجهة برمجة التطبيقات، على سبيل المثال:  ‎--key 012345XYZ‏
-
-‏ ‎--libreurl &lt;url&gt;‏ عنوان URL لخدمة الترجمة libretranslate، على سبيل المثال:  ‎--libreurl https://libretranslate.com/translate‏
-
-‏ ‎--sortbyname &lt;yes|no&gt;‏ يحدد أنه يجب فرز ملف CSV حسب الاسم، نعم أو لا. الافتراضي هو:  ‎no‏
-
-‏ ‎--toresx &lt;name.csv&gt;‏ يجب دمج ملف CSV المحدد في ملفات RESX المقابلة، على سبيل المثال:  ‎--toresx Resources.csv‏
-
-‏ ‎--onlystrings &lt;yes|no&gt;‏ يحدد ما إذا كان سيتم جمع قيم السلسلة فقط في ملف CSV، أو قيم أخرى أيضًا. نعم أو لا، الافتراضي هو نعم، على سبيل المثال:  ‎--onlystrings no‏
-
 ‏للتحويل إلى CSV:  ‎ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; [--sortbyname yes] [--onlystrings no]‏
 
 ‏للترجمة:  ‎ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator &lt;google|microsoft|deepl|toptranslation&gt; --apikey &lt;key&gt; [--sortbyname yes]‏
@@ -695,24 +677,6 @@
 # עִברִית
 <a name="he"></a>
 ‏פרויקט זה הופך קבצי RESX ל-CSV ובחזרה. כמו כן, מתווספת פונקציונליות מסוימת עבור תרגומים אוטומטיים של מחרוזות.
-
-‏פרמטרים:
-
-‏ ‎--directory &lt;dir&gt;‏ הספרייה של קבצי RESX או של קובץ CSV, למשל:  ‎--directory c:\users\myname\projects\myproject‏
-
-‏ ‎--pattern &lt;pattern&gt;‏ התבנית של קבצי RESX, למשל:  ‎--pattern Resources.*resx‏
-
-‏ ‎--translator &lt;google|microsoft|deepl|toptranslation|libretranslate|argos&gt;‏ המתרגם לתרגום של ערכי RESX חסרים במהלך העברה ל-CSV, למשל:  ‎--translator argos‏
-
-‏ ‎--apikey &lt;key&gt;‏ המפתח לתרגום API, למשל:  ‎--key 012345XYZ‏
-
-‏ ‎--libreurl &lt;url&gt;‏ כתובת האתר של שירות התרגום libretranslate, למשל:  ‎--libreurl https://libretranslate.com/translate‏
-
-‏ ‎--sortbyname &lt;yes|no&gt;‏ מציין שקובץ ה-CSV ימויין לפי שם, כן או לא. ברירת המחדל היא:  ‎no‏
-
-‏ ‎--toresx &lt;name.csv&gt;‏ קובץ ה-CSV שצוין ישולבו בקבצי RESX מתאימים, למשל:  ‎--toresx Resources.csv‏
-
-‏ ‎--onlystrings &lt;yes|no&gt;‏ מציין, אם רק ערכי מחרוזת יאספו ב-CSV, או גם בערכים אחרים. כן או לא, ברירת המחדל היא כן, למשל:  ‎--onlystrings no‏
 
 ‏להמרה ל-CSV:  ‎ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; [--sortbyname yes] [--onlystrings no]‏
 
