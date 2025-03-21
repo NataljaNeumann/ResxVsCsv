@@ -20,6 +20,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
+
 using System;
 using System.Data;
 using System.IO;
@@ -78,7 +79,7 @@ namespace ResxVsCsv
             //string strSetCulture =
                 // "af-ZA";
                 // "ar-SA";
-                // "az-AZ";
+                // "az-Latn-AZ";
                 // "be-BY";
                 // "bg-BG";
                 // "bs-Latn-BA";
@@ -439,7 +440,7 @@ namespace ResxVsCsv
 
 
                                             foreach (string strSourceCulture in new string[] { 
-                                                        "es", "de", "pt", "it", "en", "fr", "ru" })
+                                                        "es", "de", "pt", "it", "en", "fr", "ru", "ko", "ja", "zh-CHS", "zh-CHT", "hi" })
                                             {
                                                 if (oEntriesDictionary.TryGetValue(
                                                     new Entry { Culture = strSourceCulture, Name = strName }, out oFoundEntry))
@@ -530,7 +531,7 @@ namespace ResxVsCsv
 
 
                                             foreach (string strSourceCulture in new string[] { 
-                                                        "es", "de", "pt", "it", "en", "fr", "ru" })
+                                                        "es", "de", "pt", "it", "en", "fr", "ru", "ko", "ja", "zh-CHS", "zh-CHT", "hi" })
                                             {
                                                 if (oEntriesDictionary.TryGetValue(
                                                     new Entry { Culture = strSourceCulture, Name = strName }, out oFoundEntry))
