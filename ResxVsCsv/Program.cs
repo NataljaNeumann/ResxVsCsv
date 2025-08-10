@@ -149,6 +149,7 @@ namespace ResxVsCsv
                 string strAddCultures = null;
                 bool bOnlyStrings = true;
                 bool bRemoveDuplicates = false;
+                bool bFixFonts = false;
                 if (aArgs.Length == 0)
                     aArgs = new string[] { "/?" };
 
@@ -219,6 +220,12 @@ namespace ResxVsCsv
                                 strApiKey = aArgs[++i];
                             }
                             break;
+                        case "--fixfonts":
+                            if (i + 1 < aArgs.Length)
+                            {
+                                bFixFonts = "yes".Equals(aArgs[++i]);
+                            }
+                            break;
                         case "--help":
                         case "-?":
                         case "/?":
@@ -262,7 +269,7 @@ namespace ResxVsCsv
                             WriteWrappedText(
                                 Properties.Resources.ForUpdatingResxFiles +
                                 "ResxVsCsv --directory <dir> --toresx <resources.csv> [--removeduplicates yes]\r\n"+
-                                "  [--addcultures <comma-separated-list>]");
+                                "  [--addcultures <comma-separated-list>] [--fixfonts yes]");
                             return;
                     }
                 }
@@ -283,6 +290,20 @@ namespace ResxVsCsv
                     }
                     else
                     {
+
+                        Dictionary<string, string> oFonts = new Dictionary<string, string>();
+
+                        if (bFixFonts)
+                        {
+                            foreach (Entry oFontEntry in
+                                oEntries
+                                .Where(x => !string.IsNullOrEmpty(x.Type) &&
+                                    !string.IsNullOrEmpty(x.Value) &&
+                                    "System.Drawing.Font, System.Drawing".Equals(x.Type)))
+                            {
+                                oFonts[oFontEntry.Culture + "_" + oFontEntry.Name] = oFontEntry.Value;
+                            }
+                        }
 
                         List<string> aDistinctCultures = oEntries
                             .Where(x => !string.IsNullOrEmpty(x.Culture) &&
@@ -315,7 +336,7 @@ namespace ResxVsCsv
                             string strResxFile = System.IO.Path.Combine(strDirectory, strToResx.Replace(".csv", strResxCulture + ".resx"));
                             aResxFiles.Add(strResxFile);
                             UpdateResxFile(oEntries.Where(x => x.Culture.Equals(strCulture) && !string.IsNullOrEmpty(x.Value)),
-                                strResxFile, strDefaultCulturePath);
+                                strResxFile, strDefaultCulturePath, oFonts);
                         }
 
                         // if we need to remove duplicate entries then do an addiional step
@@ -988,6 +1009,9 @@ namespace ResxVsCsv
                         continue;
                     }
 
+                    for (int i = astrValues.Length - 1; i >= 0; --i)
+                        astrValues[i] = astrValues[i].Replace("\"\"", "\"");
+
                     if (bHeaders)
                     {
                         for (int i = 0; i < astrValues.Length; ++i)
@@ -1074,9 +1098,10 @@ namespace ResxVsCsv
             string[] astrValues
             )
         {
-            foreach (var value in astrValues)
+            foreach (string strValue in astrValues)
             {
-                if (value.StartsWith("\"") && !value.EndsWith("\""))
+                if (strValue.StartsWith("\"") && (!strValue.EndsWith("\"") || 
+                    ((strValue.Length-strValue.Replace("\"","").Length)&1) != 0))
                 {
                     return true;
                 }
@@ -1099,7 +1124,7 @@ namespace ResxVsCsv
                 @"(?<=^|;)(?:""(?<value>(?:[^""]|"""")*)""|(?<value>[^;]*))",
                 RegexOptions.Compiled);
 
-            return oMatches.Cast<Match>().Select(m => m.Groups["value"].Value.Replace("\"\"", "\"")).ToArray();
+            return oMatches.Cast<Match>().Select(m => m.Groups["value"].Value).ToArray();
         }
 
         //===================================================================================================
@@ -1134,11 +1159,14 @@ namespace ResxVsCsv
         /// </summary>
         /// <param name="iNewValues">New values</param>
         /// <param name="strFilePath">Path to update</param>
+        /// <param name="strTemplateResxPath">Path to template resx file</param>
+        /// <param name="oFonts">All fonts from the CSV</param>
         //===================================================================================================
         public static void UpdateResxFile(
             IEnumerable<Entry> iNewValues,
             string strFilePath,
-            string strTemplateResxPath
+            string strTemplateResxPath,
+            Dictionary<string, string> oFonts
             )
         {
             try
@@ -1219,6 +1247,37 @@ namespace ResxVsCsv
                         }
                         oXmlDoc.Root.Add(oNewElement);
                     }
+
+                    // if we have a size of an element, assume there must be a font, as well
+                    if (oNewValue.Name.EndsWith(".Size") &&
+                        !oFonts.ContainsKey(oNewValue.Culture+"_"+oNewValue.Name.Replace(".Size",".Font")))
+                    {
+                        string strNewValue = null;
+                        if (oFonts.ContainsKey("(default)_" + oNewValue.Name.Replace(".Size", ".Font")))
+                        {
+                            strNewValue = oFonts["(default)_" + oNewValue.Name.Replace(".Size", ".Font")];
+                        } else
+                        if (oFonts.ContainsKey(oNewValue.Culture + "_$this.Font"))
+                        {
+                            strNewValue = oFonts[oNewValue.Culture + "_$this.Font"];
+                        } else
+                        if (oFonts.ContainsKey("(default)_$this.Font"))
+                        {
+                            strNewValue = oFonts["(default)_$this.Font"];
+                        }
+
+                        if (strNewValue != null)
+                        {
+                            oXmlDoc.Root.Add(new XElement("data",
+                                new XAttribute("name", oNewValue.Name.Replace(".Size", ".Font")),
+                                new XAttribute("type", "System.Drawing.Font, System.Drawing"),
+                                new XElement("value", strNewValue),
+                                new XElement("comment", "Automatically fixed")
+                                ));
+                        }
+                    }
+
+
                 }
 
 
