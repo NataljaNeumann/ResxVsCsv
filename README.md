@@ -22,7 +22,7 @@
 
 ‎‎--translator &lt;google|microsoft|deepl|toptranslation|libretranslate|argos&gt;‎the translator for translation of missing RESX entries during transfer to CSV, e.g.:  ‎--translator argos‎
 
-‎‎--apikey &lt;key&gt;‎the key for translation API, e.g.:  ‎--key 012345XYZ‎
+‎‎--apikey &lt;key&gt;‎the key for translation API, e.g.:  ‎--apikey 012345XYZ‎
 
 ‎‎--libreurl &lt;url&gt;‎the URL for libretranslate translation service, e.g.:  ‎--libreurl https://libretranslate.com/translate‎
 
@@ -42,7 +42,7 @@
 
 ‎For translation with LibreTranslate:  ‎ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes]‎
 
-‎For updating RESX files:  ‎ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt;‎
+‎For updating RESX files:  ‎ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt; [--fixfonts yes]‎
 
 [Do you need support?](https://github.com/NataljaNeumann/ResxVsCsv/issues)  
 [Wiki](https://github.com/NataljaNeumann/ResxVsCsv/wiki)‎
@@ -58,7 +58,7 @@
 
 ‎‎--translator &lt;google|microsoft|deepl|toptranslation|libretranslate|argos&gt;‎le traducteur pour la traduction des entrées RESX manquantes lors du transfert vers CSV, par exemple:  ‎--translator argos‎
 
-‎‎--apikey &lt;key&gt;‎la clé de l'API de traduction, par exemple:  ‎--key 012345XYZ‎
+‎‎--apikey &lt;key&gt;‎la clé de l'API de traduction, par exemple:  ‎--apikey 012345XYZ‎
 
 ‎‎--libreurl &lt;url&gt;‎l'URL du service de traduction libretranslate, par exemple:  ‎--libreurl https://libretranslate.com/translate‎
 
@@ -78,7 +78,7 @@
 
 ‎Pour la traduction avec «LibreTranslate»:  ‎ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes]‎
 
-‎Pour mettre à jour les fichiers RESX:  ‎ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt;‎
+‎Pour mettre à jour les fichiers RESX:  ‎ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt; [--fixfonts yes]‎
 
 [Avez-vous besoin de soutien?](https://github.com/NataljaNeumann/ResxVsCsv/issues)  
 [Wikia](https://github.com/NataljaNeumann/ResxVsCsv/wiki)‎
@@ -94,7 +94,7 @@
 
 ‎‎--translator &lt;google|microsoft|deepl|toptranslation|libretranslate|argos&gt;‎tel traductor para traducir las entradas RESX que faltan durante la transferencia a CSV, por ejemplo:  ‎--translator argos‎
 
-‎‎--apikey &lt;key&gt;‎la clave para la API de traducción, p. ej.:  ‎--key 012345XYZ‎
+‎‎--apikey &lt;key&gt;‎la clave para la API de traducción, p. ej.:  ‎--apikey 012345XYZ‎
 
 ‎‎--libreurl &lt;url&gt;‎la URL del servicio de traducción libretranslate, por ejemplo:  ‎--libreurl https://libretranslate.com/translate‎
 
@@ -114,7 +114,7 @@
 
 ‎Para traducir con "LibreTranslate":  ‎ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes]‎
 
-‎Para actualizar archivos RESX:  ‎ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt;‎
+‎Para actualizar archivos RESX:  ‎ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt; [--fixfonts yes]‎
 
 [¿Necesitas apoyo?](https://github.com/NataljaNeumann/ResxVsCsv/issues)  
 [Wiki](https://github.com/NataljaNeumann/ResxVsCsv/wiki)‎
@@ -130,7 +130,7 @@
 
 ‎‎--translator &lt;google|microsoft|deepl|toptranslation|libretranslate|argos&gt;‎o tradutor para tradução de entradas RESX ausentes durante a transferência para CSV, por exemplo:  ‎--translator argos‎
 
-‎‎--apikey &lt;key&gt;‎a chave para a API de tradução, por exemplo:  ‎--key 012345XYZ‎
+‎‎--apikey &lt;key&gt;‎a chave para a API de tradução, por exemplo:  ‎--apikey 012345XYZ‎
 
 ‎‎--libreurl &lt;url&gt;‎o URL do serviço de tradução libretranslate, por exemplo:  ‎--libreurl https://libretranslate.com/translate‎
 
@@ -150,7 +150,7 @@
 
 ‎FPara tradução com "LibreTranslate":  ‎ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes]‎
 
-‎Para atualizar arquivos RESX:  ‎ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt;‎
+‎Para atualizar arquivos RESX:  ‎ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt; [--fixfonts yes]‎
 
 [Você precisa de suporte?](https://github.com/NataljaNeumann/ResxVsCsv/issues)  
 [Wiki](https://github.com/NataljaNeumann/ResxVsCsv/wiki)‎
@@ -166,7 +166,7 @@
 
 ‎‎--translator &lt;google|microsoft|deepl|toptranslation|libretranslate|argos&gt;‎il traduttore per la traduzione delle voci RESX mancanti durante il trasferimento in CSV, ad esempio:  ‎--translator argos‎
 
-‎‎--apikey &lt;key&gt;‎la chiave per l'API di traduzione, ad esempio:  ‎--key 012345XYZ‎
+‎‎--apikey &lt;key&gt;‎la chiave per l'API di traduzione, ad esempio:  ‎--apikey 012345XYZ‎
 
 ‎‎--libreurl &lt;url&gt;‎l'URL del servizio di traduzione libretranslate, ad esempio:  ‎--libreurl https://libretranslate.com/translate‎
 
@@ -186,7 +186,7 @@
 
 ‎Per la traduzione con "LibreTranslate":  ‎ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes]‎
 
-‎Per aggiornare i file RESX:  ‎ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt;‎
+‎Per aggiornare i file RESX:  ‎ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt; [--fixfonts yes]‎
 
 [Hai bisogno di supporto?](https://github.com/NataljaNeumann/ResxVsCsv/issues)  
 [Wiki](https://github.com/NataljaNeumann/ResxVsCsv/wiki)‎
@@ -202,7 +202,7 @@
 
 ‎‎--translator &lt;google|microsoft|deepl|toptranslation|libretranslate|argos&gt;‎der Übersetzer zur Übersetzung fehlender RESX-Einträge bei der Übertragung nach CSV, z.B.:  ‎--translator argos‎
 
-‎‎--apikey &lt;key&gt;‎der Schlüssel für die Übersetzungs-API, z.B.:  ‎--key 012345XYZ‎
+‎‎--apikey &lt;key&gt;‎der Schlüssel für die Übersetzungs-API, z.B.:  ‎--apikey 012345XYZ‎
 
 ‎‎--libreurl &lt;url&gt;‎die URL für den Übersetzungsdienst libretranslate, z. B.:  ‎--libreurl https://libretranslate.com/translate‎
 
@@ -222,7 +222,7 @@
 
 ‎Zur Übersetzung mit „LibreTranslate“:  ‎ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes]‎
 
-‎Zum Aktualisieren von RESX-Dateien:  ‎ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt;‎
+‎Zum Aktualisieren von RESX-Dateien:  ‎ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt; [--fixfonts yes]‎
 
 [Brauchen Sie Unterstützung?](https://github.com/NataljaNeumann/ResxVsCsv/issues)  
 [Wiki](https://github.com/NataljaNeumann/ResxVsCsv/wiki)‎
@@ -238,7 +238,7 @@
 
 ‎‎--translator &lt;google|microsoft|deepl|toptranslation|libretranslate|argos&gt;‎переводчик для перевода недостающих записей RESX при переносе в CSV, например:  ‎--translator argos‎
 
-‎‎--apikey &lt;key&gt;‎ключ для API перевода, например:  ‎--key 012345XYZ‎
+‎‎--apikey &lt;key&gt;‎ключ для API перевода, например:  ‎--apikey 012345XYZ‎
 
 ‎‎--libreurl &lt;url&gt;‎URL-адрес службы перевода libretranslate, например:  ‎--libreurl https://libretranslate.com/translate‎
 
@@ -258,7 +258,7 @@
 
 ‎Для перевода с помощью «LibreTranslate»:  ‎ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes]‎
 
-‎Для обновления файлов RESX:  ‎ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt;‎
+‎Для обновления файлов RESX:  ‎ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt; [--fixfonts yes]‎
 
 [Вам нужна поддержка?](https://github.com/NataljaNeumann/ResxVsCsv/issues)  
 [Вики](https://github.com/NataljaNeumann/ResxVsCsv/wiki)‎
@@ -274,7 +274,7 @@
 
 ‎‎--translator &lt;google|microsoft|deepl|toptranslation|libretranslate|argos&gt;‎tłumacz do tłumaczenia brakujących wpisów RESX podczas przesyłania do CSV, np.:  ‎--translator argos‎
 
-‎‎--apikey &lt;key&gt;‎klucz do API tłumaczenia, np.:  ‎--key 012345XYZ‎
+‎‎--apikey &lt;key&gt;‎klucz do API tłumaczenia, np.:  ‎--apikey 012345XYZ‎
 
 ‎‎--libreurl &lt;url&gt;‎adres URL usługi tłumaczeniowej libretranslate, np.:  ‎--libreurl https://libretranslate.com/translate‎
 
@@ -294,7 +294,7 @@
 
 ‎Do tłumaczenia za pomocą „LibreTranslate”:  ‎ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes]‎
 
-‎Aby zaktualizować pliki RESX:  ‎ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt;‎
+‎Aby zaktualizować pliki RESX:  ‎ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt; [--fixfonts yes]‎
 
 [Czy potrzebujesz wsparcia?](https://github.com/NataljaNeumann/ResxVsCsv/issues)  
 [Вики](https://github.com/NataljaNeumann/ResxVsCsv/wiki)‎
@@ -310,7 +310,7 @@
 
 ‎‎--translator &lt;google|microsoft|deepl|toptranslation|libretranslate|argos&gt;‎ο μεταφραστής για μετάφραση των καταχωρήσεων RESX που λείπουν κατά τη μεταφορά σε CSV, π.χ.  ‎--translator argos‎
 
-‎‎--apikey &lt;key&gt;‎το κλειδί για το API μετάφρασης, π.χ.:  ‎--key 012345XYZ‎
+‎‎--apikey &lt;key&gt;‎το κλειδί για το API μετάφρασης, π.χ.:  ‎--apikey 012345XYZ‎
 
 ‎‎--libreurl &lt;url&gt;‎τη διεύθυνση URL για την υπηρεσία μετάφρασης libretranslate, π.χ.:  ‎--libreurl https://libretranslate.com/translate‎
 
@@ -330,7 +330,7 @@
 
 ‎Για μετάφραση με το "LibreTranslate":  ‎ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes]‎
 
-‎Για ενημέρωση αρχείων RESX:  ‎ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt;‎
+‎Για ενημέρωση αρχείων RESX:  ‎ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt; [--fixfonts yes]‎
 
 [Χρειάζεστε υποστήριξη;](https://github.com/NataljaNeumann/ResxVsCsv/issues)  
 [Wiki](https://github.com/NataljaNeumann/ResxVsCsv/wiki)‎
@@ -346,7 +346,7 @@
 
 ‎‎--translator &lt;google|microsoft|deepl|toptranslation|libretranslate|argos&gt;‎de vertaler voor de vertaling van ontbrekende RESX-gegevens tijdens de overdracht naar CSV, bijvoorbeeld:  ‎--translator argos‎
 
-‎‎--apikey &lt;key&gt;‎de sleutel voor de vertaal-API, bijvoorbeeld:  ‎--key 012345XYZ‎
+‎‎--apikey &lt;key&gt;‎de sleutel voor de vertaal-API, bijvoorbeeld:  ‎--apikey 012345XYZ‎
 
 ‎‎--libreurl &lt;url&gt;‎de URL voor de libretranslate-vertaalservice, bijvoorbeeld:  ‎--libreurl https://libretranslate.com/translate‎
 
@@ -366,7 +366,7 @@
 
 ‎Voor vertaling met "LibreTranslate":  ‎ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes]‎
 
-‎Voor het bijwerken van RESX-bestanden:  ‎ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt;‎
+‎Voor het bijwerken van RESX-bestanden:  ‎ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt; [--fixfonts yes]‎
 
 [Heeft u ondersteuning nodig?](https://github.com/NataljaNeumann/ResxVsCsv/issues)  
 [Wiki](https://github.com/NataljaNeumann/ResxVsCsv/wiki)‎
@@ -382,7 +382,7 @@
 
 ‎‎--translator &lt;google|microsoft|deepl|toptranslation|libretranslate|argos&gt;‎oversætteren til oversættelse af manglende RESX-poster under overførsel til CSV, f.eks.:  ‎--translator argos‎
 
-‎‎--apikey &lt;key&gt;‎nøglen til oversættelses-API'en, f.eks.:  ‎--key 012345XYZ‎
+‎‎--apikey &lt;key&gt;‎nøglen til oversættelses-API'en, f.eks.:  ‎--apikey 012345XYZ‎
 
 ‎‎--libreurl &lt;url&gt;‎URL'en til libretranslate-oversættelsestjenesten, f.eks.:  ‎--libreurl https://libretranslate.com/translate‎
 
@@ -402,7 +402,7 @@
 
 ‎Til oversættelse med "LibreTranslate":  ‎ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes]‎
 
-‎Til opdatering af RESX-filer:  ‎ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt;‎
+‎Til opdatering af RESX-filer:  ‎ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt; [--fixfonts yes]‎
 
 [Har du brug for støtte?](https://github.com/NataljaNeumann/ResxVsCsv/issues)  
 [Wiki](https://github.com/NataljaNeumann/ResxVsCsv/wiki)‎
@@ -418,7 +418,7 @@
 
 ‎‎--translator &lt;google|microsoft|deepl|toptranslation|libretranslate|argos&gt;‎kääntäjä puuttuvien RESX-merkintöjen kääntämiseen CSV-tiedostoon siirron aikana, esim.  ‎--translator argos‎
 
-‎‎--apikey &lt;key&gt;‎käännösrajapinnan avain, esim.:  ‎--key 012345XYZ‎
+‎‎--apikey &lt;key&gt;‎käännösrajapinnan avain, esim.:  ‎--apikey 012345XYZ‎
 
 ‎‎--libreurl &lt;url&gt;‎libretranslate-käännöspalvelun URL-osoite, esim.:  ‎--libreurl https://libretranslate.com/translate‎
 
@@ -438,7 +438,7 @@
 
 ‎Käännös sanalla "LibreTranslate":  ‎ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes]‎
 
-‎RESX-tiedostojen päivittäminen:  ‎ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt;‎
+‎RESX-tiedostojen päivittäminen:  ‎ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt; [--fixfonts yes]‎
 
 [Tarvitsetko tukea?](https://github.com/NataljaNeumann/ResxVsCsv/issues)  
 [Wiki](https://github.com/NataljaNeumann/ResxVsCsv/wiki)‎
@@ -454,7 +454,7 @@
 
 ‎‎--translator &lt;google|microsoft|deepl|toptranslation|libretranslate|argos&gt;‎översättaren för översättning av saknade RESX-poster under överföring till CSV, t.ex.:  ‎--translator argos‎
 
-‎‎--apikey &lt;key&gt;‎nyckeln för översättnings-API:et, t.ex.:  ‎--key 012345XYZ‎
+‎‎--apikey &lt;key&gt;‎nyckeln för översättnings-API:et, t.ex.:  ‎--apikey 012345XYZ‎
 
 ‎‎--libreurl &lt;url&gt;‎URL:en för översättningstjänsten libretranslate, t.ex.:  ‎--libreurl https://libretranslate.com/translate‎
 
@@ -474,7 +474,7 @@
 
 ‎För översättning med "LibreTranslate":  ‎ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes]‎
 
-‎För att uppdatera RESX-filer:  ‎ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt;‎
+‎För att uppdatera RESX-filer:  ‎ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt; [--fixfonts yes]‎
 
 [Behöver du stöd?](https://github.com/NataljaNeumann/ResxVsCsv/issues)  
 [Wiki](https://github.com/NataljaNeumann/ResxVsCsv/wiki)‎
@@ -490,7 +490,7 @@
 
 ‎‎--translator &lt;google|microsoft|deepl|toptranslation|libretranslate|argos&gt;‎CSV'ye aktarım sırasında eksik RESX girişlerinin çevirisi için çevirmen, örneğin:  ‎--translator argos‎
 
-‎‎--apikey &lt;key&gt;‎çeviri API'si için anahtar, örneğin:  ‎--key 012345XYZ‎
+‎‎--apikey &lt;key&gt;‎çeviri API'si için anahtar, örneğin:  ‎--apikey 012345XYZ‎
 
 ‎‎--libreurl &lt;url&gt;‎libretranslate çeviri hizmetinin URL'si, örneğin:  ‎--libreurl https://libretranslate.com/translate‎
 
@@ -510,7 +510,7 @@
 
 ‎"LibreTranslate" ile çeviri için:  ‎ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes]‎
 
-‎RESX dosyalarını güncellemek için:  ‎ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt;‎
+‎RESX dosyalarını güncellemek için:  ‎ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt; [--fixfonts yes]‎
 
 [Desteğe mi ihtiyacınız var?](https://github.com/NataljaNeumann/ResxVsCsv/issues)  
 [Viki](https://github.com/NataljaNeumann/ResxVsCsv/wiki)‎
@@ -526,7 +526,7 @@
 
 ‎‎--translator &lt;google|microsoft|deepl|toptranslation|libretranslate|argos&gt;‎翻译器用于在传输到 CSV 期间翻译丢失的 RESX 条目，例如：  ‎--translator argos‎
 
-‎‎--apikey &lt;key&gt;‎翻译 API 的键，例如：  ‎--key 012345XYZ‎
+‎‎--apikey &lt;key&gt;‎翻译 API 的键，例如：  ‎--apikey 012345XYZ‎
 
 ‎‎--libreurl &lt;url&gt;‎libretranslate 翻译服务的 URL，例如：  ‎--libreurl https://libretranslate.com/translate‎
 
@@ -546,7 +546,7 @@
 
 ‎使用「LibreTranslate」进行翻译：  ‎ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes]‎
 
-‎对于更新 RESX 文件：  ‎ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt;‎
+‎对于更新 RESX 文件：  ‎ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt; [--fixfonts yes]‎
 
 [您需要支持吗？](https://github.com/NataljaNeumann/ResxVsCsv/issues)  
 [维基百科](https://github.com/NataljaNeumann/ResxVsCsv/wiki)  
@@ -563,7 +563,7 @@
 
 ‎‎--translator &lt;google|microsoft|deepl|toptranslation|libretranslate|argos&gt;‎在傳輸到 CSV 期間翻譯遺失的 RESX 條目的翻譯器，例如：  ‎--translator argos‎
 
-‎‎--apikey &lt;key&gt;‎翻譯 API 的鍵，例如：  ‎--key 012345XYZ‎
+‎‎--apikey &lt;key&gt;‎翻譯 API 的鍵，例如：  ‎--apikey 012345XYZ‎
 
 ‎‎--libreurl &lt;url&gt;‎libretranslate 翻譯服務的 URL，例如：  ‎--libreurl https://libretranslate.com/translate‎
 
@@ -583,7 +583,7 @@
 
 ‎對於使用「LibreTranslate」進行翻譯：  ‎ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes]‎
 
-‎對於更新 RESX 檔案：  ‎ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt;‎
+‎對於更新 RESX 檔案：  ‎ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt; [--fixfonts yes]‎
 
 [您需要支援嗎？](https://github.com/NataljaNeumann/ResxVsCsv/issues)  
 [維基百科](https://github.com/NataljaNeumann/ResxVsCsv/wiki)‎
@@ -599,7 +599,7 @@
 
 ‎‎--translator &lt;google|microsoft|deepl|toptranslation|libretranslate|argos&gt;‎CSV への転送中に欠落している RESX エントリを翻訳するためのトランスレータ。例:  ‎--translator argos‎
 
-‎‎--apikey &lt;key&gt;‎翻訳 API のキー、例:  ‎--key 012345XYZ‎
+‎‎--apikey &lt;key&gt;‎翻訳 API のキー、例:  ‎--apikey 012345XYZ‎
 
 ‎‎--libreurl &lt;url&gt;‎libretranslate 翻訳サービスの URL、例:  ‎--libreurl https://libretranslate.com/translate‎
 
@@ -619,7 +619,7 @@
 
 ‎「LibreTranslate」による翻訳の場合:  ‎ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes]‎
 
-‎RESX ファイルを更新するには:  ‎ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt;‎
+‎RESX ファイルを更新するには:  ‎ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt; [--fixfonts yes]‎
 
 [サポートが必要ですか?](https://github.com/NataljaNeumann/ResxVsCsv/issues)  
 [ウィキ](https://github.com/NataljaNeumann/ResxVsCsv/wiki)‎
@@ -635,7 +635,7 @@
 
 ‎‎--translator &lt;google|microsoft|deepl|toptranslation|libretranslate|argos&gt;‎CSV로 전송하는 동안 누락된 RESX 항목을 번역하기 위한 번역기, 예:  ‎--translator argos‎
 
-‎‎--apikey &lt;key&gt;‎번역 API의 키, 예:  ‎--key 012345XYZ‎
+‎‎--apikey &lt;key&gt;‎번역 API의 키, 예:  ‎--apikey 012345XYZ‎
 
 ‎‎--libreurl &lt;url&gt;‎libretranslate 번역 서비스의 URL, 예:  ‎--libreurl https://libretranslate.com/translate‎
 
@@ -655,7 +655,7 @@
 
 ‎"LibreTranslate"를 사용한 번역:  ‎ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes]‎
 
-‎RESX 파일을 업데이트하려면:  ‎ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt;‎
+‎RESX 파일을 업데이트하려면:  ‎ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt; [--fixfonts yes]‎
 
 [지원이 필요합니까?](https://github.com/NataljaNeumann/ResxVsCsv/issues)  
 [위키](https://github.com/NataljaNeumann/ResxVsCsv/wiki)‎
@@ -671,7 +671,7 @@
 
 ‎‎--translator &lt;google|microsoft|deepl|toptranslation|libretranslate|argos&gt;‎CSV में स्थानांतरण के दौरान गुम RESX प्रविष्टियों के अनुवाद के लिए अनुवादक, उदाहरण:  ‎--translator argos‎
 
-‎‎--apikey &lt;key&gt;‎अनुवाद API की कुंजी, उदाहरणार्थ:  ‎--key 012345XYZ‎
+‎‎--apikey &lt;key&gt;‎अनुवाद API की कुंजी, उदाहरणार्थ:  ‎--apikey 012345XYZ‎
 
 ‎‎--libreurl &lt;url&gt;‎लिब्रेट्रांसलेट अनुवाद सेवा के लिए यूआरएल, उदाहरण:  ‎--libreurl https://libretranslate.com/translate‎
 
@@ -691,7 +691,7 @@
 
 ‎"LibreTranslate" के साथ अनुवाद के लिए:  ‎ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes]‎
 
-‎RESX फ़ाइलें अद्यतन करने के लिए:  ‎ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt;‎
+‎RESX फ़ाइलें अद्यतन करने के लिए:  ‎ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt; [--fixfonts yes]‎
 
 [क्या आपको समर्थन की आवश्यकता है?](https://github.com/NataljaNeumann/ResxVsCsv/issues)  
 [विकि](https://github.com/NataljaNeumann/ResxVsCsv/wiki)‏
