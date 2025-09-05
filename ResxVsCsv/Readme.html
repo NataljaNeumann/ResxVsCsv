@@ -83,11 +83,13 @@
     <p dir="ltr" lang="en"><cite dir="ltr">--toresx &lt;name.csv&gt;</cite> the specified CSV file shall be integrated into corresponding RESX files, e.g.: <cite dir="ltr">--toresx Resources.csv</cite></p>
     <p dir="ltr" lang="en"><cite dir="ltr">--onlystrings &lt;yes|no&gt;</cite> specifies, if only string values shall be gathered in CSV, or other values, too. Yes or no, the default is yes, e.g.: <cite dir="ltr">--onlystrings no</cite></p>
     <p dir="ltr" lang="en"><cite dir="ltr">--fixfonts &lt;yes|no&gt;</cite> specifies if the APP shall forcibly set all missing fonts. This works only if the CSV has been created with all values, not only strings. yes or no. Default is: <cite dir="ltr">no</cite></p>
+    <p dir="ltr" lang="en"><cite dir="ltr">--bruteforce &lt;yes|no&gt;</cite> specifies if all possible translation variants shall be tested. yes or no. Default is: <cite dir="ltr">no</cite></p>
+    <p dir="ltr" lang="en"><cite dir="ltr">--defaultculture &lt;culture&gt;</cite> the default culture, i.e. the meaning of "(default)". If nothing is specified then following is used: <cite dir="ltr">en</cite></p>
     <hr/>
     <p dir="ltr" lang="en">For conversion to CSV: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; [--sortbyname yes] [--onlystrings no]</cite></p>
-    <p dir="ltr" lang="en">For translation: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator &lt;google|microsoft|deepl|toptranslation&gt; --apikey &lt;key&gt; [--sortbyname yes]</cite></p>
-    <p dir="ltr" lang="en">For translation with Argos: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt;  --translator argos [--sortbyname yes]</cite></p>
-    <p dir="ltr" lang="en">For translation with LibreTranslate: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="en">For translation: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator &lt;google|microsoft|deepl|toptranslation&gt; --apikey &lt;key&gt; [--sortbyname yes] [--bruteforce yes] [--defaultculture &lt;culture&gt;]</cite></p>
+    <p dir="ltr" lang="en">For translation with Argos: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt;  --translator argos [--sortbyname yes] [--bruteforce yes] [--defaultculture &lt;culture&gt;]</cite></p>
+    <p dir="ltr" lang="en">For translation with LibreTranslate: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes]  [--bruteforce yes] [--defaultculture &lt;culture&gt;]</cite></p>
     <p dir="ltr" lang="en">For updating RESX files: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt; [--fixfonts yes]</cite></p>
 
     <br/>
@@ -110,11 +112,13 @@
     <p dir="ltr" lang="fr"><cite dir="ltr">--toresx &lt;name.csv&gt;</cite> le fichier CSV spécifié doit être intégré aux fichiers RESX correspondants, par exemple: <cite dir="ltr">--toresx Resources.csv</cite></p>
     <p dir="ltr" lang="fr"><cite dir="ltr">--onlystrings &lt;yes|no&gt;</cite> spécifie si seules les valeurs de chaîne doivent être collectées au format CSV, ou d'autres valeurs également. Oui ou non, la valeur par défaut est oui, par exemple: <cite dir="ltr">--onlystrings no</cite></p>
     <p dir="ltr" lang="fr"><cite dir="ltr">--fixfonts &lt;yes|no&gt;</cite>Spécifie si l'application doit forcer la définition de toutes les polices manquantes. Cela ne fonctionne que si le fichier CSV a été créé avec toutes les valeurs, et pas seulement des chaînes. Oui ou Non. La valeur par défaut est: <cite dir="ltr">no</cite></p>
+    <p dir="ltr" lang="fr"><cite dir="ltr">--bruteforce &lt;yes|no&gt;</cite>Indique si toutes les variantes de traduction possibles doivent être testées. Oui ou Non. La valeur par défaut est: <cite dir="ltr">no</cite></p>
+    <p dir="ltr" lang="fr"><cite dir="ltr">--defaultculture &lt;culture&gt;</cite>La culture par défaut, c'est-à-dire la signification de «(default)». Si rien n'est spécifié, la méthode suivante est utilisée : <cite dir="ltr">en</cite></p>
     <hr/>
     <p dir="ltr" lang="fr">Pour la conversion en CSV: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; [--sortbyname yes] [--onlystrings no]</cite></p>
-    <p dir="ltr" lang="fr">Pour la traduction: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator &lt;google|microsoft|deepl|toptranslation&gt; --apikey &lt;key&gt; [--sortbyname yes]</cite></p>
-    <p dir="ltr" lang="fr">Pour la traduction avec «Argos»: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt;  --translator argos [--sortbyname yes]</cite></p>
-    <p dir="ltr" lang="fr">Pour la traduction avec «LibreTranslate»: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="fr">Pour la traduction: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator &lt;google|microsoft|deepl|toptranslation&gt; --apikey &lt;key&gt; [--sortbyname yes] [--bruteforce yes] [--defaultculture &lt;culture&gt;]</cite></p>
+    <p dir="ltr" lang="fr">Pour la traduction avec «Argos»: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt;  --translator argos [--sortbyname yes] [--bruteforce yes] [--defaultculture &lt;culture&gt;]</cite></p>
+    <p dir="ltr" lang="fr">Pour la traduction avec «LibreTranslate»: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes] [--bruteforce yes] [--defaultculture &lt;culture&gt;]</cite></p>
     <p dir="ltr" lang="fr">Pour mettre à jour les fichiers RESX: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt; [--fixfonts yes]</cite></p>
 
     <br/>
@@ -136,11 +140,13 @@
     <p dir="ltr" lang="es"><cite dir="ltr">--toresx &lt;name.csv&gt;</cite> El archivo CSV especificado se integrará en los archivos RESX correspondientes, por ejemplo: <cite dir="ltr">--toresx Resources.csv</cite></p>
     <p dir="ltr" lang="es"><cite dir="ltr">--onlystrings &lt;yes|no&gt;</cite> especifica si solo se recopilarán valores de cadena en CSV, u otros valores también. Sí o no, el valor predeterminado es sí, por ejemplo: <cite dir="ltr">--onlystrings no</cite></p>
     <p dir="ltr" lang="es"><cite dir="ltr">--fixfonts &lt;yes|no&gt;</cite> especifica si la aplicación debe configurar forzosamente todas las fuentes faltantes. Esto solo funciona si el CSV se creó con todos los valores, no solo cadenas. Sí o no. El valor predeterminado es:<cite dir="ltr">no</cite></p>
+    <p dir="ltr" lang="es"><cite dir="ltr">--bruteforce &lt;yes|no&gt;</cite> especifica si se deben probar todas las variantes de traducción posibles. Sí o no. El valor predeterminado es: <cite dir="ltr">no</cite></p>
+    <p dir="ltr" lang="es"><cite dir="ltr">--defaultculture &lt;culture&gt;</cite> la cultura predeterminada, es decir, el significado de "(default)". Si no se especifica nada, se utiliza lo siguiente: <cite dir="ltr">en</cite></p>
     <hr/>
     <p dir="ltr" lang="es">Para conversión a CSV: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; [--sortbyname yes] [--onlystrings no]</cite></p>
-    <p dir="ltr" lang="es">Para traducción: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator &lt;google|microsoft|deepl|toptranslation&gt; --apikey &lt;key&gt; [--sortbyname yes]</cite></p>
-    <p dir="ltr" lang="es">Para traducir con "Argos": <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt;  --translator argos [--sortbyname yes]</cite></p>
-    <p dir="ltr" lang="es">Para traducir con "LibreTranslate": <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="es">Para traducción: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator &lt;google|microsoft|deepl|toptranslation&gt; --apikey &lt;key&gt; [--sortbyname yes] [--bruteforce yes] [--defaultculture &lt;culture&gt;]</cite></p>
+    <p dir="ltr" lang="es">Para traducir con "Argos": <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt;  --translator argos [--sortbyname yes] [--bruteforce yes] [--defaultculture &lt;culture&gt;]</cite></p>
+    <p dir="ltr" lang="es">Para traducir con "LibreTranslate": <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes] [--bruteforce yes] [--defaultculture &lt;culture&gt;]</cite></p>
     <p dir="ltr" lang="es">Para actualizar archivos RESX: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt; [--fixfonts yes]</cite></p>
 
     <br/>
@@ -163,11 +169,13 @@
     <p dir="ltr" lang="pt"><cite dir="ltr">--toresx &lt;name.csv&gt;</cite> o arquivo CSV especificado deve ser integrado aos arquivos RESX correspondentes, por exemplo: <cite dir="ltr">--toresx Resources.csv</cite></p>
     <p dir="ltr" lang="pt"><cite dir="ltr">--onlystrings &lt;yes|no&gt;</cite> especifica se apenas valores de string devem ser reunidos em CSV ou outros valores também. Sim ou não, o padrão é sim, por exemplo: <cite dir="ltr">--onlystrings no</cite></p>
     <p dir="ltr" lang="pt"><cite dir="ltr">--fixfonts &lt;yes|no&gt;</cite> especifica se o APP deve definir à força todas as fontes em falta. Isto só funciona se o CSV tiver sido criado com todos os valores, e não apenas com strings. Sim ou não. O padrão é: <cite dir="ltr">no</cite></p>
+    <p dir="ltr" lang="pt"><cite dir="ltr">--bruteforce &lt;yes|no&gt;</cite> especifica se todas as variantes de tradução possíveis devem ser testadas. Sim ou não. O padrão é: <cite dir="ltr">no</cite></p>
+    <p dir="ltr" lang="pt"><cite dir="ltr">--defaultculture &lt;culture&gt;</cite> a cultura padrão, ou seja, o significado de "(default)". Se nada for especificado, será utilizado o seguinte: <cite dir="ltr">en</cite></p>
    <hr/>
     <p dir="ltr" lang="pt">Para conversão para CSV: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; [--sortbyname yes] [--onlystrings no]</cite></p>
-    <p dir="ltr" lang="pt">Para tradução: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator &lt;google|microsoft|deepl|toptranslation&gt; --apikey &lt;key&gt; [--sortbyname yes]</cite></p>
-    <p dir="ltr" lang="pt">Para tradução com "Argos": <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt;  --translator argos [--sortbyname yes]</cite></p>
-    <p dir="ltr" lang="pt">FPara tradução com "LibreTranslate": <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="pt">Para tradução: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator &lt;google|microsoft|deepl|toptranslation&gt; --apikey &lt;key&gt; [--sortbyname yes] [--bruteforce yes] [--defaultculture &lt;culture&gt;]</cite></p>
+    <p dir="ltr" lang="pt">Para tradução com "Argos": <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt;  --translator argos [--sortbyname yes] [--bruteforce yes] [--defaultculture &lt;culture&gt;]</cite></p>
+    <p dir="ltr" lang="pt">FPara tradução com "LibreTranslate": <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes] [--bruteforce yes] [--defaultculture &lt;culture&gt;]</cite></p>
     <p dir="ltr" lang="pt">Para atualizar arquivos RESX: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt; [--fixfonts yes]</cite></p>
 
     <br/>
@@ -189,11 +197,13 @@
     <p dir="ltr" lang="it"><cite dir="ltr">--toresx &lt;name.csv&gt;</cite> il file CSV specificato deve essere integrato nei file RESX corrispondenti, ad esempio: <cite dir="ltr">--toresx Resources.csv</cite></p>
     <p dir="ltr" lang="it"><cite dir="ltr">--onlystrings &lt;yes|no&gt;</cite> specifica se nel CSV devono essere raccolti solo valori stringa o anche altri valori. Sì o no, l'impostazione predefinita è sì, ad esempio: <cite dir="ltr">--onlystrings no</cite></p>
     <p dir="ltr" lang="it"><cite dir="ltr">--fixfonts &lt;yes|no&gt;</cite> specifica se l'APP deve impostare forzatamente tutti i font mancanti. Funziona solo se il CSV è stato creato con tutti i valori, non solo le stringhe. Sì o No. L'impostazione predefinita è: <cite dir="ltr">no</cite></p>
+    <p dir="ltr" lang="it"><cite dir="ltr">--bruteforce &lt;yes|no&gt;</cite> specifica se tutte le possibili varianti di traduzione devono essere testate. Sì o No. L'impostazione predefinita è: <cite dir="ltr">no</cite></p>
+    <p dir="ltr" lang="it"><cite dir="ltr">--defaultculture &lt;culture&gt;</cite> la cultura predefinita, ovvero il significato di "(default)". Se non viene specificato nulla, viene utilizzato quanto segue:: <cite dir="ltr">en</cite></p>
     <hr/>
     <p dir="ltr" lang="it">Per la conversione in CSV: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; [--sortbyname yes] [--onlystrings no]</cite></p>
-    <p dir="ltr" lang="it">Per la traduzione: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator &lt;google|microsoft|deepl|toptranslation&gt; --apikey &lt;key&gt; [--sortbyname yes]</cite></p>
-    <p dir="ltr" lang="it">Per la traduzione con "Argos": <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt;  --translator argos [--sortbyname yes]</cite></p>
-    <p dir="ltr" lang="it">Per la traduzione con "LibreTranslate": <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="it">Per la traduzione: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator &lt;google|microsoft|deepl|toptranslation&gt; --apikey &lt;key&gt; [--sortbyname yes] [--bruteforce yes] [--defaultculture &lt;culture&gt;]</cite></p>
+    <p dir="ltr" lang="it">Per la traduzione con "Argos": <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt;  --translator argos [--sortbyname yes] [--bruteforce yes] [--defaultculture &lt;culture&gt;]</cite></p>
+    <p dir="ltr" lang="it">Per la traduzione con "LibreTranslate": <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes] [--bruteforce yes] [--defaultculture &lt;culture&gt;]</cite></p>
     <p dir="ltr" lang="it">Per aggiornare i file RESX: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt; [--fixfonts yes]</cite></p>
 
     <br/>
@@ -215,11 +225,13 @@
     <p dir="ltr" lang="de"><cite dir="ltr">--toresx &lt;name.csv&gt;</cite> Die angegebene CSV-Datei muss in entsprechende RESX-Dateien integriert werden, z. B.: <cite dir="ltr">--toresx Resources.csv</cite></p>
     <p dir="ltr" lang="de"><cite dir="ltr">--onlystrings &lt;yes|no&gt;</cite> Gibt an, ob nur String-Werte in CSV erfasst werden sollen, oder auch andere Werte. Ja oder nein, die Standardeinstellung ist ja, z. B.: <cite dir="ltr">--onlystrings no</cite></p>
     <p dir="ltr" lang="de"><cite dir="ltr">--fixfonts &lt;yes|no&gt;</cite> Gibt an, ob die APP alle fehlenden Schriftarten zwangsweise setzen soll. Dies funktioniert nur, wenn die CSV-Datei mit allen Werten erstellt wurde, nicht nur mit Strings. Ja oder Nein. Standard ist: <cite dir="ltr">no</cite></p>
+    <p dir="ltr" lang="de"><cite dir="ltr">--bruteforce &lt;yes|no&gt;</cite> Gibt an, ob alle möglichen Übersetzungsvarianten getestet werden sollen. Ja oder Nein. Standard ist: <cite dir="ltr">no</cite></p>
+    <p dir="ltr" lang="de"><cite dir="ltr">--defaultculture &lt;culture&gt;</cite> Die Standardkultur, d. h. die Bedeutung von "(default)". Wenn nichts angegeben ist, wird Folgendes verwendet:<cite dir="ltr">en</cite></p>
     <hr/>
     <p dir="ltr" lang="de">Für die Konvertierung in CSV: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; [--sortbyname yes] [--onlystrings no]</cite></p>
-    <p dir="ltr" lang="de">Zur Übersetzung: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator &lt;google|microsoft|deepl|toptranslation&gt; --apikey &lt;key&gt; [--sortbyname yes]</cite></p>
-    <p dir="ltr" lang="de">Zur Übersetzung mit „Argos“: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt;  --translator argos [--sortbyname yes]</cite></p>
-    <p dir="ltr" lang="de">Zur Übersetzung mit „LibreTranslate“: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="de">Zur Übersetzung: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator &lt;google|microsoft|deepl|toptranslation&gt; --apikey &lt;key&gt; [--sortbyname yes] [--bruteforce yes] [--defaultculture &lt;culture&gt;]</cite></p>
+    <p dir="ltr" lang="de">Zur Übersetzung mit „Argos“: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt;  --translator argos [--sortbyname yes] [--bruteforce yes] [--defaultculture &lt;culture&gt;]</cite></p>
+    <p dir="ltr" lang="de">Zur Übersetzung mit „LibreTranslate“: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes] [--bruteforce yes] [--defaultculture &lt;culture&gt;]</cite></p>
     <p dir="ltr" lang="de">Zum Aktualisieren von RESX-Dateien: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt; [--fixfonts yes]</cite></p>
     
     <br/>
@@ -241,11 +253,13 @@
     <p dir="ltr" lang="ru"><cite dir="ltr">--toresx &lt;name.csv&gt;</cite> указанный файл CSV должен быть интегрирован в соответствующие файлы RESX, например: <cite dir="ltr">--toresx Resources.csv</cite></p>
     <p dir="ltr" lang="ru"><cite dir="ltr">--onlystrings &lt;yes|no&gt;</cite> указывает, следует ли собирать в CSV только строковые значения или другие значения. Да или нет, по умолчанию — да, например: <cite dir="ltr">--onlystrings no</cite></p>
     <p dir="ltr" lang="ru"><cite dir="ltr">--fixfonts &lt;yes|no&gt;</cite> указывает, будет ли приложение принудительно устанавливать все отсутствующие шрифты. Это работает только в том случае, если CSV-файл создан со всеми значениями, а не только строками. Да или нет. Значение по умолчанию: <cite dir="ltr">no</cite></p>
+    <p dir="ltr" lang="ru"><cite dir="ltr">--bruteforce &lt;yes|no&gt;</cite> указывает, следует ли проверять все возможные варианты перевода. Да или нет. Значение по умолчанию: <cite dir="ltr">no</cite></p>
+    <p dir="ltr" lang="ru"><cite dir="ltr">--defaultculture &lt;culture&gt;</cite> регион по умолчанию, т.е. интерпретация значения «(default)». Если ничего не указано, используется следующее: <cite dir="ltr">en</cite></p>
     <hr/>
     <p dir="ltr" lang="ru">Для преобразования в CSV: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; [--sortbyname yes] [--onlystrings no]</cite></p>
-    <p dir="ltr" lang="ru">Для перевода: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator &lt;google|microsoft|deepl|toptranslation&gt; --apikey &lt;key&gt; [--sortbyname yes]</cite></p>
-    <p dir="ltr" lang="ru">Для перевода с помощью «Argos»: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt;  --translator argos [--sortbyname yes]</cite></p>
-    <p dir="ltr" lang="ru">Для перевода с помощью «LibreTranslate»: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="ru">Для перевода: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator &lt;google|microsoft|deepl|toptranslation&gt; --apikey &lt;key&gt; [--sortbyname yes] [--bruteforce yes] [--defaultculture &lt;culture&gt;]</cite></p>
+    <p dir="ltr" lang="ru">Для перевода с помощью «Argos»: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt;  --translator argos [--sortbyname yes] [--bruteforce yes] [--defaultculture &lt;culture&gt;]</cite></p>
+    <p dir="ltr" lang="ru">Для перевода с помощью «LibreTranslate»: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes] [--bruteforce yes] [--defaultculture &lt;culture&gt;]</cite></p>
     <p dir="ltr" lang="ru">Для обновления файлов RESX: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt; [--fixfonts yes]</cite></p>
 
     <br/>
@@ -268,11 +282,13 @@
     <p dir="ltr" lang="pl"><cite dir="ltr">--toresx &lt;name.csv&gt;</cite> określony plik CSV należy zintegrować z odpowiednimi plikami RESX, np.: <cite dir="ltr">--toresx Resources.csv</cite></p>
     <p dir="ltr" lang="pl"><cite dir="ltr">--onlystrings &lt;yes|no&gt;</cite> określa, czy w formacie CSV mają być gromadzone tylko wartości łańcuchowe, czy też inne wartości. Tak lub nie, domyślnie jest to tak, np.: <cite dir="ltr">--onlystrings no</cite></p>
     <p dir="ltr" lang="pl"><cite dir="ltr">--fixfonts &lt;yes|no&gt;</cite> określa, czy aplikacja ma wymusić ustawienie wszystkich brakujących czcionek. Działa to tylko wtedy, gdy plik CSV został utworzony ze wszystkimi wartościami, a nie tylko ciągami znaków. Tak lub nie. Wartość domyślna: <cite dir="ltr">no</cite></p>
+    <p dir="ltr" lang="pl"><cite dir="ltr">--bruteforce &lt;yes|no&gt;</cite> określa, czy wszystkie możliwe warianty tłumaczenia mają zostać przetestowane. Tak lub nie. Wartość domyślna: <cite dir="ltr">no</cite></p>
+    <p dir="ltr" lang="pl"><cite dir="ltr">--defaultculture &lt;culture&gt;</cite> kultura domyślna, czyli interpretacja wartości „(default)”. Jeśli nic nie jest określone, stosuje się: <cite dir="ltr">en</cite></p>
     <hr/>
     <p dir="ltr" lang="pl">Do konwersji do CSV: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; [--sortbyname yes] [--onlystrings no]</cite></p>
-    <p dir="ltr" lang="pl">Do tłumaczenia: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator &lt;google|microsoft|deepl|toptranslation&gt; --apikey &lt;key&gt; [--sortbyname yes]</cite></p>
-    <p dir="ltr" lang="pl">Do tłumaczenia z „Argos”: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt;  --translator argos [--sortbyname yes]</cite></p>
-    <p dir="ltr" lang="pl">Do tłumaczenia za pomocą „LibreTranslate”: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="pl">Do tłumaczenia: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator &lt;google|microsoft|deepl|toptranslation&gt; --apikey &lt;key&gt; [--sortbyname yes] [--bruteforce yes] [--defaultculture &lt;culture&gt;]</cite></p>
+    <p dir="ltr" lang="pl">Do tłumaczenia z „Argos”: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt;  --translator argos [--sortbyname yes] [--bruteforce yes] [--defaultculture &lt;culture&gt;]</cite></p>
+    <p dir="ltr" lang="pl">Do tłumaczenia za pomocą „LibreTranslate”: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes] [--bruteforce yes] [--defaultculture &lt;culture&gt;]</cite></p>
     <p dir="ltr" lang="pl">Aby zaktualizować pliki RESX: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt; [--fixfonts yes]</cite></p>
 
     <br/>
@@ -295,11 +311,13 @@
     <p dir="ltr" lang="gr"><cite dir="ltr">--toresx &lt;name.csv&gt;</cite> το καθορισμένο αρχείο CSV θα ενσωματωθεί σε αντίστοιχα αρχεία RESX, π.χ. <cite dir="ltr">--toresx Resources.csv</cite></p>
     <p dir="ltr" lang="gr"><cite dir="ltr">--onlystrings &lt;yes|no&gt;</cite> καθορίζει, εάν θα συγκεντρώνονται μόνο τιμές συμβολοσειράς στο CSV ή και άλλες τιμές. Ναι ή όχι, η προεπιλογή είναι ναι, π.χ. <cite dir="ltr">--onlystrings no</cite></p>
     <p dir="ltr" lang="gr"><cite dir="ltr">--fixfonts &lt;yes|no&gt;</cite> καθορίζει εάν η εφαρμογή θα ορίσει υποχρεωτικά όλες τις γραμματοσειρές που λείπουν. Αυτό λειτουργεί μόνο εάν το CSV έχει δημιουργηθεί με όλες τις τιμές, όχι μόνο με συμβολοσειρές. Ναι ή όχι. Η προεπιλογή είναι: <cite dir="ltr">no</cite></p>
+    <p dir="ltr" lang="gr"><cite dir="ltr">--bruteforce &lt;yes|no&gt;</cite> καθορίζει εάν θα ελεγχθούν όλες οι πιθανές παραλλαγές μετάφρασης. Ναι ή όχι. Η προεπιλογή είναι: <cite dir="ltr">no</cite></p>
+    <p dir="ltr" lang="gr"><cite dir="ltr">--defaultculture &lt;culture&gt;</cite> η προεπιλεγμένη κουλτούρα, δηλαδή η ερμηνεία της τιμής "(default)". Εάν δεν έχει καθοριστεί τίποτα, τότε χρησιμοποιούνται τα εξής: <cite dir="ltr">en</cite></p>
     <hr/>
     <p dir="ltr" lang="gr">Για μετατροπή σε CSV: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; [--sortbyname yes] [--onlystrings no]</cite></p>
-    <p dir="ltr" lang="gr">Για μετάφραση: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator &lt;google|microsoft|deepl|toptranslation&gt; --apikey &lt;key&gt; [--sortbyname yes]</cite></p>
-    <p dir="ltr" lang="gr">Για μετάφραση με το "Argos": <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt;  --translator argos [--sortbyname yes]</cite></p>
-    <p dir="ltr" lang="gr">Για μετάφραση με το "LibreTranslate": <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="gr">Για μετάφραση: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator &lt;google|microsoft|deepl|toptranslation&gt; --apikey &lt;key&gt; [--sortbyname yes] [--bruteforce yes] [--defaultculture &lt;culture&gt;]</cite></p>
+    <p dir="ltr" lang="gr">Για μετάφραση με το "Argos": <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt;  --translator argos [--sortbyname yes] [--bruteforce yes] [--defaultculture &lt;culture&gt;]</cite></p>
+    <p dir="ltr" lang="gr">Για μετάφραση με το "LibreTranslate": <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes] [--bruteforce yes] [--defaultculture &lt;culture&gt;]</cite></p>
     <p dir="ltr" lang="gr">Για ενημέρωση αρχείων RESX: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt; [--fixfonts yes]</cite></p>
 
     <br/>
@@ -322,11 +340,13 @@
     <p dir="ltr" lang="nl"><cite dir="ltr">--toresx &lt;name.csv&gt;</cite> het gespecificeerde CSV-bestand wordt geïntegreerd in overeenkomstige RESX-bestanden, bijvoorbeeld: <cite dir="ltr">--toresx Resources.csv</cite></p>
     <p dir="ltr" lang="nl"><cite dir="ltr">--onlystrings &lt;yes|no&gt;</cite> specificeert of alleen tekenreekswaarden moeten worden verzameld in CSV, of ook andere waarden. Ja of nee, de standaardwaarde is ja, bijvoorbeeld: <cite dir="ltr">--onlystrings no</cite></p>
     <p dir="ltr" lang="nl"><cite dir="ltr">--fixfonts &lt;yes|no&gt;</cite> geeft aan of de APP alle ontbrekende lettertypen geforceerd moet instellen. Dit werkt alleen als de CSV is aangemaakt met alle waarden, niet alleen strings. Ja of nee. De standaardwaarde is: <cite dir="ltr">no</cite></p>
+    <p dir="ltr" lang="nl"><cite dir="ltr">--bruteforce &lt;yes|no&gt;</cite> geeft aan of alle mogelijke vertaalvarianten getest moeten worden. Ja of nee. Standaard is dit: <cite dir="ltr">no</cite></p>
+    <p dir="ltr" lang="nl"><cite dir="ltr">--defaultculture &lt;culture&gt;</cite> de standaardcultuur, d.w.z. de interpretatie van de waarde "(default)". Als er niets is gespecificeerd, wordt het volgende gebruikt: <cite dir="ltr">en</cite></p>
     <hr/>
     <p dir="ltr" lang="nl">Voor conversie naar CSV: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; [--sortbyname yes] [--onlystrings no]</cite></p>
-    <p dir="ltr" lang="nl">Voor vertaling: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator &lt;google|microsoft|deepl|toptranslation&gt; --apikey &lt;key&gt; [--sortbyname yes]</cite></p>
-    <p dir="ltr" lang="nl">Voor vertaling met "Argos": <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt;  --translator argos [--sortbyname yes]</cite></p>
-    <p dir="ltr" lang="nl">Voor vertaling met "LibreTranslate": <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="nl">Voor vertaling: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator &lt;google|microsoft|deepl|toptranslation&gt; --apikey &lt;key&gt; [--sortbyname yes] [--bruteforce yes] [--defaultculture &lt;culture&gt;]</cite></p>
+    <p dir="ltr" lang="nl">Voor vertaling met "Argos": <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt;  --translator argos [--sortbyname yes] [--bruteforce yes] [--defaultculture &lt;culture&gt;]</cite></p>
+    <p dir="ltr" lang="nl">Voor vertaling met "LibreTranslate": <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes] [--bruteforce yes] [--defaultculture &lt;culture&gt;]</cite></p>
     <p dir="ltr" lang="nl">Voor het bijwerken van RESX-bestanden: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt; [--fixfonts yes]</cite></p>
 
     <br/>
@@ -348,11 +368,13 @@
     <p dir="ltr" lang="da"><cite dir="ltr">--toresx &lt;name.csv&gt;</cite> den angivne CSV-fil skal integreres i tilsvarende RESX-filer, f.eks.: <cite dir="ltr">--toresx Resources.csv</cite></p>
     <p dir="ltr" lang="da"><cite dir="ltr">--onlystrings &lt;yes|no&gt;</cite> angiver, om kun strengværdier skal samles i CSV, eller også andre værdier. Ja eller nej, standarden er ja, f.eks.: <cite dir="ltr">--onlystrings no</cite></p>
     <p dir="ltr" lang="da"><cite dir="ltr">--fixfonts &lt;yes|no&gt;</cite> angiver, om APP'en skal tvinge alle manglende skrifttyper til at blive indstillet. Dette virker kun, hvis CSV-filen er oprettet med alle værdier, ikke kun strenge. ja eller nej. Standard er: <cite dir="ltr">no</cite></p>
+    <p dir="ltr" lang="da"><cite dir="ltr">--bruteforce &lt;yes|no&gt;</cite> angiver om alle mulige oversættelsesvarianter skal testes. ja eller nej. Standard er: <cite dir="ltr">no</cite></p>
+    <p dir="ltr" lang="da"><cite dir="ltr">--defaultculture &lt;culture&gt;</cite> standardkulturen, dvs. fortolkningen af værdien "(default)". Hvis intet er angivet, anvendes følgende: <cite dir="ltr">en</cite></p>
      <hr/>
     <p dir="ltr" lang="da">For konvertering til CSV: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; [--sortbyname yes] [--onlystrings no]</cite></p>
-    <p dir="ltr" lang="da">Til oversættelse: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator &lt;google|microsoft|deepl|toptranslation&gt; --apikey &lt;key&gt; [--sortbyname yes]</cite></p>
-    <p dir="ltr" lang="da">Til oversættelse med "Argos": <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt;  --translator argos [--sortbyname yes]</cite></p>
-    <p dir="ltr" lang="da">Til oversættelse med "LibreTranslate": <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="da">Til oversættelse: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator &lt;google|microsoft|deepl|toptranslation&gt; --apikey &lt;key&gt; [--sortbyname yes] [--bruteforce yes] [--defaultculture &lt;culture&gt;]</cite></p>
+    <p dir="ltr" lang="da">Til oversættelse med "Argos": <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt;  --translator argos [--sortbyname yes] [--bruteforce yes] [--defaultculture &lt;culture&gt;]</cite></p>
+    <p dir="ltr" lang="da">Til oversættelse med "LibreTranslate": <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes] [--bruteforce yes] [--defaultculture &lt;culture&gt;]</cite></p>
     <p dir="ltr" lang="da">Til opdatering af RESX-filer: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt; [--fixfonts yes]</cite></p>
     
     <br/>
@@ -376,11 +398,13 @@
     <p dir="ltr" lang="fi"><cite dir="ltr">--toresx &lt;name.csv&gt;</cite> määritetty CSV-tiedosto tulee integroida vastaaviin RESX-tiedostoihin, esim. <cite dir="ltr">--toresx Resources.csv</cite></p>
     <p dir="ltr" lang="fi"><cite dir="ltr">--onlystrings &lt;yes|no&gt;</cite> määrittää, kerätäänkö CSV:hen vain merkkijonoarvot vai myös muita arvoja. Kyllä tai ei, oletusarvo on kyllä, esim.: <cite dir="ltr">--onlystrings no</cite></p>
     <p dir="ltr" lang="fi"><cite dir="ltr">--fixfonts &lt;yes|no&gt;</cite> määrittää, asettaako sovellus pakotetusti kaikki puuttuvat fontit. Tämä toimii vain, jos CSV-tiedosto on luotu kaikilla arvoilla, ei vain merkkijonoilla. kyllä tai ei. Oletusarvo on: <cite dir="ltr">no</cite></p>
+    <p dir="ltr" lang="fi"><cite dir="ltr">--bruteforce &lt;yes|no&gt;</cite> määrittää, testataanko kaikki mahdolliset käännösvariantit. kyllä ​​tai ei. Oletusarvo on: <cite dir="ltr">no</cite></p>
+    <p dir="ltr" lang="fi"><cite dir="ltr">--defaultculture &lt;culture&gt;</cite> oletuskulttuuri eli arvon "(default)" tulkinta. Jos mitään ei ole määritetty, käytetään seuraavaa: <cite dir="ltr">en</cite></p>
     <hr/>
     <p dir="ltr" lang="fi">CSV-muotoon muuntaminen: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; [--sortbyname yes] [--onlystrings no]</cite></p>
-    <p dir="ltr" lang="fi">Käännös: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator &lt;google|microsoft|deepl|toptranslation&gt; --apikey &lt;key&gt; [--sortbyname yes]</cite></p>
-    <p dir="ltr" lang="fi">Käännös sanalla "Argos": <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt;  --translator argos [--sortbyname yes]</cite></p>
-    <p dir="ltr" lang="fi">Käännös sanalla "LibreTranslate": <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="fi">Käännös: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator &lt;google|microsoft|deepl|toptranslation&gt; --apikey &lt;key&gt; [--sortbyname yes] [--bruteforce yes] [--defaultculture &lt;culture&gt;]</cite></p>
+    <p dir="ltr" lang="fi">Käännös sanalla "Argos": <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt;  --translator argos [--sortbyname yes] [--bruteforce yes] [--defaultculture &lt;culture&gt;]</cite></p>
+    <p dir="ltr" lang="fi">Käännös sanalla "LibreTranslate": <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes] [--bruteforce yes] [--defaultculture &lt;culture&gt;]</cite></p>
     <p dir="ltr" lang="fi">RESX-tiedostojen päivittäminen: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt; [--fixfonts yes]</cite></p>
 
     <br/>
@@ -403,11 +427,13 @@
     <p dir="ltr" lang="sv"><cite dir="ltr">--toresx &lt;name.csv&gt;</cite> den angivna CSV-filen ska integreras i motsvarande RESX-filer, t.ex.: <cite dir="ltr">--toresx Resources.csv</cite></p>
     <p dir="ltr" lang="sv"><cite dir="ltr">--onlystrings &lt;yes|no&gt;</cite> anger om endast strängvärden ska samlas in i CSV, eller andra värden också. Ja eller nej, standard är ja, t.ex.: <cite dir="ltr">--onlystrings no</cite></p>
     <p dir="ltr" lang="sv"><cite dir="ltr">--fixfonts &lt;yes|no&gt;</cite> anger om appen ska tvinga in alla saknade teckensnitt. Detta fungerar bara om CSV-filen har skapats med alla värden, inte bara strängar. ja eller nej. Standard är: <cite dir="ltr">no</cite></p>
+    <p dir="ltr" lang="sv"><cite dir="ltr">--bruteforce &lt;yes|no&gt;</cite> anger om alla möjliga översättningsvarianter ska testas. Ja eller nej. Standardinställningen är: <cite dir="ltr">no</cite></p>
+    <p dir="ltr" lang="sv"><cite dir="ltr">--defaultculture &lt;culture&gt;</cite> standardkulturen, d.v.s. tolkningen av värdet "(default)". Om inget anges används följande: <cite dir="ltr">en</cite></p>
     <hr/>
     <p dir="ltr" lang="sv">För konvertering till CSV: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; [--sortbyname yes] [--onlystrings no]</cite></p>
-    <p dir="ltr" lang="sv">För översättning: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator &lt;google|microsoft|deepl|toptranslation&gt; --apikey &lt;key&gt; [--sortbyname yes]</cite></p>
-    <p dir="ltr" lang="sv">För översättning med "Argos": <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt;  --translator argos [--sortbyname yes]</cite></p>
-    <p dir="ltr" lang="sv">För översättning med "LibreTranslate": <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="sv">För översättning: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator &lt;google|microsoft|deepl|toptranslation&gt; --apikey &lt;key&gt; [--sortbyname yes] [--bruteforce yes] [--defaultculture &lt;culture&gt;]</cite></p>
+    <p dir="ltr" lang="sv">För översättning med "Argos": <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt;  --translator argos [--sortbyname yes] [--bruteforce yes] [--defaultculture &lt;culture&gt;]</cite></p>
+    <p dir="ltr" lang="sv">För översättning med "LibreTranslate": <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes] [--bruteforce yes] [--defaultculture &lt;culture&gt;]</cite></p>
     <p dir="ltr" lang="sv">För att uppdatera RESX-filer: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt; [--fixfonts yes]</cite></p>
 
     <br/>
@@ -430,11 +456,13 @@
     <p dir="ltr" lang="tr"><cite dir="ltr">--toresx &lt;name.csv&gt;</cite> belirtilen CSV dosyası ilgili RESX dosyalarına entegre edilecektir, örneğin: <cite dir="ltr">--toresx Resources.csv</cite></p>
     <p dir="ltr" lang="tr"><cite dir="ltr">--onlystrings &lt;yes|no&gt;</cite> CSV'de yalnızca dize değerlerinin mi yoksa diğer değerlerin mi toplanacağını belirtir. Evet veya hayır, varsayılan evet'tir, örneğin: <cite dir="ltr">--onlystrings no</cite></p>
     <p dir="ltr" lang="tr"><cite dir="ltr">--fixfonts &lt;yes|no&gt;</cite> APP'nin tüm eksik yazı tiplerini zorla ayarlayıp ayarlamayacağını belirtir. Bu, yalnızca CSV dosyası yalnızca dizelerle değil, tüm değerlerle oluşturulmuşsa işe yarar. Evet veya hayır. Varsayılan: <cite dir="ltr">no</cite></p>
+    <p dir="ltr" lang="tr"><cite dir="ltr">--bruteforce &lt;yes|no&gt;</cite> tüm olası çeviri varyantlarının test edilip edilmeyeceğini belirtir. Evet veya hayır. Varsayılan: <cite dir="ltr">no</cite></p>
+    <p dir="ltr" lang="tr"><cite dir="ltr">--defaultculture &lt;culture&gt;</cite> varsayılan kültür, yani "(default)" değerinin yorumlanması. Hiçbir şey belirtilmezse, aşağıdakiler kullanılır: <cite dir="ltr">en</cite></p>
     <hr/>
     <p dir="ltr" lang="tr">CSV'ye dönüştürmek için: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; [--sortbyname yes] [--onlystrings no]</cite></p>
-    <p dir="ltr" lang="tr">Çeviri için: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator &lt;google|microsoft|deepl|toptranslation&gt; --apikey &lt;key&gt; [--sortbyname yes]</cite></p>
-    <p dir="ltr" lang="tr">"Argos" ile çeviri için: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt;  --translator argos [--sortbyname yes]</cite></p>
-    <p dir="ltr" lang="tr">"LibreTranslate" ile çeviri için: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="tr">Çeviri için: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator &lt;google|microsoft|deepl|toptranslation&gt; --apikey &lt;key&gt; [--sortbyname yes] [--bruteforce yes] [--defaultculture &lt;culture&gt;]</cite></p>
+    <p dir="ltr" lang="tr">"Argos" ile çeviri için: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt;  --translator argos [--sortbyname yes] [--bruteforce yes] [--defaultculture &lt;culture&gt;]</cite></p>
+    <p dir="ltr" lang="tr">"LibreTranslate" ile çeviri için: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes] [--bruteforce yes] [--defaultculture &lt;culture&gt;]</cite></p>
     <p dir="ltr" lang="tr">RESX dosyalarını güncellemek için: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt; [--fixfonts yes]</cite></p>
 
     <br/>
@@ -458,11 +486,13 @@
     <p dir="ltr" lang="chs"><cite dir="ltr">--toresx &lt;name.csv&gt;</cite> 指定的 CSV 文件应集成到相应的 RESX 文件中，例如： <cite dir="ltr">--toresx Resources.csv</cite></p>
     <p dir="ltr" lang="chs"><cite dir="ltr">--onlystrings &lt;yes|no&gt;</cite> 指定是否仅应在 CSV 中收集字符串值，或者也应收集其他值。是或否，默认为是，例如： <cite dir="ltr">--onlystrings no</cite></p>
     <p dir="ltr" lang="chs"><cite dir="ltr">--fixfonts &lt;yes|no&gt;</cite> 指定 APP 是否强制设置所有缺失的字体。仅当 CSV 文件包含所有值（而非仅包含字符串）时，此选项才有效。「是」或「否」。默认值为： <cite dir="ltr">no</cite></p>
+    <p dir="ltr" lang="chs"><cite dir="ltr">--bruteforce &lt;yes|no&gt;</cite> 指定是否测试所有可能的翻译变体。是或否。默认值为： <cite dir="ltr">no</cite></p>
+    <p dir="ltr" lang="chs"><cite dir="ltr">--defaultculture &lt;culture&gt;</cite> 默认文化，即对值「(default)」的解释。如果未指定任何内容，则使用以下内容： <cite dir="ltr">en</cite></p>
     <hr/>
     <p dir="ltr" lang="chs">对于转换为 CSV： <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; [--sortbyname yes] [--onlystrings no]</cite></p>
-    <p dir="ltr" lang="chs">翻译： <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator &lt;google|microsoft|deepl|toptranslation&gt; --apikey &lt;key&gt; [--sortbyname yes]</cite></p>
-    <p dir="ltr" lang="chs">对于「Argos」翻译： <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt;  --translator argos [--sortbyname yes]</cite></p>
-    <p dir="ltr" lang="chs">使用「LibreTranslate」进行翻译： <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="chs">翻译： <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator &lt;google|microsoft|deepl|toptranslation&gt; --apikey &lt;key&gt; [--sortbyname yes] [--bruteforce yes] [--defaultculture &lt;culture&gt;]</cite></p>
+    <p dir="ltr" lang="chs">对于「Argos」翻译： <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt;  --translator argos [--sortbyname yes] [--bruteforce yes] [--defaultculture &lt;culture&gt;]</cite></p>
+    <p dir="ltr" lang="chs">使用「LibreTranslate」进行翻译： <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes] [--bruteforce yes] [--defaultculture &lt;culture&gt;]</cite></p>
     <p dir="ltr" lang="chs">对于更新 RESX 文件： <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt; [--fixfonts yes]</cite></p>
 
     <br/>
@@ -486,11 +516,13 @@
     <p dir="ltr" lang="cht"><cite dir="ltr">--toresx &lt;name.csv&gt;</cite> 指定的 CSV 檔案應整合到對應的 RESX 檔案中，例如： <cite dir="ltr">--toresx Resources.csv</cite></p>
     <p dir="ltr" lang="cht"><cite dir="ltr">--onlystrings &lt;yes|no&gt;</cite> 指定是否僅將字串值收集在 CSV 中，或也收集其他值。是或否，預設為是，例如： <cite dir="ltr">--onlystrings no</cite></p>
     <p dir="ltr" lang="cht"><cite dir="ltr">--fixfonts &lt;yes|no&gt;</cite> 指定 APP 是否強制設定所有缺少的字體。僅當 CSV 檔案包含所有值（而非僅包含字串）時，此選項才有效。 「是」或「否」。預設值為： <cite dir="ltr">no</cite></p>
+    <p dir="ltr" lang="cht"><cite dir="ltr">--bruteforce &lt;yes|no&gt;</cite> 指定是否測試所有可能的翻譯變體。是或否。預設值為： <cite dir="ltr">no</cite></p>
+    <p dir="ltr" lang="cht"><cite dir="ltr">--defaultculture &lt;culture&gt;</cite> 預設文化，即對值「(default)」的解釋。如果未指定任何內容，則使用以下內容：<cite dir="ltr">en</cite></p>
     <hr/>
     <p dir="ltr" lang="cht">對於轉換為 CSV： <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; [--sortbyname yes] [--onlystrings no]</cite></p>
-    <p dir="ltr" lang="cht">對於翻譯： <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator &lt;google|microsoft|deepl|toptranslation&gt; --apikey &lt;key&gt; [--sortbyname yes]</cite></p>
-    <p dir="ltr" lang="cht">對於使用「Argos」進行翻譯：<cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt;  --translator argos [--sortbyname yes]</cite></p>
-    <p dir="ltr" lang="cht">對於使用「LibreTranslate」進行翻譯： <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="cht">對於翻譯： <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator &lt;google|microsoft|deepl|toptranslation&gt; --apikey &lt;key&gt; [--sortbyname yes] [--bruteforce yes] [--defaultculture &lt;culture&gt;]</cite></p>
+    <p dir="ltr" lang="cht">對於使用「Argos」進行翻譯：<cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt;  --translator argos [--sortbyname yes] [--bruteforce yes] [--defaultculture &lt;culture&gt;]</cite></p>
+    <p dir="ltr" lang="cht">對於使用「LibreTranslate」進行翻譯： <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes] [--bruteforce yes] [--defaultculture &lt;culture&gt;]</cite></p>
     <p dir="ltr" lang="cht">對於更新 RESX 檔案： <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt; [--fixfonts yes]</cite></p>
     
 
@@ -513,11 +545,13 @@
     <p dir="ltr" lang="ja"><cite dir="ltr">--toresx &lt;name.csv&gt;</cite> 指定された CSV ファイルは、対応する RESX ファイルに統合されます。例: <cite dir="ltr">--toresx Resources.csv</cite></p>
     <p dir="ltr" lang="ja"><cite dir="ltr">--onlystrings &lt;yes|no&gt;</cite> 文字列値のみを CSV で収集するか、他の値も収集するかどうかを指定します。 「はい」または「いいえ」。デフォルトは「はい」です。例: <cite dir="ltr">--onlystrings no</cite></p>
     <p dir="ltr" lang="ja"><cite dir="ltr">--fixfonts &lt;yes|no&gt;</cite> APPが不足しているフォントをすべて強制的に設定するかどうかを指定します。これは、CSVが文字列だけでなくすべての値で作成されている場合にのみ機能します。yesまたはno。デフォルトは： <cite dir="ltr">no</cite></p>
+    <p dir="ltr" lang="ja"><cite dir="ltr">--bruteforce &lt;yes|no&gt;</cite> すべての翻訳可能なバリエーションをテストするかどうかを指定します。yesまたはno。デフォルトは次のとおりです： <cite dir="ltr">no</cite></p>
+    <p dir="ltr" lang="ja"><cite dir="ltr">--defaultculture &lt;culture&gt;</cite> デフォルトのカルチャ、つまり値「(default)」の解釈。何も指定されていない場合は、以下が使用されます: <cite dir="ltr">en</cite></p>
     <hr/>
     <p dir="ltr" lang="ja">CSV に変換するには: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; [--sortbyname yes] [--onlystrings no]</cite></p>
-    <p dir="ltr" lang="ja">翻訳の場合: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator &lt;google|microsoft|deepl|toptranslation&gt; --apikey &lt;key&gt; [--sortbyname yes]</cite></p>
-    <p dir="ltr" lang="ja">「Argos」を使用した翻訳の場合: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt;  --translator argos [--sortbyname yes]</cite></p>
-    <p dir="ltr" lang="ja">「LibreTranslate」による翻訳の場合: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="ja">翻訳の場合: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator &lt;google|microsoft|deepl|toptranslation&gt; --apikey &lt;key&gt; [--sortbyname yes] [--bruteforce yes] [--defaultculture &lt;culture&gt;]</cite></p>
+    <p dir="ltr" lang="ja">「Argos」を使用した翻訳の場合: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt;  --translator argos [--sortbyname yes] [--bruteforce yes] [--defaultculture &lt;culture&gt;]</cite></p>
+    <p dir="ltr" lang="ja">「LibreTranslate」による翻訳の場合: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes] [--bruteforce yes] [--defaultculture &lt;culture&gt;]</cite></p>
     <p dir="ltr" lang="ja">RESX ファイルを更新するには: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt; [--fixfonts yes]</cite></p>
 
     <br/>
@@ -539,11 +573,13 @@
     <p dir="ltr" lang="ko"><cite dir="ltr">--toresx &lt;name.csv&gt;</cite> 지정된 CSV 파일은 해당 RESX 파일에 통합되어야 합니다. 예: <cite dir="ltr">--toresx Resources.csv</cite></p>
     <p dir="ltr" lang="ko"><cite dir="ltr">--onlystrings &lt;yes|no&gt;</cite> 문자열 값만 CSV로 수집할지, 아니면 다른 값도 수집할지를 지정합니다. 예 또는 아니요. 기본값은 예입니다. 예: <cite dir="ltr">--onlystrings no</cite></p>
     <p dir="ltr" lang="ko"><cite dir="ltr">--fixfonts &lt;yes|no&gt;</cite> APP가 누락된 모든 글꼴을 강제로 설정할지 여부를 지정합니다. 이 설정은 문자열뿐만 아니라 모든 값을 사용하여 CSV 파일을 생성한 경우에만 작동합니다. 가능한 값은 yes 또는 no입니다. 기본값은 <cite dir="ltr">no</cite> 입니다. </p>
+    <p dir="ltr" lang="ko"><cite dir="ltr">--bruteforce &lt;yes|no&gt;</cite> 가능한 모든 번역 변형을 테스트할지 여부를 지정합니다. 예 또는 아니요. 기본값은 다음과 같습니다: <cite dir="ltr">no</cite></p>
+    <p dir="ltr" lang="ko"><cite dir="ltr">--defaultculture &lt;culture&gt;</cite> 기본 문화권, 즉 "(default)" 값의 해석입니다. 아무것도 지정하지 않으면 다음이 사용됩니다: <cite dir="ltr">en</cite></p>
     <hr/>
     <p dir="ltr" lang="ko">CSV로 변환하려면: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; [--sortbyname yes] [--onlystrings no]</cite></p>
-    <p dir="ltr" lang="ko">번역: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator &lt;google|microsoft|deepl|toptranslation&gt; --apikey &lt;key&gt; [--sortbyname yes]</cite></p>
-    <p dir="ltr" lang="ko">"Argos"로 번역하려면: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt;  --translator argos [--sortbyname yes]</cite></p>
-    <p dir="ltr" lang="ko">"LibreTranslate"를 사용한 번역: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="ko">번역: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator &lt;google|microsoft|deepl|toptranslation&gt; --apikey &lt;key&gt; [--sortbyname yes] [--bruteforce yes] [--defaultculture &lt;culture&gt;]</cite></p>
+    <p dir="ltr" lang="ko">"Argos"로 번역하려면: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt;  --translator argos [--sortbyname yes] [--bruteforce yes] [--defaultculture &lt;culture&gt;]</cite></p>
+    <p dir="ltr" lang="ko">"LibreTranslate"를 사용한 번역: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes] [--bruteforce yes] [--defaultculture &lt;culture&gt;]</cite></p>
     <p dir="ltr" lang="ko">RESX 파일을 업데이트하려면: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt; [--fixfonts yes]</cite></p>
 
     <br/>
@@ -565,11 +601,13 @@
     <p dir="ltr" lang="hi"><cite dir="ltr">--toresx &lt;name.csv&gt;</cite> निर्दिष्ट CSV फ़ाइल को संबंधित RESX फ़ाइलों में एकीकृत किया जाएगा, उदाहरण के लिए: <cite dir="ltr">--toresx Resources.csv</cite></p>
     <p dir="ltr" lang="hi"><cite dir="ltr">--onlystrings &lt;yes|no&gt;</cite> निर्दिष्ट करता है, यदि सीएसवी में केवल स्ट्रिंग मान एकत्र किए जाएंगे, या अन्य मान भी। हाँ या नहीं, डिफ़ॉल्ट हाँ है, उदाहरण: <cite dir="ltr">--onlystrings no</cite></p>
     <p dir="ltr" lang="hi"><cite dir="ltr">--fixfonts &lt;yes|no&gt;</cite> यह निर्दिष्ट करता है कि क्या ऐप सभी अनुपलब्ध फ़ॉन्ट्स को जबरन सेट करेगा। यह तभी काम करता है जब CSV सभी मानों के साथ बनाया गया हो, केवल स्ट्रिंग्स के साथ नहीं। संभावित मान हाँ या नहीं हैं। डिफ़ॉल्ट है: <cite dir="ltr">no</cite></p>
+    <p dir="ltr" lang="hi"><cite dir="ltr">--bruteforce &lt;yes|no&gt;</cite> निर्दिष्ट करता है कि क्या सभी संभावित अनुवाद प्रकारों का परीक्षण किया जाएगा। हाँ या नहीं। डिफ़ॉल्ट है: <cite dir="ltr">no</cite></p>
+    <p dir="ltr" lang="hi"><cite dir="ltr">--defaultculture &lt;culture&gt;</cite> डिफ़ॉल्ट संस्कृति, यानी "(default)" मान की व्याख्या। यदि कुछ निर्दिष्ट नहीं है, तो निम्नलिखित का उपयोग किया जाता है: <cite dir="ltr">en</cite></p>
     <hr/>
     <p dir="ltr" lang="hi">सीएसवी में रूपांतरण के लिए: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; [--sortbyname yes] [--onlystrings no]</cite></p>
-    <p dir="ltr" lang="hi">अनुवाद के लिए: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator &lt;google|microsoft|deepl|toptranslation&gt; --apikey &lt;key&gt; [--sortbyname yes]</cite></p>
-    <p dir="ltr" lang="hi">"Argos" के साथ अनुवाद के लिए: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt;  --translator argos [--sortbyname yes]</cite></p>
-    <p dir="ltr" lang="hi">"LibreTranslate" के साथ अनुवाद के लिए: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes]</cite></p>
+    <p dir="ltr" lang="hi">अनुवाद के लिए: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator &lt;google|microsoft|deepl|toptranslation&gt; --apikey &lt;key&gt; [--sortbyname yes] [--bruteforce yes] [--defaultculture &lt;culture&gt;]</cite></p>
+    <p dir="ltr" lang="hi">"Argos" के साथ अनुवाद के लिए: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt;  --translator argos [--sortbyname yes] [--bruteforce yes] [--defaultculture &lt;culture&gt;]</cite></p>
+    <p dir="ltr" lang="hi">"LibreTranslate" के साथ अनुवाद के लिए: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes] [--bruteforce yes] [--defaultculture &lt;culture&gt;]</cite></p>
     <p dir="ltr" lang="hi">RESX फ़ाइलें अद्यतन करने के लिए: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt; [--fixfonts yes]</cite></p>
 
     <br/>
@@ -594,11 +632,13 @@
       <p dir="rtl" lang="ar"><cite dir="ltr">--toresx &lt;name.csv&gt;</cite> يجب دمج ملف CSV المحدد في ملفات RESX المقابلة، على سبيل المثال: <cite dir="ltr">--toresx Resources.csv</cite></p>
       <p dir="rtl" lang="ar"><cite dir="ltr">--onlystrings &lt;yes|no&gt;</cite> يحدد ما إذا كان سيتم جمع قيم السلسلة فقط في ملف CSV، أو قيم أخرى أيضًا. نعم أو لا، الافتراضي هو نعم، على سبيل المثال: <cite dir="ltr">--onlystrings no</cite></p>
       <p dir="rtl" lang="ar"><cite dir="ltr">--fixfonts &lt;yes|no&gt;</cite> يُحدد ما إذا كان التطبيق سيُعيّن جميع الخطوط المفقودة قسرًا. يعمل هذا فقط إذا تم إنشاء ملف CSV بجميع القيم، وليس فقط السلاسل النصية. القيم الممكنة هي نعم أو لا. القيمة الافتراضية هي: <cite dir="ltr">no</cite></p>
+      <p dir="rtl" lang="ar"><cite dir="ltr">--bruteforce &lt;yes|no&gt;</cite> يُحدد ما إذا كان يجب اختبار جميع متغيرات الترجمة الممكنة. نعم أم لا. الإعداد الافتراضي هو: <cite dir="ltr">no</cite></p>
+      <p dir="rtl" lang="en"><cite dir="ltr">--defaultculture &lt;culture&gt;</cite> الثقافة الافتراضية، أي تفسير القيمة "(default)". إذا لم يُحدَّد شيء، يُستخدم ما يلي: <cite dir="ltr">en</cite></p>
       <hr/>
       <p dir="rtl" lang="ar">للتحويل إلى CSV: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; [--sortbyname yes] [--onlystrings no]</cite></p>
-      <p dir="rtl" lang="ar">للترجمة: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator &lt;google|microsoft|deepl|toptranslation&gt; --apikey &lt;key&gt; [--sortbyname yes]</cite></p>
-      <p dir="rtl" lang="ar">للترجمة مع "أرجوس": <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt;  --translator argos [--sortbyname yes]</cite></p>
-      <p dir="rtl" lang="ar">للترجمة باستخدام "LibreTranslate": <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes]</cite></p>
+      <p dir="rtl" lang="ar">للترجمة: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator &lt;google|microsoft|deepl|toptranslation&gt; --apikey &lt;key&gt; [--sortbyname yes] [--bruteforce yes] [--defaultculture &lt;culture&gt;]</cite></p>
+      <p dir="rtl" lang="ar">للترجمة مع "أرجوس": <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt;  --translator argos [--sortbyname yes] [--bruteforce yes] [--defaultculture &lt;culture&gt;]</cite></p>
+      <p dir="rtl" lang="ar">للترجمة باستخدام "LibreTranslate": <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes] [--bruteforce yes] [--defaultculture &lt;culture&gt;]</cite></p>
       <p dir="rtl" lang="ar">لتحديث ملفات RESX: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt; [--fixfonts yes]</cite></p>
 
       <p dir="rtl" lang="ar">
@@ -623,11 +663,13 @@
       <p dir="rtl" lang="he"><cite dir="ltr">--toresx &lt;name.csv&gt;</cite> קובץ ה-CSV שצוין ישולבו בקבצי RESX מתאימים, למשל: <cite dir="ltr">--toresx Resources.csv</cite></p>
       <p dir="rtl" lang="he"><cite dir="ltr">--onlystrings &lt;yes|no&gt;</cite> מציין, אם רק ערכי מחרוזת יאספו ב-CSV, או גם בערכים אחרים. כן או לא, ברירת המחדל היא כן, למשל: <cite dir="ltr">--onlystrings no</cite></p>
       <p dir="rtl" lang="he"><cite dir="ltr">--fixfonts &lt;yes|no&gt;</cite> מציין אם האפליקציה תכריח להגדיר את כל הגופנים החסרים. זה עובד רק אם קובץ ה-CSV נוצר עם כל הערכים, לא רק מחרוזות. ערכים אפשריים הם כן או לא. ברירת המחדל היא: <cite dir="ltr">no</cite></p>
+      <p dir="rtl" lang="he"><cite dir="ltr">--bruteforce &lt;yes|no&gt;</cite> מציין אם יש לבדוק את כל גרסאות התרגום האפשריות. כן או לא. ברירת המחדל היא: <cite dir="ltr">no</cite></p>
+      <p dir="rtl" lang="he"><cite dir="ltr">--defaultculture &lt;culture&gt;</cite> תרבות ברירת המחדל, כלומר הפרשנות של הערך "(default)". אם לא צוין דבר, נעשה שימוש בפונקציות הבאות: <cite dir="ltr">en</cite></p>
       <hr/>
       <p dir="rtl" lang="he">להמרה ל-CSV: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; [--sortbyname yes] [--onlystrings no]</cite></p>
-      <p dir="rtl" lang="he">לתרגום: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator &lt;google|microsoft|deepl|toptranslation&gt; --apikey &lt;key&gt; [--sortbyname yes]</cite></p>
-      <p dir="rtl" lang="he">לתרגום עם "Argos": <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt;  --translator argos [--sortbyname yes]</cite></p>
-      <p dir="rtl" lang="he">לתרגום עם "LibreTranslate": <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes]</cite></p>
+      <p dir="rtl" lang="he">לתרגום: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator &lt;google|microsoft|deepl|toptranslation&gt; --apikey &lt;key&gt; [--sortbyname yes] [--bruteforce yes] [--defaultculture &lt;culture&gt;]</cite></p>
+      <p dir="rtl" lang="he">לתרגום עם "Argos": <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt;  --translator argos [--sortbyname yes] [--bruteforce yes] [--defaultculture &lt;culture&gt;]</cite></p>
+      <p dir="rtl" lang="he">לתרגום עם "LibreTranslate": <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --pattern &lt;pattern&gt; --translator libretranslate --libreurl &lt;url&gt; [--apikey &lt;key&gt;] [--sortbyname yes] [--bruteforce yes] [--defaultculture &lt;culture&gt;]</cite></p>
       <p dir="rtl" lang="he">לעדכון קבצי RESX: <cite dir="ltr">ResxVsCsv --directory &lt;dir&gt; --toresx &lt;resources.csv&gt; [--fixfonts yes]</cite></p>
 
     <p dir="rtl" lang="he">

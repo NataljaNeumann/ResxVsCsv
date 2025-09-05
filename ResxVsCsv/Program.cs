@@ -150,6 +150,8 @@ namespace ResxVsCsv
                 bool bOnlyStrings = true;
                 bool bRemoveDuplicates = false;
                 bool bFixFonts = false;
+                bool bBruteForce = false;
+                string strDefaultCulture = "en";
                 if (aArgs.Length == 0)
                     aArgs = new string[] { "/?" };
 
@@ -226,6 +228,22 @@ namespace ResxVsCsv
                                 bFixFonts = "yes".Equals(aArgs[++i]);
                             }
                             break;
+                        case "--bruteforce":
+                            if (i + 1 < aArgs.Length)
+                            {
+                                bBruteForce = "yes".Equals(aArgs[++i]);
+                            }
+                            break;
+                        case "--defaultculture":
+                            if (i + 1 < aArgs.Length)
+                            {
+                                strDefaultCulture = aArgs[++i];
+                                if (string.IsNullOrEmpty(strDefaultCulture))
+                                {
+                                    strDefaultCulture = "en";
+                                }
+                            }
+                            break;
                         case "--help":
                         case "-?":
                         case "/?":
@@ -257,15 +275,18 @@ namespace ResxVsCsv
                             WriteWrappedText(
                                 Properties.Resources.ForTranslation +
                                 "ResxVsCsv --directory <dir> --pattern <pattern> \r\n" +
-                                "  --translator <google|microsoft|deepl|toptranslation> --apikey <key> [--sortbyname yes]");
+                                "  --translator <google|microsoft|deepl|toptranslation> --apikey <key> [--sortbyname yes]\r\n" +
+                                "  [--bruteforce yes] [--defaultculture <culture>]");
                             WriteWrappedText(
                                 Properties.Resources.ForTranslationWithArgos +
                                 "ResxVsCsv --directory <dir> --pattern <pattern> \r\n" +
-                                "  --translator argos [--sortbyname yes]");
+                                "  --translator argos [--sortbyname yes]\r\n" +
+                                "  [--bruteforce yes] [--defaultculture <culture>]");
                             WriteWrappedText(
                                 Properties.Resources.ForTranslationWithLibreTranslate +
                                 "ResxVsCsv --directory <dir> --pattern <pattern> \r\n" +
-                                "  --translator libretranslate --libreurl <url> [--apikey <key>] [--sortbyname yes]");
+                                "  --translator libretranslate --libreurl <url> [--apikey <key>] [--sortbyname yes]\r\n" +
+                                "  [--bruteforce yes] [--defaultculture <culture>]");
                             WriteWrappedText(
                                 Properties.Resources.ForUpdatingResxFiles +
                                 "ResxVsCsv --directory <dir> --toresx <resources.csv> [--removeduplicates yes]\r\n"+
@@ -445,41 +466,70 @@ namespace ResxVsCsv
                                         {
                                             var translations = new List<Translation>();
 
-                                            string strLocalizedTextVariant = null;
-                                            Entry oFoundEntry = null;
-                                            if (oEntriesDictionary.TryGetValue(
-                                                new Entry { Culture = "(default)", Name = strName }, out oFoundEntry))
-                                            {
-                                                strLocalizedTextVariant = oFoundEntry.Value;
-                                                if (!string.IsNullOrEmpty(strLocalizedTextVariant))
-                                                    translations.Add(new Translation
-                                                    {
-                                                        Language = "en",
-                                                        Text = strLocalizedTextVariant
-                                                    });
-                                            };
 
 
-                                            foreach (string strSourceCulture in new string[] { 
-                                                        "es", "de", "pt", "it", "en", "fr", "ru", "ko", "ja", "zh-CHS", "zh-CHT", "hi" })
+                                            if (!bBruteForce)
                                             {
+                                                // without brute force we take only the big languages
+                                                string strLocalizedTextVariant = null;
+                                                Entry oFoundEntry = null;
                                                 if (oEntriesDictionary.TryGetValue(
-                                                    new Entry { Culture = strSourceCulture, Name = strName }, out oFoundEntry))
+                                                    new Entry { Culture = "(default)", Name = strName }, out oFoundEntry))
                                                 {
                                                     strLocalizedTextVariant = oFoundEntry.Value;
                                                     if (!string.IsNullOrEmpty(strLocalizedTextVariant))
                                                         translations.Add(new Translation
                                                         {
-                                                            Language = strSourceCulture,
+                                                            Language = strDefaultCulture,
                                                             Text = strLocalizedTextVariant
                                                         });
                                                 };
+
+                                                foreach (string strSourceCulture in new string[] { 
+                                                        "es", "de", "pt", "it", "fr", "ru", "ko", "ja", "zh-CHS", "zh-CHT", "hi", "en" })
+                                                {
+                                                    if (oEntriesDictionary.TryGetValue(
+                                                        new Entry { Culture = strSourceCulture, Name = strName }, out oFoundEntry))
+                                                    {
+                                                        strLocalizedTextVariant = oFoundEntry.Value;
+                                                        if (!string.IsNullOrEmpty(strLocalizedTextVariant))
+                                                            translations.Add(new Translation
+                                                            {
+                                                                Language = strSourceCulture,
+                                                                Text = strLocalizedTextVariant
+                                                            });
+                                                    };
+                                                }
+                                            }
+                                            else
+                                            {
+                                                // in brute force mode we get all available variants
+                                                foreach (Entry oEntry2 in oAllEntries)
+                                                {
+                                                    if (!string.IsNullOrEmpty(oEntry2.Name) &&
+                                                        oEntry2.Name.Equals(strName) &&
+                                                        !string.IsNullOrEmpty(oEntry2.Value))
+                                                    {
+                                                        string strSourceCulture = oEntry2.Culture;
+                                                        if (!string.IsNullOrEmpty(strSourceCulture) &&
+                                                            strSourceCulture.Equals("(default)"))
+                                                        {
+                                                            strSourceCulture = strDefaultCulture;
+                                                        }
+
+                                                        translations.Add(new Translation
+                                                        {
+                                                            Language = strSourceCulture,
+                                                            Text = oEntry2.Value
+                                                        });
+                                                    }
+                                                }
                                             }
 
 
 
                                             string bestTranslation = GetBestTranslation(
-                                                translations, strCulture, strApiKey, strTranslationService, strApiUrl);
+                                                translations, strCulture, strApiKey, strTranslationService, strApiUrl, bBruteForce);
 
 
                                             if (!string.IsNullOrEmpty(bestTranslation))
@@ -536,41 +586,69 @@ namespace ResxVsCsv
                                         {
                                             var translations = new List<Translation>();
 
-                                            string strLocalizedTextVariant = null;
-                                            Entry oFoundEntry = null;
-                                            if (oEntriesDictionary.TryGetValue(
-                                                new Entry { Culture = "(default)", Name = strName }, out oFoundEntry))
+                                            if (!bBruteForce)
                                             {
-                                                strLocalizedTextVariant = oFoundEntry.Value;
-                                                if (!string.IsNullOrEmpty(strLocalizedTextVariant))
-                                                    translations.Add(new Translation
-                                                        {
-                                                            Language = "en",
-                                                            Text = strLocalizedTextVariant
-                                                        });
-                                            };
-
-
-                                            foreach (string strSourceCulture in new string[] { 
-                                                        "es", "de", "pt", "it", "en", "fr", "ru", "ko", "ja", "zh-CHS", "zh-CHT", "hi" })
-                                            {
+                                                // without brute force we take only the big languages
+                                                string strLocalizedTextVariant = null;
+                                                Entry oFoundEntry = null;
                                                 if (oEntriesDictionary.TryGetValue(
-                                                    new Entry { Culture = strSourceCulture, Name = strName }, out oFoundEntry))
+                                                    new Entry { Culture = "(default)", Name = strName }, out oFoundEntry))
                                                 {
                                                     strLocalizedTextVariant = oFoundEntry.Value;
                                                     if (!string.IsNullOrEmpty(strLocalizedTextVariant))
                                                         translations.Add(new Translation
-                                                          {
-                                                              Language = strSourceCulture,
-                                                              Text = strLocalizedTextVariant
-                                                          });
+                                                            {
+                                                                Language = strDefaultCulture,
+                                                                Text = strLocalizedTextVariant
+                                                            });
                                                 };
+
+
+                                                foreach (string strSourceCulture in new string[] { 
+                                                            "es", "de", "pt", "it", "fr", "ru", "ko", "ja", "zh-CHS", "zh-CHT", "hi", "en" })
+                                                {
+                                                    if (oEntriesDictionary.TryGetValue(
+                                                        new Entry { Culture = strSourceCulture, Name = strName }, out oFoundEntry))
+                                                    {
+                                                        strLocalizedTextVariant = oFoundEntry.Value;
+                                                        if (!string.IsNullOrEmpty(strLocalizedTextVariant))
+                                                            translations.Add(new Translation
+                                                              {
+                                                                  Language = strSourceCulture,
+                                                                  Text = strLocalizedTextVariant
+                                                              });
+                                                    };
+                                                }
+                                            }
+                                            else
+                                            {
+                                                // in brute force mode we get all available variants
+                                                foreach (Entry oEntry2 in oAllEntries)
+                                                {
+                                                    if (!string.IsNullOrEmpty(oEntry2.Name) &&
+                                                        oEntry2.Name.Equals(strName) &&
+                                                        !string.IsNullOrEmpty(oEntry2.Value))
+                                                    {
+                                                        string strSourceCulture = oEntry2.Culture;
+                                                        if (!string.IsNullOrEmpty(strSourceCulture) &&
+                                                            strSourceCulture.Equals("(default)"))
+                                                        {
+                                                            strSourceCulture = strDefaultCulture;
+                                                        }
+
+                                                        translations.Add(new Translation
+                                                        {
+                                                            Language = strSourceCulture,
+                                                            Text = oEntry2.Value
+                                                        });
+                                                    }
+                                                }
                                             }
 
 
 
                                             string bestTranslation = GetBestTranslation(
-                                                translations, strCulture, strApiKey, strTranslationService, strApiUrl);
+                                                translations, strCulture, strApiKey, strTranslationService, strApiUrl, bBruteForce);
 
                                             if (!string.IsNullOrEmpty(bestTranslation))
                                                 outputlist.Add(new Entry
@@ -1620,6 +1698,7 @@ namespace ResxVsCsv
         /// <param name="iTranslations">The translations of the text in different languages</param>
         /// <param name="strTargetLanguage">The target language</param>
         /// <param name="strAPIKey">API Key for querying translations</param>
+        /// <param name="bBruteForce">Indicates if all translation variants need to be searched</param>
         /// <returns>The hopefully one and only translation</returns>
         //===================================================================================================
         public static string GetBestTranslation(
@@ -1627,7 +1706,8 @@ namespace ResxVsCsv
             string strTargetLanguage,
             string strApiKey,
             string strService,
-            string strApiUrl)
+            string strApiUrl,
+            bool bBruteForce)
         {
 
             string strBestTranslation = null;
@@ -1637,20 +1717,49 @@ namespace ResxVsCsv
             {
                 string strTranslatedText = Translate(oTranslation.Language, oTranslation.Text,
                     strTargetLanguage, strApiKey, strService, strApiUrl);
-                string strBackTranslatedText = Translate(strTargetLanguage, strTranslatedText,
-                    oTranslation.Language, strApiKey, strService, strApiUrl);
 
-                if (strBackTranslatedText.Equals(oTranslation.Text))
+                if (!bBruteForce)
                 {
-                    // Found a perfect match
-                    return strTranslatedText;
+                    // if not in bruteforce method then we search for a translation that 
+                    // back-translates to itself
+                    string strBackTranslatedText = Translate(strTargetLanguage, strTranslatedText,
+                        oTranslation.Language, strApiKey, strService, strApiUrl);
+
+                    if (strBackTranslatedText.Equals(oTranslation.Text))
+                    {
+                        // Found a perfect match
+                        return strTranslatedText;
+                    }
+                    else
+                    {
+                        int nEditDistance = GetEditDistance(oTranslation.Text, strBackTranslatedText);
+                        if (nEditDistance < nMinEditDistance)
+                        {
+                            nMinEditDistance = nEditDistance;
+                            strBestTranslation = strTranslatedText;
+                        }
+                    }
                 }
                 else
                 {
-                    int editDistance = GetEditDistance(oTranslation.Text, strBackTranslatedText);
-                    if (editDistance < nMinEditDistance)
+                    // in bruteforce mode we search for a translation that back-translates
+                    // to same in possibly all available languages
+                    int nSumOfDistances = 0;
+                    foreach (var oTranslation2 in iTranslations)
                     {
-                        nMinEditDistance = editDistance;
+                        string strBackTranslatedText = Translate(strTargetLanguage, strTranslatedText,
+                            oTranslation2.Language, strApiKey, strService, strApiUrl);
+
+                        if (!strBackTranslatedText.Equals(oTranslation2.Text))
+                        {
+                            int nEditDistance = GetEditDistance(oTranslation.Text, strBackTranslatedText);
+                            nSumOfDistances += nEditDistance;
+                        }
+                    };
+
+                    if (nSumOfDistances < nMinEditDistance)
+                    {
+                        nMinEditDistance = nSumOfDistances;
                         strBestTranslation = strTranslatedText;
                     }
                 }
