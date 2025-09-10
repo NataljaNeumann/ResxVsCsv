@@ -1613,8 +1613,7 @@ namespace ResxVsCsv
                     RedirectStandardInput = true,
                     RedirectStandardOutput = true,
                     UseShellExecute = true,
-                    CreateNoWindow = true, 
-                    StandardOutputEncoding = Encoding.Unicode                     
+                    CreateNoWindow = true                  
                 }
             };
             oProcess.Start();
