@@ -826,7 +826,9 @@ namespace ResxVsCsv
         /// <param name="strInput">Input text</param>
         /// <returns>Reversed text</returns>
         //===================================================================================================
-        static string ReverseArabicAndHebrewText(string strInput)
+        static string ReverseArabicAndHebrewText(
+            string strInput
+            )
         {
             // first reverse the complete line
             char[] aChars = strInput.ToCharArray();
@@ -862,7 +864,9 @@ namespace ResxVsCsv
         /// <param name="strInput">Input text</param>
         /// <returns>Text with reversed hebrew and arabic parts</returns>
         //===================================================================================================
-        static string ReverseArabicAndHebrewParts(string strInput)
+        static string ReverseArabicAndHebrewParts(
+            string strInput
+            )
         {
             string strPattern = "[\\u0590-\\u05FF\\u0600-\\u06FF\\s,:\\.\\\"\\'\\(\\)]+";
             return Regex.Replace(strInput, strPattern, new MatchEvaluator(ReverseMatch));
@@ -876,7 +880,9 @@ namespace ResxVsCsv
         /// <param name="match"></param>
         /// <returns></returns>
         //===================================================================================================
-        static string ReverseMatch(Match oMatch)
+        static string ReverseMatch(
+            Match oMatch
+            )
         {
             char[] aChars = oMatch.Value.ToCharArray();
             Array.Reverse(aChars);
@@ -911,7 +917,8 @@ namespace ResxVsCsv
         static IEnumerable<Entry> ReadResxFile(
             string strFilePath,
             string strCulture,
-            bool bOnlyStrings)
+            bool bOnlyStrings
+            )
         {
             var oXmlDoc = XDocument.Load(strFilePath);
             var iDataElements = oXmlDoc.Root.Elements("data");
@@ -964,7 +971,8 @@ namespace ResxVsCsv
         //===================================================================================================
         static void WriteToCsv(
             IEnumerable<Entry> iEntries,
-            string strFilePath)
+            string strFilePath
+            )
         {
             using (System.IO.StreamWriter oWriter =
                 new StreamWriter(strFilePath, false, Encoding.UTF8))
@@ -994,7 +1002,9 @@ namespace ResxVsCsv
         /// <param name="strValue">Value to transform</param>
         /// <returns>Value in CSV format</returns>
         //===================================================================================================
-        static string ToCsv(string strValue)
+        static string ToCsv(
+            string strValue
+            )
         {
             if (strValue == null)
                 return "";
@@ -1013,7 +1023,9 @@ namespace ResxVsCsv
         /// <param name="strValue">Value to transform</param>
         /// <returns>Value in Json format</returns>
         //===================================================================================================
-        static string ToJson(string strValue)
+        static string ToJson(
+            string strValue
+            )
         {
             var oResult = new StringBuilder();
 
@@ -1069,7 +1081,10 @@ namespace ResxVsCsv
         /// <param name="strKey">Key to search for</param>
         /// <returns>Value, transformed back</returns>
         //===================================================================================================
-        static string ExtractJsonValue(string strJson, string strKey)
+        static string ExtractJsonValue(
+            string strJson,
+            string strKey
+            )
         {
             string pattern = "\\\"" + strKey + "\\\":\\\"(.*?)\\\"";
             Match match = Regex.Match(strJson, pattern);
@@ -1438,7 +1453,8 @@ namespace ResxVsCsv
             string strTargetLanguage,
             string strApiKey,
             string strService,
-            string strApiUrl)
+            string strApiUrl
+            )
         {
 #if TEST_TRANSLATION_LOGIC
             if (m_oTranslations != null)
@@ -1488,7 +1504,8 @@ namespace ResxVsCsv
             string strText,
             string strSourceLanguage,
             string strTargetLanguage,
-            string strAPIKey)
+            string strAPIKey
+            )
         {
             string oUrl = @"https://translation.googleapis.com/language/translate/v2?key=" +
                 strAPIKey + "&q=" + Uri.EscapeDataString(strText) + "&source=" + strSourceLanguage +
@@ -1516,7 +1533,8 @@ namespace ResxVsCsv
             string strText,
             string strSourceLanguage,
             string strTargetLanguage,
-            string strAPIKey)
+            string strAPIKey
+            )
         {
             string oUrl = @"https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=" +
                 strSourceLanguage + "&to=" + strTargetLanguage;
@@ -1547,7 +1565,8 @@ namespace ResxVsCsv
             string strText,
             string strSourceLanguage,
             string strTargetLanguage,
-            string strAPIKey)
+            string strAPIKey
+            )
         {
             string oUrl = @"https://api.deepl.com/v2/translate?auth_key=" + strAPIKey + "&text=" +
                 Uri.EscapeDataString(strText) + "&source_lang=" + strSourceLanguage + "&target_lang=" +
@@ -1575,7 +1594,8 @@ namespace ResxVsCsv
             string strText,
             string strSourceLanguage,
             string strTargetLanguage,
-            string strAPIKey)
+            string strAPIKey
+            )
         {
             string url = @"https://api.toptranslation.com/translate?auth_key=" + strAPIKey + "&text=" +
                 Uri.EscapeDataString(strText) + "&source_lang=" + strSourceLanguage + "&target_lang=" + strTargetLanguage;
@@ -1603,7 +1623,8 @@ namespace ResxVsCsv
             string strText,
             string strSourceLanguage,
             string strTargetLanguage,
-            string strArgosTranslatePath)
+            string strArgosTranslatePath
+            )
         {
             var oProcess = new Process
             {
@@ -1640,7 +1661,8 @@ namespace ResxVsCsv
             string strSourceLanguage,
             string strTargetLanguage,
             string strApiKey,
-            string strLibreTranslateUrl)
+            string strLibreTranslateUrl
+            )
         {
             using (WebClient oClient = new WebClient())
             {
@@ -1683,7 +1705,9 @@ namespace ResxVsCsv
         /// <param name="strResponse">Response from microsoft service</param>
         /// <returns>The translated text from response</returns>
         //===================================================================================================
-        private static string ExtractTranslatedTextFromMicrosoftResponse(string strResponse)
+        private static string ExtractTranslatedTextFromMicrosoftResponse(
+            string strResponse
+            )
         {
             // Basic string manipulation to extract the translated text
             return ExtractJsonValue(strResponse, "text");
@@ -1697,7 +1721,9 @@ namespace ResxVsCsv
         /// <param name="strResponse">Response from deepl service</param>
         /// <returns>The translated text from response</returns>
         //===================================================================================================
-        private static string ExtractTranslatedTextFromDeepLResponse(string strResponse)
+        private static string ExtractTranslatedTextFromDeepLResponse(
+            string strResponse
+            )
         {
             return ExtractJsonValue(strResponse, "text");
         }
@@ -1709,7 +1735,9 @@ namespace ResxVsCsv
         /// <param name="strResponse">Response from toptanslation service</param>
         /// <returns>The translated text from response</returns>
         //===================================================================================================
-        private static string ExtractTranslatedTextFromTopTranslationResponse(string strResponse)
+        private static string ExtractTranslatedTextFromTopTranslationResponse(
+            string strResponse
+            )
         {
             // Basic string manipulation to extract the translated text
             return ExtractJsonValue(strResponse, "translatedText");
@@ -1740,7 +1768,9 @@ namespace ResxVsCsv
         /// <param name="strJsonResponse">libre response</param>
         /// <returns>Translation</returns>
         //===================================================================================================
-        private static string ExtractTranslatedTextFromLibreResponse(string strResponse)
+        private static string ExtractTranslatedTextFromLibreResponse(
+            string strResponse
+            )
         {
             return ExtractJsonValue(strResponse, "translatedText");
         }
@@ -1762,14 +1792,15 @@ namespace ResxVsCsv
             string strApiKey,
             string strService,
             string strApiUrl,
-            bool bBruteForce)
+            bool bBruteForce
+            )
         {
 
             string strBestTranslation = null;
             int nMinEditDistance = int.MaxValue;
             float fMinSumOfEditDistances = float.MaxValue;
 
-            foreach (var oTranslation in iTranslations)
+            foreach (Translation oTranslation in iTranslations)
             {   
 
                 string strTranslatedText = Translate(oTranslation.Language, oTranslation.Text,
@@ -1870,7 +1901,10 @@ namespace ResxVsCsv
         /// <param name="str2">second string</param>
         /// <returns>The edit distance</returns>
         //===================================================================================================
-        private static int GetEditDistance(string str1, string str2)
+        private static int GetEditDistance(
+            string str1,
+            string str2
+            )
         {
             int[,] aDist = new int[str1.Length + 1, str2.Length + 1];
 
@@ -1985,7 +2019,9 @@ namespace ResxVsCsv
         /// <param name="oResxDoc">Document to search for data nodes</param>
         /// <returns>A list of data-elementnodes</returns>
         //===================================================================================================
-        static List<XmlNode> LoadDataElements(XmlDocument oResxDoc)
+        static List<XmlNode> LoadDataElements(
+            XmlDocument oResxDoc
+            )
         {
             List<XmlNode> dataElements = new List<XmlNode>();
 
