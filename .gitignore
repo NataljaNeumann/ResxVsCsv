@@ -2,7 +2,7 @@ ResxVsCsv/obj/**
 ResxVsCsv/bin/Release/**
 ResxVsCsv/bin/Debug/**
 ResxVsCsv/bin/*.zip
-**\.vs\**
-Backup\**
+**/.vs/**
+Backup/**
 *.user
 *.suo
