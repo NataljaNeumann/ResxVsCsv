@@ -61,171 +61,61 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.de.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.fr.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.es.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.pt.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.it.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.el.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.ru.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.da.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.fi.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.sv.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.hi.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.ar.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.he.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.sa.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.hu.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.uk.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.nl.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.be.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.bg.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.af.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.et.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.cs.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.fa.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.hy.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.id-ID.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.is.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.ja.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.ka.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.kk.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.km-KH.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.ko.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.ky-KG.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.lv.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.lt.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.mk.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.mn-MN.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.ms.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.no.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.pa-Arab-PK.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.pa-IN.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.pl.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.ps-AF.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.ro.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.sk.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.sl.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.sr.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.tg-Cyrl-TJ.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.th.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.tr.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.uz.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.vi.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.zh-CHS.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.zh-CHT.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.az.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.bs-Latn-BA.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.de.resx"/>
+    <EmbeddedResource Include="Properties\Resources.fr.resx"/>
+    <EmbeddedResource Include="Properties\Resources.es.resx"/>
+    <EmbeddedResource Include="Properties\Resources.pt.resx"/>
+    <EmbeddedResource Include="Properties\Resources.it.resx"/>
+    <EmbeddedResource Include="Properties\Resources.el.resx"/>
+    <EmbeddedResource Include="Properties\Resources.ru.resx"/>
+    <EmbeddedResource Include="Properties\Resources.da.resx"/>
+    <EmbeddedResource Include="Properties\Resources.fi.resx"/>
+    <EmbeddedResource Include="Properties\Resources.sv.resx"/>
+    <EmbeddedResource Include="Properties\Resources.hi.resx"/>
+    <EmbeddedResource Include="Properties\Resources.ar.resx"/>
+    <EmbeddedResource Include="Properties\Resources.he.resx"/>
+    <EmbeddedResource Include="Properties\Resources.sa.resx"/>
+    <EmbeddedResource Include="Properties\Resources.hu.resx"/>
+    <EmbeddedResource Include="Properties\Resources.uk.resx"/>
+    <EmbeddedResource Include="Properties\Resources.nl.resx"/>
+    <EmbeddedResource Include="Properties\Resources.be.resx"/>
+    <EmbeddedResource Include="Properties\Resources.bg.resx"/>
+    <EmbeddedResource Include="Properties\Resources.af.resx"/>
+    <EmbeddedResource Include="Properties\Resources.et.resx"/>
+    <EmbeddedResource Include="Properties\Resources.cs.resx"/>
+    <EmbeddedResource Include="Properties\Resources.fa.resx"/>
+    <EmbeddedResource Include="Properties\Resources.hy.resx"/>
+    <EmbeddedResource Include="Properties\Resources.id-ID.resx"/>
+    <EmbeddedResource Include="Properties\Resources.is.resx"/>
+    <EmbeddedResource Include="Properties\Resources.ja.resx"/>
+    <EmbeddedResource Include="Properties\Resources.ka.resx"/>
+    <EmbeddedResource Include="Properties\Resources.kk.resx"/>
+    <EmbeddedResource Include="Properties\Resources.km-KH.resx"/>
+    <EmbeddedResource Include="Properties\Resources.ko.resx"/>
+    <EmbeddedResource Include="Properties\Resources.ky-KG.resx"/>
+    <EmbeddedResource Include="Properties\Resources.lv.resx"/>
+    <EmbeddedResource Include="Properties\Resources.lt.resx"/>
+    <EmbeddedResource Include="Properties\Resources.mk.resx"/>
+    <EmbeddedResource Include="Properties\Resources.mn-MN.resx"/>
+    <EmbeddedResource Include="Properties\Resources.ms.resx"/>
+    <EmbeddedResource Include="Properties\Resources.no.resx"/>
+    <EmbeddedResource Include="Properties\Resources.pa-Arab-PK.resx"/>
+    <EmbeddedResource Include="Properties\Resources.pa-IN.resx"/>
+    <EmbeddedResource Include="Properties\Resources.pl.resx"/>
+    <EmbeddedResource Include="Properties\Resources.ps-AF.resx"/>
+    <EmbeddedResource Include="Properties\Resources.ro.resx"/>
+    <EmbeddedResource Include="Properties\Resources.sk.resx"/>
+    <EmbeddedResource Include="Properties\Resources.sl.resx"/>
+    <EmbeddedResource Include="Properties\Resources.sr.resx"/>
+    <EmbeddedResource Include="Properties\Resources.tg-Cyrl-TJ.resx"/>
+    <EmbeddedResource Include="Properties\Resources.th.resx"/>
+    <EmbeddedResource Include="Properties\Resources.tr.resx"/>
+    <EmbeddedResource Include="Properties\Resources.uz.resx"/>
+    <EmbeddedResource Include="Properties\Resources.vi.resx"/>
+    <EmbeddedResource Include="Properties\Resources.zh-CHS.resx"/>
+    <EmbeddedResource Include="Properties\Resources.zh-CHT.resx"/>
+    <EmbeddedResource Include="Properties\Resources.az.resx"/>
+    <EmbeddedResource Include="Properties\Resources.bs-Latn-BA.resx"/>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Readme.html">
