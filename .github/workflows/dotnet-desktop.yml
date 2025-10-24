@@ -297,9 +297,9 @@ jobs:
 
           function Get-AuthorsUnique($range) {
             if ([string]::IsNullOrEmpty($range)) {
-              $list = git log --pretty=format:'%an' --no-merges
+              $list = git log --pretty=format:'@%an' --no-merges
             } else {
-              $list = git log $range --pretty=format:'[%an](https://github.com/%an)' --no-merges
+              $list = git log $range --pretty=format:'@%an' --no-merges
             }
             if (-not $list) { return @() }
             $authors = $list -split "`n" | ForEach-Object { $_.Trim() } | Where-Object { $_ -ne "" } | Select-Object -Unique
