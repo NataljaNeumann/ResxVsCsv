@@ -39,12 +39,12 @@ namespace ResxVsCsv
         /// <summary>
         /// Language of a translation
         /// </summary>
-        public string Language { get; set; }
+        public string? Language { get; set; }
 
         //===================================================================================================
         /// <summary>
         /// Text of the translation
         /// </summary>
-        public string Text { get; set; }
+        public string? Text { get; set; }
     }
 }

@@ -39,37 +39,37 @@ namespace ResxVsCsv
         /// <summary>
         /// Culture of the entry
         /// </summary>
-        public string Culture { get; set; }
+        public string? Culture { get; set; }
 
         //===================================================================================================
         /// <summary>
         /// The name of the entry
         /// </summary>
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
         //===================================================================================================
         /// <summary>
         /// The value of the entry
         /// </summary>
-        public string Value { get; set; }
+        public string? Value { get; set; }
 
         //===================================================================================================
         /// <summary>
         /// The comment of the entry
         /// </summary>
-        public string Comment { get; set; }
+        public string? Comment { get; set; }
 
         //===================================================================================================
         /// <summary>
         /// The type of the entry (if it is not a simple string
         /// </summary>
-        public string Type { get; set; }
+        public string? Type { get; set; }
 
         //===================================================================================================
         /// <summary>
         /// The type of the entry (if it is not a simple string
         /// </summary>
-        public string MimeType { get; set; }
+        public string? MimeType { get; set; }
 
         //===================================================================================================
         /// <summary>
@@ -78,7 +78,7 @@ namespace ResxVsCsv
         /// <param name="obj">Other object</param>
         /// <returns>true iff the name and the culture are equal</returns>
         //===================================================================================================
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             if (obj == this)
                 return true;
@@ -86,7 +86,31 @@ namespace ResxVsCsv
                 return false;
 
             var other = (Entry)obj;
-            return Culture.Equals(other.Culture) && Name.Equals(other.Name);
+
+            if ((Culture != null) != (other.Culture != null))
+                return false;
+
+            if ((Name != null) != (other.Name != null))
+                return false;
+
+            if (Culture != null)
+            {
+                if (!Culture.Equals(other.Culture))
+                {
+                    return false;
+                }
+            }
+
+
+            if (Name != null)
+            {
+                if (!Name.Equals(other.Name))
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
 
         //===================================================================================================

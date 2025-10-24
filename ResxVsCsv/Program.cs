@@ -36,6 +36,7 @@ using System.Text;
 using System.Diagnostics;
 using System.Globalization;
 using System.Xml;
+using System.Runtime.InteropServices;
 
 
 namespace ResxVsCsv
@@ -152,12 +153,12 @@ namespace ResxVsCsv
             {
                 string strPattern = "Resources.*resx";
                 string strDirectory = Directory.GetCurrentDirectory();
-                string strToResx = null;
+                string? strToResx = null;
                 bool bSortByName = false;
-                string strApiKey = null;
-                string strApiUrl = null;
-                string strTranslationService = null;
-                string strAddCultures = null;
+                string? strApiKey = null;
+                string? strApiUrl = null;
+                string? strTranslationService = null;
+                string? strAddCultures = null;
                 bool bOnlyStrings = true;
                 bool bRemoveDuplicates = false;
                 bool bFixFonts = false;
@@ -260,9 +261,30 @@ namespace ResxVsCsv
                         case "/?":
                             try
                             {
-                                System.Diagnostics.Process.Start(System.IO.Path.Combine(
+                                string strUrl = System.IO.Path.Combine(
                                     AppDomain.CurrentDomain.BaseDirectory,
-                                    "Readme.html"));
+                                    "Readme.html");
+
+                                try
+                                {
+                                    if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+                                    {
+                                        Process.Start(new ProcessStartInfo(strUrl) { UseShellExecute = true });
+                                    }
+                                    else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+                                    {
+                                        Process.Start("xdg-open", strUrl);
+                                    }
+                                    else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
+                                    {
+                                        Process.Start("open", strUrl);
+                                    }
+                                }
+                                catch (Exception oEx)
+                                {
+                                    System.Console.Error.WriteLine("Could not open browser: " + oEx.Message);
+                                }
+
                             }
                             catch
                             {
@@ -271,37 +293,47 @@ namespace ResxVsCsv
                             goto case "--licence";
                         case "--licence":
                         case "--license":
-                            Version oVersion = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
+                            Version? oVersion = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
+
                             WriteWrappedText(
                                 string.Format("ResxVsCsv v{0}.{1} {2} {3}",
-                                oVersion.Major, oVersion.Minor,
-                                Properties.Resources.CopyrightMessage, "NataljaNeumann@gmx.de"));
+                                    oVersion?.Major, oVersion?.Minor,
+                                    Properties.Resources.CopyrightMessage, "NataljaNeumann@gmx.de"));
+
                             System.Console.WriteLine();
+
                             WriteWrappedText(Properties.Resources.LicenseText);
+
                             System.Console.WriteLine();
+
                             WriteWrappedText(
                                 Properties.Resources.ForConversionToCsv +
                                 "ResxVsCsv --directory <dir> --pattern <pattern> [--sortbyname yes] [--onlystrings no]\r\n"+
                                 "  [--addcultures <comma-separated-list>]");
+
                             WriteWrappedText(
                                 Properties.Resources.ForTranslation +
                                 "ResxVsCsv --directory <dir> --pattern <pattern> \r\n" +
                                 "  --translator <google|microsoft|deepl|toptranslation> --apikey <key> [--sortbyname yes]\r\n" +
                                 "  [--bruteforce yes] [--defaultculture <culture>]");
+
                             WriteWrappedText(
                                 Properties.Resources.ForTranslationWithArgos +
                                 "ResxVsCsv --directory <dir> --pattern <pattern> \r\n" +
                                 "  --translator argos [--sortbyname yes]\r\n" +
                                 "  [--bruteforce yes] [--defaultculture <culture>]");
+
                             WriteWrappedText(
                                 Properties.Resources.ForTranslationWithLibreTranslate +
                                 "ResxVsCsv --directory <dir> --pattern <pattern> \r\n" +
                                 "  --translator libretranslate --libreurl <url> [--apikey <key>] [--sortbyname yes]\r\n" +
                                 "  [--bruteforce yes] [--defaultculture <culture>]");
+
                             WriteWrappedText(
                                 Properties.Resources.ForUpdatingResxFiles +
                                 "ResxVsCsv --directory <dir> --toresx <resources.csv> [--removeduplicates yes]\r\n"+
                                 "  [--addcultures <comma-separated-list>] [--fixfonts yes]");
+
                             return;
                     }
                 }
@@ -333,10 +365,15 @@ namespace ResxVsCsv
                                     !string.IsNullOrEmpty(x.Value) &&
                                     "System.Drawing.Font, System.Drawing".Equals(x.Type)))
                             {
-                                oFonts[oFontEntry.Culture + "_" + oFontEntry.Name] = oFontEntry.Value;
+                                // actually already tested above, but compiler wants it.
+                                if (oFontEntry.Value != null)
+                                {
+                                    oFonts[oFontEntry.Culture + "_" + oFontEntry.Name] = oFontEntry.Value;
+                                }
                             }
                         }
 
+                        #pragma warning disable CS8619 // Nullability of reference types in value doesn't match target type.
                         List<string> aDistinctCultures = oEntries
                             .Where(x => !string.IsNullOrEmpty(x.Culture) &&
                                         !string.IsNullOrEmpty(x.Name) &&
@@ -346,6 +383,8 @@ namespace ResxVsCsv
                             .Select(x => x.Culture)
                             .Distinct()
                             .ToList();
+                        #pragma warning restore CS8619 // Nullability of reference types in value doesn't match target type.
+
 
                         if (!string.IsNullOrEmpty(strAddCultures))
                             AddCulturesIfMissing(aDistinctCultures, 
@@ -367,7 +406,7 @@ namespace ResxVsCsv
                             string strResxCulture = strCulture.Equals("(default)") ? "" : "." + strCulture;
                             string strResxFile = System.IO.Path.Combine(strDirectory, strToResx.Replace(".csv", strResxCulture + ".resx"));
                             aResxFiles.Add(strResxFile);
-                            UpdateResxFile(oEntries.Where(x => x.Culture.Equals(strCulture) && !string.IsNullOrEmpty(x.Value)),
+                            UpdateResxFile(oEntries.Where(x => x.Culture != null && x.Culture.Equals(strCulture) && !string.IsNullOrEmpty(x.Value)),
                                 strResxFile, strDefaultCulturePath, oFonts);
                         }
 
@@ -420,12 +459,14 @@ namespace ResxVsCsv
                         .ToList();
                      */
 
+                    #pragma warning disable CS8619 // Nullability of reference types in value doesn't match target type.
                     // find distinct names for values
-                    var astrDistinctNames = oAllEntries
+                    List<string> astrDistinctNames = oAllEntries
                         .Where(x => !string.IsNullOrEmpty(x.Name))
                         .Select(x => x.Name)
                         .Distinct()
                         .ToList();
+                    #pragma warning restore CS8619 // Nullability of reference types in value doesn't match target type.
 
                     // Dictionary with types
                     Dictionary<string, string> oNameTypes = new Dictionary<string, string>();
@@ -452,7 +493,7 @@ namespace ResxVsCsv
                         foreach (string strName in astrDistinctNames)
                             foreach (string strCulture in astrDistinctCultures)
                             {
-                                Entry oEntry;
+                                Entry? oEntry;
 #if TEST_TRANSLATION_LOGIC
                                 if ((string.IsNullOrEmpty(strTranslationService) || 
                                      oNameTypes.ContainsKey(strName) ||
@@ -494,8 +535,8 @@ namespace ResxVsCsv
                                             if (!bBruteForce)
                                             {
                                                 // without brute force we take only the big languages
-                                                string strLocalizedTextVariant = null;
-                                                Entry oFoundEntry = null;
+                                                string? strLocalizedTextVariant = null;
+                                                Entry? oFoundEntry = null;
 
                                                 foreach (string strSourceCulture in new string[] { 
                                                         "es", "de", "pt", "it", "fr", "ru", "ko", "ja", "zh-CHS", "zh-CHT", "hi", "en" })
@@ -535,7 +576,7 @@ namespace ResxVsCsv
                                                         oEntry2.Name.Equals(strName) &&
                                                         !string.IsNullOrEmpty(oEntry2.Value))
                                                     {
-                                                        string strSourceCulture = oEntry2.Culture;
+                                                        string? strSourceCulture = oEntry2.Culture;
                                                         if (!string.IsNullOrEmpty(strSourceCulture) &&
                                                             strSourceCulture.Equals("(default)"))
                                                         {
@@ -553,7 +594,7 @@ namespace ResxVsCsv
 
 
 
-                                            string strBestTranslation = GetBestTranslation(
+                                            string? strBestTranslation = GetBestTranslation(
                                                 oTranslations, strCulture, strApiKey, strTranslationService, strApiUrl, bBruteForce);
 
 
@@ -585,7 +626,7 @@ namespace ResxVsCsv
                         foreach (string strCulture in astrDistinctCultures)
                             foreach (string strName in astrDistinctNames)
                             {
-                                Entry oEntry;
+                                Entry? oEntry;
 #if TEST_TRANSLATION_LOGIC
                                 if ((string.IsNullOrEmpty(strTranslationService) ||
                                      oNameTypes.ContainsKey(strName) ||
@@ -625,8 +666,8 @@ namespace ResxVsCsv
                                             if (!bBruteForce)
                                             {
                                                 // without brute force we take only the big languages
-                                                string strLocalizedTextVariant = null;
-                                                Entry oFoundEntry = null;
+                                                string? strLocalizedTextVariant = null;
+                                                Entry? oFoundEntry = null;
 
                                                 foreach (string strSourceCulture in new string[] { 
                                                             "es", "de", "pt", "it", "fr", "ru", "ko", "ja", "zh-CHS", "zh-CHT", "hi", "en" })
@@ -665,7 +706,7 @@ namespace ResxVsCsv
                                                         oEntry2.Name.Equals(strName) &&
                                                         !string.IsNullOrEmpty(oEntry2.Value))
                                                     {
-                                                        string strSourceCulture = oEntry2.Culture;
+                                                        string? strSourceCulture = oEntry2.Culture;
                                                         if (!string.IsNullOrEmpty(strSourceCulture) &&
                                                             strSourceCulture.Equals("(default)"))
                                                         {
@@ -683,7 +724,7 @@ namespace ResxVsCsv
 
 
 
-                                            string strBestTranslation = GetBestTranslation(
+                                            string? strBestTranslation = GetBestTranslation(
                                                 oTranslations, strCulture, strApiKey, strTranslationService, strApiUrl, bBruteForce);
 
                                             if (!string.IsNullOrEmpty(strBestTranslation))
@@ -920,45 +961,48 @@ namespace ResxVsCsv
             bool bOnlyStrings
             )
         {
-            var oXmlDoc = XDocument.Load(strFilePath);
-            var iDataElements = oXmlDoc.Root.Elements("data");
+            XDocument oXmlDoc = XDocument.Load(strFilePath);
 
-            foreach (var oElement in iDataElements)
+            if (oXmlDoc.Root != null)
             {
-                // skip non-strings, if specified
-                XAttribute oTypeAttribute = oElement.Attribute("type");
-
-                if (bOnlyStrings && oTypeAttribute != null)
-                    continue;
-
-                var strType = oTypeAttribute != null ? oTypeAttribute.Value : null;
-                XAttribute oMimeTypeAttribute = oElement.Attribute("mimetype");
-                var strMimeType = oMimeTypeAttribute != null ? oMimeTypeAttribute.Value : null;
-
-                XAttribute oNameAttribute = oElement.Attribute("name");
-                var strName = oNameAttribute != null ? oNameAttribute.Value : null;
-
-
-                // skip non-strings, if specified
-                if (bOnlyStrings && strName != null && strName.StartsWith(">>"))
-                    continue;
-
-                var oValueNode = oElement.Element("value");
-                var oValueTextNode = oValueNode != null ? oValueNode.FirstNode as XText : null;
-                var strValue = oValueTextNode != null ? oValueTextNode.Value : null;
-                var oCommentNode = oElement.Element("comment");
-                var oCommentTextNode = oCommentNode != null ? oCommentNode.FirstNode as XText : null;
-                var strComment = oCommentTextNode != null ? oCommentTextNode.Value : null;
-
-                yield return new Entry
+                IEnumerable<XElement> iDataElements = oXmlDoc.Root.Elements("data");
+                foreach (var oElement in iDataElements)
                 {
-                    Name = strName,
-                    Value = strValue,
-                    Comment = strComment,
-                    Culture = strCulture,
-                    Type = strType,
-                    MimeType = strMimeType
-                };
+                    // skip non-strings, if specified
+                    XAttribute? oTypeAttribute = oElement.Attribute("type");
+
+                    if (bOnlyStrings && oTypeAttribute != null)
+                        continue;
+
+                    var strType = oTypeAttribute?.Value;
+                    XAttribute? oMimeTypeAttribute = oElement.Attribute("mimetype");
+                    var strMimeType = oMimeTypeAttribute?.Value;
+
+                    XAttribute? oNameAttribute = oElement.Attribute("name");
+                    var strName = oNameAttribute?.Value;
+
+
+                    // skip non-strings, if specified
+                    if (bOnlyStrings && strName != null && strName.StartsWith(">>"))
+                        continue;
+
+                    var oValueNode = oElement.Element("value");
+                    var oValueTextNode = oValueNode != null ? oValueNode.FirstNode as XText : null;
+                    var strValue = oValueTextNode?.Value;
+                    var oCommentNode = oElement.Element("comment");
+                    var oCommentTextNode = oCommentNode != null ? oCommentNode.FirstNode as XText : null;
+                    var strComment = oCommentTextNode?.Value;
+
+                    yield return new Entry
+                    {
+                        Name = strName,
+                        Value = strValue,
+                        Comment = strComment,
+                        Culture = strCulture,
+                        Type = strType,
+                        MimeType = strMimeType
+                    };
+                }
             }
         }
 
@@ -1003,7 +1047,7 @@ namespace ResxVsCsv
         /// <returns>Value in CSV format</returns>
         //===================================================================================================
         static string ToCsv(
-            string strValue
+            string? strValue
             )
         {
             if (strValue == null)
@@ -1122,8 +1166,8 @@ namespace ResxVsCsv
             using (StreamReader oReader = new StreamReader(strFilePath))
             {
                 bool bHeaders = true;
-                string strLine;
-                string strPartialLine = null;
+                string? strLine;
+                string? strPartialLine = null;
                 Dictionary<eColumn, int> oColumnHeadersDictionary = new Dictionary<eColumn, int>();
 
                 while ((strLine = oReader.ReadLine()) != null)
@@ -1273,10 +1317,12 @@ namespace ResxVsCsv
             )
         {
             var doc = new XDocument(
-                new XElement("root",
-                    iEntries.Cast<Entry>().Select(row =>
+                new XElement("root",iEntries
+                    .Where(static row => row.Name != null)
+                    .Cast<Entry>()
+                    .Select(static row =>
                         new XElement("data",
-                            new XAttribute("name", row.Name),
+                            new XAttribute("name", row.Name??""),
                             new XElement("value", row.Value)
                         )
                     )
@@ -1305,7 +1351,7 @@ namespace ResxVsCsv
             try
             {
 
-                XDocument oXmlDoc = null;
+                XDocument? oXmlDoc = null;
 
                 try
                 {
@@ -1332,17 +1378,19 @@ namespace ResxVsCsv
                     if (string.IsNullOrEmpty(oNewValue.Name))
                         continue;
 
-                    var oElement = oXmlDoc.Root.Elements("data")
-                        .FirstOrDefault(e => e.Attribute("name").Value == oNewValue.Name);
+                    var oElement = oXmlDoc.Root?.Elements("data")
+                        .FirstOrDefault(e => e.Attribute("name")?.Value?.Equals(oNewValue.Name)??false);
 
                     if (oElement != null)
                     {
-                        XElement oValueElement = oElement.Element("value");
-                        oValueElement.Value = oNewValue.Value;
-                        //valueElement.SetAttributeValue(XNamespace.Xml + "space", "preserve");
+                        XElement? oValueElement = oElement.Element("value");
+                        if (oValueElement != null && oNewValue.Value != null)
+                        {
+                            oValueElement.Value = oNewValue.Value;
+                        }
 
-                        XElement oCommentElement = oElement.Element("comment");
-                        if (oCommentElement != null)
+                        XElement? oCommentElement = oElement.Element("comment");
+                        if (oCommentElement != null && oNewValue.Comment != null)
                         {
                             oCommentElement.Value = oNewValue.Comment;
                         }
@@ -1378,14 +1426,14 @@ namespace ResxVsCsv
                         {
                             oNewElement.Add(new XAttribute("mimetype", oNewValue.MimeType));
                         }
-                        oXmlDoc.Root.Add(oNewElement);
+                        oXmlDoc.Root?.Add(oNewElement);
                     }
 
                     // if we have a size of an element, assume there must be a font, as well
                     if (oNewValue.Name.EndsWith(".Size") &&
                         !oFonts.ContainsKey(oNewValue.Culture+"_"+oNewValue.Name.Replace(".Size",".Font")))
                     {
-                        string strNewValue = null;
+                        string? strNewValue = null;
                         if (oFonts.ContainsKey("(default)_" + oNewValue.Name.Replace(".Size", ".Font")))
                         {
                             strNewValue = oFonts["(default)_" + oNewValue.Name.Replace(".Size", ".Font")];
@@ -1401,7 +1449,7 @@ namespace ResxVsCsv
 
                         if (strNewValue != null)
                         {
-                            oXmlDoc.Root.Add(new XElement("data",
+                            oXmlDoc.Root?.Add(new XElement("data",
                                 new XAttribute("name", oNewValue.Name.Replace(".Size", ".Font")),
                                 new XAttribute("type", "System.Drawing.Font, System.Drawing"),
                                 new XElement("value", strNewValue),
@@ -1451,9 +1499,9 @@ namespace ResxVsCsv
             string strSourceLanguage,
             string strText,
             string strTargetLanguage,
-            string strApiKey,
+            string? strApiKey,
             string strService,
-            string strApiUrl
+            string? strApiUrl
             )
         {
 #if TEST_TRANSLATION_LOGIC
@@ -1473,17 +1521,17 @@ namespace ResxVsCsv
             switch (strService.ToLower())
             {
                 case "google":
-                    return TranslateWithGoogle(strText, strSourceLanguage, strTargetLanguage, strApiKey);
+                    return TranslateWithGoogle(strText, strSourceLanguage, strTargetLanguage, strApiKey??"");
                 case "microsoft":
-                    return TranslateWithMicrosoft(strText, strSourceLanguage, strTargetLanguage, strApiKey);
+                    return TranslateWithMicrosoft(strText, strSourceLanguage, strTargetLanguage, strApiKey??"");
                 case "deepl":
-                    return TranslateWithDeepL(strText, strSourceLanguage, strTargetLanguage, strApiKey);
+                    return TranslateWithDeepL(strText, strSourceLanguage, strTargetLanguage, strApiKey??"");
                 case "toptranslation":
-                    return TranslateWithTopTranslation(strText, strSourceLanguage, strTargetLanguage, strApiKey);
+                    return TranslateWithTopTranslation(strText, strSourceLanguage, strTargetLanguage, strApiKey??"");
                 case "argos":
                     return TranslateWithArgosTranslate(strText, strSourceLanguage, strTargetLanguage, "");
                 case "libretranslate":
-                    return TranslateWithLibreTranslate(strText, strSourceLanguage, strTargetLanguage, strApiKey, strApiUrl);
+                    return TranslateWithLibreTranslate(strText, strSourceLanguage, strTargetLanguage, strApiKey??"", strApiUrl??"");
                 default:
                     throw new ArgumentException("Unknown translation service specified.");
             }
@@ -1633,7 +1681,7 @@ namespace ResxVsCsv
                 {
                     RedirectStandardInput = true,
                     RedirectStandardOutput = true,
-                    UseShellExecute = true,
+                    UseShellExecute = false,
                     CreateNoWindow = true                  
                 }
             };
@@ -1786,22 +1834,24 @@ namespace ResxVsCsv
         /// <param name="bBruteForce">Indicates if all translation variants need to be searched</param>
         /// <returns>The hopefully one and only translation</returns>
         //===================================================================================================
-        public static string GetBestTranslation(
+        public static string? GetBestTranslation(
             IList<Translation> iTranslations,
             string strTargetLanguage,
-            string strApiKey,
+            string? strApiKey,
             string strService,
-            string strApiUrl,
+            string? strApiUrl,
             bool bBruteForce
             )
         {
 
-            string strBestTranslation = null;
+            string? strBestTranslation = null;
             int nMinEditDistance = int.MaxValue;
             float fMinSumOfEditDistances = float.MaxValue;
 
             foreach (Translation oTranslation in iTranslations)
-            {   
+            {
+                if (oTranslation.Language == null || oTranslation.Text == null)
+                    continue;
 
                 string strTranslatedText = Translate(oTranslation.Language, oTranslation.Text,
                     strTargetLanguage, strApiKey, strService, strApiUrl);
@@ -1835,6 +1885,9 @@ namespace ResxVsCsv
                     float fSumOfWeightedDistances = 0;
                     foreach (var oTranslation2 in iTranslations)
                     {
+                        if (oTranslation2.Language == null)
+                            continue;
+
                         string strBackTranslatedText = Translate(strTargetLanguage, strTranslatedText,
                             oTranslation2.Language, strApiKey, strService, strApiUrl);
 
@@ -1910,6 +1963,7 @@ namespace ResxVsCsv
 
             for (int i = 0; i <= str1.Length; i++)
                 aDist[i, 0] = i;
+
             for (int j = 0; j <= str2.Length; j++)
                 aDist[0, j] = j;
 
@@ -1973,7 +2027,9 @@ namespace ResxVsCsv
             foreach (string strOtherResxPath in iOtherResxFiles)
             {
                 if (strOtherResxPath.Equals(strBaseResxPath))
+                {
                     continue;
+                }
 
                 XmlDocument oOtherResxDoc = new XmlDocument();
                 oOtherResxDoc.PreserveWhitespace = true;
@@ -2040,12 +2096,14 @@ namespace ResxVsCsv
         /// <param name="oNode">Node, can also be null</param>
         /// <returns>the inner text, or null in case oNode is null</returns>
         //===================================================================================================
-        static string GetInnerText(
-            XmlNode oNode
+        static string? GetInnerText(
+            XmlNode? oNode
             )
         {
             if (oNode == null)
+            {
                 return null;
+            }
 
             return oNode.InnerText;
         }
@@ -2059,12 +2117,15 @@ namespace ResxVsCsv
         /// <returns>true iff both strings are equal</returns>
         //===================================================================================================
         static bool StringsEqual(
-            string str1, 
-            string str2
+            string? str1, 
+            string? str2
             )
         {
             if (str1 == null || str2 == null)
+            {
                 return str1 == null && str2 == null;
+            }
+
             return str1.Equals(str2);
         }
 
@@ -2076,9 +2137,9 @@ namespace ResxVsCsv
         /// <param name="oNode2">Node from another XML document</param>
         /// <returns>true iff the inner text of nodes equals, or both nodes are null</returns>
         //===================================================================================================
-        static bool InnedTextEqual(
-            XmlNode oNode1, 
-            XmlNode oNode2
+        static bool InnerTextEqual(
+            XmlNode? oNode1, 
+            XmlNode? oNode2
             )
         {
             return StringsEqual(GetInnerText(oNode1), GetInnerText(oNode2));
@@ -2098,19 +2159,19 @@ namespace ResxVsCsv
             )
         {
             // Compare name attribute
-            if (!InnedTextEqual(oBaseDocElement.Attributes["name"], oOotherDocElement.Attributes["name"])) 
+            if (!InnerTextEqual(oBaseDocElement.Attributes?["name"], oOotherDocElement.Attributes?["name"])) 
                 return false;
 
             // Compare value sub-element
-            if (!InnedTextEqual(oBaseDocElement.SelectSingleNode("value"), oOotherDocElement.SelectSingleNode("value")))
+            if (!InnerTextEqual(oBaseDocElement.SelectSingleNode("value"), oOotherDocElement.SelectSingleNode("value")))
                 return false;
 
             // Compare type attribute
-            if (!InnedTextEqual(oBaseDocElement.Attributes["type"], oOotherDocElement.Attributes["type"]))
+            if (!InnerTextEqual(oBaseDocElement.Attributes?["type"], oOotherDocElement.Attributes?["type"]))
                 return false;
 
             // Compare mimetype attribute
-            return InnedTextEqual(oBaseDocElement.Attributes["mimetype"], oOotherDocElement.Attributes["mimetype"]);
+            return InnerTextEqual(oBaseDocElement.Attributes?["mimetype"], oOotherDocElement.Attributes?["mimetype"]);
         }
 
         //===================================================================================================
@@ -2125,13 +2186,11 @@ namespace ResxVsCsv
             List<XmlNode> aElementsToRemove
             )
         {
+            ArgumentNullException.ThrowIfNull(oResxDoc);
             foreach (XmlNode oNode in aElementsToRemove)
             {
-                XmlNode oParentNode = oNode.ParentNode;
-                if (oParentNode != null)
-                {
-                    oParentNode.RemoveChild(oNode);
-                }
+                XmlNode? oParentNode = oNode.ParentNode;
+                oParentNode?.RemoveChild(oNode);
             }
         }
 

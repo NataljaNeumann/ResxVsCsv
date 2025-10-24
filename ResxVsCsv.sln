@@ -1,7 +1,9 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual C# Express 2008
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResxVsCsv", "ResxVsCsv\ResxVsCsv.csproj", "{23D2AF27-DA56-4F39-921C-85B85D21C6F5}"
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36603.0 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResxVsCsv", "ResxVsCsv\ResxVsCsv.csproj", "{1B99717D-A4B3-4251-9249-2A5F0F8F3FCE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,12 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{23D2AF27-DA56-4F39-921C-85B85D21C6F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{23D2AF27-DA56-4F39-921C-85B85D21C6F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{23D2AF27-DA56-4F39-921C-85B85D21C6F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{23D2AF27-DA56-4F39-921C-85B85D21C6F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B99717D-A4B3-4251-9249-2A5F0F8F3FCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B99717D-A4B3-4251-9249-2A5F0F8F3FCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B99717D-A4B3-4251-9249-2A5F0F8F3FCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B99717D-A4B3-4251-9249-2A5F0F8F3FCE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E7FBE5DF-CF4A-4E2F-A771-5AF881D0796B}
 	EndGlobalSection
 EndGlobal
