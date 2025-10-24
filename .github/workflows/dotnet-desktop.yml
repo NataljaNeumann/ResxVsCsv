@@ -299,7 +299,7 @@ jobs:
             if ([string]::IsNullOrEmpty($range)) {
               $list = git log --pretty=format:'%an' --no-merges
             } else {
-              $list = git log $range --pretty=format:'%an' --no-merges
+              $list = git log $range --pretty=format:'[%an](https://github.com/%an)' --no-merges
             }
             if (-not $list) { return @() }
             $authors = $list -split "`n" | ForEach-Object { $_.Trim() } | Where-Object { $_ -ne "" } | Select-Object -Unique
@@ -324,9 +324,9 @@ jobs:
 
           # Append author(s) Part A
           if ($authorsSinceTag.Count -gt 1) { 
-            $commitsSinceTag += ("`n`nAuthors: *" + ($authorsSinceTag -join ", ") + "*") 
+            $commitsSinceTag += ("`n`nContributors: *" + ($authorsSinceTag -join ", ") + "*") 
           } elseif ($authorsSinceTag.Count -gt 0) { 
-            $commitsSinceTag += ("`n`nAuthor: *" + ($authorsSinceTag -join ", ") + "*") 
+            $commitsSinceTag += ("`n`nContributor: *" + ($authorsSinceTag -join ", ") + "*") 
           }
 
           # Part B: commits with same major.minor
@@ -361,8 +361,8 @@ jobs:
           }
 
           # Append author(s) Part B
-          if ($sameMinorAuthors.Count -gt 1) { $sameMinorCommits += ("`n`nAuthors: *" + ($sameMinorAuthors -join ", ") + "*") }
-          elseif ($sameMinorAuthors.Count -gt 0) { $sameMinorCommits += ("`n`nAuthor: *" + ($sameMinorAuthors -join ", ") + "*") }
+          if ($sameMinorAuthors.Count -gt 1) { $sameMinorCommits += ("`n`nContributors: *" + ($sameMinorAuthors -join ", ") + "*") }
+          elseif ($sameMinorAuthors.Count -gt 0) { $sameMinorCommits += ("`n`nContributor: *" + ($sameMinorAuthors -join ", ") + "*") }
           
           $releaseBody = "### Changes since $($prevTag -replace "_v", " v"):`n"
           $releaseBody += ($commitsSinceTag -join "`n")
