@@ -1,12 +1,13 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <Version>1.1.1.0</Version>
     <OutputType>Exe</OutputType>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <AssemblyVersion>1.1.0.0</AssemblyVersion>
-    <FileVersion>1.1.0.0</FileVersion>
+    <AssemblyVersion>1.1.1.0</AssemblyVersion>
+    <FileVersion>1.1.1.0</FileVersion>
     <Version>$(AssemblyVersion)</Version>
     <ProduceReferenceAssembly>False</ProduceReferenceAssembly>
     <Copyright>Copyright © 2025 NataljaNeumann@gmx.de</Copyright>
@@ -27,3 +28,4 @@
   </ItemGroup>
 
 </Project>
+
