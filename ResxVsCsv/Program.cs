@@ -993,13 +993,14 @@ namespace ResxVsCsv
                     var oCommentTextNode = oCommentNode != null ? oCommentNode.FirstNode as XText : null;
                     var strComment = oCommentTextNode?.Value;
 
+ 
                     yield return new Entry
                     {
                         Name = strName,
                         Value = strValue,
                         Comment = strComment,
                         Culture = strCulture,
-                        Type = strType,
+                        Type = strType != null? (strType.Equals("System.Resources.ResXNullRef, System.Windows.Forms")?null:strType) : null,
                         MimeType = strMimeType
                     };
                 }
@@ -1387,6 +1388,20 @@ namespace ResxVsCsv
                         if (oValueElement != null && oNewValue.Value != null)
                         {
                             oValueElement.Value = oNewValue.Value;
+
+                            // remove type attribute, if it is exactly the specified value
+                            var oTypeAttr = oElement.Attribute("type");
+                            if (oTypeAttr != null && oTypeAttr.Value.Equals("System.Resources.ResXNullRef, System.Windows.Forms"))
+                            {
+                                oTypeAttr.Remove();
+                            }
+
+                            // insert xml:space="preserve", if it is missing
+                            var oSpaceAttr = oElement.Attribute(XNamespace.Xml + "space");
+                            if (oSpaceAttr == null)
+                            {
+                                oElement.Add(new XAttribute(XNamespace.Xml + "space", "preserve"));
+                            }
                         }
 
                         XElement? oCommentElement = oElement.Element("comment");
