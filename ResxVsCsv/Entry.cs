@@ -123,6 +123,18 @@ namespace ResxVsCsv
         {
             return (Culture != null ? Culture.GetHashCode() : 1) ^ (Name != null ? Name.GetHashCode() : 0);
         }
+
+        //===================================================================================================
+        /// <summary>
+        /// Transforms entry to string (used for debugging)
+        /// </summary>
+        /// <returns>Human-understandable representation of the entry</returns>
+        //===================================================================================================
+        public override string ToString()
+        {
+            return (Culture??"") + " " + (Name ?? "") + " " +
+                (Value ?? "") + " " + (Type != null ? "("+Type+")":"");
+        }
     }
 
 }
