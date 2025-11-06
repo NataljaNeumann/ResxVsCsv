@@ -1,6 +1,6 @@
 ﻿/* MIT License
 
-Copyright (c) 2025 NataljaNeumann
+Copyright (c) 2025 NataljaNeumann@gmx.de
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -1277,7 +1277,7 @@ namespace ResxVsCsv
         {
             foreach (string strValue in astrValues)
             {
-                if (strValue.StartsWith("\"") && (!strValue.EndsWith("\"") || 
+                if (strValue.Replace("\"\"","").StartsWith("\"") && (!strValue.Replace("\"\"","").EndsWith("\"") || 
                     ((strValue.Length-strValue.Replace("\"","").Length)&1) != 0))
                 {
                     return true;
