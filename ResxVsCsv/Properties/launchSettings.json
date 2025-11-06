@@ -1,9 +1,0 @@
-{
-  "profiles": {
-    "ResxVsCsv": {
-      "commandName": "Project",
-      "commandLineArgs": "--directory VokabelTrainer --pattern WordTest*resx -? ",
-      "workingDirectory": "C:\\Users\\Alex\\Documents\\Visual Studio 2008\\Projects\\VokabelTrainer"
-    }
-  }
-}
