@@ -1218,7 +1218,7 @@ namespace ResxVsCsv
                         }
 
                         // someone deleted the headers?
-                        if (oColumnHeadersDictionary.Count == 0 && astrValues.Length >= 4)
+                        if (oColumnHeadersDictionary.Count < 4 && astrValues.Length >= 4)
                         {
                             oColumnHeadersDictionary[eColumn.Culture] = 0;
                             oColumnHeadersDictionary[eColumn.Name] = 1;
