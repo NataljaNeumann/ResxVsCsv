@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -145,27 +145,28 @@
     <value>AI loodud</value>
   </data>
   <data name="LicenseText" xml:space="preserve">
-    <value>Käesolevaga antakse igale isikule, kes omandab selle tarkvara ja sellega seotud dokumentatsioonifailide ("tarkvara") koopia, tasuta luba tegeleda Tarkvaraga piiranguteta, sealhulgas ilma piiranguteta õigused kasutada, kopeerida, muuta, ühendada, avaldada, levitada, all-litsentsida ja/või müüa tarkvara koopiaid ning lubada isikutel, kellele tarkvara on antud, seda teha järgmistel tingimustel:
-
-Ülaltoodud autoriõiguse teatis ja käesolev loa teatis sisalduvad tarkvara kõikides koopiates või olulistes osades.
-
-TARKVARA PAKUTAKSE "NAGU ON", ILMA IGALsuguse, OTSESE VÕI KAUDSE GARANTIITA, KAASA arvatud, KUID MITTE PIIRATUD, KAUBANDUSVÕIME, KONKREETSE EESMÄRGIKS SOBIVUSE JA MITTERIKKUMISE GARANTIID. AUTORID VÕI AUTORIÕIGUSE OMAJAD EI VASTUTA MINGIL JUHUL MISGI NÕUETE, KAHJUSTUSTE VÕI MUU VASTUTUSE EEST LEPINGU TOIMIMISEL, kahju hüvitamisel VÕI MUUL VASTUTUSE EEST, MIS TULENEVAD, SELLEST VÕI SELLEGA SEOTUD TARKVARA.</value>
+    <value>Käesolevaga antakse igale isikule, kes omandab selle tarkvara ja sellega seotud dokumentatsioonifailide ("tarkvara</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="LlmCallFailedMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmCallFailedMessage" xml:space="preserve">
+    <value>LLM-i väljakutse nurjus: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmErrorParsingJsonMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmErrorParsingJsonMessage" xml:space="preserve">
+    <value>Viga LLM-i JSON-vastuse parsimsiel: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmHtttpResponseErrorMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmHtttpResponseErrorMessage" xml:space="preserve">
+    <value>Viga HTTP-päringu tegemisel LLM-ile: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmInvalidMessageElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmInvalidMessageElementMessage" xml:space="preserve">
+    <value>LLM vastus ei sisalda kehtivat 'message' objekti esimeses 'choices' elemendis:</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmMisssingChoicesElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmMisssingChoicesElementMessage" xml:space="preserve">
+    <value>LLM vastus ei sisalda kehtivat 'choices' elementi {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
   <data name="TranslatedCultureString" xml:space="preserve">
     <value>See on tõlgitud {0}</value>

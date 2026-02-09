@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -145,27 +145,28 @@
     <value>AI tərəfindən yaradılıb</value>
   </data>
   <data name="LicenseText" xml:space="preserve">
-    <value>Bununla bu proqram təminatının surətini və əlaqəli sənəd fayllarını ("Proqram Təminatı") əldə edən hər hansı şəxsə proqram təminatının istifadəsi, surətinin dəyişdirilməsi, birləşdirilməsi, dərc edilməsi, paylanması, sublisenziyası və/və ya nüsxələrinin satışı da daxil olmaqla məhdudiyyət olmadan proqram təminatı ilə məşğul olmaq və Proqram təminatının aşağıdakı şərtlərə tabe olduğu şəxslərə icazə vermək pulsuz olaraq verilir:
-
-Yuxarıdakı müəllif hüququ bildirişi və bu icazə bildirişi Proqram təminatının bütün nüsxələrinə və ya əhəmiyyətli hissələrinə daxil edilməlidir.
-
-PROQRAM TƏMİNATI "OLDUĞU KİMİ", HƏR NÖRDƏ, AÇIQ VƏ YA DEYNİ ZƏMANƏT OLMADAN, O cümlədən, MÜƏKSƏİ MƏQSƏDLƏRƏ UYĞUNLUQ VƏ QEYRİ MƏQSƏDLƏRƏ TƏMİN EDİLİR. MÜƏLLİF HÜQUQ SAHİBLƏRİ HEÇ HİÇBİR HALDA MÜQAVİLƏDƏN, HƏQİYYƏTDƏN VƏ YA BAŞQA HƏRƏKƏTDƏN OLDUĞU HƏR HƏR İDDİA, ZƏYAN VƏ YA DİGƏR MƏSULİYYƏTƏ GÖRƏ MƏSULİYYƏT OLMAYIR. VƏ YA PROQRAM TƏMİNATIDA DİGƏR ƏMƏLƏLƏR.</value>
+    <value>Bununla bu proqram təminatının surətini və əlaqəli sənəd fayllarını ("Proqram Təminatı</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="LlmCallFailedMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmCallFailedMessage" xml:space="preserve">
+    <value>LLM çağırışı uğursuz oldu: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmErrorParsingJsonMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmErrorParsingJsonMessage" xml:space="preserve">
+    <value>LLM-dən gələn JSON cavabını ayrışdırarkən xəta baş verdi: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmHtttpResponseErrorMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmHtttpResponseErrorMessage" xml:space="preserve">
+    <value>LLM-ə HTTP sorğusu göndərilərkən xəta baş verdi: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmInvalidMessageElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmInvalidMessageElementMessage" xml:space="preserve">
+    <value>LLM cavabı ilk 'choices' elementində düzgün 'message' obyektini ehtiva etmir:</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmMisssingChoicesElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmMisssingChoicesElementMessage" xml:space="preserve">
+    <value>LLM cavabı etibarlı 'choices' elementi {0} içermir</value>
+    <comment>Von KI generiert</comment>
   </data>
   <data name="TranslatedCultureString" xml:space="preserve">
     <value>Tərcümə edilib: {0}</value>

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -145,27 +145,28 @@
     <value>Аз ҷониби AI тавлид шудааст</value>
   </data>
   <data name="LicenseText" xml:space="preserve">
-    <value>Иҷозати ройгон ба ҳар шахсе, ки нусхаи ин нармафзор ва файлҳои ҳуҷҷатҳои алоқамандро ("Нармафзор") ба даст меорад, барои кор кардан бо Нармафзор бидуни маҳдудият, аз ҷумла бидуни маҳдудият ҳуқуқи истифода, нусхабардорӣ, тағир додан, якҷоя кардан, нашр кардан, паҳн кардан, зерлитсензия ва/ё фурӯши нусхаҳои Нармафзор дода мешавад ва ба шахсоне, ки шартҳои зеринро иҷро мекунанд, иҷозат дода мешавад:
-
-Огоҳии дар боло зикршуда дар бораи ҳуқуқи муаллиф ва ин огоҳиномаи иҷозат бояд ба ҳама нусхаҳо ё қисмҳои муҳими Барнома дохил карда шаванд.
-
-НАРНАМИҲО "ЧУНОН КИ ҲАСТ", БЕ КАФОЛАТИ ҲАМГУН, ОЗОҲ Ё МАСЪАЛӢ, АЗ ҶУМЛА НА БА КАФОЛАТҲОИ ТИҶОРӢ, МУНОСИБАТ БА МАҚСАДҲОИ МАХСУС ВА МАСЪАЛАИ ҒАЙРИҲОИ МАХДУД НЕСТ. БА ҲЕҶ ҲОЛО МУАЛЛИМОН ВА СОХИБОНИ ҲУҚУДИ ​​МУАЛЛИФӢ БАРОИ ЯГОН ДАЪВО, ЗАРАР ВА ДИГАР масъулият, НОҲО АЗ АМАЛИ ШАРТАНДА, ТОҶИКИСТОН ВА ДИГАР ҶАВОБГИРӢ НАМЕШАВАНД. Ё ДИГАР МУНОСИБАТҲО ДАР НАМОЗ.</value>
+    <value>Иҷозати ройгон ба ҳар шахсе, ки нусхаи ин нармафзор ва файлҳои ҳуҷҷатҳои алоқамандро ("Нармафзор</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="LlmCallFailedMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmCallFailedMessage" xml:space="preserve">
+    <value>Занг ба LLM ноком шуд: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmErrorParsingJsonMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmErrorParsingJsonMessage" xml:space="preserve">
+    <value>Хато ҳангоми таҳлили ҷавоби JSON аз LLM: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmHtttpResponseErrorMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmHtttpResponseErrorMessage" xml:space="preserve">
+    <value>Ҳангоми иҷрои дархости HTTP ба LLM хато рух дод: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmInvalidMessageElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmInvalidMessageElementMessage" xml:space="preserve">
+    <value>Ҷавоби LLM объекти 'message'-и дурустро дар аввалин элементи 'choices' дарбар намегирад:</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmMisssingChoicesElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmMisssingChoicesElementMessage" xml:space="preserve">
+    <value>Ҷавоби LLM унсури дурусти 'choices'-ро дар бар намегирад {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
   <data name="TranslatedCultureString" xml:space="preserve">
     <value>Тарҷума шудааст {0}</value>

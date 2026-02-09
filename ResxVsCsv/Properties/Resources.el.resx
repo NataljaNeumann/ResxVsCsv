@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -145,27 +145,28 @@
     <value>Δημιουργήθηκε από AI</value>
   </data>
   <data name="LicenseText" xml:space="preserve">
-    <value>Με το παρόν χορηγείται άδεια, δωρεάν, σε οποιοδήποτε άτομο που αποκτά αντίγραφο αυτού του λογισμικού και των σχετικών αρχείων τεκμηρίωσης (το "Λογισμικό"), να συναλλάσσεται με το Λογισμικό χωρίς περιορισμούς, συμπεριλαμβανομένων χωρίς περιορισμό των δικαιωμάτων χρήσης, αντιγραφής, τροποποίησης, συγχώνευσης, δημοσίευσης, διανομής, υποαδειοδότησης και/ή πώλησης αντιγράφων του Λογισμικού και να επιτραπεί σε άτομα στα οποία υπόκειται οι παρακάτω όροι:
-
-Η παραπάνω σημείωση πνευματικών δικαιωμάτων και αυτή η σημείωση άδειας θα περιλαμβάνονται σε όλα τα αντίγραφα ή σημαντικά τμήματα του Λογισμικού.
-
-ΤΟ ΛΟΓΙΣΜΙΚΟ ΠΑΡΕΧΕΤΑΙ "ΩΣ ΕΧΕΙ", ΧΩΡΙΣ ΕΓΓΥΗΣΗ ΟΠΟΙΟΥΔΗΠΟΤΕ ΕΙΔΟΥΣ, ΡΗΤΗ Ή ΣΙΩΠΗΡΗ, ΣΥΜΠΕΡΙΛΑΜΒΑΝΟΝΤΩΝ ΑΛΛΑ ΟΧΙ ΠΕΡΙΟΡΙΣΜΕΝΟ ΣΤΙΣ ΕΓΓΥΗΣΕΙΣ ΕΜΠΟΡΕΥΣΙΜΟΤΗΤΑΣ, ΚΑΤΑΛΛΗΛΟΤΗΤΑΣ ΓΙΑ ΣΥΓΚΕΚΡΙΜΕΝΟ ΣΚΟΠΟ ΚΑΙ ΜΗ. ΣΕ ΚΑΜΙΑ ΠΕΡΙΠΤΩΣΗ ΟΙ ΣΥΓΓΡΑΦΕΙΣ Ή ΟΙ ΚΑΤΟΧΟΙ ΠΝΕΥΜΑΤΙΚΩΝ ΔΙΚΑΙΩΜΑΤΩΝ ΔΕΝ ΕΧΟΥΝ ΕΥΘΥΝΗ ΓΙΑ ΟΠΟΙΑΔΗΠΟΤΕ ΑΠΑΙΤΗΣΗ, ΖΗΜΙΑ Ή ΑΛΛΗ ΕΥΘΥΝΗ, ΕΙΤΕ ΣΕ ΠΡΑΞΗ ΣΥΜΒΑΣΗΣ, αδικοπραξία Ή ΑΛΛΙΩΣ, ΠΟΥ ΠΡΟΚΥΠΤΕΙ ΑΠΟ ΑΥΤΟ Ή ΑΛΛΕΣ ΣΥΝΑΛΛΑΓΕΣ ΣΤΟ ΛΟΓΙΣΜΙΚΟ.</value>
+    <value>Με το παρόν χορηγείται άδεια, δωρεάν, σε οποιοδήποτε άτομο που αποκτά αντίγραφο αυτού του λογισμικού και των σχετικών αρχείων τεκμηρίωσης (το "Λογισμικό</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="LlmCallFailedMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmCallFailedMessage" xml:space="preserve">
+    <value>Η κλήση LLM απέτυχε: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmErrorParsingJsonMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmErrorParsingJsonMessage" xml:space="preserve">
+    <value>Σφάλμα κατά την ανάλυση της απάντησης JSON από το LLM: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmHtttpResponseErrorMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmHtttpResponseErrorMessage" xml:space="preserve">
+    <value>Σφάλμα κατά την εκτέλεση του αιτήματος HTTP προς το LLM: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmInvalidMessageElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmInvalidMessageElementMessage" xml:space="preserve">
+    <value>Η απάντηση του LLM δεν περιέχει έγκυρο αντικείμενο 'message' στο πρώτο στοιχείο 'choices':</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmMisssingChoicesElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmMisssingChoicesElementMessage" xml:space="preserve">
+    <value>Η απάντηση του LLM δεν περιέχει έγκυρο στοιχείο 'choices' {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
   <data name="TranslatedCultureString" xml:space="preserve">
     <value>Έχει μεταφραστεί {0}</value>

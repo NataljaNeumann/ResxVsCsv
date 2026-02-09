@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -145,27 +145,28 @@
     <value>Tekoälyn luoma</value>
   </data>
   <data name="LicenseText" xml:space="preserve">
-    <value>Lupa myönnetään täten veloituksetta kenelle tahansa, joka hankkii kopion tästä ohjelmistosta ja siihen liittyvistä dokumentaatiotiedostoista ("Ohjelmisto"), käsitellä Ohjelmistoa rajoituksetta, mukaan lukien rajoituksetta oikeudet käyttää, kopioida, muokata, yhdistää, julkaista, levittää, alilisensoida ja/tai myydä ohjelmiston kopioita, ja sallia henkilöiden, joille Ohjelmisto on toimitettu, tehdä niin:
-
-Yllä oleva tekijänoikeusilmoitus ja tämä lupailmoitus sisällytetään kaikkiin ohjelmiston kopioihin tai merkittäviin osiin.
-
-OHJELMISTO TARJOTAAN "SELLAISENAAN", ILMAN MINKÄÄNLAISTA, NIMENOMAISTA TAI OLUETTUA TAKUUTTA, MUKAAN MUKAAN MUKAAN MUKAAN RAJOITTAAN TAKUUT MYYNTIKELPOISUUDESTA, SOVELTUVUUDESTA TIETTYYN TARKOITUKSEEN JA LOUKKAMATTA. TEKIJÄT TAI TEKIJÄNOIKEUDEN HALTIJAT EIVÄT OLE MISSÄÄN TAPAUKSESSA VASTUUSSA MISSÄÄN SOPIMUSTOIMINNASSA, VAHINGONVAIKUTUKSESTA TAI MUUSTA VASTUUSTA, JOKA JOHDANTO TAI MUUN KÄYTÖSTÄ TAI SIIHEN YHTEYDESSÄ. OHJELMISTO.</value>
+    <value>Lupa myönnetään täten veloituksetta kenelle tahansa, joka hankkii kopion tästä ohjelmistosta ja siihen liittyvistä dokumentaatiotiedostoista ("Ohjelmisto</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="LlmCallFailedMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmCallFailedMessage" xml:space="preserve">
+    <value>LLM-kutsu epäonnistui: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmErrorParsingJsonMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmErrorParsingJsonMessage" xml:space="preserve">
+    <value>Virhe JSON-vastauksen jäsentämisessä LLM:ltä: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmHtttpResponseErrorMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmHtttpResponseErrorMessage" xml:space="preserve">
+    <value>Virhe suoritettaessa HTTP-pyyntöä LLM:lle: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmInvalidMessageElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmInvalidMessageElementMessage" xml:space="preserve">
+    <value>LLM-vastaus ei sisällä kelvollista 'message'-objektia ensimmäisessä 'choices'-elementissä:</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmMisssingChoicesElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmMisssingChoicesElementMessage" xml:space="preserve">
+    <value>LLM-vastaus ei sisällä kelvollista 'choices'-elementtiä {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
   <data name="TranslatedCultureString" xml:space="preserve">
     <value>Se on käännetty kielelle {0}</value>

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -152,20 +152,25 @@ Nota privind drepturile de autor de mai sus și această notificare de permisiun
 SOFTWARE-UL ESTE OFERIT „CA AȘA ESTE”, FĂRĂ NICIUN FEL DE GARANȚIE, EXPRESĂ SAU IMPLICITĂ, INCLUSIV, DAR FĂRĂ A SE LIMITA LA GARANȚII DE VANTABILITATE, ADEPRENARE PENTRU UN ANUMIT SCOP ȘI NEÎNCĂLCARE. AUTORII SAU DEȚINĂTORII DE DREPTURI DE AUTOR NU VA FI RESPONSABILIT ÎN NICIO CAZ PENTRU ORICE RECLAMAȚIE, DAUNE SAU ALTĂ RESPONSABILITATE, CHIAR DIN O ACȚIUNE DE CONTRACT, DELICIT SAU ÎN ALTRE MOD, DERIVATE DIN, DIN SAU ÎN LEGAȚIE CU SOFTWARE-UL SAU ALTELE UTILIZARE DE SOFTWARE.</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="LlmCallFailedMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmCallFailedMessage" xml:space="preserve">
+    <value>Eroare la apelarea LLM: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmErrorParsingJsonMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmErrorParsingJsonMessage" xml:space="preserve">
+    <value>Eroare la analizarea răspunsului JSON de la LLM: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmHtttpResponseErrorMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmHtttpResponseErrorMessage" xml:space="preserve">
+    <value>Eroare la executarea cererii HTTP către LLM: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmInvalidMessageElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmInvalidMessageElementMessage" xml:space="preserve">
+    <value>Răspunsul LLM nu conține un obiect 'message' valid în primul element 'choices':</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmMisssingChoicesElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmMisssingChoicesElementMessage" xml:space="preserve">
+    <value>Răspunsul LLM nu conține un element 'choices' valid {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
   <data name="TranslatedCultureString" xml:space="preserve">
     <value>A fost tradus {0}</value>

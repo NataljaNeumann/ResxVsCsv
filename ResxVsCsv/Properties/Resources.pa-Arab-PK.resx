@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -151,27 +151,28 @@
     <value>اے آئی دے ذریعہ تیار کیتا گیا</value>
   </data>
   <data name="LicenseText" xml:space="preserve">
-    <value>اس سافٹ ویئر تے متعلقہ دستاویزات فائلاں ("سافٹ ویئر") دی کاپی حاصل کرن آلے کسی وی شخص نو اجازت دتی جاندی اے، بغیر کسے پابندی دے سافٹ ویئر نال نمٹن لئی، بشمول بغیر کسی حد دے سافٹ ویئر دی کاپیاں استعمال کرن، کاپی کرن، ترمیم کرن، ضم کرن، شائع کرن، تقسیم کرن، ذیلی لائسنس دین، تے / یا فروخت کرن دے حقوق، تے انہاں لوکاں نو اجازت دین لئی جہڑے سافٹ ویئر دے تابع ہن، مندرجہ ذیل شرائط دے مطابق:
-
-مندرجہ بالا کاپی رائٹ نوٹس تے ایہ اجازت نامہ سافٹ ویئر دیاں ساریاں کاپیاں یا کافی حصیاں وچ شامل کیتا جائے گا۔
-
-سافٹ ویئر "جیویں اے" فراہم کیتا جاندا اے، بغیر کسی قسم دی وارنٹی دے، واضح یا ضمنی، بشمول لیکن تجارتی صلاحیت دی وارنٹیاں تک محدود نئیں، کسے خاص مقصد لئی فٹنس تے کوئی خاص مقصد تک محدود نئیں۔ کسے وی صورت وچ مصنفین یا کاپی رائٹ ہولڈر کسی وی دعوے، نقصانات یا دوجی ذمہ داری دے ذمہ دار نئیں ہون گے، چاہے اوہ معاہدے، ٹورٹ یا دوجی صورت وچ، اس توں پیدا ہون آلے، اس طرح دے اندر، اس طرح توں پیدا ہون آلا ہووے۔ سافٹ ویئر وچ ورتن یا دوجے لین دین۔</value>
+    <value>اس سافٹ ویئر تے متعلقہ دستاویزات فائلاں ("سافٹ ویئر</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="LlmCallFailedMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmCallFailedMessage" xml:space="preserve">
+    <value>ایل ایل ایم کال ناکام ہوگئی: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmErrorParsingJsonMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmErrorParsingJsonMessage" xml:space="preserve">
+    <value>ایل ایل ایم سے جے ایس او این جواب پارس کرتے وقت خرابی: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmHtttpResponseErrorMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmHtttpResponseErrorMessage" xml:space="preserve">
+    <value>ایل ایل ایم کو HTTP ریکویسٹ چلانے میں خرابی: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmInvalidMessageElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmInvalidMessageElementMessage" xml:space="preserve">
+    <value>ایل ایل ایم کے جواب میں پہلے 'choices' عنصر میں کوئی درست 'message' آبجیکٹ موجود نہیں ہے۔</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmMisssingChoicesElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmMisssingChoicesElementMessage" xml:space="preserve">
+    <value>ایل ایل ایم کے جواب میں ایک درست 'choices' عنصر {0} موجود نہیں ہے</value>
+    <comment>Von KI generiert</comment>
   </data>
   <data name="RightToLeft" xml:space="preserve">
     <value>Yes</value>

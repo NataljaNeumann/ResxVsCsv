@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -145,27 +145,28 @@
     <value>Gegenereer deur KI</value>
   </data>
   <data name="LicenseText" xml:space="preserve">
-    <value>Toestemming word hiermee gratis verleen aan enige persoon wat 'n kopie van hierdie sagteware en gepaardgaande dokumentasielêers (die "sagteware") bekom, om sonder beperking met die sagteware te handel, insluitend sonder beperking die regte om te gebruik, kopieer, wysig, saam te voeg, publiseer, versprei, sublisensieer en/of verkoop kopieë van die sagteware, en om persone toe te laat aan wie die sagteware dit onderhewig is aan die volgende voorwaardes:
-
-Bogenoemde kopieregkennisgewing en hierdie toestemmingskennisgewing sal by alle kopieë of wesenlike gedeeltes van die sagteware ingesluit word.
-
-DIE SAGTEWARE WORD "SOOS IS" VERSKAF, SONDER WAARBORG VAN ENIGE AARD, UITDRUKKELIJK OF geïmpliseer, INSLUITEND MAAR NIE BEPERK TOT DIE WAARBORGE VAN VERHANDELBAARHEID, GESKIKTHEID VIR 'N SPESIFIEKE DOEL EN NIE-SKENNING. IN GEEN GEVAL SAL DIE OUTEURS OF KOPIEREGHOUERS AANSPREEKLIK WEES VIR ENIGE EIS, SKADE OF ANDER AANSPREEKLIKHEID, HETSY IN 'N OPDRAG VAN KONTRAK, OORWEGING OF ANDERS, WAT VOORTKOM UIT, UIT OF IN VERBAND MET DIE ANDER SAGTEWARE.</value>
+    <value>Toestemming word hiermee gratis verleen aan enige persoon wat 'n kopie van hierdie sagteware en gepaardgaande dokumentasielêers (die "sagteware</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="LlmCallFailedMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmCallFailedMessage" xml:space="preserve">
+    <value>LLM-oproep het misluk: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmErrorParsingJsonMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmErrorParsingJsonMessage" xml:space="preserve">
+    <value>Fout tydens die ontleding van JSON-antwoord van LLM: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmHtttpResponseErrorMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmHtttpResponseErrorMessage" xml:space="preserve">
+    <value>Fout tydens uitvoer van HTTP-versoek na LLM: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmInvalidMessageElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmInvalidMessageElementMessage" xml:space="preserve">
+    <value>LLM-reaksie bevat nie ’n geldige ‘message’-voorwerp in die eerste ‘choices’-element nie:</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmMisssingChoicesElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmMisssingChoicesElementMessage" xml:space="preserve">
+    <value>LLM-antwoord bevat nie 'n geldige 'choices'-element nie {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
   <data name="TranslatedCultureString" xml:space="preserve">
     <value>Dit is vertaal {0}</value>

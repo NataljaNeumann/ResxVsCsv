@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -151,27 +151,28 @@
     <value>נוצר על ידי AI</value>
   </data>
   <data name="LicenseText" xml:space="preserve">
-    <value>הרשאה ניתנת בזאת, ללא תשלום, לכל אדם המשיג עותק של תוכנה זו וקובצי תיעוד הקשורים ("התוכנה"), לעסוק בתוכנה ללא הגבלה, לרבות, ללא הגבלה, זכויות השימוש, העתקה, שינוי, מיזוג, פרסום, הפצה, מתן רישיון משנה ו/או מכירת עותקים של התוכנה, ולהתיר לאנשים אשר התוכנה תעשה זאת בכפוף לתנאים הבאים:
-
-הודעת זכויות היוצרים לעיל והודעת הרשאה זו יכללו בכל העותקים או חלקים מהותיים של התוכנה.
-
-התוכנה מסופקת "כמות שהיא", ללא אחריות מכל סוג, מפורשת או משתמעת, כולל אך לא מוגבלת לאחריות של סחירות, התאמה למטרה מסוימת ואי-הפרה. בשום מקרה לא יהיו המחברים או בעלי זכויות היוצרים אחראים לכל תביעה, נזקים או חבות אחרת, בין אם בפעולה של חוזה, בנזיקין או אחרת, הנובעת מהתוכנה האחרת שלה, או בהקשר אליה.</value>
+    <value>הרשאה ניתנת בזאת, ללא תשלום, לכל אדם המשיג עותק של תוכנה זו וקובצי תיעוד הקשורים ("התוכנה</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="LlmCallFailedMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmCallFailedMessage" xml:space="preserve">
+    <value>קריאת LLM נכשלה: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmErrorParsingJsonMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmErrorParsingJsonMessage" xml:space="preserve">
+    <value>שגיאה בעת פענוח תגובת JSON מה-LLM: ‏{0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmHtttpResponseErrorMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmHtttpResponseErrorMessage" xml:space="preserve">
+    <value>אירעה שגיאה בעת ביצוע בקשת HTTP ל-LLM: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmInvalidMessageElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmInvalidMessageElementMessage" xml:space="preserve">
+    <value>תגובת ה־LLM אינה מכילה אובייקט 'message' חוקי בפריט הראשון של 'choices':</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmMisssingChoicesElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmMisssingChoicesElementMessage" xml:space="preserve">
+    <value>תגובת LLM אינה מכילה רכיב 'choices' חוקי {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
   <data name="RightToLeft" xml:space="preserve">
     <value>Yes</value>

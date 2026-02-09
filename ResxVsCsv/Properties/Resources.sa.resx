@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -145,27 +145,28 @@
     <value>एआइ द्वारा उत्पन्नम्</value>
   </data>
   <data name="LicenseText" xml:space="preserve">
-    <value>अस्य सॉफ्टवेयरस्य तथा तत्सम्बद्धानां दस्तावेजीकरणसञ्चिकानां ("सॉफ्टवेयर") प्रतिलिपिं प्राप्य, निःशुल्कं, सॉफ्टवेयरस्य प्रतिबन्धं विना व्यवहारं कर्तुं, यत्र सीमां विना सॉफ्टवेयरस्य प्रतिलिपानां उपयोगस्य, प्रतिलिपिं कर्तुं, परिवर्तनस्य, विलयस्य, प्रकाशनस्य, वितरणस्य, उपअनुज्ञापत्रस्य, तथा/वा विक्रयणस्य अधिकारः, तथा च येषां व्यक्तिनां कृते सॉफ्टवेयरः प्रदत्तः अस्ति, तेषां अनुमतिं दातुं, निम्नलिखितशर्तानाम् अधीनम्, अनुमतिः प्रदत्ता अस्ति:अस्य सॉफ्टवेयरस्य तथा तत्सम्बद्धानां दस्तावेजीकरणसञ्चिकानां ("सॉफ्टवेयर") प्रतिलिपिं प्राप्य, निःशुल्कं, सॉफ्टवेयरस्य प्रतिबन्धं विना व्यवहारं कर्तुं, यत्र सीमां विना सॉफ्टवेयरस्य प्रतिलिपानां उपयोगस्य, प्रतिलिपिं कर्तुं, परिवर्तनस्य, विलयस्य, प्रकाशनस्य, वितरणस्य, उपअनुज्ञापत्रस्य, तथा/वा विक्रयणस्य अधिकारः, तथा च येषां व्यक्तिनां कृते सॉफ्टवेयरः प्रदत्तः अस्ति, तेषां अनुमतिं दातुं, निम्नलिखितशर्तानाम् अधीनम्, अनुमतिः प्रदत्ता अस्ति:
-
-उपर्युक्तप्रतिलिपिधर्मसूचना तथा च एषा अनुमतिसूचना सॉफ्टवेयरस्य सर्वासु प्रतिलिपिषु अथवा पर्याप्तभागेषु समाविष्टा भविष्यति।
-
-सॉफ्टवेयर "यथा अस्ति" प्रदत्तं भवति, कस्यापि प्रकारस्य, स्पष्टस्य वा अप्रत्यक्षस्य वा वारण्टीं विना, यत्र विक्रयणस्य, विशिष्टप्रयोजनस्य योग्यतायाः, अउल्लङ्घनस्य च वारण्टीः समाविष्टाः परन्तु एतेषु एव सीमिताः न सन्ति कस्मिन् अपि सन्दर्भे लेखकाः वा प्रतिलिपिधर्मधारकाः वा कस्यापि दावस्य, क्षतिस्य वा अन्यस्य वा उत्तरदायित्वस्य उत्तरदायी न भविष्यन्ति, भवेत् तत् अनुबन्धस्य कार्ये, क्षतिस्य वा अन्यथा, यत् सॉफ्टवेयरस्य वा उपयोगस्य वा अन्यस्य व्यवहारस्य वा सम्बन्धे उत्पद्यते तन्त्रांश।</value>
+    <value>अस्य सॉफ्टवेयरस्य तथा तत्सम्बद्धानां दस्तावेजीकरणसञ्चिकानां ("सॉफ्टवेयर") प्रतिलिपिं प्राप्य, निःशुल्कं, सॉफ्टवेयरस्य प्रतिबन्धं विना व्यवहारं कर्तुं, यत्र सीमां विना सॉफ्टवेयरस्य प्रतिलिपानां उपयोगस्य, प्रतिलिपिं कर्तुं, परिवर्तनस्य, विलयस्य, प्रकाशनस्य, वितरणस्य, उपअनुज्ञापत्रस्य, तथा/वा विक्रयणस्य अधिकारः, तथा च येषां व्यक्तिनां कृते सॉफ्टवेयरः प्रदत्तः अस्ति, तेषां अनुमतिं दातुं, निम्नलिखितशर्तानाम् अधीनम्, अनुमतिः प्रदत्ता अस्ति:अस्य सॉफ्टवेयरस्य तथा तत्सम्बद्धानां दस्तावेजीकरणसञ्चिकानां ("सॉफ्टवेयर</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="LlmCallFailedMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmCallFailedMessage" xml:space="preserve">
+    <value>एलएलएम कॉल विफलः {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmErrorParsingJsonMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmErrorParsingJsonMessage" xml:space="preserve">
+    <value>एलएलएम से JSON प्रत्युत्तर का विश्लेषण करते समय त्रुटि: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmHtttpResponseErrorMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmHtttpResponseErrorMessage" xml:space="preserve">
+    <value>एलएलएम् प्रति एचटीटीपी अनुरोधं प्रचालयन् दोषः: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmInvalidMessageElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmInvalidMessageElementMessage" xml:space="preserve">
+    <value>प्रथम 'choices' घटके स्थित 'message' वस्तु नास्ति यः वैधम् अस्ति इति LLM प्रत्युत्तरम्।</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmMisssingChoicesElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmMisssingChoicesElementMessage" xml:space="preserve">
+    <value>एल्एल्एम प्रत्युत्तरम् प्रमाणिकं 'choices' अंगं {0} न धारयति</value>
+    <comment>Von KI generiert</comment>
   </data>
   <data name="TranslatedCultureString" xml:space="preserve">
     <value>अनुवादितम् अस्ति {0} ।</value>

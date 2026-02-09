@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -152,20 +152,25 @@
 პროგრამული უზრუნველყოფა მოწოდებულია "როგორც არის", რაიმე სახის, გამოხატული ან ნაგულისხმევი გარანტიის გარეშე, მათ შორის, მაგრამ არ შემოიფარგლება ვაჭრობის გარანტიებით, ვარგისიანობა კონკრეტული მიზნისთვის და სხვა მიზნით. არავითარ შემთხვევაში ავტორები ან საავტორო უფლებების მფლობელები არ იქნებიან პასუხისმგებელი პრეტენზიებზე, ზარალზე ან სხვა პასუხისმგებლობაზე, იქნება ეს კონტრაქტის მოქმედებაში, დელიქტურ დანაშაულში თუ სხვაგვარად, რომელიც წარმოიშობა ჩვენგან ამის გარეშე ან სხვა გარიგებები პროგრამულ უზრუნველყოფაში.</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="LlmCallFailedMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmCallFailedMessage" xml:space="preserve">
+    <value>LLM-ის გამოძახება ვერ შესრულდა: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmErrorParsingJsonMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmErrorParsingJsonMessage" xml:space="preserve">
+    <value>შეცდომა JSON პასუხის LLM-დან დამუშავებისას: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmHtttpResponseErrorMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmHtttpResponseErrorMessage" xml:space="preserve">
+    <value>LLM-თან HTTP მოთხოვნის შესრულებისას მოხდა შეცდომა: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmInvalidMessageElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmInvalidMessageElementMessage" xml:space="preserve">
+    <value>LLM-ის პასუხი პირველ 'choices' ელემენტში არ შეიცავს სწორს 'message' ობიექტს:</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmMisssingChoicesElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmMisssingChoicesElementMessage" xml:space="preserve">
+    <value>LLM-ის პასუხი არ შეიცავს ვალიდურ 'choices' ელემენტს {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
   <data name="TranslatedCultureString" xml:space="preserve">
     <value>ის ნათარგმნია {0}</value>

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -152,20 +152,25 @@ Ofangreind höfundarréttartilkynning og þessi leyfistilkynning skulu vera með
 HUGBÚNAÐURINN ER LEYNDUR „EINS OG ER“, ÁN NOKKURS ÁBYRGÐAR, SKÝRI EÐA UNDIRLIÐI, ÞAR Á MEÐ EN EKKI TAKMARKAÐUR VIÐ ÁBYRGÐIR UM SÖLJANNI, HÆFNI Í SÉRSTÖKNUM TILGANGI OG EKKI BROT. HÖFUNDAR EÐA HÖFUNDARRETTAHAFAR SKALA Í ENGUM TILKYNDUM BÆRA ÁBYRGÐ Á KÖFUM, SKAÐUM EÐA AÐRAR ÁBYRGÐ, HVORKI Í SAMNINGS-, skaðabótamáli EÐA ANNAÐ SEM SEM KOMA AF, ÚT EÐA Í TENGSLUM VIÐ NOTKUN VIÐ NOTKUNARVIÐ.</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="LlmCallFailedMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmCallFailedMessage" xml:space="preserve">
+    <value>LLM-beiðni mistókst: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmErrorParsingJsonMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmErrorParsingJsonMessage" xml:space="preserve">
+    <value>Villa við að lesa JSON svörun frá LLM: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmHtttpResponseErrorMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmHtttpResponseErrorMessage" xml:space="preserve">
+    <value>Villa kom upp við HTTP-beiðni til LLM: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmInvalidMessageElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmInvalidMessageElementMessage" xml:space="preserve">
+    <value>Svar LLM inniheldur ekki gilt 'message'-hlut í fyrsta 'choices'-þættinum:</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmMisssingChoicesElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmMisssingChoicesElementMessage" xml:space="preserve">
+    <value>Svar LLM inniheldur ekki gilt 'choices'-element {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
   <data name="TranslatedCultureString" xml:space="preserve">
     <value>Það hefur verið þýtt {0}</value>

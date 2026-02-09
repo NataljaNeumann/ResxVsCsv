@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -151,27 +151,28 @@
     <value>تم إنشاؤها بواسطة منظمة العفو الدولية</value>
   </data>
   <data name="LicenseText" xml:space="preserve">
-    <value>يُمنح الإذن مجانًا لأي شخص يحصل على نسخة من هذا البرنامج وملفات الوثائق المرتبطة به ("البرنامج")، للتعامل في البرنامج دون قيود، بما في ذلك على سبيل المثال لا الحصر، حقوق استخدام و/أو نسخ وتعديل ودمج و/أو نشر وتوزيع وترخيص فرعي و/أو بيع نسخ من البرنامج، والسماح للأشخاص الذين تم توفير البرنامج لهم بالقيام بذلك، وفقًا للشروط التالية:
-
-يجب تضمين إشعار حقوق الطبع والنشر أعلاه وإشعار الإذن هذا في جميع النسخ أو الأجزاء الكبيرة من البرنامج.
-
-يتم توفير البرنامج "كما هو"، دون أي ضمان من أي نوع، صريحًا أو ضمنيًا، بما في ذلك، على سبيل المثال لا الحصر، ضمانات القابلية للتسويق والملاءمة لغرض معين وعدم الانتهاك. لا يتحمل المؤلفون أو أصحاب حقوق الطبع والنشر بأي حال من الأحوال المسؤولية عن أي مطالبة أو أضرار أو مسؤولية أخرى، سواء في إجراء العقد أو الضرر أو غير ذلك، الناشئة عن أو خارج أو فيما يتعلق بالبرنامج أو الاستخدام أو المعاملات الأخرى في البرنامج.</value>
+    <value>يُمنح الإذن مجانًا لأي شخص يحصل على نسخة من هذا البرنامج وملفات الوثائق المرتبطة به ("البرنامج</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="LlmCallFailedMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmCallFailedMessage" xml:space="preserve">
+    <value>فشل استدعاء LLM: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmErrorParsingJsonMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmErrorParsingJsonMessage" xml:space="preserve">
+    <value>حدث خطأ أثناء تحليل استجابة JSON من LLM: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmHtttpResponseErrorMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmHtttpResponseErrorMessage" xml:space="preserve">
+    <value>حدث خطأ أثناء تنفيذ طلب HTTP إلى LLM: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmInvalidMessageElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmInvalidMessageElementMessage" xml:space="preserve">
+    <value>استجابة LLM لا تحتوي على كائن 'message' صالح في أول عنصر من عناصر 'choices':</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmMisssingChoicesElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmMisssingChoicesElementMessage" xml:space="preserve">
+    <value>استجابة LLM لا تحتوي على عنصر 'choices' صحيح {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
   <data name="RightToLeft" xml:space="preserve">
     <value>Yes</value>

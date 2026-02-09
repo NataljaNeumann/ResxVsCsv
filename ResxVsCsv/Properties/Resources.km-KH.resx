@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -145,27 +145,28 @@
     <value>បង្កើតឡើងដោយ AI</value>
   </data>
   <data name="LicenseText" xml:space="preserve">
-    <value>ការអនុញ្ញាតត្រូវបានផ្តល់ដោយឥតគិតថ្លៃដល់បុគ្គលណាម្នាក់ដែលទទួលបានច្បាប់ចម្លងនៃកម្មវិធីនេះ និងឯកសារឯកសារដែលពាក់ព័ន្ធ ("កម្មវិធី") ដើម្បីដោះស្រាយនៅក្នុងកម្មវិធីដោយគ្មានការរឹតត្បិត រួមទាំងដោយគ្មានការកំណត់សិទ្ធិក្នុងការប្រើប្រាស់ ចម្លង កែប្រែ បញ្ចូលចូលគ្នា បោះផ្សាយ ចែកចាយ អាជ្ញាប័ណ្ណរង និង/ឬលក់ច្បាប់ចម្លងនៃកម្មវិធី និងអនុញ្ញាតិឱ្យបុគ្គលណាដែលអនុវត្តលក្ខខណ្ឌដូចតទៅនេះ៖ ផ្តល់ជូន
-
-ការជូនដំណឹងអំពីការរក្សាសិទ្ធិខាងលើ និងការជូនដំណឹងអំពីការអនុញ្ញាតនេះ នឹងត្រូវបញ្ចូលទៅក្នុងច្បាប់ចម្លងទាំងអស់ ឬផ្នែកសំខាន់ៗនៃកម្មវិធី។
-
-សូហ្វវែរត្រូវបានផ្តល់ជូន "ដូចដែល" ដោយគ្មានការធានានៃប្រភេទណាមួយ បង្ហាញ ឬបង្កប់ន័យ រួមទាំង ប៉ុន្តែមិនកំណត់ចំពោះការធានានៃការធ្វើពាណិជ្ជកម្ម ភាពសមស្របសម្រាប់គោលបំណងជាក់លាក់ និងគ្មានដែនកំណត់។ គ្មានករណីណាមួយដែលអ្នកនិពន្ធ ឬអ្នកកាន់កាប់សិទ្ធិថតចម្លងត្រូវទទួលខុសត្រូវចំពោះការទាមទារ ការខូចខាត ឬការទទួលខុសត្រូវផ្សេងទៀត មិនថានៅក្នុងសកម្មភាពនៃកិច្ចសន្យា ការទារុណកម្ម ឬផ្សេងទៀត កើតឡើងពី ខាងក្រៅ ឬនៅពេលក្រោយក៏ដោយ កិច្ចព្រមព្រៀងផ្សេងទៀតនៅក្នុងកម្មវិធី។</value>
+    <value>ការអនុញ្ញាតត្រូវបានផ្តល់ដោយឥតគិតថ្លៃដល់បុគ្គលណាម្នាក់ដែលទទួលបានច្បាប់ចម្លងនៃកម្មវិធីនេះ និងឯកសារឯកសារដែលពាក់ព័ន្ធ ("កម្មវិធី</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="LlmCallFailedMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmCallFailedMessage" xml:space="preserve">
+    <value>កំណើញ LLM បានបរាជ័យ៖ {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmErrorParsingJsonMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmErrorParsingJsonMessage" xml:space="preserve">
+    <value>មានកំហុសក្នុងការវិភាគចម្លើយ JSON ពី LLM: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmHtttpResponseErrorMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmHtttpResponseErrorMessage" xml:space="preserve">
+    <value>កំហុស أثناءបំពេញសំណើ HTTP ទៅ LLM៖ {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmInvalidMessageElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmInvalidMessageElementMessage" xml:space="preserve">
+    <value>ចម្លើយ LLM មិនមានវត្ថុ 'message' ត្រឹមត្រូវនៅក្នុងធាតុ 'choices' ទីមួយទេ៖</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmMisssingChoicesElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmMisssingChoicesElementMessage" xml:space="preserve">
+    <value>ចម្លើយ LLM មិនមានធាតុ 'choices' ត្រឹមត្រូវ {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
   <data name="TranslatedCultureString" xml:space="preserve">
     <value>វាត្រូវបានបកប្រែ {0}</value>

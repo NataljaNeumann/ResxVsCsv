@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -158,20 +158,25 @@
 نرم‌افزار «همان‌طور که هست»، بدون ضمانت از هر نوع، صریح یا ضمنی، شامل اما نه محدود به ضمانت‌های کالای تجاری، تناسب برای یک هدف خاص و غیر از آن، ارائه می‌شود. در هیچ موردی نویسندگان یا دارندگان حق نسخه‌برداری در قبال ادعا، خسارت یا سایر مسئولیت‌ها، اعم از اینکه در یک اقدام قراردادی، ظلم یا در غیر این صورت، ناشی از خارج از این موضوع باشد، مسئول نخواهند بود. یا سایر معاملات در نرم افزار.</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="LlmCallFailedMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmCallFailedMessage" xml:space="preserve">
+    <value>تماس با LLM با شکست مواجه شد: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmErrorParsingJsonMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmErrorParsingJsonMessage" xml:space="preserve">
+    <value>خطا در تجزیه پاسخ JSON از LLM: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmHtttpResponseErrorMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmHtttpResponseErrorMessage" xml:space="preserve">
+    <value>خطا در اجرای درخواست HTTP به LLM: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmInvalidMessageElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmInvalidMessageElementMessage" xml:space="preserve">
+    <value>پاسخ LLM شامل یک شیء 'message' معتبر در اولین عنصر 'choices' نیست:</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmMisssingChoicesElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmMisssingChoicesElementMessage" xml:space="preserve">
+    <value>پاسخ LLM حاوی عنصر 'choices' معتبر نیست {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
   <data name="RightToLeft" xml:space="preserve">
     <value>Yes</value>

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -152,20 +152,25 @@ Vyššie uvedené oznámenie o autorských právach a toto oznámenie o povolen�
 SOFTVÉR JE POSKYTOVANÝ „TAK, AKO JE“, BEZ ZÁRUKY AKÉHOKOĽVEK DRUHU, VÝSLOVNEJ ALEBO IMPLICITNE, VRÁTANE, NIE VÝHRADNE, ZÁRUKY PREDAJNOSTI, VHODNOSTI NA KONKRÉTNY ÚČEL A NEPORUŠOVANIA PRÁV. AUTORI ALEBO DRŽITELIA AUTORSKÝCH PRÁV V ŽIADNOM PRÍPADE NEBUDÚ ZODPOVEDNÍ ZA AKÉKOĽVEK NÁROKY, ŠKODY ALEBO INÉ ZODPOVEDNOSTI, ČI UŽ V ZMLUVNOM KONANI, ALEBO INAK, VZNIKNUTÉ Z TOHTO POUŽITIA, ALEBO V SÚVISLOSTI S TÝMTO DEWALOM SOFTWARE.</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="LlmCallFailedMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmCallFailedMessage" xml:space="preserve">
+    <value>Volanie LLM zlyhalo: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmErrorParsingJsonMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmErrorParsingJsonMessage" xml:space="preserve">
+    <value>Chyba pri analyzovaní JSON odpovede z LLM: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmHtttpResponseErrorMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmHtttpResponseErrorMessage" xml:space="preserve">
+    <value>Chyba pri vykonávaní HTTP požiadavky na LLM: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmInvalidMessageElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmInvalidMessageElementMessage" xml:space="preserve">
+    <value>Odpoveď LLM neobsahuje platný objekt „message“ v prvom prvku „choices“:</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmMisssingChoicesElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmMisssingChoicesElementMessage" xml:space="preserve">
+    <value>Odpoveď LLM neobsahuje platný prvok „choices“ {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
   <data name="TranslatedCultureString" xml:space="preserve">
     <value>Bola preložená {0}</value>

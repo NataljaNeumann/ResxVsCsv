@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -145,27 +145,28 @@
     <value>Generert av AI</value>
   </data>
   <data name="LicenseText" xml:space="preserve">
-    <value>Tillatelse gis herved, gratis, til enhver person som skaffer seg en kopi av denne programvaren og tilhørende dokumentasjonsfiler ("Programvaren"), til å handle med Programvaren uten begrensning, inkludert uten begrensning rettighetene til å bruke, kopiere, modifisere, slå sammen, publisere, distribuere, underlisensiere og/eller selge kopier av Programvaren, og tillate personer som er underlagt følgende betingelser for Programvaren:
-
-Ovennevnte copyright-melding og denne tillatelseserklæringen skal inkluderes i alle kopier eller vesentlige deler av programvaren.
-
-PROGRAMVAREN LEVERES "SOM DEN ER", UTEN GARANTI AV NOEN SLAG, UTTRYKKELIGE ELLER UNDERFORSTÅTTE, INKLUDERT MEN IKKE BEGRENSET TIL GARANTIER FOR SALGBARHET, EGNETHET FOR ET BESTEMT FORMÅL OG IKKE-KRENKELSE. UNDER INGEN OMSTENDIGHET SKAL FORFATTERNE ELLER OPPHAVSRETTESSINNEHAVENE VÆRE ANSVARLIGE FOR NOEN KRAV, SKADER ELLER ANNET ANSVAR, ENTEN I EN KONTRAKTSHANDLING, TORT ELLER ANNET, SOM STÅR AV, UTENFOR ELLER I FORBINDELSE MED DET ANDRE SOFTWAREN.</value>
+    <value>Tillatelse gis herved, gratis, til enhver person som skaffer seg en kopi av denne programvaren og tilhørende dokumentasjonsfiler ("Programvaren</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="LlmCallFailedMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmCallFailedMessage" xml:space="preserve">
+    <value>LLM-kall mislyktes: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmErrorParsingJsonMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmErrorParsingJsonMessage" xml:space="preserve">
+    <value>Feil ved parsing av JSON-svar fra LLM: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmHtttpResponseErrorMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmHtttpResponseErrorMessage" xml:space="preserve">
+    <value>Feil ved kjøring av HTTP-forespørsel til LLM: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmInvalidMessageElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmInvalidMessageElementMessage" xml:space="preserve">
+    <value>LLM-responsen inneholder ikke et gyldig 'message'-objekt i det første 'choices'-elementet:</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmMisssingChoicesElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmMisssingChoicesElementMessage" xml:space="preserve">
+    <value>LLM-responsen inneholder ikke et gyldig 'choices'-element {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
   <data name="TranslatedCultureString" xml:space="preserve">
     <value>Den er oversatt {0}</value>

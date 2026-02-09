@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -145,27 +145,28 @@
     <value>AI тарабынан түзүлгөн</value>
   </data>
   <data name="LicenseText" xml:space="preserve">
-    <value>Ушуну менен бул программанын көчүрмөсүн жана ага байланыштуу документация файлдарын ("Программалык камсыздоо") алган ар кандай адамга Программалык камсыздоо менен чектөөсүз иштөөгө, анын ичинде Программанын нускаларын колдонуу, көчүрүү, өзгөртүү, бириктирүү, жарыялоо, жайылтуу, сублицензиялоо жана/же сатуу укуктарын чектөөсүз, ошондой эле Программа төмөндөгү шарттарды аткарууга тийиш болгон адамдарга уруксат берилет:
-
-Жогорудагы автордук укук эскертүүсү жана бул уруксат эскертүүсү Программанын бардык нускаларына же олуттуу бөлүктөрүнө камтылууга тийиш.
-
-ПРОГРАММА "КАНДАЙ БОЛСО БОЛГОНДОЙ" БЕРИЛЕТ, ЭЧ КАЧАН ТҮРДӨГҮ, АЧЫН ЖАНА КИЙИНКЕН КЕПИЛДИКСИЗ, БИРОК БИРОК БИРОК СОТТУК КЕРЕКТҮҮЛҮК, БЕЛГИЛҮҮ МАКСАТКА ЖАНА ПАЙДАЛУУ ЭМЕС КЕПИЛДИКТЕР МЕНЕН ЧЕКТЕЛБЕГЕН. ЭЧ КАНДАЙ ЖАГДАЙДА АВТОРЛОР ЖЕ АВТОМОБИЛЬК УКУКТУН ЭЭЛЕРИ КЕЛИШИМДИН ИШ-АРАКЕТИНДЕГИ, КОРКУНУЧТУК ЖЕ БАШКА ЖОЛУ МЕНЕН, БАШКА ТАШКАН ТААНЫП КЕЛГЕН ДОО, ЗЫЯН ЖЕ БАШКА ЖООПКЕРЧИЛИК ҮЧҮН ЖООПКЕРЧИЛИКТИ ТАРТБАЙТ. ЖЕ ПРОГРАММАДАГЫ БАШКА ИШТЕР.</value>
+    <value>Ушуну менен бул программанын көчүрмөсүн жана ага байланыштуу документация файлдарын ("Программалык камсыздоо</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="LlmCallFailedMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmCallFailedMessage" xml:space="preserve">
+    <value>LLM чакырыгы ишке ашпай калды: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmErrorParsingJsonMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmErrorParsingJsonMessage" xml:space="preserve">
+    <value>LLM'ден келген JSON жоопту талдоо учурунда ката чыкты: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmHtttpResponseErrorMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmHtttpResponseErrorMessage" xml:space="preserve">
+    <value>LLM'ге HTTP сурамын жөнөтүүдө ката кетти: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmInvalidMessageElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmInvalidMessageElementMessage" xml:space="preserve">
+    <value>Биринчиси 'choices' элементинде LLM жообунда туура 'message' объектиси жок:</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmMisssingChoicesElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmMisssingChoicesElementMessage" xml:space="preserve">
+    <value>LLM жоопто туура 'choices' элементи {0} жок</value>
+    <comment>Von KI generiert</comment>
   </data>
   <data name="TranslatedCultureString" xml:space="preserve">
     <value>{0} которулду</value>

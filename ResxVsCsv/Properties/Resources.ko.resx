@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -145,27 +145,28 @@
     <value>AI에 의해 생성됨</value>
   </data>
   <data name="LicenseText" xml:space="preserve">
-    <value>본 소프트웨어 및 관련 문서 파일("소프트웨어")의 사본을 취득한 사람에게는 다음 조건에 따라 소프트웨어 사본을 사용, 복사, 수정, 병합, 게시, 배포, 재라이센스 부여 및/또는 판매할 수 있는 권리를 포함하되 이에 국한되지 않고 제한 없이 소프트웨어를 취급하고 소프트웨어를 제공받은 사람에게 그렇게 하도록 허용하는 권한이 무료로 부여됩니다.
-
-위의 저작권 고지와 본 허가 고지는 소프트웨어의 모든 사본 또는 상당 부분에 포함됩니다.
-
-소프트웨어는 상품성, 특정 목적에의 적합성 및 비침해에 대한 보증을 포함하되 이에 국한되지 않고 명시적이든 묵시적이든 어떠한 종류의 보증 없이 "있는 그대로" 제공됩니다. 어떠한 경우에도 작성자 또는 저작권 보유자는 소프트웨어나 소프트웨어의 사용 또는 기타 거래로 인해 발생하거나 이와 관련하여 발생하는 계약, 불법 행위 또는 기타 행위로 인한 청구, 손해 또는 기타 책임에 대해 책임을 지지 않습니다.</value>
+    <value>본 소프트웨어 및 관련 문서 파일("소프트웨어</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="LlmCallFailedMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmCallFailedMessage" xml:space="preserve">
+    <value>LLM 호출 실패: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmErrorParsingJsonMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmErrorParsingJsonMessage" xml:space="preserve">
+    <value>LLM에서 받은 JSON 응답을 파싱하는 중 오류 발생: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmHtttpResponseErrorMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmHtttpResponseErrorMessage" xml:space="preserve">
+    <value>LLM에 HTTP 요청을 실행하는 중 오류 발생: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmInvalidMessageElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmInvalidMessageElementMessage" xml:space="preserve">
+    <value>LLM 응답에 첫 번째 'choices' 요소에 유효한 'message' 객체가 포함되어 있지 않습니다:</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmMisssingChoicesElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmMisssingChoicesElementMessage" xml:space="preserve">
+    <value>LLM 응답에 유효한 'choices' 요소 {0}가 포함되어 있지 않습니다.</value>
+    <comment>Von KI generiert</comment>
   </data>
   <data name="TranslatedCultureString" xml:space="preserve">
     <value>{0}로 번역되었습니다</value>

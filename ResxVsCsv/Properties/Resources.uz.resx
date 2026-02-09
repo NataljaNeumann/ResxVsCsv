@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -145,27 +145,28 @@
     <value>AI tomonidan yaratilgan</value>
   </data>
   <data name="LicenseText" xml:space="preserve">
-    <value>Shu bilan ushbu dasturiy ta'minot nusxasini va tegishli hujjat fayllarini ("Dastur ta'minoti") olgan har qanday shaxsga dasturiy ta'minot bilan cheklovsiz muomala qilish, shu jumladan cheklanmagan holda, dasturiy ta'minotdan foydalanish, nusxa ko'chirish, o'zgartirish, birlashtirish, nashr qilish, tarqatish, sublitsenziyalash va/yoki uning nusxalarini sotish, shuningdek, dasturiy ta'minot quyidagi shartlarga rioya qilgan shaxslarga ruxsat berish uchun bepul ruxsat beriladi:
-
-Yuqoridagi mualliflik huquqi to'g'risidagi bildirishnoma va ushbu ruxsatnomalar Dasturiy ta'minotning barcha nusxalari yoki muhim qismlariga kiritilishi kerak.
-
-DASTURIY TA'MINOT HAR QANDAY, OG'ROQ YOKI KO'RSATILGAN KAFOLATLARSIZ, JUMLADAN, SOVLASH MAQSADLARIGA, MAQSUS MAQSADGA MUVOFIQligi VA NOMONLIK BO'LGAN KAFOLATLAR BILAN CHEKLANMAYDI. HECH HOLDA MUVALFORLAR YOKI MALILIK HUQUQ SOG'ILARI SHARTNOMA HARAKATLARI, SHARTNOMALAR YOKI BOSHQA HARAKATLAR BO'YICHA, BOSHQA BO'LGAN BO'LGAN HARAKATLAR UCHUN JAVBOR BO'LMAYDI. YOKI DASTURIY TA'MINOTDAGI BOSHQA MUMKINLAR.</value>
+    <value>Shu bilan ushbu dasturiy ta'minot nusxasini va tegishli hujjat fayllarini ("Dastur ta'minoti</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="LlmCallFailedMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmCallFailedMessage" xml:space="preserve">
+    <value>LLM chaqiruvi muvaffaqiyatsiz tugadi: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmErrorParsingJsonMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmErrorParsingJsonMessage" xml:space="preserve">
+    <value>LLM dan JSON javobini tahlil qilishda xatolik yuz berdi: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmHtttpResponseErrorMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmHtttpResponseErrorMessage" xml:space="preserve">
+    <value>LLM-ga HTTP so‘rovi bajarilishida xatolik yuz berdi: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmInvalidMessageElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmInvalidMessageElementMessage" xml:space="preserve">
+    <value>LLM javobi birinchi 'choices' elementida to‘g‘ri 'message' obyektini o‘z ichiga olmaydi:</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmMisssingChoicesElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmMisssingChoicesElementMessage" xml:space="preserve">
+    <value>LLM javobi yaroqli 'choices' elementi {0} ni o‘z ichiga olmaydi</value>
+    <comment>Von KI generiert</comment>
   </data>
   <data name="TranslatedCultureString" xml:space="preserve">
     <value>U tarjima qilingan: {0}</value>

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -145,27 +145,28 @@
     <value>Được tạo bởi AI</value>
   </data>
   <data name="LicenseText" xml:space="preserve">
-    <value>Theo đây, quyền được cấp miễn phí cho bất kỳ người nào có bản sao của phần mềm này và các tệp tài liệu liên quan ("Phần mềm") để xử lý Phần mềm mà không bị hạn chế, bao gồm nhưng không giới hạn các quyền sử dụng, sao chép, sửa đổi, hợp nhất, xuất bản, phân phối, cấp phép phụ và/hoặc bán bản sao của Phần mềm và cho phép những người được cung cấp Phần mềm làm như vậy, tuân theo các điều kiện sau:
-
-Thông báo bản quyền ở trên và thông báo cấp phép này sẽ được bao gồm trong tất cả các bản sao hoặc các phần quan trọng của Phần mềm.
-
-PHẦN MỀM ĐƯỢC CUNG CẤP "NGUYÊN TRẠNG", KHÔNG CÓ BẤT KỲ HÌNH THỨC BẢO ĐẢM NÀO, RÕ RÀNG HAY NGỤ Ý, BAO GỒM NHƯNG KHÔNG GIỚI HẠN ĐẢM BẢO VỀ KHẢ NĂNG CÓ THỂ BÁN, SỰ PHÙ HỢP CHO MỘT MỤC ĐÍCH CỤ THỂ VÀ KHÔNG VI PHẠM. TRONG MỌI TRƯỜNG HỢP CÁC TÁC GIẢ HOẶC NGƯỜI GIỮ BẢN QUYỀN SẼ KHÔNG CHỊU TRÁCH NHIỆM VỀ BẤT KỲ KHIẾU NẠI, THIỆT HẠI HOẶC TRÁCH NHIỆM PHÁP LÝ KHÁC NÀO DÙ TRONG HÀNH ĐỘNG HỢP ĐỒNG, VIỆC LẠI HOẶC CÁCH KHÁC, PHÁT SINH TỪ, NGOÀI HOẶC LIÊN QUAN ĐẾN PHẦN MỀM HOẶC VIỆC SỬ DỤNG HOẶC CÁC GIAO DỊCH KHÁC TRONG PHẦN MỀM.</value>
+    <value>Theo đây, quyền được cấp miễn phí cho bất kỳ người nào có bản sao của phần mềm này và các tệp tài liệu liên quan ("Phần mềm</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="LlmCallFailedMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmCallFailedMessage" xml:space="preserve">
+    <value>Gọi LLM thất bại: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmErrorParsingJsonMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmErrorParsingJsonMessage" xml:space="preserve">
+    <value>Lỗi khi phân tích cú pháp phản hồi JSON từ LLM: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmHtttpResponseErrorMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmHtttpResponseErrorMessage" xml:space="preserve">
+    <value>Lỗi khi thực hiện yêu cầu HTTP tới LLM: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmInvalidMessageElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmInvalidMessageElementMessage" xml:space="preserve">
+    <value>Phản hồi LLM không chứa đối tượng 'message' hợp lệ trong phần tử 'choices' đầu tiên:</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmMisssingChoicesElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmMisssingChoicesElementMessage" xml:space="preserve">
+    <value>Phản hồi LLM không chứa phần tử 'choices' hợp lệ {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
   <data name="TranslatedCultureString" xml:space="preserve">
     <value>Nó đã được dịch {0}</value>

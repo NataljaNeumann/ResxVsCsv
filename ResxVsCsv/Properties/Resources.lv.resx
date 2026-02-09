@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -152,20 +152,25 @@ Iepriekš minētais autortiesību paziņojums un šis paziņojums par atļauju i
 PROGRAMMATŪRA TIEK PIEDĀVĀTA TĀDA, KĀDA IR, BEZ JEBKĀDA VEIDA, TIEŠAS VAI NETIEŠAS GARANTIJAS, IESKAITOT, BET NEAPROBEŽOTAS, GARANTIJAS PAR TIRDZNIECĪBU, PIEMĒROTĪBU KONKRĒTAM MĒRĶIEM UN PĀRKĀPUMIEM. AUTORI VAI AUTORTIESĪBU ĪPAŠNIEKI NEKĀDĀ GADĪJUMĀ NAV ATBILDĪGI PAR JEBKĀDĀM PRASĪBĀM, ZAUDĒJUMIEM VAI CITĀM ATBILDĪBĀM LĪGUMA DARBĪBĀ, DEKLĀTĀ VAI CITĀDI, KAS IZRIETĀS NO, IZMANTOŠANAS VAI SAISTĪBĀ AR TO. PROGRAMMATŪRA.</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="LlmCallFailedMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmCallFailedMessage" xml:space="preserve">
+    <value>LLM izsaukums neizdevās: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmErrorParsingJsonMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmErrorParsingJsonMessage" xml:space="preserve">
+    <value>Kļūda, parsējot LLM JSON atbildi: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmHtttpResponseErrorMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmHtttpResponseErrorMessage" xml:space="preserve">
+    <value>Kļūda, veicot HTTP pieprasījumu uz LLM: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmInvalidMessageElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmInvalidMessageElementMessage" xml:space="preserve">
+    <value>LLM atbilde nesatur derīgu 'message' objektu pirmajā 'choices' elementā:</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmMisssingChoicesElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmMisssingChoicesElementMessage" xml:space="preserve">
+    <value>LLM atbildē nav derīga 'choices' elementa {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
   <data name="TranslatedCultureString" xml:space="preserve">
     <value>Tas ir tulkots šādā valodā: {0}</value>

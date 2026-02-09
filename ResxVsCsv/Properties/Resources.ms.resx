@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -145,27 +145,28 @@
     <value>Dijana oleh AI</value>
   </data>
   <data name="LicenseText" xml:space="preserve">
-    <value>Kebenaran dengan ini diberikan, secara percuma, kepada mana-mana orang yang mendapatkan salinan perisian ini dan fail dokumentasi yang berkaitan ("Perisian"), untuk berurusan dalam Perisian tanpa sekatan, termasuk tanpa had hak untuk menggunakan, menyalin, mengubah suai, menggabungkan, menerbitkan, mengedar, mensublesenkan, dan/atau menjual salinan Perisian, dan membenarkan orang yang tertakluk kepada syarat Perisian berikut, diberikan kepadanya:
-
-Notis hak cipta di atas dan notis kebenaran ini hendaklah disertakan dalam semua salinan atau sebahagian besar Perisian.
-
-PERISIAN INI DISEDIAKAN "SEBAGAIMANA ADANYA", TANPA SEBARANG JENIS WARANTI, TERSURAT ATAU TERSIRAT, TERMASUK TETAPI TIDAK TERHAD KEPADA WARANTI KEBOLEHPERDAGANGAN, KESESUAIAN UNTUK TUJUAN TERTENTU DAN TANPA PELANGGARAN. DALAM APA PUN PENGARANG ATAU PEMEGANG HAK CIPTA TIDAK AKAN BERTANGGUNGJAWAB ATAS SEBARANG TUNTUTAN, KEROSAKAN ATAU LIABILITI LAIN, SAMA ADA DALAM TINDAKAN KONTRAK, TORT ATAU LAINNYA, TIMBUL DARIPADA, LUAR ATAU BERKAITAN DENGAN PERISIAN ATAU PENGGUNAAN YANG LAIN.</value>
+    <value>Kebenaran dengan ini diberikan, secara percuma, kepada mana-mana orang yang mendapatkan salinan perisian ini dan fail dokumentasi yang berkaitan ("Perisian</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="LlmCallFailedMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmCallFailedMessage" xml:space="preserve">
+    <value>Panggilan LLM gagal: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmErrorParsingJsonMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmErrorParsingJsonMessage" xml:space="preserve">
+    <value>Ralat semasa mengurai respons JSON daripada LLM: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmHtttpResponseErrorMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmHtttpResponseErrorMessage" xml:space="preserve">
+    <value>Ralat semasa menjalankan permintaan HTTP ke LLM: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmInvalidMessageElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmInvalidMessageElementMessage" xml:space="preserve">
+    <value>Respons LLM tidak mengandungi objek 'message' yang sah dalam elemen 'choices' pertama:</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmMisssingChoicesElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmMisssingChoicesElementMessage" xml:space="preserve">
+    <value>Respons LLM tidak mengandungi elemen 'choices' yang sah {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
   <data name="TranslatedCultureString" xml:space="preserve">
     <value>Ia telah diterjemahkan {0}</value>

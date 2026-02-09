@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -152,20 +152,25 @@
 БАҒДАРЛАМАЛЫҚ ҚҰРАМ КЕЗ КЕЛГЕН ТҮРЛЕРДІҢ, АЙҚЫН НЕМЕСЕ ЖҰМЫСТЫ КЕПІЛДІКТЕРСІЗ, БІРАҚ САТУ КЕПІЛДЕРІМЕН, НЕГІЗГІ МАҚСАТҚА ЖӘНЕ МАҚСАТҚА ЖӘНЕ МАҚСАТҚА СӘЙКЕМДІККЕ САЙЫМДАСТЫҚТЫҢ ҚОСЫМЫНДА, БІРАҚ ШЕКТЕУЛЕГЕН КЕПІЛДІГІСІЗ «БҰЛ ҚАЛАЙ» ҚАМТАМАСЫЗ ЕТЕДІ. АВТОРЛАР НЕМЕСЕ АВТОРЛЫҚ ҚҰҚЫҚ ИЕЛЕРІ ЕШҚАНДА ЕМЕС КЕЗ КЕЛГЕН ШАҒЫМДАСТЫРУ, ЗИЯН НЕ БАСҚА ЖАУАПКЕРШІЛІК ҮШІН, КЕЛІСІМ-ШАТ ӘРЕКЕТТЕРДІҢ, ЗИЯНДАРДЫҢ НЕ БАСҚА ТӘСІЛДЕРДІҢ НЕГІЗІНДЕ, БАСҚА НЕМЕСЕ АЙТЫНДАҒАН ТУЫНДАҒЫ ЖАУАПКЕРШІЛІКТІ БОЛМАЙДЫ. НЕМЕСЕ БАҒДАРЛАМАЛЫҚ ҚҰРАЛДАҒЫ БАСҚА МӘМІЛЕЛЕР.БАҒДАРЛАМАЛЫҚ ҚҰРАМ КЕЗ КЕЛГЕН ТҮРЛЕРДІҢ, АЙҚЫН НЕМЕСЕ ЖҰМЫСТЫ КЕПІЛДІКТЕРСІЗ, БІРАҚ САТУ КЕПІЛДЕРІМЕН, НЕГІЗГІ МАҚСАТҚА ЖӘНЕ МАҚСАТҚА ЖӘНЕ МАҚСАТҚА СӘЙКЕМДІККЕ САЙЫМДАСТЫҚТЫҢ ҚОСЫМЫНДА, БІРАҚ ШЕКТЕУЛЕГЕН КЕПІЛДІГІСІЗ «БҰЛ ҚАЛАЙ» ҚАМТАМАСЫЗ ЕТЕДІ. АВТОРЛАР НЕМЕСЕ АВТОРЛЫҚ ҚҰҚЫҚ ИЕЛЕРІ ЕШҚАНДА ЕМЕС КЕЗ КЕЛГЕН ШАҒЫМДАСТЫРУ, ЗИЯН НЕ БАСҚА ЖАУАПКЕРШІЛІК ҮШІН, КЕЛІСІМ-ШАТ ӘРЕКЕТТЕРДІҢ, ЗИЯНДАРДЫҢ НЕ БАСҚА ТӘСІЛДЕРДІҢ НЕГІЗІНДЕ, БАСҚА НЕМЕСЕ АЙТЫНДАҒАН ТУЫНДАҒЫ ЖАУАПКЕРШІЛІКТІ БОЛМАЙДЫ. НЕМЕСЕ БАҒДАРЛАМАЛЫҚ ҚҰРАЛДАҒЫ БАСҚА МӘМІЛЕЛЕР.</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="LlmCallFailedMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmCallFailedMessage" xml:space="preserve">
+    <value>LLM қоңырауы орындалмады: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmErrorParsingJsonMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmErrorParsingJsonMessage" xml:space="preserve">
+    <value>LLM жүйесінен алынған JSON жауапты талдау кезінде қате орын алды: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmHtttpResponseErrorMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmHtttpResponseErrorMessage" xml:space="preserve">
+    <value>LLM-ге HTTP сұранысын орындау кезінде қате пайда болды: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmInvalidMessageElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmInvalidMessageElementMessage" xml:space="preserve">
+    <value>LLM жауабында бірінші 'choices' элементінде жарамды 'message' объектісі жоқ:</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmMisssingChoicesElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmMisssingChoicesElementMessage" xml:space="preserve">
+    <value>LLM жауабында жарамды 'choices' элементі жоқ {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
   <data name="TranslatedCultureString" xml:space="preserve">
     <value>Ол аударылды: {0}</value>

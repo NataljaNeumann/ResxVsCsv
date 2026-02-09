@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -151,27 +151,28 @@
     <value>د AI لخوا تولید شوی</value>
   </data>
   <data name="LicenseText" xml:space="preserve">
-    <value>په دې توګه اجازه ورکول کیږي، وړیا، هر هغه چا ته چې د دې سافټویر او اړوندو اسنادو فایلونو ("سافټویر") یوه کاپي ترلاسه کوي، پرته له کوم محدودیت څخه په سافټویر کې معامله وکړي، په شمول پرته له کوم محدودیت څخه د سافټویر د کارولو، کاپي کولو، تعدیل، یوځای کولو، خپرولو، ویشلو، فرعي جواز، او/یا د پلورلو حقونه، او هغه چا ته اجازه ورکول کیږي چې د سافټویر تابع وي. په لاندې شرایطو کې:
-
-د پورتني کاپي حق خبرتیا او د اجازې دا خبرتیا باید د سافټویر په ټولو کاپي یا د پام وړ برخو کې شامل شي.
-
-سافټویر د هر ډول تضمین پرته "لکه څنګه چې دی" چمتو شوی، څرګند یا ضمیمه شوی، په شمول مګر د سوداګریزې وړتیا، مناسبې ځانګړې موخې لپاره د تضمین تضمینونو پورې محدود نه دی. په هیڅ صورت کې به لیکوالان یا د کاپي حق لرونکي د هر ډول ادعا، زیانونو یا نورو مسؤلیتونو لپاره مسؤل نه وي، که څه هم د تړون په یوه عمل کې، شکنجه یا بل ډول، د بیا وروسته وروسته، له دې وروسته رامنځ ته کیږي په سافټویر کې کارول یا نورې معاملې.</value>
+    <value>په دې توګه اجازه ورکول کیږي، وړیا، هر هغه چا ته چې د دې سافټویر او اړوندو اسنادو فایلونو ("سافټویر</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="LlmCallFailedMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmCallFailedMessage" xml:space="preserve">
+    <value>د LLM غوښتنه ناکامه شوه: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmErrorParsingJsonMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmErrorParsingJsonMessage" xml:space="preserve">
+    <value>د LLM څخه د JSON ځواب د تجزیې پر مهال تېروتنه: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmHtttpResponseErrorMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmHtttpResponseErrorMessage" xml:space="preserve">
+    <value>د LLM ته د HTTP غوښتنې پر مهال تېروتنه: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmInvalidMessageElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmInvalidMessageElementMessage" xml:space="preserve">
+    <value>د LLM ځواب په لومړي 'choices' عنصر کې معتبر 'message' شی نه لري</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmMisssingChoicesElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmMisssingChoicesElementMessage" xml:space="preserve">
+    <value>د LLM ځواب کې یو معتبر 'choices' عنصر {0} نشته</value>
+    <comment>Von KI generiert</comment>
   </data>
   <data name="RightToLeft" xml:space="preserve">
     <value>Yes</value>

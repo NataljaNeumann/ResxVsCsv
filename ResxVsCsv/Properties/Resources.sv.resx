@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -145,27 +145,28 @@
     <value>Genereras av AI</value>
   </data>
   <data name="LicenseText" xml:space="preserve">
-    <value>Tillstånd ges härmed kostnadsfritt till varje person som skaffar en kopia av denna programvara och tillhörande dokumentationsfiler ("Programvaran"), att handla med programvaran utan begränsningar, inklusive utan begränsning rätten att använda, kopiera, modifiera, slå samman, publicera, distribuera, underlicensiera och/eller sälja kopior av programvaran, och att tillåta personer för vilka programvaran är föremål för följande villkor:
-
-Ovanstående copyrightmeddelande och detta tillståndsmeddelande ska inkluderas i alla kopior eller väsentliga delar av programvaran.
-
-PROGRAMVARAN TILLHANDAHÅLLS "I BEFINTLIGT SKICK", UTAN GARANTIER AV NÅGOT SLAG, UTTRYCKTA ELLER UNDERFÖRSTÅDDA, INKLUSIVE MEN INTE BEGRÄNSAT TILL GARANTIER FÖR SÄLJBARHET, LÄMPLIGHET FÖR ETT SÄRSKILT ÄNDAMÅL OCH INTRÄNGNING. UNDER INGA OMSTÄNDIGHETER SKALL FÖRFATTARE ELLER UPPHOVSRÄTTSINNEHAVARE VARA ANSVARIGA FÖR NÅGOT ANSVAR, SKADOR ELLER ANNAT ANSVAR, VARKEN I EN ANVÄNDNING AV KONTRAKT, TORT ELLER ANNAT SÄTT, SOM UPPSTÅR FRÅN, UTAN ELLER I SAMBAND MED ANVÄNDNING AV ANVÄNDA MJUKVARAN.</value>
+    <value>Tillstånd ges härmed kostnadsfritt till varje person som skaffar en kopia av denna programvara och tillhörande dokumentationsfiler ("Programvaran</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="LlmCallFailedMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmCallFailedMessage" xml:space="preserve">
+    <value>LLM-anrop misslyckades: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmErrorParsingJsonMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmErrorParsingJsonMessage" xml:space="preserve">
+    <value>Fel vid tolkning av JSON-svar från LLM: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmHtttpResponseErrorMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmHtttpResponseErrorMessage" xml:space="preserve">
+    <value>Fel vid HTTP-begäran till LLM: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmInvalidMessageElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmInvalidMessageElementMessage" xml:space="preserve">
+    <value>LLM-svaret innehåller inte ett giltigt 'message'-objekt i det första 'choices'-elementet:</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmMisssingChoicesElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmMisssingChoicesElementMessage" xml:space="preserve">
+    <value>LLM-svaret innehåller inte ett giltigt 'choices'-element {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
   <data name="TranslatedCultureString" xml:space="preserve">
     <value>Den har översatts {0}</value>

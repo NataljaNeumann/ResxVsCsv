@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -145,27 +145,28 @@
     <value>AI үүсгэсэн</value>
   </data>
   <data name="LicenseText" xml:space="preserve">
-    <value>Энэхүү програм хангамжийн хуулбар болон холбогдох баримт бичгийн файлыг ("Програм хангамж") олж авсан аливаа этгээдэд Програм хангамжийн хуулбарыг ашиглах, хуулах, өөрчлөх, нэгтгэх, нийтлэх, түгээх, тусгай зөвшөөрөл олгох болон/эсвэл худалдах эрхийг хязгаарлахгүйгээр Програм хангамжийг ашиглах, мөн дараах нөхцлүүдийг дагаж мөрдөхийг зөвшөөрч байна.
-
-Дээрх зохиогчийн эрхийн мэдэгдэл болон энэхүү зөвшөөрлийн мэдэгдэл нь Програм хангамжийн бүх хуулбар эсвэл ихээхэн хэсэгт багтсан байна.
-
-ПРОГРАММ ХЭРЭГСЭЛИЙГ "БАЙГААГААР НЬ" ЯМАП Ч ТӨРЛИЙН, ИЛТ ЭСВЭЛ ДАЛД БАТАЛГАА ӨГӨХГҮЙ, ОНЦЛОХ ЗОРИУЛАЛТ, ЗОРИУЛАЛТЫН БУС ЗОРИУЛАЛТЫН БАТАЛГАА ОРОН ГЭХДЭЭ ХЯЗГААРЛАХГҮЙ. ЗОХИОГЧ БУЮУ ЗОХИОГЧИЙН ЭРХ ЭЗЭМШИГЧИД НЭГДСЭН ГЭРЭЭГЭЭС ГАРСАН ГЭРЭЭНИЙ ҮЙЛ АЖИЛЛАГАА, ЗОХИОН БАЙГУУЛАЛТ, БУСАД ЗОРИУЛАЛТ, ХОХИРОЛ, БУСАД ХАРИУЦЛАГЫГ ХАРИУЦАХГҮЙ. ЭСВЭЛ ПРОГРАММЫН БУСАД ХАРИУЦЛАГА.</value>
+    <value>Энэхүү програм хангамжийн хуулбар болон холбогдох баримт бичгийн файлыг ("Програм хангамж</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="LlmCallFailedMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmCallFailedMessage" xml:space="preserve">
+    <value>LLM дуудлага амжилтгүй боллоо: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmErrorParsingJsonMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmErrorParsingJsonMessage" xml:space="preserve">
+    <value>LLM-сээс ирсэн JSON хариуг задлахад алдаа гарлаа: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmHtttpResponseErrorMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmHtttpResponseErrorMessage" xml:space="preserve">
+    <value>LLM руу HTTP хүсэлт илгээх үед алдаа гарлаа: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmInvalidMessageElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmInvalidMessageElementMessage" xml:space="preserve">
+    <value>LLM-ийн хариу эхний 'choices' элементийн дотор хүчинтэй 'message' объект агуулаагүй байна:</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmMisssingChoicesElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmMisssingChoicesElementMessage" xml:space="preserve">
+    <value>LLM-ийн хариу нь хүчинтэй 'choices' элемент {0}-г агуулаагүй байна</value>
+    <comment>Von KI generiert</comment>
   </data>
   <data name="TranslatedCultureString" xml:space="preserve">
     <value>Үүнийг {0} орчуулсан</value>

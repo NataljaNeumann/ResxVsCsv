@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -152,20 +152,25 @@
 СОФТУЕРЪТ СЕ ПРЕДОСТАВЯ "ТАКЪВ КАКЪВ Е", БЕЗ КАКВАТО И ДА Е ГАРАНЦИЯ, ИЗРИЧНА ИЛИ КОСВЕНА, ВКЛЮЧИТЕЛНО, НО НЕ САМО, ГАРАНЦИИТЕ ЗА ПРОДАВАЕМОСТ, ГОДНОСТ ЗА ОПРЕДЕЛЕНА ЦЕЛ И НЕНАРУШЕНИЕ. В НИКАКЪВ СЛУЧАЙ АВТОРИТЕ ИЛИ ПРИТЕЖАТЕЛИТЕ НА АВТОРСКИ ПРАВА НЕ НОСИ ОТГОВОРНОСТ ЗА ИСК, ЩЕТИ ИЛИ ДРУГА ОТГОВОРНОСТ, НЕЗАВИСИМО ДА Е ВЪЗ ДОГОВОР, ДЕЛИКТ ИЛИ ДРУГО, ПРОИЗТИЧАЩО ОТ, ИЗВЪН ИЛИ ВЪВ ВРЪЗКА СЪС СОФТУЕРА ИЛИ ИЗПОЛЗВАНЕТО ИЛИ ДРУГИ СДЕЛКИ В СОФТУЕР.</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="LlmCallFailedMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmCallFailedMessage" xml:space="preserve">
+    <value>Обаждането към LLM неуспешно: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmErrorParsingJsonMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmErrorParsingJsonMessage" xml:space="preserve">
+    <value>Грешка при анализиране на JSON отговор от LLM: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmHtttpResponseErrorMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmHtttpResponseErrorMessage" xml:space="preserve">
+    <value>Грешка при изпълнение на HTTP заявка към LLM: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmInvalidMessageElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmInvalidMessageElementMessage" xml:space="preserve">
+    <value>Отговорът на LLM не съдържа валиден обект 'message' в първия елемент на 'choices':</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmMisssingChoicesElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmMisssingChoicesElementMessage" xml:space="preserve">
+    <value>Отговорът от LLM не съдържа валиден елемент 'choices' {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
   <data name="TranslatedCultureString" xml:space="preserve">
     <value>Преведено е на {0}</value>

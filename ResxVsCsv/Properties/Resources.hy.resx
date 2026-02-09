@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -152,20 +152,25 @@
 ԾՐԱԳՐԱԿԱՆ ԾՐԱԳՐԸ ՏՐԱՄԱԴՐՎՈՒՄ Է «ԻՆՉՊԵՍ ԿԱ», ԱՌԱՆՑ ՈՐԵՎԷ ՏԵՍԱԿԻ ԵՐԱՇԽԻՔԻ, ՀԱՅՏԱՐԱՐ ԿԱՄ ՆԿԱՏԻՐՎԱԾ, ՆԵՐԱՌՅԱԼ, ԲԱՅՑ ՉՍԱՀՄԱՆԱՓԱԿՎՈՂ ԱՐՏԱԴՐԱԿԱՆՈՒԹՅԱՆ ԵՐԱՇԽԻՔՆԵՐՈՎ, ՊԱՏԱՍԽԱՆՈՒԹՅԱՆ ՀԱՏՈՒԿ ՆՊԱՏԱԿՈՎ ԵՎ ՆՊԱՏԱԿՈՎ: ՈՉ ՄԻ ԴԵՊՔՈՒՄ ՀԵՂԻՆԱԿՆԵՐԸ ԿԱՄ ՀԵՂԻՆԱԿԱՅԻՆ ԻՐԱՎՈՒՆՔՆԵՐԸ ՊԱՏԱՍԽԱՆԱՏՎՈՒԹՅՈՒՆ ՉԻ ՊԱՏԱՍԽԱՆԱՏՎԵԼ ՈՐԵՎԷ ՊԱՀԱՆՋԻ, ՎՆԱՍԻ ԿԱՄ ԱՅԼ ՊԱՏԱՍԽԱՆԱՏՎՈՒԹՅԱՆ ՀԱՄԱՐ՝ ԱՆԿԱԽ ՊԱՅՄԱՆԱԳՐԻ ԳՈՐԾՈՂՈՒԹՅԱՆ, ԴԱՇԽԱՏՈՒԹՅԱՆ, ԿԱՄ ԱՅԼ ՀԱԿԱՌԱԿԻՑ, ՈՐ ԲԱՑՎՈՒՄ Է ԱՊԱՀՈՎ ՄԵԶ. ԿԱՄ ԱՅԼ ԳՈՐԾՈՒՆՔՆԵՐ ԾՐԱԳՐԵՐԻ ՄԵՋ:</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="LlmCallFailedMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmCallFailedMessage" xml:space="preserve">
+    <value>LLM–ի կանչը ձախողվեց՝ {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmErrorParsingJsonMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmErrorParsingJsonMessage" xml:space="preserve">
+    <value>Սխալ՝ JSON պատասխանի վերլուծության ժամանակ LLM-ից՝ {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmHtttpResponseErrorMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmHtttpResponseErrorMessage" xml:space="preserve">
+    <value>Սխալ առաջացավ HTTP հարցում կատարելու ժամանակ դեպի LLM՝ {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmInvalidMessageElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmInvalidMessageElementMessage" xml:space="preserve">
+    <value>LLM-ի արձագանքը չի պարունակում վավեր «message» օբյեկտ առաջին «choices» տարրի մեջ:</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmMisssingChoicesElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmMisssingChoicesElementMessage" xml:space="preserve">
+    <value>LLM-ի պատասխանն չի պարունակում վավեր «choices» տարր {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
   <data name="TranslatedCultureString" xml:space="preserve">
     <value>Այն թարգմանվել է {0}</value>

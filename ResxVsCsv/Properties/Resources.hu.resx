@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -145,27 +145,28 @@
     <value>AI által generált</value>
   </data>
   <data name="LicenseText" xml:space="preserve">
-    <value>A szoftver és a kapcsolódó dokumentációs fájlok (a "Szoftver") másolatát megszerző bármely személy ingyenesen engedélyt ad arra, hogy korlátozás nélkül kereskedjen a Szoftverrel, beleértve korlátozás nélkül a Szoftver használatára, másolására, módosítására, egyesítésére, közzétételére, terjesztésére, allicencelésére és/vagy eladására vonatkozó jogokat, valamint a szoftverrel ellátott személyek számára, hogy ezt megtegyék:
-
-A fenti szerzői jogi megjegyzést és ezt az engedélyt tartalmazó megjegyzést a Szoftver minden másolatának vagy jelentős részének tartalmaznia kell.
-
-A SZOFTVER „AHOGY VAN”, MINDEN FÉLE, KIFEJEZETT VAGY VÉLEMEZTETETT GARANCIA NÉLKÜL, BELEÉRTVE, DE NEM KORLÁTOZOTT AZ ELADHATÓSÁGRA, A MEGHATÁROZOTT CÉLRA VALÓ ALKALMASSÁGRA ÉS A JOGSÉRTÉSRE VONATKOZÓ GARANCIA NÉLKÜL. A SZERZŐK VAGY A SZERZŐI JOGOK TULAJDONOSA SEMMILYEN ESETBEN NEM VÁLLALKOZNAK FELELŐSSÉGET SEMMILYEN KÖVETELÉSÉRT, KÁROKÉRT VAGY EGYÉB FELELŐSSÉGÉRT, AKÁR AKÁR SZERZŐDÉS CSELEKVÉSÉBŐL, VAGY EGYÉBEN, AZ EGYÉB HASZNÁLATBÓL, VAGY AZZAL KAPCSOLATBAN KERÜLŐDŐ. A SZOFTVER.</value>
+    <value>A szoftver és a kapcsolódó dokumentációs fájlok (a "Szoftver</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="LlmCallFailedMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmCallFailedMessage" xml:space="preserve">
+    <value>LLM hívás sikertelen: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmErrorParsingJsonMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmErrorParsingJsonMessage" xml:space="preserve">
+    <value>Hiba történt az LLM JSON válaszának feldolgozása közben: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmHtttpResponseErrorMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmHtttpResponseErrorMessage" xml:space="preserve">
+    <value>Hiba történt a HTTP-kérés során az LLM-hez: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmInvalidMessageElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmInvalidMessageElementMessage" xml:space="preserve">
+    <value>Az LLM válasza nem tartalmaz érvényes 'message' objektumot az első 'choices' elemben:</value>
+    <comment>Von KI generiert</comment>
   </data>
-  <data name="LlmMisssingChoicesElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="LlmMisssingChoicesElementMessage" xml:space="preserve">
+    <value>Az LLM válasz nem tartalmaz érvényes 'choices' elemet: {0}</value>
+    <comment>Von KI generiert</comment>
   </data>
   <data name="TranslatedCultureString" xml:space="preserve">
     <value>Lefordították {0} nyelvre</value>
