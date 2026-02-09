@@ -191,6 +191,13 @@ namespace ResxVsCsv
                             if (i + 1 < aArgs.Length)
                             {
                                 strTranslationService = aArgs[++i];
+                                if ("llm".Equals(strTranslationService, 
+                                    StringComparison.InvariantCultureIgnoreCase))
+                                {
+                                    // if user wants to translate with LLM then provide
+                                    // all available translations to LLM per default
+                                    bBruteForce = true;
+                                }
                             }
                             break;
                         case "--toresx":
@@ -341,8 +348,8 @@ namespace ResxVsCsv
                             WriteWrappedText(
                                 Properties.Resources.ForTranslationWithLLM +
                                 "ResxVsCsv --directory <dir> --pattern <pattern> \r\n" +
-                                "  --translator llm --llmeurl <url> --llmmodel <moel> [--apikey <key>] [--sortbyname yes]\r\n" +
-                                "  [--bruteforce yes] [--defaultculture <culture>]");
+                                "  --translator llm --llmeurl <url> --llmmodel <model> [--apikey <key>] [--sortbyname yes]\r\n" +
+                                "  [--defaultculture <culture>]");
 
 
                             WriteWrappedText(
@@ -510,8 +517,18 @@ namespace ResxVsCsv
                             foreach (string strCulture in astrDistinctCultures)
                             {
                                 string strComment = "";
-
                                 Entry? oEntry;
+
+                                if (oEntriesDictionary.TryGetValue(
+                                    new Entry { Culture = "(default)", Name = strName }, out oEntry))
+                                {
+                                    if (string.IsNullOrEmpty(strComment) &&
+                                        !string.IsNullOrEmpty(oEntry.Comment))
+                                    {
+                                        strComment = oEntry.Comment;
+                                    }
+                                }
+
 #if TEST_TRANSLATION_LOGIC
                                 if ((string.IsNullOrEmpty(strTranslationService) || 
                                      oNameTypes.ContainsKey(strName) ||
@@ -524,13 +541,6 @@ namespace ResxVsCsv
 #endif
                                 {
                                     aOutputList.Add(oEntry);
-
-                                    if ((string.IsNullOrEmpty(strComment) &&
-                                        !string.IsNullOrEmpty(oEntry.Comment)) ||
-                                        "(default)".Equals(oEntry.Culture))
-                                    {
-                                        strComment = oEntry.Comment;
-                                    }
                                 }
                                 else
                                 {
@@ -625,6 +635,7 @@ namespace ResxVsCsv
 
 
                                             if (!string.IsNullOrEmpty(strBestTranslation))
+                                            {
                                                 aOutputList.Add(new Entry
                                                 {
                                                     Culture = strCulture,
@@ -632,10 +643,21 @@ namespace ResxVsCsv
                                                     Value = strBestTranslation,
                                                     Comment = Properties.Resources.GeneratedByAi
                                                 });
+                                            } else
+                                            {
+                                                aOutputList.Add(new Entry
+                                                {
+                                                    Culture = strCulture,
+                                                    Name = strName,
+                                                    Comment = oNameTypes.ContainsKey(strName) || strName.StartsWith(">>") ? "" : c_strSpecialComment,
+                                                    Type = oNameTypes.ContainsKey(strName) ? oNameTypes[strName] : null,
+                                                    MimeType = oNameMimeTypes.ContainsKey(strName) ? oNameMimeTypes[strName] : null,
+                                                });
+                                            }
 
                                             WriteWrappedText(
-                                                string.Format(Properties.Resources.TranslatedCultureString,
-                                                    strCulture + " - " + strName));
+                                                    string.Format(Properties.Resources.TranslatedCultureString,
+                                                        strCulture + " - " + strName));
                                         }
                                         catch (Exception oEx)
                                         {
@@ -654,6 +676,17 @@ namespace ResxVsCsv
                             {
                                 Entry? oEntry;
                                 string strComment = "";
+
+                                if (oEntriesDictionary.TryGetValue(
+                                    new Entry { Culture = "(default)", Name = strName }, out oEntry))
+                                {
+                                    if (string.IsNullOrEmpty(strComment) &&
+                                        !string.IsNullOrEmpty(oEntry.Comment))
+                                    {
+                                        strComment = oEntry.Comment;
+                                    }
+                                }
+
 #if TEST_TRANSLATION_LOGIC
                                 if ((string.IsNullOrEmpty(strTranslationService) ||
                                      oNameTypes.ContainsKey(strName) ||
@@ -666,13 +699,6 @@ namespace ResxVsCsv
 #endif
                                 {
                                     aOutputList.Add(oEntry);
-
-                                    if ((string.IsNullOrEmpty(strComment) &&
-                                        !string.IsNullOrEmpty(oEntry.Comment)) ||
-                                        "(default)".Equals(oEntry.Culture))
-                                    {
-                                        strComment = oEntry.Comment;
-                                    }
                                 }
                                 else
                                 {
@@ -766,6 +792,7 @@ namespace ResxVsCsv
                                                 strApiUrl, bBruteForce, strLLMModel, strName, strComment);
 
                                             if (!string.IsNullOrEmpty(strBestTranslation))
+                                            {
                                                 aOutputList.Add(new Entry
                                                 {
                                                     Culture = strCulture,
@@ -773,6 +800,18 @@ namespace ResxVsCsv
                                                     Value = strBestTranslation,
                                                     Comment = Properties.Resources.GeneratedByAi
                                                 });
+                                            }
+                                            else
+                                            {
+                                                aOutputList.Add(new Entry
+                                                {
+                                                    Culture = strCulture,
+                                                    Name = strName,
+                                                    Comment = oNameTypes.ContainsKey(strName) || strName.StartsWith(">>") ? "" : c_strSpecialComment,
+                                                    Type = oNameTypes.ContainsKey(strName) ? oNameTypes[strName] : null,
+                                                    MimeType = oNameMimeTypes.ContainsKey(strName) ? oNameMimeTypes[strName] : null,
+                                                });
+                                            }
 
                                             WriteWrappedText(
                                                 string.Format(Properties.Resources.TranslatedCultureString,
@@ -1913,7 +1952,7 @@ namespace ResxVsCsv
 
                         if (!oResponse.IsSuccessStatusCode)
                         {
-                            Console.WriteLine(string.Format(
+                            Console.Error.WriteLine(string.Format(
                                 Properties.Resources.LlmCallFailedMessage, oResponse.StatusCode));
                             continue;
                         }
@@ -1935,7 +1974,7 @@ namespace ResxVsCsv
                                         oChoices.GetArrayLength() == 0
                                         )
                                     {
-                                        Console.WriteLine(string.Format(
+                                        Console.Error.WriteLine(string.Format(
                                             Properties.Resources.LlmMisssingChoicesElementMessage,
                                             strApiResult));
                                         continue;
@@ -1948,13 +1987,23 @@ namespace ResxVsCsv
                                     if (!oFirstChoice.TryGetProperty("message", out oMessage) ||
                                         oMessage.ValueKind != JsonValueKind.Object)
                                     {
-                                        Console.WriteLine(string.Format(
+                                        Console.Error.WriteLine(string.Format(
                                             Properties.Resources.LlmInvalidMessageElementMessage,
                                             strApiResult));
                                         continue;
                                     }
 
-                                    string? strMessage = oMessage.GetString();
+                                    JsonElement oMessageContent;
+                                    if (!oMessage.TryGetProperty("content", out oMessageContent) ||
+                                        oMessageContent.ValueKind != JsonValueKind.String)
+                                    {
+                                        Console.Error.WriteLine(string.Format(
+                                            Properties.Resources.LlmInvalidMessageElementMessage,
+                                            strApiResult));
+                                        continue;
+                                    }
+
+                                    string? strMessage = oMessageContent.GetString();
                                     ostrResult = strMessage ?? string.Empty;
 
                                     return true;
@@ -1962,7 +2011,7 @@ namespace ResxVsCsv
                                 }
                             } catch (JsonException oEx2)
                             {
-                                Console.WriteLine(string.Format(
+                                Console.Error.WriteLine(string.Format(
                                     Properties.Resources.LlmErrorParsingJsonMessage, oEx2.Message));
                                 continue;
                             }
@@ -1973,13 +2022,13 @@ namespace ResxVsCsv
                     {
                         if (oEx is AggregateException && oEx.InnerException != null)
                         {
-                            Console.WriteLine(string.Format(
+                            Console.Error.WriteLine(string.Format(
                                 Properties.Resources.LlmHtttpResponseErrorMessage,
                                 oEx.InnerException.Message));
                         }
                         else
                         {
-                            Console.WriteLine(string.Format(
+                            Console.Error.WriteLine(string.Format(
                                 Properties.Resources.LlmHtttpResponseErrorMessage, 
                                 oEx.Message));
                         }
@@ -2029,17 +2078,20 @@ namespace ResxVsCsv
                     "based on available information. Text passages in source texts like " +
                     "{1}, {2}, {3} etc mean insertings that will be done later, during runtime "+
                     "of application, those can be e.g. numbers or text passages. "+
-                    "They need to be placed in a meaningful way in the result." +
-                    "Please return the translation as text without any additional comments."
+                    "They need to be placed in a meaningful way in the result. " +
+                    "Please use the name of the element and the comment(if available as hints), " +
+                    "don't translate them. If there is a hint that the string or value shall not be " +
+                    "translated then return an empty string as a translation. " +
+                    "Please return the translation as text without any additional comments or JSON structure."
                 });
 
                 aMessages.Add(new
                 {
                     role = "user",
                     content =
-                        "The name of the element is "+strElementName+". "+
-                        (!string.IsNullOrEmpty(strComment)?("My comment to element: "+strComment)+'.':"")+
-                        "Please provide translation in the culture with IETF-code '" + strTargetLanguage + "'."
+                         "The name of the element that is mentioned in the source code is '" + strElementName + "'. " +
+                         (!string.IsNullOrEmpty(strComment) ? ("The comment to element, mentioned in code: " + strComment) + '.' : "") +
+                         "Please provide translation in the culture '" + strTargetLanguage + "', the available translations follow."
                 });
 
                 // add all awailable translations
@@ -2048,11 +2100,12 @@ namespace ResxVsCsv
                     aMessages.Add(new
                     {
                         role = "user",
-                        content = "This is a translation in a culture with IETF-code '" + oTranslation.Language + "':" +
+                        content = "This is an available translation of the text in culture '" + oTranslation.Language + "':" +
                         oTranslation.Text
                     });
                 }
 
+ 
                 var oRequest = new
                 {
                     model = strLLMModel,
