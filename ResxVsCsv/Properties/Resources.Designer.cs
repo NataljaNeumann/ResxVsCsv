@@ -61,7 +61,7 @@ namespace ResxVsCsv.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Copyright © 2025  ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Copyright © 2025-2026  ähnelt.
         /// </summary>
         internal static string CopyrightMessage {
             get {
