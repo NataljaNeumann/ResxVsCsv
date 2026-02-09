@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CopyrightMessage" xml:space="preserve">
     <value>Autortiesības © 2025 </value>
@@ -135,6 +135,9 @@
   <data name="ForTranslationWithLibreTranslate" xml:space="preserve">
     <value>Lai tulkotu ar LibreTranslate: </value>
   </data>
+  <data name="ForTranslationWithLLM" xml:space="preserve">
+    <value>Lai tulkotu ar LLM: </value>
+  </data>
   <data name="ForUpdatingResxFiles" xml:space="preserve">
     <value>Lai atjauninātu .Resx failus: </value>
   </data>
@@ -147,6 +150,22 @@
 Iepriekš minētais autortiesību paziņojums un šis paziņojums par atļauju ir jāiekļauj visās Programmatūras kopijās vai būtiskajās daļās.
 
 PROGRAMMATŪRA TIEK PIEDĀVĀTA TĀDA, KĀDA IR, BEZ JEBKĀDA VEIDA, TIEŠAS VAI NETIEŠAS GARANTIJAS, IESKAITOT, BET NEAPROBEŽOTAS, GARANTIJAS PAR TIRDZNIECĪBU, PIEMĒROTĪBU KONKRĒTAM MĒRĶIEM UN PĀRKĀPUMIEM. AUTORI VAI AUTORTIESĪBU ĪPAŠNIEKI NEKĀDĀ GADĪJUMĀ NAV ATBILDĪGI PAR JEBKĀDĀM PRASĪBĀM, ZAUDĒJUMIEM VAI CITĀM ATBILDĪBĀM LĪGUMA DARBĪBĀ, DEKLĀTĀ VAI CITĀDI, KAS IZRIETĀS NO, IZMANTOŠANAS VAI SAISTĪBĀ AR TO. PROGRAMMATŪRA.</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="LlmCallFailedMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="LlmErrorParsingJsonMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="LlmHtttpResponseErrorMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="LlmInvalidMessageElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="LlmMisssingChoicesElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
   </data>
   <data name="TranslatedCultureString" xml:space="preserve">
     <value>Tas ir tulkots šādā valodā: {0}</value>

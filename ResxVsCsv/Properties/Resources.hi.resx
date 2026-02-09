@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CopyrightMessage" xml:space="preserve">
     <value>कॉपीराइट © 2025 </value>
@@ -130,10 +130,13 @@
     <value>अनुवाद के लिए: </value>
   </data>
   <data name="ForTranslationWithArgos" xml:space="preserve">
-    <value>आर्गोस के साथ अनुवाद के लिए: </value>
+    <value>Argos के साथ अनुवाद के लिए: </value>
   </data>
   <data name="ForTranslationWithLibreTranslate" xml:space="preserve">
-    <value>लिब्रेट्रांसलेट के साथ अनुवाद के लिए: </value>
+    <value>LibreTranslate के साथ अनुवाद के लिए: </value>
+  </data>
+  <data name="ForTranslationWithLLM" xml:space="preserve">
+    <value>LLM के साथ अनुवाद के लिए: </value>
   </data>
   <data name="ForUpdatingResxFiles" xml:space="preserve">
     <value>.Resx फ़ाइलें अद्यतन करने के लिए: </value>
@@ -147,6 +150,22 @@
 उपरोक्त कॉपीराइट नोटिस और यह अनुमति नोटिस सॉफ़्टवेयर की सभी प्रतियों या पर्याप्त भागों में शामिल किया जाएगा।
 
 सॉफ़्टवेयर "जैसा है" प्रदान किया जाता है, किसी भी प्रकार की स्पष्ट या निहित वारंटी के बिना, जिसमें व्यापारिकता, किसी विशेष उद्देश्य के लिए उपयुक्तता और गैर-उल्लंघन की वारंटी शामिल है, लेकिन इन्हीं तक सीमित नहीं है। किसी भी स्थिति में लेखक या कॉपीराइट धारक किसी भी दावे, क्षति या अन्य देनदारी के लिए उत्तरदायी नहीं होंगे, चाहे अनुबंध, अपकृत्य या अन्यथा की कार्रवाई में, सॉफ्टवेयर से उत्पन्न, उसके बाहर या उसके संबंध में या उसके उपयोग या अन्य लेनदेन में। सॉफ़्टवेयर।</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="LlmCallFailedMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="LlmErrorParsingJsonMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="LlmHtttpResponseErrorMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="LlmInvalidMessageElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="LlmMisssingChoicesElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
   </data>
   <data name="TranslatedCultureString" xml:space="preserve">
     <value>इसका अनुवाद किया गया है {0}</value>

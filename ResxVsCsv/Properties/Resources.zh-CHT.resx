@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CopyrightMessage" xml:space="preserve">
     <value>版權 © 2025 </value>
@@ -135,6 +135,9 @@
   <data name="ForTranslationWithLibreTranslate" xml:space="preserve">
     <value>使用 LibreTranslate 進行翻譯： </value>
   </data>
+  <data name="ForTranslationWithLLM" xml:space="preserve">
+    <value>使用 LLM 進行翻譯： </value>
+  </data>
   <data name="ForUpdatingResxFiles" xml:space="preserve">
     <value>要更新 .Resx 檔案： </value>
   </data>
@@ -147,6 +150,22 @@
 上述版權聲明和本授權聲明應包含在本軟體的所有副本或主要部分中。
 
 本軟體以「現況」提供，不提供任何明示或暗示的保證，包括但不限於適銷性、特定用途的適用性和不侵權的保證。在任何情況下，作者或版權所有者均不對因本軟體或本軟體的使用或其他交易而引起、或與之相關的任何索賠、損害或其他責任負責，無論是合約、侵權或其他行為。</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="LlmCallFailedMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="LlmErrorParsingJsonMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="LlmHtttpResponseErrorMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="LlmInvalidMessageElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="LlmMisssingChoicesElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
   </data>
   <data name="TranslatedCultureString" xml:space="preserve">
     <value>已翻譯{0}</value>

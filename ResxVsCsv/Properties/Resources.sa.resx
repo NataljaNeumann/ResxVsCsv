@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CopyrightMessage" xml:space="preserve">
     <value>प्रतिलिपि अधिकार © 2025 </value>
@@ -130,10 +130,13 @@
     <value>अनुवादार्थम्: </value>
   </data>
   <data name="ForTranslationWithArgos" xml:space="preserve">
-    <value>आर्गोस् सह अनुवादार्थम्: </value>
+    <value>Argos सह अनुवादार्थम्: </value>
   </data>
   <data name="ForTranslationWithLibreTranslate" xml:space="preserve">
     <value>LibreTranslate इत्यनेन सह अनुवादार्थम्: </value>
+  </data>
+  <data name="ForTranslationWithLLM" xml:space="preserve">
+    <value>LLM इत्यनेन सह अनुवादार्थम्: </value>
   </data>
   <data name="ForUpdatingResxFiles" xml:space="preserve">
     <value>.Resx सञ्चिकानां अद्यतनीकरणार्थम्: </value>
@@ -147,6 +150,22 @@
 उपर्युक्तप्रतिलिपिधर्मसूचना तथा च एषा अनुमतिसूचना सॉफ्टवेयरस्य सर्वासु प्रतिलिपिषु अथवा पर्याप्तभागेषु समाविष्टा भविष्यति।
 
 सॉफ्टवेयर "यथा अस्ति" प्रदत्तं भवति, कस्यापि प्रकारस्य, स्पष्टस्य वा अप्रत्यक्षस्य वा वारण्टीं विना, यत्र विक्रयणस्य, विशिष्टप्रयोजनस्य योग्यतायाः, अउल्लङ्घनस्य च वारण्टीः समाविष्टाः परन्तु एतेषु एव सीमिताः न सन्ति कस्मिन् अपि सन्दर्भे लेखकाः वा प्रतिलिपिधर्मधारकाः वा कस्यापि दावस्य, क्षतिस्य वा अन्यस्य वा उत्तरदायित्वस्य उत्तरदायी न भविष्यन्ति, भवेत् तत् अनुबन्धस्य कार्ये, क्षतिस्य वा अन्यथा, यत् सॉफ्टवेयरस्य वा उपयोगस्य वा अन्यस्य व्यवहारस्य वा सम्बन्धे उत्पद्यते तन्त्रांश।</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="LlmCallFailedMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="LlmErrorParsingJsonMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="LlmHtttpResponseErrorMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="LlmInvalidMessageElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="LlmMisssingChoicesElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
   </data>
   <data name="TranslatedCultureString" xml:space="preserve">
     <value>अनुवादितम् अस्ति {0} ।</value>

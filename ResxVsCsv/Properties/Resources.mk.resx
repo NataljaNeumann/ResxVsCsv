@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CopyrightMessage" xml:space="preserve">
     <value>Авторски права © 2025 </value>
@@ -135,6 +135,9 @@
   <data name="ForTranslationWithLibreTranslate" xml:space="preserve">
     <value>За да преведете со LibreTranslate: </value>
   </data>
+  <data name="ForTranslationWithLLM" xml:space="preserve">
+    <value>За да преведете со LLM: </value>
+  </data>
   <data name="ForUpdatingResxFiles" xml:space="preserve">
     <value>За да ги ажурирате датотеките .Resx: </value>
   </data>
@@ -147,6 +150,22 @@
 Горенаведеното известување за авторски права и ова известување за дозвола ќе бидат вклучени во сите копии или значителни делови од софтверот.
 
 СОФТВЕРОТ СЕ ДОБИВА „КАКО ШТО Е“, БЕЗ НИКОЈ ВИД ГАРАНЦИЈА, ИЗРАЗНА И ИМПЛИЦИРАНА, ВКЛУЧУВАЈЌИ, НО НЕ ОГРАНИЧЕН НА ГАРАНЦИИТЕ ЗА КОРИСТЕЊЕ, ПОДОБРУВАЊЕ ЗА ПОСЕДНА ЦЕЛИ И НЕМА. ВО НИКОЈ СЛУЧАЈ АВТОРИТЕ ИЛИ НОСИТЕЛИТЕ НА АВТОРСКИТЕ ПРАВА НЕМА ДА СЕ ОДГОВАРААТ ЗА НИКАКОВ ПОБАРУВАЊЕ, ШТЕТА ИЛИ ДРУГА ОДГОВОРНОСТ, ДАЛИ ВО ПОСТАВУВАЊЕ НА ДОГОВОР, ДЕЛКИТ ИЛИ ПОИНАКУ, КОИ ПРОИЗЛЕГУВА ПОВЕЌЕ ПОВЕЌЕ ОД НАШ ИЛИ ДРУГИ РАБОТИ ВО СОФТВЕРОТ.</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="LlmCallFailedMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="LlmErrorParsingJsonMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="LlmHtttpResponseErrorMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="LlmInvalidMessageElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="LlmMisssingChoicesElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
   </data>
   <data name="TranslatedCultureString" xml:space="preserve">
     <value>Преведено е {0}</value>

@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CopyrightMessage" xml:space="preserve">
     <value>کاپی رائٹ © 2025 </value>
@@ -132,11 +132,15 @@
 </value>
   </data>
   <data name="ForTranslationWithArgos" xml:space="preserve">
-    <value>آرگوس دے نال ترجمہ کرن لئی:
+    <value>Argos دے نال ترجمہ کرن لئی:
 </value>
   </data>
   <data name="ForTranslationWithLibreTranslate" xml:space="preserve">
     <value>LibreTranslate نال ترجمہ کرن لئی:
+</value>
+  </data>
+  <data name="ForTranslationWithLLM" xml:space="preserve">
+    <value>LLM نال ترجمہ کرن لئی:
 </value>
   </data>
   <data name="ForUpdatingResxFiles" xml:space="preserve">
@@ -152,6 +156,22 @@
 مندرجہ بالا کاپی رائٹ نوٹس تے ایہ اجازت نامہ سافٹ ویئر دیاں ساریاں کاپیاں یا کافی حصیاں وچ شامل کیتا جائے گا۔
 
 سافٹ ویئر "جیویں اے" فراہم کیتا جاندا اے، بغیر کسی قسم دی وارنٹی دے، واضح یا ضمنی، بشمول لیکن تجارتی صلاحیت دی وارنٹیاں تک محدود نئیں، کسے خاص مقصد لئی فٹنس تے کوئی خاص مقصد تک محدود نئیں۔ کسے وی صورت وچ مصنفین یا کاپی رائٹ ہولڈر کسی وی دعوے، نقصانات یا دوجی ذمہ داری دے ذمہ دار نئیں ہون گے، چاہے اوہ معاہدے، ٹورٹ یا دوجی صورت وچ، اس توں پیدا ہون آلے، اس طرح دے اندر، اس طرح توں پیدا ہون آلا ہووے۔ سافٹ ویئر وچ ورتن یا دوجے لین دین۔</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="LlmCallFailedMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="LlmErrorParsingJsonMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="LlmHtttpResponseErrorMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="LlmInvalidMessageElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="LlmMisssingChoicesElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
   </data>
   <data name="RightToLeft" xml:space="preserve">
     <value>Yes</value>

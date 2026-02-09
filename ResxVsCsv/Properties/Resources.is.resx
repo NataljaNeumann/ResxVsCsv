@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CopyrightMessage" xml:space="preserve">
     <value>Höfundarréttur © 2025 </value>
@@ -135,6 +135,9 @@
   <data name="ForTranslationWithLibreTranslate" xml:space="preserve">
     <value>Til að þýða með LibreTranslate: </value>
   </data>
+  <data name="ForTranslationWithLLM" xml:space="preserve">
+    <value>Til að þýða með LLM: </value>
+  </data>
   <data name="ForUpdatingResxFiles" xml:space="preserve">
     <value>Til að uppfæra .Resx skrár: </value>
   </data>
@@ -147,6 +150,22 @@
 Ofangreind höfundarréttartilkynning og þessi leyfistilkynning skulu vera með í öllum eintökum eða verulegum hlutum hugbúnaðarins.
 
 HUGBÚNAÐURINN ER LEYNDUR „EINS OG ER“, ÁN NOKKURS ÁBYRGÐAR, SKÝRI EÐA UNDIRLIÐI, ÞAR Á MEÐ EN EKKI TAKMARKAÐUR VIÐ ÁBYRGÐIR UM SÖLJANNI, HÆFNI Í SÉRSTÖKNUM TILGANGI OG EKKI BROT. HÖFUNDAR EÐA HÖFUNDARRETTAHAFAR SKALA Í ENGUM TILKYNDUM BÆRA ÁBYRGÐ Á KÖFUM, SKAÐUM EÐA AÐRAR ÁBYRGÐ, HVORKI Í SAMNINGS-, skaðabótamáli EÐA ANNAÐ SEM SEM KOMA AF, ÚT EÐA Í TENGSLUM VIÐ NOTKUN VIÐ NOTKUNARVIÐ.</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="LlmCallFailedMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="LlmErrorParsingJsonMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="LlmHtttpResponseErrorMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="LlmInvalidMessageElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="LlmMisssingChoicesElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
   </data>
   <data name="TranslatedCultureString" xml:space="preserve">
     <value>Það hefur verið þýtt {0}</value>

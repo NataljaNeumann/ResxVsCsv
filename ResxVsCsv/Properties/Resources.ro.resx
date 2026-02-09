@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CopyrightMessage" xml:space="preserve">
     <value>Drepturi de autor © 2025 </value>
@@ -135,6 +135,9 @@
   <data name="ForTranslationWithLibreTranslate" xml:space="preserve">
     <value>Pentru a traduce cu LibreTranslate: </value>
   </data>
+  <data name="ForTranslationWithLLM" xml:space="preserve">
+    <value>Pentru a traduce cu LLM: </value>
+  </data>
   <data name="ForUpdatingResxFiles" xml:space="preserve">
     <value>Pentru a actualiza fișierele .Resx: </value>
   </data>
@@ -147,6 +150,22 @@
 Nota privind drepturile de autor de mai sus și această notificare de permisiune vor fi incluse în toate copiile sau părțile substanțiale ale Software-ului.
 
 SOFTWARE-UL ESTE OFERIT „CA AȘA ESTE”, FĂRĂ NICIUN FEL DE GARANȚIE, EXPRESĂ SAU IMPLICITĂ, INCLUSIV, DAR FĂRĂ A SE LIMITA LA GARANȚII DE VANTABILITATE, ADEPRENARE PENTRU UN ANUMIT SCOP ȘI NEÎNCĂLCARE. AUTORII SAU DEȚINĂTORII DE DREPTURI DE AUTOR NU VA FI RESPONSABILIT ÎN NICIO CAZ PENTRU ORICE RECLAMAȚIE, DAUNE SAU ALTĂ RESPONSABILITATE, CHIAR DIN O ACȚIUNE DE CONTRACT, DELICIT SAU ÎN ALTRE MOD, DERIVATE DIN, DIN SAU ÎN LEGAȚIE CU SOFTWARE-UL SAU ALTELE UTILIZARE DE SOFTWARE.</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="LlmCallFailedMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="LlmErrorParsingJsonMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="LlmHtttpResponseErrorMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="LlmInvalidMessageElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="LlmMisssingChoicesElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
   </data>
   <data name="TranslatedCultureString" xml:space="preserve">
     <value>A fost tradus {0}</value>

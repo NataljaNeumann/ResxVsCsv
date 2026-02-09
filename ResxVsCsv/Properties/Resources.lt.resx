@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CopyrightMessage" xml:space="preserve">
     <value>Autorių teisės © 2025 </value>
@@ -135,6 +135,9 @@
   <data name="ForTranslationWithLibreTranslate" xml:space="preserve">
     <value>Norėdami išversti su LibreTranslate: </value>
   </data>
+  <data name="ForTranslationWithLLM" xml:space="preserve">
+    <value>Norėdami išversti su LLM: </value>
+  </data>
   <data name="ForUpdatingResxFiles" xml:space="preserve">
     <value>Norėdami atnaujinti .Resx failus: </value>
   </data>
@@ -147,6 +150,22 @@
 Aukščiau pateiktas pranešimas apie autorių teises ir šis pranešimas apie leidimą turi būti įtrauktas į visas Programinės įrangos kopijas arba svarbias dalis.
 
 PROGRAMINĖ ĮRANGA TEIKIAMA „TOKI, KOKIA YRA“, BE JOKIŲ RŪŠIŲ, AIŠKIŲ AR NUMANOMŲ GARANTIJŲ, ĮSKAITANT, BET JOMIS, JOMIS GARANTIJAS DĖL TINKAMUMO PARDUOTI, TINKAMUMO TAM TAM TIKSLUI IR NEPAŽEIDIMO. JOKIU ATVEJU AUTORIAI AR AUTORIŲ TEISIŲ TURĖTOJAI NEATSAKO UŽ JOKIUS REIKALAVIMUS, ŽALĄ AR KITĄ ATSAKOMYBĘ, ATSIŽVELGIANT Į SUTARTIES VEIKSMUS, NESKELIMUS AR KITAIP, KELIAUSIĄ DĖL, NAUDOJIMO AR SU SU KITAIS SU JAIS PROGRAMINĖ ĮRANGA.</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="LlmCallFailedMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="LlmErrorParsingJsonMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="LlmHtttpResponseErrorMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="LlmInvalidMessageElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="LlmMisssingChoicesElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
   </data>
   <data name="TranslatedCultureString" xml:space="preserve">
     <value>Jis buvo išverstas į {0}</value>

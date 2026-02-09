@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CopyrightMessage" xml:space="preserve">
     <value>Copyright © 2025 </value>
@@ -135,6 +135,9 @@
   <data name="ForTranslationWithLibreTranslate" xml:space="preserve">
     <value>Барои тарҷума бо LibreTranslate: </value>
   </data>
+  <data name="ForTranslationWithLLM" xml:space="preserve">
+    <value>Барои тарҷума бо LLM: </value>
+  </data>
   <data name="ForUpdatingResxFiles" xml:space="preserve">
     <value>Барои навсозии файлҳои .Resx: </value>
   </data>
@@ -147,6 +150,22 @@
 Огоҳии дар боло зикршуда дар бораи ҳуқуқи муаллиф ва ин огоҳиномаи иҷозат бояд ба ҳама нусхаҳо ё қисмҳои муҳими Барнома дохил карда шаванд.
 
 НАРНАМИҲО "ЧУНОН КИ ҲАСТ", БЕ КАФОЛАТИ ҲАМГУН, ОЗОҲ Ё МАСЪАЛӢ, АЗ ҶУМЛА НА БА КАФОЛАТҲОИ ТИҶОРӢ, МУНОСИБАТ БА МАҚСАДҲОИ МАХСУС ВА МАСЪАЛАИ ҒАЙРИҲОИ МАХДУД НЕСТ. БА ҲЕҶ ҲОЛО МУАЛЛИМОН ВА СОХИБОНИ ҲУҚУДИ ​​МУАЛЛИФӢ БАРОИ ЯГОН ДАЪВО, ЗАРАР ВА ДИГАР масъулият, НОҲО АЗ АМАЛИ ШАРТАНДА, ТОҶИКИСТОН ВА ДИГАР ҶАВОБГИРӢ НАМЕШАВАНД. Ё ДИГАР МУНОСИБАТҲО ДАР НАМОЗ.</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="LlmCallFailedMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="LlmErrorParsingJsonMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="LlmHtttpResponseErrorMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="LlmInvalidMessageElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="LlmMisssingChoicesElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
   </data>
   <data name="TranslatedCultureString" xml:space="preserve">
     <value>Тарҷума шудааст {0}</value>

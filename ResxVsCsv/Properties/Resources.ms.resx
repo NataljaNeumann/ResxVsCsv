@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CopyrightMessage" xml:space="preserve">
     <value>Hak Cipta © 2025</value>
@@ -135,6 +135,9 @@
   <data name="ForTranslationWithLibreTranslate" xml:space="preserve">
     <value>Untuk menterjemah dengan LibreTranslate: </value>
   </data>
+  <data name="ForTranslationWithLLM" xml:space="preserve">
+    <value>Untuk menterjemah dengan LLM: </value>
+  </data>
   <data name="ForUpdatingResxFiles" xml:space="preserve">
     <value>Untuk mengemas kini fail .Resx: </value>
   </data>
@@ -147,6 +150,22 @@
 Notis hak cipta di atas dan notis kebenaran ini hendaklah disertakan dalam semua salinan atau sebahagian besar Perisian.
 
 PERISIAN INI DISEDIAKAN "SEBAGAIMANA ADANYA", TANPA SEBARANG JENIS WARANTI, TERSURAT ATAU TERSIRAT, TERMASUK TETAPI TIDAK TERHAD KEPADA WARANTI KEBOLEHPERDAGANGAN, KESESUAIAN UNTUK TUJUAN TERTENTU DAN TANPA PELANGGARAN. DALAM APA PUN PENGARANG ATAU PEMEGANG HAK CIPTA TIDAK AKAN BERTANGGUNGJAWAB ATAS SEBARANG TUNTUTAN, KEROSAKAN ATAU LIABILITI LAIN, SAMA ADA DALAM TINDAKAN KONTRAK, TORT ATAU LAINNYA, TIMBUL DARIPADA, LUAR ATAU BERKAITAN DENGAN PERISIAN ATAU PENGGUNAAN YANG LAIN.</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="LlmCallFailedMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="LlmErrorParsingJsonMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="LlmHtttpResponseErrorMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="LlmInvalidMessageElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="LlmMisssingChoicesElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
   </data>
   <data name="TranslatedCultureString" xml:space="preserve">
     <value>Ia telah diterjemahkan {0}</value>

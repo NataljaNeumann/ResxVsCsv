@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CopyrightMessage" xml:space="preserve">
     <value>Аўтарскае права © 2025 </value>
@@ -135,6 +135,9 @@
   <data name="ForTranslationWithLibreTranslate" xml:space="preserve">
     <value>Для перакладу з LibreTranslate: </value>
   </data>
+  <data name="ForTranslationWithLLM" xml:space="preserve">
+    <value>Для перакладу з LLM: </value>
+  </data>
   <data name="ForUpdatingResxFiles" xml:space="preserve">
     <value>Для абнаўлення файлаў .Resx: </value>
   </data>
@@ -147,6 +150,22 @@
 Прыведзенае вышэй паведамленне аб аўтарскім праве і гэта паведамленне аб дазволе павінны быць уключаны ва ўсе копіі або істотныя часткі Праграмнага забеспячэння.
 
 ПРАГРАМНАЕ ЗАБЕСПЯЧЭННЕ ПАСТАЎЛЯЕЦЦА "ЯК ЁСЦЬ", БЕЗ ЛЮБЫХ ГАРАНТЫЙ, ЯВНЫХ АБО ПАРУШЭННЫХ, УКЛЮЧАЮЧЫ, АЛЕ НЕ АБМЕЖУЮЧЫСЯ ГАРАНТЫЯМІ ГАРАНТЫЙНАСЦІ, ПРЫДАТНАСЦІ ДЛЯ ПЭЙНАЙ МЭТЫ І НЕ ПАРУШЭННЯ. АЎТАРЫ АБО ўладальнікі аўтарскага права НЕ НЯСУЦЬ АДКАЗНАСЦІ НІ ЗА ЛЮБЫЯ ПРЭТЭНЗІІ, ШКОДУ АБО ІНШУЮ АДКАЗНАСЦЬ, ЯКІЯ ЎЗНАЧАЮЦЦА ПА ДАГОВОРНЫМ ДЗЕЯННЯМ, ПРАВІЛЬНЫМ ДЗЕЯННЕМ ЦІ ІНШЫМ ПРАЦУМАМ, ЯКІЯ ВЫНІКАЮЦЬ З ПРАГРАМНАГА ЗАБЕСПЯЧЭННЯ, ПА-ЗА АБО Ў СУВЯЗІ З ІМ ПРАГРАМНАЕ ЗАБЕСПЯЧЭННЕ.</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="LlmCallFailedMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="LlmErrorParsingJsonMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="LlmHtttpResponseErrorMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="LlmInvalidMessageElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="LlmMisssingChoicesElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
   </data>
   <data name="TranslatedCultureString" xml:space="preserve">
     <value>Ён быў перакладзены {0}</value>

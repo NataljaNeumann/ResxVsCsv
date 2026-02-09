@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CopyrightMessage" xml:space="preserve">
     <value>Copyright © 2025 </value>
@@ -135,6 +135,9 @@
   <data name="ForTranslationWithLibreTranslate" xml:space="preserve">
     <value>For translation with LibreTranslate: </value>
   </data>
+  <data name="ForTranslationWithLLM" xml:space="preserve">
+    <value>For translation with LibreTranslate: </value>
+  </data>
   <data name="ForUpdatingResxFiles" xml:space="preserve">
     <value>For updating .Resx files: </value>
   </data>
@@ -147,6 +150,21 @@
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</value>
+  </data>
+  <data name="LlmCallFailedMessage" xml:space="preserve">
+    <value>LLM call failed: {0}</value>
+  </data>
+  <data name="LlmErrorParsingJsonMessage" xml:space="preserve">
+    <value>Error while parsing JSON response from LLM: {0}</value>
+  </data>
+  <data name="LlmHtttpResponseErrorMessage" xml:space="preserve">
+    <value>Error while running HTTP request to LLM: {0}</value>
+  </data>
+  <data name="LlmInvalidMessageElementMessage" xml:space="preserve">
+    <value>LLM response doesn't contain a valid 'message' object in first 'choices' element:</value>
+  </data>
+  <data name="LlmMisssingChoicesElementMessage" xml:space="preserve">
+    <value>LLM response doesn't contain a valid 'choices' element {0}</value>
   </data>
   <data name="RightToLeft" xml:space="preserve">
     <value>No</value>

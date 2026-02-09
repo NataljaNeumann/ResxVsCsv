@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CopyrightMessage" xml:space="preserve">
     <value>Müəlliflik hüququ © 2025 </value>
@@ -135,6 +135,9 @@
   <data name="ForTranslationWithLibreTranslate" xml:space="preserve">
     <value>LibreTranslate ilə tərcümə etmək üçün: </value>
   </data>
+  <data name="ForTranslationWithLLM" xml:space="preserve">
+    <value>LLM ilə tərcümə etmək üçün: </value>
+  </data>
   <data name="ForUpdatingResxFiles" xml:space="preserve">
     <value>.Resx fayllarını yeniləmək üçün: </value>
   </data>
@@ -147,6 +150,22 @@
 Yuxarıdakı müəllif hüququ bildirişi və bu icazə bildirişi Proqram təminatının bütün nüsxələrinə və ya əhəmiyyətli hissələrinə daxil edilməlidir.
 
 PROQRAM TƏMİNATI "OLDUĞU KİMİ", HƏR NÖRDƏ, AÇIQ VƏ YA DEYNİ ZƏMANƏT OLMADAN, O cümlədən, MÜƏKSƏİ MƏQSƏDLƏRƏ UYĞUNLUQ VƏ QEYRİ MƏQSƏDLƏRƏ TƏMİN EDİLİR. MÜƏLLİF HÜQUQ SAHİBLƏRİ HEÇ HİÇBİR HALDA MÜQAVİLƏDƏN, HƏQİYYƏTDƏN VƏ YA BAŞQA HƏRƏKƏTDƏN OLDUĞU HƏR HƏR İDDİA, ZƏYAN VƏ YA DİGƏR MƏSULİYYƏTƏ GÖRƏ MƏSULİYYƏT OLMAYIR. VƏ YA PROQRAM TƏMİNATIDA DİGƏR ƏMƏLƏLƏR.</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="LlmCallFailedMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="LlmErrorParsingJsonMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="LlmHtttpResponseErrorMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="LlmInvalidMessageElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="LlmMisssingChoicesElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
   </data>
   <data name="TranslatedCultureString" xml:space="preserve">
     <value>Tərcümə edilib: {0}</value>

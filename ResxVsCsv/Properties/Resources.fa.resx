@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CopyrightMessage" xml:space="preserve">
     <value>حق چاپ © 2025 </value>
@@ -139,6 +139,10 @@
     <value>برای ترجمه با LibreTranslate:
 </value>
   </data>
+  <data name="ForTranslationWithLLM" xml:space="preserve">
+    <value>برای ترجمه با LLM:
+</value>
+  </data>
   <data name="ForUpdatingResxFiles" xml:space="preserve">
     <value>برای به روز رسانی فایل های .Resx:
 </value>
@@ -152,6 +156,22 @@
 اعلامیه حق چاپ بالا و این اعلامیه مجوز باید در تمام نسخه ها یا بخش های قابل توجهی از نرم افزار گنجانده شود.
 
 نرم‌افزار «همان‌طور که هست»، بدون ضمانت از هر نوع، صریح یا ضمنی، شامل اما نه محدود به ضمانت‌های کالای تجاری، تناسب برای یک هدف خاص و غیر از آن، ارائه می‌شود. در هیچ موردی نویسندگان یا دارندگان حق نسخه‌برداری در قبال ادعا، خسارت یا سایر مسئولیت‌ها، اعم از اینکه در یک اقدام قراردادی، ظلم یا در غیر این صورت، ناشی از خارج از این موضوع باشد، مسئول نخواهند بود. یا سایر معاملات در نرم افزار.</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="LlmCallFailedMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="LlmErrorParsingJsonMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="LlmHtttpResponseErrorMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="LlmInvalidMessageElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="LlmMisssingChoicesElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
   </data>
   <data name="RightToLeft" xml:space="preserve">
     <value>Yes</value>

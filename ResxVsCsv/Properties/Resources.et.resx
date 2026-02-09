@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CopyrightMessage" xml:space="preserve">
     <value>Autoriõigus © 2025 </value>
@@ -135,6 +135,9 @@
   <data name="ForTranslationWithLibreTranslate" xml:space="preserve">
     <value>LibreTranslate'iga tõlkimiseks: </value>
   </data>
+  <data name="ForTranslationWithLLM" xml:space="preserve">
+    <value>LLM'iga tõlkimiseks: </value>
+  </data>
   <data name="ForUpdatingResxFiles" xml:space="preserve">
     <value>Resx-failide värskendamiseks: </value>
   </data>
@@ -147,6 +150,22 @@
 Ülaltoodud autoriõiguse teatis ja käesolev loa teatis sisalduvad tarkvara kõikides koopiates või olulistes osades.
 
 TARKVARA PAKUTAKSE "NAGU ON", ILMA IGALsuguse, OTSESE VÕI KAUDSE GARANTIITA, KAASA arvatud, KUID MITTE PIIRATUD, KAUBANDUSVÕIME, KONKREETSE EESMÄRGIKS SOBIVUSE JA MITTERIKKUMISE GARANTIID. AUTORID VÕI AUTORIÕIGUSE OMAJAD EI VASTUTA MINGIL JUHUL MISGI NÕUETE, KAHJUSTUSTE VÕI MUU VASTUTUSE EEST LEPINGU TOIMIMISEL, kahju hüvitamisel VÕI MUUL VASTUTUSE EEST, MIS TULENEVAD, SELLEST VÕI SELLEGA SEOTUD TARKVARA.</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="LlmCallFailedMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="LlmErrorParsingJsonMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="LlmHtttpResponseErrorMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="LlmInvalidMessageElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="LlmMisssingChoicesElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
   </data>
   <data name="TranslatedCultureString" xml:space="preserve">
     <value>See on tõlgitud {0}</value>

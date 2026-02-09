@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CopyrightMessage" xml:space="preserve">
     <value>Հեղինակային իրավունք © 2025 </value>
@@ -135,6 +135,9 @@
   <data name="ForTranslationWithLibreTranslate" xml:space="preserve">
     <value>LibreTranslate-ով թարգմանելու համար՝ </value>
   </data>
+  <data name="ForTranslationWithLLM" xml:space="preserve">
+    <value>LLM-ով թարգմանելու համար՝ </value>
+  </data>
   <data name="ForUpdatingResxFiles" xml:space="preserve">
     <value>.Resx ֆայլերը թարմացնելու համար. </value>
   </data>
@@ -147,6 +150,22 @@
 Հեղինակային իրավունքի վերը նշված ծանուցումը և թույլտվության այս ծանուցումը պետք է ներառվեն Ծրագրաշարի բոլոր պատճեններում կամ զգալի մասերում:
 
 ԾՐԱԳՐԱԿԱՆ ԾՐԱԳՐԸ ՏՐԱՄԱԴՐՎՈՒՄ Է «ԻՆՉՊԵՍ ԿԱ», ԱՌԱՆՑ ՈՐԵՎԷ ՏԵՍԱԿԻ ԵՐԱՇԽԻՔԻ, ՀԱՅՏԱՐԱՐ ԿԱՄ ՆԿԱՏԻՐՎԱԾ, ՆԵՐԱՌՅԱԼ, ԲԱՅՑ ՉՍԱՀՄԱՆԱՓԱԿՎՈՂ ԱՐՏԱԴՐԱԿԱՆՈՒԹՅԱՆ ԵՐԱՇԽԻՔՆԵՐՈՎ, ՊԱՏԱՍԽԱՆՈՒԹՅԱՆ ՀԱՏՈՒԿ ՆՊԱՏԱԿՈՎ ԵՎ ՆՊԱՏԱԿՈՎ: ՈՉ ՄԻ ԴԵՊՔՈՒՄ ՀԵՂԻՆԱԿՆԵՐԸ ԿԱՄ ՀԵՂԻՆԱԿԱՅԻՆ ԻՐԱՎՈՒՆՔՆԵՐԸ ՊԱՏԱՍԽԱՆԱՏՎՈՒԹՅՈՒՆ ՉԻ ՊԱՏԱՍԽԱՆԱՏՎԵԼ ՈՐԵՎԷ ՊԱՀԱՆՋԻ, ՎՆԱՍԻ ԿԱՄ ԱՅԼ ՊԱՏԱՍԽԱՆԱՏՎՈՒԹՅԱՆ ՀԱՄԱՐ՝ ԱՆԿԱԽ ՊԱՅՄԱՆԱԳՐԻ ԳՈՐԾՈՂՈՒԹՅԱՆ, ԴԱՇԽԱՏՈՒԹՅԱՆ, ԿԱՄ ԱՅԼ ՀԱԿԱՌԱԿԻՑ, ՈՐ ԲԱՑՎՈՒՄ Է ԱՊԱՀՈՎ ՄԵԶ. ԿԱՄ ԱՅԼ ԳՈՐԾՈՒՆՔՆԵՐ ԾՐԱԳՐԵՐԻ ՄԵՋ:</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="LlmCallFailedMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="LlmErrorParsingJsonMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="LlmHtttpResponseErrorMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="LlmInvalidMessageElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="LlmMisssingChoicesElementMessage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
   </data>
   <data name="TranslatedCultureString" xml:space="preserve">
     <value>Այն թարգմանվել է {0}</value>
