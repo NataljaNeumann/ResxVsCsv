@@ -37,6 +37,7 @@ using System.Diagnostics;
 using System.Globalization;
 using System.Xml;
 using System.Runtime.InteropServices;
+using System.Text.Json;
 
 
 namespace ResxVsCsv
@@ -159,6 +160,7 @@ namespace ResxVsCsv
                 string? strApiUrl = null;
                 string? strTranslationService = null;
                 string? strAddCultures = null;
+                string? strLLMModel = "";
                 bool bOnlyStrings = true;
                 bool bRemoveDuplicates = false;
                 bool bFixFonts = false;
@@ -222,6 +224,7 @@ namespace ResxVsCsv
                             }
                             break;
                         case "--libreurl":
+                        case "--llmurl":
                             if (i + 1 < aArgs.Length)
                             {
                                 strApiUrl = aArgs[++i];
@@ -254,6 +257,12 @@ namespace ResxVsCsv
                                 {
                                     strDefaultCulture = "en";
                                 }
+                            }
+                            break;
+                        case "--llmmodel":
+                            if (i + 1 < aArgs.Length)
+                            {
+                                strLLMModel = aArgs[++i];
                             }
                             break;
                         case "--help":
@@ -328,6 +337,13 @@ namespace ResxVsCsv
                                 "ResxVsCsv --directory <dir> --pattern <pattern> \r\n" +
                                 "  --translator libretranslate --libreurl <url> [--apikey <key>] [--sortbyname yes]\r\n" +
                                 "  [--bruteforce yes] [--defaultculture <culture>]");
+
+                            WriteWrappedText(
+                                Properties.Resources.ForTranslationWithLLM +
+                                "ResxVsCsv --directory <dir> --pattern <pattern> \r\n" +
+                                "  --translator llm --llmeurl <url> --llmmodel <moel> [--apikey <key>] [--sortbyname yes]\r\n" +
+                                "  [--bruteforce yes] [--defaultculture <culture>]");
+
 
                             WriteWrappedText(
                                 Properties.Resources.ForUpdatingResxFiles +
@@ -493,6 +509,8 @@ namespace ResxVsCsv
                         foreach (string strName in astrDistinctNames)
                             foreach (string strCulture in astrDistinctCultures)
                             {
+                                string strComment = "";
+
                                 Entry? oEntry;
 #if TEST_TRANSLATION_LOGIC
                                 if ((string.IsNullOrEmpty(strTranslationService) || 
@@ -506,6 +524,13 @@ namespace ResxVsCsv
 #endif
                                 {
                                     aOutputList.Add(oEntry);
+
+                                    if ((string.IsNullOrEmpty(strComment) &&
+                                        !string.IsNullOrEmpty(oEntry.Comment)) ||
+                                        "(default)".Equals(oEntry.Culture))
+                                    {
+                                        strComment = oEntry.Comment;
+                                    }
                                 }
                                 else
                                 {
@@ -595,7 +620,8 @@ namespace ResxVsCsv
 
 
                                             string? strBestTranslation = GetBestTranslation(
-                                                oTranslations, strCulture, strApiKey, strTranslationService, strApiUrl, bBruteForce);
+                                                oTranslations, strCulture, strApiKey, strTranslationService, 
+                                                strApiUrl, bBruteForce, strLLMModel, strName, strComment);
 
 
                                             if (!string.IsNullOrEmpty(strBestTranslation))
@@ -627,6 +653,7 @@ namespace ResxVsCsv
                             foreach (string strName in astrDistinctNames)
                             {
                                 Entry? oEntry;
+                                string strComment = "";
 #if TEST_TRANSLATION_LOGIC
                                 if ((string.IsNullOrEmpty(strTranslationService) ||
                                      oNameTypes.ContainsKey(strName) ||
@@ -639,6 +666,13 @@ namespace ResxVsCsv
 #endif
                                 {
                                     aOutputList.Add(oEntry);
+
+                                    if ((string.IsNullOrEmpty(strComment) &&
+                                        !string.IsNullOrEmpty(oEntry.Comment)) ||
+                                        "(default)".Equals(oEntry.Culture))
+                                    {
+                                        strComment = oEntry.Comment;
+                                    }
                                 }
                                 else
                                 {
@@ -659,6 +693,7 @@ namespace ResxVsCsv
                                         try
                                         {
                                             List<Translation> oTranslations = new List<Translation>();
+                                            
 #if TEST_TRANSLATION_LOGIC
                                             m_oTranslations = oTranslations;
 #endif
@@ -676,13 +711,15 @@ namespace ResxVsCsv
                                                         new Entry { Culture = strSourceCulture, Name = strName }, out oFoundEntry))
                                                     {
                                                         strLocalizedTextVariant = oFoundEntry.Value;
+
                                                         if (!string.IsNullOrEmpty(strLocalizedTextVariant))
                                                             oTranslations.Add(new Translation
                                                               {
                                                                   Language = strSourceCulture,
                                                                   Text = strLocalizedTextVariant
                                                               });
-                                                    };
+
+                                                    }
                                                 }
 
                                                 if (oEntriesDictionary.TryGetValue(
@@ -725,7 +762,8 @@ namespace ResxVsCsv
 
 
                                             string? strBestTranslation = GetBestTranslation(
-                                                oTranslations, strCulture, strApiKey, strTranslationService, strApiUrl, bBruteForce);
+                                                oTranslations, strCulture, strApiKey, strTranslationService, 
+                                                strApiUrl, bBruteForce, strLLMModel, strName, strComment);
 
                                             if (!string.IsNullOrEmpty(strBestTranslation))
                                                 aOutputList.Add(new Entry
@@ -1841,6 +1879,122 @@ namespace ResxVsCsv
 
         //===================================================================================================
         /// <summary>
+        /// Calls a large language model (LLM) HTTP Endpoint and returns the contentt
+        /// of the first choice in the response
+        /// </summary>
+        /// <param name="strLLMQuery">JSON payload that will be sent to LLM</param>
+        /// <param name="strApiUrl">URL of the LLM API</param>
+        /// <param name="strApiKey">API key that will be used for Bearer authentification</param>
+        /// <param name="ostrResult">Output parameter that will receive the LLMM
+        /// response text from choices[0].messges.content</param>
+        /// <returns>true iff the call was successful</returns>
+        //===================================================================================================
+        public static bool CallLLM(
+            string strLLMQuery,
+            string strApiUrl,
+            string strApiKey,
+            out string ostrResult)
+        {
+            for (int nRepeat = 3; nRepeat > 0; --nRepeat)
+            {
+                using (HttpClient oHttpClient = new HttpClient())
+                {
+                    oHttpClient.DefaultRequestHeaders.Authorization =
+                        new System.Net.Http.Headers.AuthenticationHeaderValue(
+                            "Bearer", strApiKey);
+
+                    StringContent oContent =
+                        new StringContent(strLLMQuery, Encoding.UTF8, "application/json");
+
+                    try
+                    {
+                        HttpResponseMessage oResponse =
+                            oHttpClient.PostAsync(strApiUrl, oContent).Result;
+
+                        if (!oResponse.IsSuccessStatusCode)
+                        {
+                            Console.WriteLine(string.Format(
+                                Properties.Resources.LlmCallFailedMessage, oResponse.StatusCode));
+                            continue;
+                        }
+                        else
+                        {
+                            string strApiResult = oResponse.Content.ReadAsStringAsync().Result;
+
+                            try
+                            {
+                                using (JsonDocument oJsonDoc = JsonDocument.Parse(strApiResult))
+                                {
+                                    JsonElement oRoot = oJsonDoc.RootElement;
+
+                                    // expect { "choices": [ { "message": { "content": "..." } } ] }
+                                    JsonElement oChoices;
+
+                                    if (!oRoot.TryGetProperty("choices", out oChoices) ||
+                                        oChoices.ValueKind != JsonValueKind.Array ||
+                                        oChoices.GetArrayLength() == 0
+                                        )
+                                    {
+                                        Console.WriteLine(string.Format(
+                                            Properties.Resources.LlmMisssingChoicesElementMessage,
+                                            strApiResult));
+                                        continue;
+                                    }
+
+                                    JsonElement oFirstChoice = oChoices[0];
+
+                                    JsonElement oMessage;
+
+                                    if (!oFirstChoice.TryGetProperty("message", out oMessage) ||
+                                        oMessage.ValueKind != JsonValueKind.Object)
+                                    {
+                                        Console.WriteLine(string.Format(
+                                            Properties.Resources.LlmInvalidMessageElementMessage,
+                                            strApiResult));
+                                        continue;
+                                    }
+
+                                    string? strMessage = oMessage.GetString();
+                                    ostrResult = strMessage ?? string.Empty;
+
+                                    return true;
+
+                                }
+                            } catch (JsonException oEx2)
+                            {
+                                Console.WriteLine(string.Format(
+                                    Properties.Resources.LlmErrorParsingJsonMessage, oEx2.Message));
+                                continue;
+                            }
+                        }
+
+                    }
+                    catch (Exception oEx)
+                    {
+                        if (oEx is AggregateException && oEx.InnerException != null)
+                        {
+                            Console.WriteLine(string.Format(
+                                Properties.Resources.LlmHtttpResponseErrorMessage,
+                                oEx.InnerException.Message));
+                        }
+                        else
+                        {
+                            Console.WriteLine(string.Format(
+                                Properties.Resources.LlmHtttpResponseErrorMessage, 
+                                oEx.Message));
+                        }
+                        continue;
+                    }
+                }
+            }
+
+            ostrResult = String.Empty;
+            return false;
+
+        }
+
+        //===================================================================================================
+        /// <summary>
         /// Gets hopefully the best translation, based on a set of texts in different languages
         /// </summary>
         /// <param name="iTranslations">The translations of the text in different languages</param>
@@ -1855,110 +2009,174 @@ namespace ResxVsCsv
             string? strApiKey,
             string strService,
             string? strApiUrl,
-            bool bBruteForce
+            bool bBruteForce,
+            string strLLMModel,
+            string strElementName,
+            string strComment
             )
         {
-
-            string? strBestTranslation = null;
-            int nMinEditDistance = int.MaxValue;
-            float fMinSumOfEditDistances = float.MaxValue;
-
-            foreach (Translation oTranslation in iTranslations)
+            // separate handlin of LLM
+            if (strService.Equals("llm", StringComparison.InvariantCultureIgnoreCase))
             {
-                if (oTranslation.Language == null || oTranslation.Text == null)
-                    continue;
+                List<object> aMessages = new List<object>();
 
-                string strTranslatedText = Translate(oTranslation.Language, oTranslation.Text,
-                    strTargetLanguage, strApiKey, strService, strApiUrl);
-
-                if (!bBruteForce)
+                aMessages.Add(new
                 {
-                    // if not in bruteforce method then we search for a translation that 
-                    // back-translates to itself
-                    string strBackTranslatedText = Translate(strTargetLanguage, strTranslatedText,
-                        oTranslation.Language, strApiKey, strService, strApiUrl);
+                    role = "system",
+                    content = "You are an agent that automatically translates GUI elements. "+
+                    "User will provide names and available translations of the element, perhaps " +
+                    "also a comment to the element. You will provide best possible translattion, "+
+                    "based on available information. Text passages in source texts like " +
+                    "{1}, {2}, {3} etc mean insertings that will be done later, during runtime "+
+                    "of application, those can be e.g. numbers or text passages. "+
+                    "They need to be placed in a meaningful way in the result." +
+                    "Please return the translation as text without any additional comments."
+                });
 
-                    if (strBackTranslatedText.Equals(oTranslation.Text))
+                aMessages.Add(new
+                {
+                    role = "user",
+                    content =
+                        "The name of the element is "+strElementName+". "+
+                        (!string.IsNullOrEmpty(strComment)?("My comment to element: "+strComment)+'.':"")+
+                        "Please provide translation in the culture with IETF-code '" + strTargetLanguage + "'."
+                });
+
+                // add all awailable translations
+                foreach (Translation oTranslation in iTranslations)
+                {
+                    aMessages.Add(new
                     {
-                        // Found a perfect match
-                        return strTranslatedText;
+                        role = "user",
+                        content = "This is a translation in a culture with IETF-code '" + oTranslation.Language + "':" +
+                        oTranslation.Text
+                    });
+                }
+
+                var oRequest = new
+                {
+                    model = strLLMModel,
+                    messages = aMessages.ToArray()
+                };
+
+
+                JsonSerializerOptions oOptions = new JsonSerializerOptions()
+                {
+                    WriteIndented = true
+                };
+
+                string strJson = JsonSerializer.Serialize(oRequest, oOptions);
+
+                string strLLMResult;
+                if (!CallLLM(strJson, strApiUrl??"", strApiKey??"", out strLLMResult))
+                {
+                    throw new ApplicationException();
+                }
+                return strLLMResult;
+            }
+            else
+            {
+                string? strBestTranslation = null;
+                int nMinEditDistance = int.MaxValue;
+                float fMinSumOfEditDistances = float.MaxValue;
+
+                foreach (Translation oTranslation in iTranslations)
+                {
+                    if (oTranslation.Language == null || oTranslation.Text == null)
+                        continue;
+
+                    string strTranslatedText = Translate(oTranslation.Language, oTranslation.Text,
+                        strTargetLanguage, strApiKey, strService, strApiUrl);
+
+                    if (!bBruteForce)
+                    {
+                        // if not in bruteforce method then we search for a translation that 
+                        // back-translates to itself
+                        string strBackTranslatedText = Translate(strTargetLanguage, strTranslatedText,
+                            oTranslation.Language, strApiKey, strService, strApiUrl);
+
+                        if (strBackTranslatedText.Equals(oTranslation.Text))
+                        {
+                            // Found a perfect match
+                            return strTranslatedText;
+                        }
+                        else
+                        {
+                            int nEditDistance = GetEditDistance(oTranslation.Text, strBackTranslatedText);
+                            if (nEditDistance < nMinEditDistance)
+                            {
+                                nMinEditDistance = nEditDistance;
+                                strBestTranslation = strTranslatedText;
+                            }
+                        }
                     }
                     else
                     {
-                        int nEditDistance = GetEditDistance(oTranslation.Text, strBackTranslatedText);
-                        if (nEditDistance < nMinEditDistance)
+                        // in bruteforce mode we search for a translation that back-translates
+                        // to same in possibly all available languages
+                        float fSumOfWeightedDistances = 0;
+                        foreach (var oTranslation2 in iTranslations)
                         {
-                            nMinEditDistance = nEditDistance;
+                            if (oTranslation2.Language == null)
+                                continue;
+
+                            string strBackTranslatedText = Translate(strTargetLanguage, strTranslatedText,
+                                oTranslation2.Language, strApiKey, strService, strApiUrl);
+
+                            if (!strBackTranslatedText.Equals(oTranslation2.Text))
+                            {
+                                int nEditDistance = GetEditDistance(oTranslation.Text, strBackTranslatedText);
+                                if (iTranslations.Count >= 10 && (
+                                    oTranslation2.Language.StartsWith("en") ||
+                                    oTranslation2.Language.StartsWith("es") ||
+                                    oTranslation2.Language.StartsWith("de") ||
+                                    oTranslation2.Language.StartsWith("pt") ||
+                                    oTranslation2.Language.StartsWith("it") ||
+                                    oTranslation2.Language.StartsWith("nl") ||
+                                    oTranslation2.Language.StartsWith("no") ||
+                                    oTranslation2.Language.StartsWith("fi") ||
+                                    oTranslation2.Language.StartsWith("fr") ||
+                                    oTranslation2.Language.StartsWith("da") ||
+                                    oTranslation2.Language.StartsWith("ru") ||
+                                    oTranslation2.Language.StartsWith("pl") ||
+                                    oTranslation2.Language.StartsWith("ko") ||
+                                    oTranslation2.Language.StartsWith("ja") ||
+                                    oTranslation2.Language.StartsWith("zh") ||
+                                    oTranslation2.Language.StartsWith("sa") ||
+                                    oTranslation2.Language.StartsWith("hi")))
+                                {
+                                    // major languages have bigger weight of edit distances, 
+                                    // if there are at least 10 translations present
+                                    fSumOfWeightedDistances += 20 * nEditDistance /
+                                        (float)(oTranslation.Text.Length + strBackTranslatedText.Length + 1);
+                                }
+                                else
+                                {
+                                    // for all other languages weight the distance based on the length of the text,
+                                    // so the difference in length of the texts between languages doesn't play a role.
+                                    fSumOfWeightedDistances += 2 * nEditDistance /
+                                        (float)(oTranslation.Text.Length + strBackTranslatedText.Length + 1);
+                                }
+                            }
+                        }
+
+                        if (fSumOfWeightedDistances == 0)
+                        {
+                            return strTranslatedText;
+                        }
+
+                        if (fSumOfWeightedDistances < fMinSumOfEditDistances)
+                        {
+                            fMinSumOfEditDistances = fSumOfWeightedDistances;
                             strBestTranslation = strTranslatedText;
                         }
+
                     }
                 }
-                else
-                {
-                    // in bruteforce mode we search for a translation that back-translates
-                    // to same in possibly all available languages
-                    float fSumOfWeightedDistances = 0;
-                    foreach (var oTranslation2 in iTranslations)
-                    {
-                        if (oTranslation2.Language == null)
-                            continue;
 
-                        string strBackTranslatedText = Translate(strTargetLanguage, strTranslatedText,
-                            oTranslation2.Language, strApiKey, strService, strApiUrl);
 
-                        if (!strBackTranslatedText.Equals(oTranslation2.Text))
-                        {
-                            int nEditDistance = GetEditDistance(oTranslation.Text, strBackTranslatedText);
-                            if (iTranslations.Count>=10 && (
-                                oTranslation2.Language.StartsWith("en") ||
-                                oTranslation2.Language.StartsWith("es") ||
-                                oTranslation2.Language.StartsWith("de") ||
-                                oTranslation2.Language.StartsWith("pt") ||
-                                oTranslation2.Language.StartsWith("it") ||
-                                oTranslation2.Language.StartsWith("nl") ||
-                                oTranslation2.Language.StartsWith("no") ||
-                                oTranslation2.Language.StartsWith("fi") ||
-                                oTranslation2.Language.StartsWith("fr") ||
-                                oTranslation2.Language.StartsWith("da") ||
-                                oTranslation2.Language.StartsWith("ru") ||
-                                oTranslation2.Language.StartsWith("pl") ||
-                                oTranslation2.Language.StartsWith("ko") ||
-                                oTranslation2.Language.StartsWith("ja") ||
-                                oTranslation2.Language.StartsWith("zh") ||
-                                oTranslation2.Language.StartsWith("sa") ||
-                                oTranslation2.Language.StartsWith("hi")))
-                            {
-                                // major languages have bigger weight of edit distances, 
-                                // if there are at least 10 translations present
-                                fSumOfWeightedDistances += 20 * nEditDistance / 
-                                    (float)(oTranslation.Text.Length + strBackTranslatedText.Length + 1);
-                            }
-                            else
-                            {
-                                // for all other languages weight the distance based on the length of the text,
-                                // so the difference in length of the text between languages doesn't play a role.
-                                fSumOfWeightedDistances += 2 * nEditDistance / 
-                                    (float)(oTranslation.Text.Length + strBackTranslatedText.Length + 1);
-                            }
-                        }
-                    };
-
-                    if (fSumOfWeightedDistances == 0)
-                    {
-                        return strTranslatedText;
-                    }
-
-                    if (fSumOfWeightedDistances < fMinSumOfEditDistances)
-                    {
-                        fMinSumOfEditDistances = fSumOfWeightedDistances;
-                        strBestTranslation = strTranslatedText;
-                    }
-
-                }
+                return strBestTranslation;
             }
-
-
-            return strBestTranslation;
         }
 
         //===================================================================================================
