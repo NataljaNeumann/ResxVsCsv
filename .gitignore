@@ -2,6 +2,8 @@ ResxVsCsv/obj/**
 ResxVsCsv/bin/Release/**
 ResxVsCsv/bin/Debug/**
 ResxVsCsv/bin/*.zip
+ResxVsCsv/Properties/*.csv
+ResxVsCsv/Properties/launchSettings.json
 **/.vs/**
 Backup/**
 *.user
