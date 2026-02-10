@@ -2090,7 +2090,8 @@ namespace ResxVsCsv
                     "{1}, {2}, {3} etc mean insertings that will be done later, during runtime "+
                     "of application, those can be e.g. numbers or text passages. "+
                     "They need to be placed in a meaningful way in the result. " +
-                    "Please use the name of the object, the element and the comment (if available) as hints, " +
+                    "Please use the name of the object (e.g. user control, form, dialog, resorce), " + 
+                    "the name of element and the comment (if available) as hints, " +
                     "don't translate them. If there is a hint that the string or value shall not be " +
                     "translated then return an empty string as a translation. " +
                     "Please return the translation as text without any additional comments or JSON structure."
