@@ -631,7 +631,9 @@ namespace ResxVsCsv
 
                                             string? strBestTranslation = GetBestTranslation(
                                                 oTranslations, strCulture, strApiKey, strTranslationService, 
-                                                strApiUrl, bBruteForce, strLLMModel, strName, strComment);
+                                                strApiUrl, bBruteForce, strLLMModel, strName, strComment,
+                                                strPattern.Replace("*","")
+                                                .Replace(".resx", "", StringComparison.InvariantCultureIgnoreCase));
 
 
                                             if (!string.IsNullOrEmpty(strBestTranslation))
@@ -789,7 +791,9 @@ namespace ResxVsCsv
 
                                             string? strBestTranslation = GetBestTranslation(
                                                 oTranslations, strCulture, strApiKey, strTranslationService, 
-                                                strApiUrl, bBruteForce, strLLMModel, strName, strComment);
+                                                strApiUrl, bBruteForce, strLLMModel, strName, strComment,
+                                                strPattern.Replace("*","")
+                                                .Replace(".resx","", StringComparison.InvariantCultureIgnoreCase));
 
                                             if (!string.IsNullOrEmpty(strBestTranslation))
                                             {
@@ -2048,8 +2052,14 @@ namespace ResxVsCsv
         /// </summary>
         /// <param name="iTranslations">The translations of the text in different languages</param>
         /// <param name="strTargetLanguage">The target language</param>
-        /// <param name="strAPIKey">API Key for querying translations</param>
+        /// <param name="strApiKey">API Key for querying translations</param>
         /// <param name="bBruteForce">Indicates if all translation variants need to be searched</param>
+        /// <param name="strApiUrl">URL of the API to call</param>
+        /// <param name="strComment">The coment for the element being processed (only for LLM)</param>
+        /// <param name="strElementName">The name of the element (only for LLM)</param>
+        /// <param name="strLLMModel">The LLM model to use</param>
+        /// <param name="strResource">The name of the resource being processed (only for LLM)</param>
+        /// <param name="strService">The translation service, e.g. "argos", "llm", etc</param>
         /// <returns>The hopefully one and only translation</returns>
         //===================================================================================================
         public static string? GetBestTranslation(
@@ -2061,7 +2071,8 @@ namespace ResxVsCsv
             bool bBruteForce,
             string strLLMModel,
             string strElementName,
-            string strComment
+            string strComment,
+            string strResource
             )
         {
             // separate handlin of LLM
@@ -2079,7 +2090,7 @@ namespace ResxVsCsv
                     "{1}, {2}, {3} etc mean insertings that will be done later, during runtime "+
                     "of application, those can be e.g. numbers or text passages. "+
                     "They need to be placed in a meaningful way in the result. " +
-                    "Please use the name of the element and the comment(if available as hints), " +
+                    "Please use the name of the object, the element and the comment (if available) as hints, " +
                     "don't translate them. If there is a hint that the string or value shall not be " +
                     "translated then return an empty string as a translation. " +
                     "Please return the translation as text without any additional comments or JSON structure."
@@ -2091,6 +2102,7 @@ namespace ResxVsCsv
                     content =
                          "The name of the element that is mentioned in the source code is '" + strElementName + "'. " +
                          (!string.IsNullOrEmpty(strComment) ? ("The comment to element, mentioned in code: " + strComment) + '.' : "") +
+                         (!string.IsNullOrEmpty(strResource) ? ("The name of the object that contain the GUI element: " + strResource) + '.' : "") +
                          "Please provide translation in the culture '" + strTargetLanguage + "', the available translations follow."
                 });
 
