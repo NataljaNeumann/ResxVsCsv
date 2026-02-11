@@ -134,6 +134,10 @@ jobs:
             }
 
             if ($changed) {
+
+              # Remove trailing empty lines after </Project>
+              $text = $text.TrimEnd("`r", "`n", " ")
+
               Set-Content -LiteralPath $path -Value $text -Encoding UTF8
               Write-Host "Updated $path"
             }
