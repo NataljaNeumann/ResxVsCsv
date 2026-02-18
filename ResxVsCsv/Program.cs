@@ -2142,6 +2142,14 @@ namespace ResxVsCsv
             }
             else
             {
+                if (strComment != null && 
+                    strComment.Contains("don't translate", 
+                        StringComparison.InvariantCultureIgnoreCase))
+                {
+                    // if the comment contains a hint in english, that the string shall not be translated, then don't do it.
+                    return "";
+                }
+
                 string? strBestTranslation = null;
                 int nMinEditDistance = int.MaxValue;
                 float fMinSumOfEditDistances = float.MaxValue;
