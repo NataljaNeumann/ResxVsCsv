@@ -2103,7 +2103,7 @@ namespace ResxVsCsv
                     content =
                          "The name of the element that is mentioned in the source code is '" + strElementName + "'. " +
                          (!string.IsNullOrEmpty(strComment) ? ("The comment to element, mentioned in code: " + strComment) + '.' : "") +
-                         (!string.IsNullOrEmpty(strResource) ? ("The name of the object that contain the GUI element: " + strResource) + '.' : "") +
+                         (!string.IsNullOrEmpty(strResource) ? ("The name of the object that contains the GUI element: " + strResource) + '.' : "") +
                          "Please provide translation in the culture '" + strTargetLanguage + "', the available translations follow."
                 });
 
