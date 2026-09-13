@@ -190,6 +190,9 @@ jobs:
           & msbuild ${{ env.APP_NAME }}.sln /p:Configuration=Release /p:SignAssembly=true /p:AssemblyOriginatorKeyFile=MyKey.snk
           Remove-Item -Force -Verbose -ErrorAction SilentlyContinue "${{ env.APP_NAME }}/MyKey.snk"
 
+      # SNK creation:
+      # sn -k MyKey.snk
+      #  [Convert]::ToBase64String([IO.File]::ReadAllBytes("MyKey.snk")) | Set-Clipboard
 
       - name: Download PFX file from secrets
         run: |
@@ -210,9 +213,7 @@ jobs:
           cd $env:GITHUB_WORKSPACE
           #cd ../../../..
 
-  
-      #    & "C:\Program Files (x86)\Windows Kits\10\bin\x64\signtool.exe" sign /f ${{ env.APP_NAME }}/MyCert.pfx /p ${{ secrets.PFX_PASSWORD }} /tr http://timestamp.digicert.com /td sha256 /fd sha256 ${{ env.APP_NAME }}/bin/Release/${{ env.APP_NAME }}.exe
-      
+       
       # certificate creation in powershell:
       # "C:\Program Files\Git\usr\bin\openssl.exe" req -x509 -newkey rsa:4096 -keyout MeinSchluessel.key -out MeinZertifikat.crt -days 1825 -nodes -subj "/CN=..."
       # "C:\Program Files\Git\usr\bin\openssl.exe" pkcs12 -export -out MyCert.pfx -inkey MeinSchluessel.key -in MeinZertifikat.crt
