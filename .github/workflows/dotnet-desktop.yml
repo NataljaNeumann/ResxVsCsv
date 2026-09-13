@@ -184,77 +184,22 @@ jobs:
       - name: Build and sign with SNK
         run: msbuild ${{ env.APP_NAME }}.sln /p:Configuration=Release /p:SignAssembly=true /p:AssemblyOriginatorKeyFile=MyKey.snk
 
-      - name: Sign EXE with SNK using ildasm/ilasm
-        shell: pwsh
+
+      - name: Download PFX file from secrets
         run: |
-          $app = $env:APP_NAME
-          $buildDir = Join-Path -Path $app -ChildPath "bin/Release/net8.0"
-          $exeName = "${app}.exe"
-          $exePath = Join-Path -Path $buildDir -ChildPath $exeName
-          $snkPath = Join-Path -Path $app -ChildPath "MyKey.snk"
+          $pfxBytes = [System.Convert]::FromBase64String("${{ secrets.PFX_FILE }}")
+          [System.IO.File]::WriteAllBytes("${{ env.APP_NAME }}/MyCert.pfx", $pfxBytes)
 
-          if (-not (Test-Path $exePath)) {
-            Write-Host "EXE not found: $exePath (skipping exe strong-name signing)"
-            exit 0
-          }
+      - name: Sign executable with PFX
+        run: |
+          & "C:\Program Files (x86)\Windows Kits\10\bin\x64\signtool.exe" sign /f ${{ env.APP_NAME }}/MyCert.pfx /p ${{ secrets.PFX_PASSWORD }} /tr http://timestamp.digicert.com /td sha256 /fd sha256 ${{ env.APP_NAME }}/bin/Release/net8.0/${{ env.APP_NAME }}.exe
+      #    & "C:\Program Files (x86)\Windows Kits\10\bin\x64\signtool.exe" sign /f ${{ env.APP_NAME }}/MyCert.pfx /p ${{ secrets.PFX_PASSWORD }} /tr http://timestamp.digicert.com /td sha256 /fd sha256 ${{ env.APP_NAME }}/bin/Release/${{ env.APP_NAME }}.exe
+      
+      # certificate creation:
+      # "C:\Program Files\Git\usr\bin\openssl.exe" req -x509 -newkey rsa:4096 -keyout MeinSchluessel.key -out MeinZertifikat.crt -days 1825 -nodes -subj "/CN=..."
 
-          if (-not (Test-Path $snkPath)) {
-            Write-Error "SNK not found: $snkPath"
-            exit 1
-          }
+      #- name: Build solution
+      #  run: msbuild ${{ env.APP_NAME }}.sln /p:Configuration=Release
+      # /verbosity:diag
 
-          # Try to find ildasm and ilasm on PATH or common SDK locations
-          $ildasmCmd = (Get-Command ildasm.exe -ErrorAction SilentlyContinue).Path
-          $ilasmCmd = (Get-Command ilasm.exe -ErrorAction SilentlyContinue).Path
-
-          if (-not $ildasmCmd) {
-            $candidates = @(
-              "C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.8 Tools\ildasm.exe",
-              "C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Bin\ildasm.exe",
-              "C:\Program Files (x86)\Microsoft SDKs\Windows\v8.0A\Bin\ildasm.exe"
-            )
-            foreach ($p in $candidates) { if (Test-Path $p) { $ildasmCmd = $p; break } }
-          }
-
-          if (-not $ilasmCmd) {
-            $candidates = @(
-              "C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.8 Tools\ilasm.exe",
-              "C:\Windows\Microsoft.NET\Framework64\v4.0.30319\ilasm.exe",
-              "C:\Windows\Microsoft.NET\Framework\v4.0.30319\ilasm.exe"
-            )
-            foreach ($p in $candidates) { if (Test-Path $p) { $ilasmCmd = $p; break } }
-          }
-
-          if (-not (Test-Path $ildasmCmd)) {
-            Write-Error "ildasm.exe not found. Cannot sign exe via ilasm/ildasm."
-            exit 1
-          }
-          if (-not (Test-Path $ilasmCmd)) {
-            Write-Error "ilasm.exe not found. Cannot sign exe via ilasm/ildasm."
-            exit 1
-          }
-
-          Write-Host "Using ildasm: $ildasmCmd"
-          Write-Host "Using ilasm: $ilasmCmd"
-
-          $tmp = Join-Path $env:TEMP ("il_" + [guid]::NewGuid().ToString())
-          New-Item -ItemType Directory -Path $tmp | Out-Null
-          Push-Location $tmp
-          try {
-            Write-Host "Disassembling $exePath to $tmp\out.il"
-            & $ildasmCmd /nobar /out:out.il $exePath
-            if ($LASTEXITCODE -ne 0) { throw "ildasm failed with exit code $LASTEXITCODE" }
-
-            Write-Host "Reassembling signed EXE to $exePath"
-            & $ilasmCmd out.il /exe /output:$exePath /KEY=$snkPath /QUIET
-            if ($LASTEXITCODE -ne 0) { throw "ilasm failed with exit code $LASTEXITCODE" }
-
-            Write-Host "Signed EXE created: $exePath"
-          } catch {
-            Write-Error $_
-            exit 1
-          } finally {
-            Pop-Location
-            Remove-Item -Recurse -Force $tmp
-          }
 
