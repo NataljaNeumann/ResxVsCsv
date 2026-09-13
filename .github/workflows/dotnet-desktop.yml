@@ -204,7 +204,9 @@ jobs:
       - name: Pack the release with signed EXE
         run: |
           cd ${{ env.APP_NAME }}/bin/Release/net8.0
-          tar.exe -u -f ../../${{ env.APP_NAME }}_v${{ steps.increment.outputs.version }}.zip "${{ env.APP_NAME }}.exe"
+          Get-ChildItem -Path . -Include *.snk, *.pfx -Recurse -Force | Remove-Item -Force -ErrorAction SilentlyContinue
+          Remove-Item -Force -ErrorAction SilentlyContinue "../../${{ env.APP_NAME }}_v${{ steps.increment.outputs.version }}.zip"
+          tar.exe -a -c -f  ../../${{ env.APP_NAME }}_v${{ steps.increment.outputs.version }}.zip *.*
           cd $env:GITHUB_WORKSPACE
           #cd ../../../..
 
