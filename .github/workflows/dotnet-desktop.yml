@@ -201,6 +201,7 @@ jobs:
       
       # certificate creation:
       # "C:\Program Files\Git\usr\bin\openssl.exe" req -x509 -newkey rsa:4096 -keyout MeinSchluessel.key -out MeinZertifikat.crt -days 1825 -nodes -subj "/CN=..."
+      # [Convert]::ToBase64String([System.IO.File]::ReadAllBytes("MyCert.pfx")) | Set-Clipboard
 
       #- name: Build solution
       #  run: msbuild ${{ env.APP_NAME }}.sln /p:Configuration=Release
