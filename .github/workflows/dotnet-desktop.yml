@@ -172,6 +172,10 @@ jobs:
       #  with:
       #    vs-version: '17.8'
 
+
+      - name: Setup SignTool Path
+        uses: KamaranL/add-signtool-action@v1
+
       - name: Restore NuGet packages
         run: nuget restore ${{ env.APP_NAME }}.sln
 
@@ -192,7 +196,7 @@ jobs:
 
       - name: Sign executable with PFX
         run: |
-          & "C:\Program Files (x86)\Windows Kits\10\bin\x64\signtool.exe" sign /f ${{ env.APP_NAME }}/MyCert.pfx /p ${{ secrets.PFX_PASSWORD }} /tr http://timestamp.digicert.com /td sha256 /fd sha256 ${{ env.APP_NAME }}/bin/Release/net8.0/${{ env.APP_NAME }}.exe
+          & signtool.exe sign /f ${{ env.APP_NAME }}/MyCert.pfx /p ${{ secrets.PFX_PASSWORD }} /tr http://timestamp.digicert.com /td sha256 /fd sha256 ${{ env.APP_NAME }}/bin/Release/net8.0/${{ env.APP_NAME }}.exe
       #    & "C:\Program Files (x86)\Windows Kits\10\bin\x64\signtool.exe" sign /f ${{ env.APP_NAME }}/MyCert.pfx /p ${{ secrets.PFX_PASSWORD }} /tr http://timestamp.digicert.com /td sha256 /fd sha256 ${{ env.APP_NAME }}/bin/Release/${{ env.APP_NAME }}.exe
       
       # certificate creation:
