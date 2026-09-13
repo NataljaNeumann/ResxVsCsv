@@ -199,7 +199,7 @@ jobs:
           & signtool.exe sign /f ${{ env.APP_NAME }}/MyCert.pfx /p ${{ secrets.PFX_PASSWORD }} /tr http://timestamp.digicert.com /td sha256 /fd sha256 ${{ env.APP_NAME }}/bin/Release/net8.0/${{ env.APP_NAME }}.exe
       #    & "C:\Program Files (x86)\Windows Kits\10\bin\x64\signtool.exe" sign /f ${{ env.APP_NAME }}/MyCert.pfx /p ${{ secrets.PFX_PASSWORD }} /tr http://timestamp.digicert.com /td sha256 /fd sha256 ${{ env.APP_NAME }}/bin/Release/${{ env.APP_NAME }}.exe
       
-      # certificate creation:
+      # certificate creation in powershell:
       # "C:\Program Files\Git\usr\bin\openssl.exe" req -x509 -newkey rsa:4096 -keyout MeinSchluessel.key -out MeinZertifikat.crt -days 1825 -nodes -subj "/CN=..."
       # "C:\Program Files\Git\usr\bin\openssl.exe" pkcs12 -export -out MyCert.pfx -inkey MeinSchluessel.key -in MeinZertifikat.crt
       # [Convert]::ToBase64String([System.IO.File]::ReadAllBytes("MyCert.pfx")) | Set-Clipboard
