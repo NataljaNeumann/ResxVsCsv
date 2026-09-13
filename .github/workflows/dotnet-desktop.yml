@@ -186,7 +186,9 @@ jobs:
           Write-Host "Wrote SNK to $targetPath"
 
       - name: Build and sign with SNK
-        run: msbuild ${{ env.APP_NAME }}.sln /p:Configuration=Release /p:SignAssembly=true /p:AssemblyOriginatorKeyFile=MyKey.snk
+        run: |
+          & msbuild ${{ env.APP_NAME }}.sln /p:Configuration=Release /p:SignAssembly=true /p:AssemblyOriginatorKeyFile=MyKey.snk
+          Remove-Item -Force -Verbose "${{ env.APP_NAME }}/MyKey.snk"
 
 
       - name: Download PFX file from secrets
@@ -197,6 +199,7 @@ jobs:
       - name: Sign executable with PFX
         run: |
           & signtool.exe sign /f ${{ env.APP_NAME }}/MyCert.pfx /p ${{ secrets.PFX_PASSWORD }} /tr http://timestamp.digicert.com /td sha256 /fd sha256 ${{ env.APP_NAME }}/bin/Release/net8.0/${{ env.APP_NAME }}.exe
+          Remove-Item -Force -Verbose "${{ env.APP_NAME }}/MyCert.pfx"
       #    & "C:\Program Files (x86)\Windows Kits\10\bin\x64\signtool.exe" sign /f ${{ env.APP_NAME }}/MyCert.pfx /p ${{ secrets.PFX_PASSWORD }} /tr http://timestamp.digicert.com /td sha256 /fd sha256 ${{ env.APP_NAME }}/bin/Release/${{ env.APP_NAME }}.exe
       
       # certificate creation in powershell:
@@ -204,8 +207,8 @@ jobs:
       # "C:\Program Files\Git\usr\bin\openssl.exe" pkcs12 -export -out MyCert.pfx -inkey MeinSchluessel.key -in MeinZertifikat.crt
       # [Convert]::ToBase64String([System.IO.File]::ReadAllBytes("MyCert.pfx")) | Set-Clipboard
 
+
       #- name: Build solution
       #  run: msbuild ${{ env.APP_NAME }}.sln /p:Configuration=Release
       # /verbosity:diag
-
 
