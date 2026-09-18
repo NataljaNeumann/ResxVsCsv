@@ -1502,8 +1502,8 @@ namespace ResxVsCsv
                     else
                     {
                         XElement oNewElement = new XElement("data",
-                            new XAttribute(XNamespace.Xml + "space", "preserve"),
                             new XAttribute("name", oNewValue.Name),
+                            new XAttribute(XNamespace.Xml + "space", "preserve"),
                             new XElement("value", oNewValue.Value
                             ));
 
