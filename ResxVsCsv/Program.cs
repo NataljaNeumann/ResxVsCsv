@@ -89,7 +89,7 @@ namespace ResxVsCsv
         {
 #if DEBUG
             //set test culture
-            string strSetCulture =
+            //string strSetCulture =
                 // "af-ZA";
                 // "ar-SA";
                 // "az-Latn-AZ";
@@ -144,10 +144,10 @@ namespace ResxVsCsv
                 // "uk-UA";
                 // "uz-Latn-UZ";
                 // "vi-VN";
-                 "zh-TW";
+                // "zh-TW";
                 // "zh-CN";
-            System.Threading.Thread.CurrentThread.CurrentCulture = new CultureInfo(strSetCulture);
-            System.Threading.Thread.CurrentThread.CurrentUICulture = new CultureInfo(strSetCulture);
+            //System.Threading.Thread.CurrentThread.CurrentCulture = new CultureInfo(strSetCulture);
+            //System.Threading.Thread.CurrentThread.CurrentUICulture = new CultureInfo(strSetCulture);
 #endif
 
             try
