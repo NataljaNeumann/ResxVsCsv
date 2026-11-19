@@ -4,6 +4,7 @@ ResxVsCsv/bin/Debug/**
 ResxVsCsv/bin/*.zip
 ResxVsCsv/Properties/*.csv
 ResxVsCsv/Properties/launchSettings.json
+**/*.exe
 **/.vs/**
 Backup/**
 *.user
