@@ -117,6 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="CopyrightMessage" xml:space="preserve">
     <value>Höfundarréttur © 2025-2026 </value>
   </data>
@@ -151,7 +152,6 @@ Ofangreind höfundarréttartilkynning og þessi leyfistilkynning skulu vera með
 
 HUGBÚNAÐURINN ER LEYNDUR „EINS OG ER“, ÁN NOKKURS ÁBYRGÐAR, SKÝRI EÐA UNDIRLIÐI, ÞAR Á MEÐ EN EKKI TAKMARKAÐUR VIÐ ÁBYRGÐIR UM SÖLJANNI, HÆFNI Í SÉRSTÖKNUM TILGANGI OG EKKI BROT. HÖFUNDAR EÐA HÖFUNDARRETTAHAFAR SKALA Í ENGUM TILKYNDUM BÆRA ÁBYRGÐ Á KÖFUM, SKAÐUM EÐA AÐRAR ÁBYRGÐ, HVORKI Í SAMNINGS-, skaðabótamáli EÐA ANNAÐ SEM SEM KOMA AF, ÚT EÐA Í TENGSLUM VIÐ NOTKUN VIÐ NOTKUNARVIÐ.</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="LlmCallFailedMessage" xml:space="preserve">
     <value>LLM-beiðni mistókst: {0}</value>
     <comment>Von KI generiert</comment>

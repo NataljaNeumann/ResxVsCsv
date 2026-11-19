@@ -117,6 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="CopyrightMessage" xml:space="preserve">
     <value>Mualliflik huquqi © 2025-2026</value>
   </data>
@@ -147,7 +148,6 @@
   <data name="LicenseText" xml:space="preserve">
     <value>Shu bilan ushbu dasturiy ta'minot nusxasini va tegishli hujjat fayllarini ("Dastur ta'minoti</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="LlmCallFailedMessage" xml:space="preserve">
     <value>LLM chaqiruvi muvaffaqiyatsiz tugadi: {0}</value>
     <comment>Von KI generiert</comment>

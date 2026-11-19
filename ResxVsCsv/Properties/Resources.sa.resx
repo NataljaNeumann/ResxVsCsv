@@ -117,6 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="CopyrightMessage" xml:space="preserve">
     <value>प्रतिलिपि अधिकार © 2025-2026 </value>
   </data>
@@ -147,7 +148,6 @@
   <data name="LicenseText" xml:space="preserve">
     <value>अस्य सॉफ्टवेयरस्य तथा तत्सम्बद्धानां दस्तावेजीकरणसञ्चिकानां ("सॉफ्टवेयर") प्रतिलिपिं प्राप्य, निःशुल्कं, सॉफ्टवेयरस्य प्रतिबन्धं विना व्यवहारं कर्तुं, यत्र सीमां विना सॉफ्टवेयरस्य प्रतिलिपानां उपयोगस्य, प्रतिलिपिं कर्तुं, परिवर्तनस्य, विलयस्य, प्रकाशनस्य, वितरणस्य, उपअनुज्ञापत्रस्य, तथा/वा विक्रयणस्य अधिकारः, तथा च येषां व्यक्तिनां कृते सॉफ्टवेयरः प्रदत्तः अस्ति, तेषां अनुमतिं दातुं, निम्नलिखितशर्तानाम् अधीनम्, अनुमतिः प्रदत्ता अस्ति:अस्य सॉफ्टवेयरस्य तथा तत्सम्बद्धानां दस्तावेजीकरणसञ्चिकानां ("सॉफ्टवेयर</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="LlmCallFailedMessage" xml:space="preserve">
     <value>एलएलएम कॉल विफलः {0}</value>
     <comment>Von KI generiert</comment>

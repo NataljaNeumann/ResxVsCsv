@@ -117,6 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="CopyrightMessage" xml:space="preserve">
     <value>版權 © 2025-2026 </value>
   </data>
@@ -151,7 +152,6 @@
 
 本軟體以「現況」提供，不提供任何明示或暗示的保證，包括但不限於適銷性、特定用途的適用性和不侵權的保證。在任何情況下，作者或版權所有者均不對因本軟體或本軟體的使用或其他交易而引起、或與之相關的任何索賠、損害或其他責任負責，無論是合約、侵權或其他行為。</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="LlmCallFailedMessage" xml:space="preserve">
     <value>LLM 呼叫失敗：{0}</value>
     <comment>Von KI generiert</comment>

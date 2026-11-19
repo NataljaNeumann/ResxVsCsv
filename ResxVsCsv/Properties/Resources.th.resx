@@ -117,6 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="CopyrightMessage" xml:space="preserve">
     <value>ลิขสิทธิ์ © 2025-2026 </value>
   </data>
@@ -147,7 +148,6 @@
   <data name="LicenseText" xml:space="preserve">
     <value>อนุญาตให้บุคคลใดก็ตามที่ได้รับสำเนาของซอฟต์แวร์นี้และไฟล์เอกสารที่เกี่ยวข้อง ("ซอฟต์แวร์</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="LlmCallFailedMessage" xml:space="preserve">
     <value>การเรียก LLM ล้มเหลว: {0}</value>
     <comment>Von KI generiert</comment>
