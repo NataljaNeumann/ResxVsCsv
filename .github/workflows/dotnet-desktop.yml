@@ -26,7 +26,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-name: Build .NET Desktop
+name: Build .NET Desktop .Net8.0
 
 env:
   APP_NAME: ResxVsCsv
@@ -240,7 +240,7 @@ jobs:
       - name: Sign executable with PFX
         if: env.IS_MAIN_PUSH == 'true' && env.HAS_SIGNING_SECRETS == 'true'
         run: |
-          & signtool.exe sign /f ${{ env.APP_NAME }}/MyCert.pfx /p ${{ secrets.PFX_PASSWORD }} /tr http://timestamp.digicert.com /td sha256 /fd sha256 ${{ env.APP_NAME }}/bin/Release/${{ env.APP_NAME }}.exe
+          & signtool.exe sign /f ${{ env.APP_NAME }}/MyCert.pfx /p ${{ secrets.PFX_PASSWORD }} /tr http://timestamp.digicert.com /td sha256 /fd sha256 ${{ env.APP_NAME }}/bin/Release/net8.0/${{ env.APP_NAME }}.exe
           Remove-Item -Force -Verbose -ErrorAction SilentlyContinue "${{ env.APP_NAME }}/MyCert.pfx"
 
       - name: Pack the MSI with signed EXE
@@ -253,9 +253,9 @@ jobs:
             throw "No WiX project was found in $PWD"
           }
 
-          # The application build outputs to bin/Release, while the x86 WiX
+          # The application build outputs to bin/Release/net8.0, while the x86 WiX
           # project expects its files under bin/x86/Release.
-          $appOutput = Join-Path $env:GITHUB_WORKSPACE "${{ env.APP_NAME }}\bin\Release"
+          $appOutput = Join-Path $env:GITHUB_WORKSPACE "${{ env.APP_NAME }}\bin\Release\net8.0"
           $x86Output = Join-Path $env:GITHUB_WORKSPACE "${{ env.APP_NAME }}\bin\x86\Release"
           if (-not (Test-Path $appOutput)) {
             throw "Application build output was not found: $appOutput"
@@ -282,7 +282,7 @@ jobs:
 
       - name: Pack the release with signed EXE
         run: |
-          cd ${{ env.APP_NAME }}/bin/Release
+          cd ${{ env.APP_NAME }}/bin/Release/net8.0
           Get-ChildItem -Path . -Include *.snk, *.pfx -Recurse -Force | Remove-Item -Force -ErrorAction SilentlyContinue
           Remove-Item -Force -ErrorAction SilentlyContinue "../../${{ env.APP_NAME }}_v${{ steps.increment.outputs.version }}.zip"
           tar.exe -a -c -f  ../../${{ env.APP_NAME }}_v${{ steps.increment.outputs.version }}.zip *.*
