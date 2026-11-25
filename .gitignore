@@ -1,9 +1,9 @@
-ResxVsCsv/obj/**
-ResxVsCsv/bin/Release/**
-ResxVsCsv/bin/Debug/**
-ResxVsCsv/bin/*.zip
-ResxVsCsv/Properties/*.csv
-ResxVsCsv/Properties/launchSettings.json
+**/obj/**
+**/Release/**
+**/Debug/**
+**/bin/*.zip
+**/Properties/*.csv
+**/Properties/launchSettings.json
 **/*.exe
 **/.vs/**
 Backup/**
