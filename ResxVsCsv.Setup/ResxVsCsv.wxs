@@ -27,7 +27,8 @@
         <File Id="ResxVsCsv_exe" Source="$(var.ResxVsCsv.TargetDir)ResxVsCsv.exe" KeyPath="yes" />
         <File Id="ResxVsCsv_runtimeconfig_json" Source="$(var.ResxVsCsv.TargetDir)ResxVsCsv.runtimeconfig.json" />
         <File Id="source_code_tar_zip" Source="$(var.ResxVsCsv.TargetDir)source_code.tar.zip" />
-      </Component>
+		<Environment Id="AddInstallFolderToPath" Name="PATH" Value="[INSTALLFOLDER]" Action="set" Part="last" System="yes" Permanent="no" />
+	  </Component>
       <Component Id="af" Guid="EDB6F5B4-FE11-464C-91A5-3295EA0E7A4B" Subdirectory="af">
         <File Id="af_resources_dll" Source="$(var.ResxVsCsv.TargetDir)af\ResxVsCsv.resources.dll" />
       </Component>
