@@ -254,9 +254,9 @@ jobs:
           }
 
           # The application build outputs to bin/Release/net8.0, while the x86 WiX
-          # project expects its files under bin/x86/Release.
+          # project expects its files under bin/x86/Release/net8.0.
           $appOutput = Join-Path $env:GITHUB_WORKSPACE "${{ env.APP_NAME }}\bin\Release\net8.0"
-          $x86Output = Join-Path $env:GITHUB_WORKSPACE "${{ env.APP_NAME }}\bin\x86\Release"
+          $x86Output = Join-Path $env:GITHUB_WORKSPACE "${{ env.APP_NAME }}\bin\x86\Release\net8.0"
           if (-not (Test-Path $appOutput)) {
             throw "Application build output was not found: $appOutput"
           }
