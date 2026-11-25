@@ -1,0 +1,264 @@
+﻿<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs" xmlns:ui="http://wixtoolset.org/schemas/v4/wxs/ui">
+  <Package Name="ResxVsCsv" Language="1033" Version="1.1.19.0" Manufacturer="NataljaNeumann@gmx.de" UpgradeCode="CA9C9749-4B75-4E5B-A5DA-8C0A977F882C" Scope="perMachine">
+    <MajorUpgrade DowngradeErrorMessage="A newer version of ResxVsCsv has already been installed." />
+    <MediaTemplate EmbedCab="yes" />
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="PublisherFolder" Name="NataljaNeumann">
+          <Directory Id="INSTALLFOLDER" Name="ResxVsCsv" />
+        </Directory>
+      </Directory>
+    </Directory>
+    <StandardDirectory Id="ProgramMenuFolder">
+      <Directory Id="WindowsMenuFolder" Name="ResxVsCsv" />
+    </StandardDirectory>
+    <StandardDirectory Id="DesktopFolder" />
+    <WixVariable Id="WixUILicenseRtf" Value="$(var.ResxVsCsv.TargetDir)license.rtf" />
+    <ui:WixUI Id="WixUI_InstallDir" InstallDirectory="INSTALLFOLDER" />
+    <DirectoryRef Id="INSTALLFOLDER">
+      <Component Id="_" Guid="7EDE3AAD-8467-4CA6-ADC5-CD256E47AFB2">
+        <File Id="license_rtf" Source="$(var.ResxVsCsv.TargetDir)license.rtf" />
+        <File Id="license_txt" Source="$(var.ResxVsCsv.TargetDir)license.txt" />
+        <File Id="Public_crt" Source="$(var.ResxVsCsv.TargetDir)Public.crt" />
+        <File Id="Readme_html" Source="$(var.ResxVsCsv.TargetDir)Readme.html" />
+        <File Id="Readme_txt" Source="$(var.ResxVsCsv.TargetDir)Readme.txt" />
+        <File Id="ResxVsCsv_deps_json" Source="$(var.ResxVsCsv.TargetDir)ResxVsCsv.deps.json" />
+        <File Id="ResxVsCsv_dll" Source="$(var.ResxVsCsv.TargetDir)ResxVsCsv.dll" />
+        <File Id="ResxVsCsv_exe" Source="$(var.ResxVsCsv.TargetDir)ResxVsCsv.exe" KeyPath="yes" />
+        <File Id="ResxVsCsv_runtimeconfig_json" Source="$(var.ResxVsCsv.TargetDir)ResxVsCsv.runtimeconfig.json" />
+        <File Id="source_code_tar_zip" Source="$(var.ResxVsCsv.TargetDir)source_code.tar.zip" />
+      </Component>
+      <Component Id="af" Guid="EDB6F5B4-FE11-464C-91A5-3295EA0E7A4B" Subdirectory="af">
+        <File Id="af_resources_dll" Source="$(var.ResxVsCsv.TargetDir)af\ResxVsCsv.resources.dll" />
+      </Component>
+      <Component Id="ar" Guid="429F3D1F-3BF1-44AF-BA9A-267268E5DD98" Subdirectory="ar">
+        <File Id="ar_resources_dll" Source="$(var.ResxVsCsv.TargetDir)ar\ResxVsCsv.resources.dll" />
+      </Component>
+      <Component Id="az" Guid="B7F98045-163A-4D16-8094-E44918E35076" Subdirectory="az">
+        <File Id="az_resources_dll" Source="$(var.ResxVsCsv.TargetDir)az\ResxVsCsv.resources.dll" />
+      </Component>
+      <Component Id="be" Guid="6FF26A5A-12DE-4360-8869-47817CF191E0" Subdirectory="be">
+        <File Id="be_resources_dll" Source="$(var.ResxVsCsv.TargetDir)be\ResxVsCsv.resources.dll" />
+      </Component>
+      <Component Id="bg" Guid="7F59BA28-8101-4193-9467-914C9109AAD0" Subdirectory="bg">
+        <File Id="bg_resources_dll" Source="$(var.ResxVsCsv.TargetDir)bg\ResxVsCsv.resources.dll" />
+      </Component>
+      <Component Id="bsLatnBA" Guid="A8EBC382-BD8F-441F-B183-3D74E0399A16" Subdirectory="bs-Latn-BA">
+        <File Id="bsLatnBA_resources_dll" Source="$(var.ResxVsCsv.TargetDir)bs-Latn-BA\ResxVsCsv.resources.dll" />
+      </Component>
+      <Component Id="cs" Guid="DFD9FFBE-BE71-47E9-B0CB-65866D55B136" Subdirectory="cs">
+        <File Id="cs_resources_dll" Source="$(var.ResxVsCsv.TargetDir)cs\ResxVsCsv.resources.dll" />
+      </Component>
+      <Component Id="da" Guid="4B5C1701-AEB1-4B63-B049-A2D08DD3B1D5" Subdirectory="da">
+        <File Id="da_resources_dll" Source="$(var.ResxVsCsv.TargetDir)da\ResxVsCsv.resources.dll" />
+      </Component>
+      <Component Id="de" Guid="B7C1F045-D5BE-4D53-A348-35D056440DED" Subdirectory="de">
+        <File Id="de_resources_dll" Source="$(var.ResxVsCsv.TargetDir)de\ResxVsCsv.resources.dll" />
+      </Component>
+      <Component Id="el" Guid="891469DA-6CF5-4502-9C68-CB075DAF7575" Subdirectory="el">
+        <File Id="el_resources_dll" Source="$(var.ResxVsCsv.TargetDir)el\ResxVsCsv.resources.dll" />
+      </Component>
+      <Component Id="es" Guid="4CE1E45A-20DC-4159-876A-77D8C73129C7" Subdirectory="es">
+        <File Id="es_resources_dll" Source="$(var.ResxVsCsv.TargetDir)es\ResxVsCsv.resources.dll" />
+      </Component>
+      <Component Id="et" Guid="E9256253-87DA-443F-8DD2-8826BCDA7010" Subdirectory="et">
+        <File Id="et_resources_dll" Source="$(var.ResxVsCsv.TargetDir)et\ResxVsCsv.resources.dll" />
+      </Component>
+      <Component Id="fa" Guid="182E5EDC-C892-416E-A775-8C392AECBD83" Subdirectory="fa">
+        <File Id="fa_resources_dll" Source="$(var.ResxVsCsv.TargetDir)fa\ResxVsCsv.resources.dll" />
+      </Component>
+      <Component Id="fi" Guid="396AC400-E59B-46BD-BCE2-8923BF56EEAC" Subdirectory="fi">
+        <File Id="fi_resources_dll" Source="$(var.ResxVsCsv.TargetDir)fi\ResxVsCsv.resources.dll" />
+      </Component>
+      <Component Id="fr" Guid="0D0023FF-A1A0-4FDB-8FE2-267CBECAEB63" Subdirectory="fr">
+        <File Id="fr_resources_dll" Source="$(var.ResxVsCsv.TargetDir)fr\ResxVsCsv.resources.dll" />
+      </Component>
+      <Component Id="he" Guid="28FF6577-461D-4DB0-A7B2-A68FE79DB8E5" Subdirectory="he">
+        <File Id="he_resources_dll" Source="$(var.ResxVsCsv.TargetDir)he\ResxVsCsv.resources.dll" />
+      </Component>
+      <Component Id="hi" Guid="0F177B5A-5D61-499F-AAFD-451835D36415" Subdirectory="hi">
+        <File Id="hi_resources_dll" Source="$(var.ResxVsCsv.TargetDir)hi\ResxVsCsv.resources.dll" />
+      </Component>
+      <Component Id="hu" Guid="5F92DAD3-F3C3-429E-AAFD-7880F6C5F82D" Subdirectory="hu">
+        <File Id="hu_resources_dll" Source="$(var.ResxVsCsv.TargetDir)hu\ResxVsCsv.resources.dll" />
+      </Component>
+      <Component Id="hy" Guid="4B7C4B4F-3322-4FE4-B954-7D8F0041C392" Subdirectory="hy">
+        <File Id="hy_resources_dll" Source="$(var.ResxVsCsv.TargetDir)hy\ResxVsCsv.resources.dll" />
+      </Component>
+      <Component Id="idID" Guid="602D30E5-42E1-4820-852D-88B01CE4CF43" Subdirectory="id-ID">
+        <File Id="idID_resources_dll" Source="$(var.ResxVsCsv.TargetDir)id-ID\ResxVsCsv.resources.dll" />
+      </Component>
+      <Component Id="is" Guid="1DA37C2F-C8F2-471A-A465-E62763D86C63" Subdirectory="is">
+        <File Id="is_resources_dll" Source="$(var.ResxVsCsv.TargetDir)is\ResxVsCsv.resources.dll" />
+      </Component>
+      <Component Id="it" Guid="5F8E9BD0-8F53-430E-AB1B-8453EADC0B69" Subdirectory="it">
+        <File Id="it_resources_dll" Source="$(var.ResxVsCsv.TargetDir)it\ResxVsCsv.resources.dll" />
+      </Component>
+      <Component Id="ja" Guid="0E0B8C6A-B8E3-47B4-9AF1-7C2E60DF9571" Subdirectory="ja">
+        <File Id="ja_resources_dll" Source="$(var.ResxVsCsv.TargetDir)ja\ResxVsCsv.resources.dll" />
+      </Component>
+      <Component Id="ka" Guid="39A45F22-584F-424F-B8B8-CFB463D597E3" Subdirectory="ka">
+        <File Id="ka_resources_dll" Source="$(var.ResxVsCsv.TargetDir)ka\ResxVsCsv.resources.dll" />
+      </Component>
+      <Component Id="kk" Guid="9C0AF383-F591-4476-A24C-864B1C8411DA" Subdirectory="kk">
+        <File Id="kk_resources_dll" Source="$(var.ResxVsCsv.TargetDir)kk\ResxVsCsv.resources.dll" />
+      </Component>
+      <Component Id="kmKH" Guid="51BBBD3A-FDBA-4C5D-B771-4A1D1CA899A2" Subdirectory="km-KH">
+        <File Id="kmKH_resources_dll" Source="$(var.ResxVsCsv.TargetDir)km-KH\ResxVsCsv.resources.dll" />
+      </Component>
+      <Component Id="ko" Guid="44891A10-48E1-4614-919B-4CD5FA23612F" Subdirectory="ko">
+        <File Id="ko_resources_dll" Source="$(var.ResxVsCsv.TargetDir)ko\ResxVsCsv.resources.dll" />
+      </Component>
+      <Component Id="kyKG" Guid="1CCB4FEB-9A41-444A-A356-839781D7E71B" Subdirectory="ky-KG">
+        <File Id="kyKG_resources_dll" Source="$(var.ResxVsCsv.TargetDir)ky-KG\ResxVsCsv.resources.dll" />
+      </Component>
+      <Component Id="lt" Guid="C7C54489-134D-460F-B7DA-E7C765BE43A9" Subdirectory="lt">
+        <File Id="lt_resources_dll" Source="$(var.ResxVsCsv.TargetDir)lt\ResxVsCsv.resources.dll" />
+      </Component>
+      <Component Id="lv" Guid="2AE66CA7-8541-417E-A23E-703EA38D88BC" Subdirectory="lv">
+        <File Id="lv_resources_dll" Source="$(var.ResxVsCsv.TargetDir)lv\ResxVsCsv.resources.dll" />
+      </Component>
+      <Component Id="mk" Guid="4455BAFE-0F81-4407-B25A-1565F4386C66" Subdirectory="mk">
+        <File Id="mk_resources_dll" Source="$(var.ResxVsCsv.TargetDir)mk\ResxVsCsv.resources.dll" />
+      </Component>
+      <Component Id="mnMN" Guid="D2708FD5-A9D5-46CF-818E-36B2C01873DC" Subdirectory="mn-MN">
+        <File Id="mnMN_resources_dll" Source="$(var.ResxVsCsv.TargetDir)mn-MN\ResxVsCsv.resources.dll" />
+      </Component>
+      <Component Id="ms" Guid="0604E464-C717-44CA-ABFE-37CE8CDA2661" Subdirectory="ms">
+        <File Id="ms_resources_dll" Source="$(var.ResxVsCsv.TargetDir)ms\ResxVsCsv.resources.dll" />
+      </Component>
+      <Component Id="nl" Guid="3E41A44B-3FCF-4C70-B6DE-8E26355E56FA" Subdirectory="nl">
+        <File Id="nl_resources_dll" Source="$(var.ResxVsCsv.TargetDir)nl\ResxVsCsv.resources.dll" />
+      </Component>
+      <Component Id="no" Guid="A0F5B39B-7377-46DE-81F5-FC8518855BFB" Subdirectory="no">
+        <File Id="no_resources_dll" Source="$(var.ResxVsCsv.TargetDir)no\ResxVsCsv.resources.dll" />
+      </Component>
+      <Component Id="paArabPK" Guid="1956A8FA-47C5-4F7E-8233-2F70480A4357" Subdirectory="pa-Arab-PK">
+        <File Id="paArabPK_resources_dll" Source="$(var.ResxVsCsv.TargetDir)pa-Arab-PK\ResxVsCsv.resources.dll" />
+      </Component>
+      <Component Id="paIN" Guid="839112A9-1390-4BBB-9D63-59EF703A8A70" Subdirectory="pa-IN">
+        <File Id="paIN_resources_dll" Source="$(var.ResxVsCsv.TargetDir)pa-IN\ResxVsCsv.resources.dll" />
+      </Component>
+      <Component Id="pl" Guid="136176C3-5B4F-46F8-8E76-9A2224831925" Subdirectory="pl">
+        <File Id="pl_resources_dll" Source="$(var.ResxVsCsv.TargetDir)pl\ResxVsCsv.resources.dll" />
+      </Component>
+      <Component Id="psAF" Guid="3BC8A95F-4608-4E42-8E2E-B8FEB4BE5DAF" Subdirectory="ps-AF">
+        <File Id="psAF_resources_dll" Source="$(var.ResxVsCsv.TargetDir)ps-AF\ResxVsCsv.resources.dll" />
+      </Component>
+      <Component Id="pt" Guid="2DA675FD-8297-45EF-8086-EB9DA6CCB29A" Subdirectory="pt">
+        <File Id="pt_resources_dll" Source="$(var.ResxVsCsv.TargetDir)pt\ResxVsCsv.resources.dll" />
+      </Component>
+      <Component Id="ro" Guid="04EB3808-AD08-4BD3-BDD2-9D205AFC3E95" Subdirectory="ro">
+        <File Id="ro_resources_dll" Source="$(var.ResxVsCsv.TargetDir)ro\ResxVsCsv.resources.dll" />
+      </Component>
+      <Component Id="ru" Guid="EB746799-AE33-49B2-ADF9-CA0E2CEF135A" Subdirectory="ru">
+        <File Id="ru_resources_dll" Source="$(var.ResxVsCsv.TargetDir)ru\ResxVsCsv.resources.dll" />
+      </Component>
+      <Component Id="sa" Guid="664FE036-C36B-48C2-9F56-12A912C7829F" Subdirectory="sa">
+        <File Id="sa_resources_dll" Source="$(var.ResxVsCsv.TargetDir)sa\ResxVsCsv.resources.dll" />
+      </Component>
+      <Component Id="sk" Guid="38AEC838-1661-4CC0-B509-7EB9CC45A82D" Subdirectory="sk">
+        <File Id="sk_resources_dll" Source="$(var.ResxVsCsv.TargetDir)sk\ResxVsCsv.resources.dll" />
+      </Component>
+      <Component Id="sl" Guid="00A70390-0BB9-4EC9-95FC-3F2036B63B83" Subdirectory="sl">
+        <File Id="sl_resources_dll" Source="$(var.ResxVsCsv.TargetDir)sl\ResxVsCsv.resources.dll" />
+      </Component>
+      <Component Id="sr" Guid="7393985C-A87F-4CD3-B266-AED17D61B8E2" Subdirectory="sr">
+        <File Id="sr_resources_dll" Source="$(var.ResxVsCsv.TargetDir)sr\ResxVsCsv.resources.dll" />
+      </Component>
+      <Component Id="sv" Guid="5F467C3F-0D8A-4F70-A1CD-791BB68593C9" Subdirectory="sv">
+        <File Id="sv_resources_dll" Source="$(var.ResxVsCsv.TargetDir)sv\ResxVsCsv.resources.dll" />
+      </Component>
+      <Component Id="tgCyrlTJ" Guid="F64C328F-359E-4116-873D-79658474C154" Subdirectory="tg-Cyrl-TJ">
+        <File Id="tgCyrlTJ_resources_dll" Source="$(var.ResxVsCsv.TargetDir)tg-Cyrl-TJ\ResxVsCsv.resources.dll" />
+      </Component>
+      <Component Id="th" Guid="8C5D4C27-BABC-4CFF-B3D9-61731CF6C74A" Subdirectory="th">
+        <File Id="th_resources_dll" Source="$(var.ResxVsCsv.TargetDir)th\ResxVsCsv.resources.dll" />
+      </Component>
+      <Component Id="tr" Guid="E47F1691-A276-4218-800B-FC64A61EFD6B" Subdirectory="tr">
+        <File Id="tr_resources_dll" Source="$(var.ResxVsCsv.TargetDir)tr\ResxVsCsv.resources.dll" />
+      </Component>
+      <Component Id="uk" Guid="343482F4-74A1-4575-BAF5-5CEC3A620CE1" Subdirectory="uk">
+        <File Id="uk_resources_dll" Source="$(var.ResxVsCsv.TargetDir)uk\ResxVsCsv.resources.dll" />
+      </Component>
+      <Component Id="uz" Guid="F324BB58-12D8-46F5-AC35-1F5236B36E9A" Subdirectory="uz">
+        <File Id="uz_resources_dll" Source="$(var.ResxVsCsv.TargetDir)uz\ResxVsCsv.resources.dll" />
+      </Component>
+      <Component Id="vi" Guid="2CBE2B42-1DC9-40E5-964A-B1B75BD5A2AF" Subdirectory="vi">
+        <File Id="vi_resources_dll" Source="$(var.ResxVsCsv.TargetDir)vi\ResxVsCsv.resources.dll" />
+      </Component>
+      <Component Id="zhHans" Guid="8381039B-8A99-4D63-A1E0-BD4DEF6E4397" Subdirectory="zh-Hans">
+        <File Id="zhHans_resources_dll" Source="$(var.ResxVsCsv.TargetDir)zh-Hans\ResxVsCsv.resources.dll" />
+      </Component>
+      <Component Id="zhHant" Guid="00F09546-D88E-4DB3-9BE0-179BDF3F626E" Subdirectory="zh-Hant">
+        <File Id="zhHant_resources_dll" Source="$(var.ResxVsCsv.TargetDir)zh-Hant\ResxVsCsv.resources.dll" />
+      </Component>
+    </DirectoryRef>
+    <DirectoryRef Id="WindowsMenuFolder">
+      <Component Id="WindowsMenuShortcuts" Guid="09CC40BF-C012-4EB9-88FF-3EA21ADA27A0">
+        <RemoveFolder Id="RemoveWindowsMenuFolder" Directory="WindowsMenuFolder" On="uninstall" />
+        <RegistryValue Root="HKCU" Key="Software\NataljaNeumann\ResxVsCsv" Name="Installed" Type="integer" Value="1" KeyPath="yes" />
+        <Shortcut Id="ResxVsCsv_exe_pfx" Directory="WindowsMenuFolder" Name="Resx Vs Csv" Target="[INSTALLFOLDER]ResxVsCsv.exe" WorkingDirectory="INSTALLFOLDER" />
+      </Component>
+    </DirectoryRef>
+    <Feature Id="ResxVsCsv" Title="ResxVsCsv" Level="1">
+      <ComponentRef Id="WindowsMenuShortcuts" />
+      <ComponentRef Id="_" />
+      <ComponentRef Id="af" />
+      <ComponentRef Id="ar" />
+      <ComponentRef Id="az" />
+      <ComponentRef Id="be" />
+      <ComponentRef Id="bg" />
+      <ComponentRef Id="bsLatnBA" />
+      <ComponentRef Id="cs" />
+      <ComponentRef Id="da" />
+      <ComponentRef Id="de" />
+      <ComponentRef Id="el" />
+      <ComponentRef Id="es" />
+      <ComponentRef Id="et" />
+      <ComponentRef Id="fa" />
+      <ComponentRef Id="fi" />
+      <ComponentRef Id="fr" />
+      <ComponentRef Id="he" />
+      <ComponentRef Id="hi" />
+      <ComponentRef Id="hu" />
+      <ComponentRef Id="hy" />
+      <ComponentRef Id="idID" />
+      <ComponentRef Id="is" />
+      <ComponentRef Id="it" />
+      <ComponentRef Id="ja" />
+      <ComponentRef Id="ka" />
+      <ComponentRef Id="kk" />
+      <ComponentRef Id="kmKH" />
+      <ComponentRef Id="ko" />
+      <ComponentRef Id="kyKG" />
+      <ComponentRef Id="lt" />
+      <ComponentRef Id="lv" />
+      <ComponentRef Id="mk" />
+      <ComponentRef Id="mnMN" />
+      <ComponentRef Id="ms" />
+      <ComponentRef Id="nl" />
+      <ComponentRef Id="no" />
+      <ComponentRef Id="paArabPK" />
+      <ComponentRef Id="paIN" />
+      <ComponentRef Id="pl" />
+      <ComponentRef Id="psAF" />
+      <ComponentRef Id="pt" />
+      <ComponentRef Id="ro" />
+      <ComponentRef Id="ru" />
+      <ComponentRef Id="sa" />
+      <ComponentRef Id="sk" />
+      <ComponentRef Id="sl" />
+      <ComponentRef Id="sr" />
+      <ComponentRef Id="sv" />
+      <ComponentRef Id="tgCyrlTJ" />
+      <ComponentRef Id="th" />
+      <ComponentRef Id="tr" />
+      <ComponentRef Id="uk" />
+      <ComponentRef Id="uz" />
+      <ComponentRef Id="vi" />
+      <ComponentRef Id="zhHans" />
+      <ComponentRef Id="zhHant" />
+    </Feature>
+  </Package>
+</Wix>
