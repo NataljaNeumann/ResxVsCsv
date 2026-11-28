@@ -198,7 +198,7 @@
     <DirectoryRef Id="WindowsMenuFolder">
       <Component Id="WindowsMenuShortcuts" Guid="09CC40BF-C012-4EB9-88FF-3EA21ADA27A0">
         <RemoveFolder Id="RemoveWindowsMenuFolder" Directory="WindowsMenuFolder" On="uninstall" />
-        <RegistryValue Root="HKLM" Key="Software\NataljaNeumann\ResxVsCsv" Name="Installed" Type="integer" Value="1" KeyPath="yes" />
+        <RegistryValue Root="HKCU" Key="Software\NataljaNeumann\ResxVsCsv" Name="Installed" Type="integer" Value="1" KeyPath="yes" />
         <Shortcut Id="ResxVsCsv_exe_pfx" Directory="WindowsMenuFolder" Name="Resx Vs Csv" Target="[INSTALLFOLDER]ResxVsCsv.exe" WorkingDirectory="INSTALLFOLDER" />
       </Component>
     </DirectoryRef>
